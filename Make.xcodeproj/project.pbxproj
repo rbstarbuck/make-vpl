@@ -17,6 +17,26 @@
 		A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143A79D1DEBF53A004DBC84 /* LaunchScreen.storyboard */; };
 		A143A7AA1DEBF53A004DBC84 /* MakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7A91DEBF53A004DBC84 /* MakeTests.swift */; };
 		A143A7B51DEBF53A004DBC84 /* MakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */; };
+		A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */; };
+		A1DBE0CD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift */; };
+		A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */; };
+		A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */; };
+		A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */; };
+		A1DBE0D51E0671770053758F /* SCNamedEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C51E0671770053758F /* SCNamedEntity+CoreDataClass.swift */; };
+		A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */; };
+		A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */; };
+		A1DBE0E11E0672760053758F /* SCClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0DF1E0672760053758F /* SCClass+CoreDataClass.swift */; };
+		A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E31E067CDF0053758F /* SCMethod+CoreDataProperties.swift */; };
+		A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E41E067CDF0053758F /* SCScene+CoreDataProperties.swift */; };
+		A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */; };
+		A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */; };
+		A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */; };
+		A1DBE0F81E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0EC1E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift */; };
+		A1DBE0F91E067CDF0053758F /* SCClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0ED1E067CDF0053758F /* SCClass+CoreDataProperties.swift */; };
+		A1DBE0FA1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0EE1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift */; };
+		A1DBE1101E067F140053758F /* OCObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE10F1E067F140053758F /* OCObject.swift */; };
+		A1DBE1121E0688270053758F /* SCStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE1111E0688270053758F /* SCStatement.swift */; };
+		A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE1131E0688D50053758F /* SCBlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +73,26 @@
 		A143A7B01DEBF53A004DBC84 /* MakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITests.swift; sourceTree = "<group>"; };
 		A143A7B61DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1DBE0791E0670590053758F /* SCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCModel.xcdatamodel; sourceTree = "<group>"; };
+		A1DBE0BD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCIndexedEntity+CoreDataClass.swift"; path = "SourceCode/SCIndexedEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataClass.swift"; path = "SourceCode/SCWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCMethod+CoreDataClass.swift"; path = "SourceCode/SCMethod+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCScene+CoreDataClass.swift"; path = "SourceCode/SCScene+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0C51E0671770053758F /* SCNamedEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCNamedEntity+CoreDataClass.swift"; path = "SourceCode/SCNamedEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCSprite+CoreDataClass.swift"; path = "SourceCode/SCSprite+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCVariable+CoreDataClass.swift"; path = "SourceCode/SCVariable+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0DF1E0672760053758F /* SCClass+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCClass+CoreDataClass.swift"; path = "SourceCode/SCClass+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1DBE0E31E067CDF0053758F /* SCMethod+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCMethod+CoreDataProperties.swift"; path = "SourceCode/SCMethod+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0E41E067CDF0053758F /* SCScene+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCScene+CoreDataProperties.swift"; path = "SourceCode/SCScene+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCVariable+CoreDataProperties.swift"; path = "SourceCode/SCVariable+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataProperties.swift"; path = "SourceCode/SCWorld+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCSprite+CoreDataProperties.swift"; path = "SourceCode/SCSprite+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0EC1E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCNamedEntity+CoreDataProperties.swift"; path = "SourceCode/SCNamedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0ED1E067CDF0053758F /* SCClass+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCClass+CoreDataProperties.swift"; path = "SourceCode/SCClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE0EE1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCIndexedEntity+CoreDataProperties.swift"; path = "SourceCode/SCIndexedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1DBE10F1E067F140053758F /* OCObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCObject.swift; path = ObjectCode/OCObject.swift; sourceTree = "<group>"; };
+		A1DBE1111E0688270053758F /* SCStatement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCStatement.swift; path = SourceCode/SCStatement.swift; sourceTree = "<group>"; };
+		A1DBE1131E0688D50053758F /* SCBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCBlock.swift; path = SourceCode/SCBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +143,8 @@
 		A143A78D1DEBF53A004DBC84 /* Make */ = {
 			isa = PBXGroup;
 			children = (
+				A16376CC1DF1656500231007 /* Source Code */,
+				A1564B131E066F8100632031 /* Object Code */,
 				A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */,
 				A143A7901DEBF53A004DBC84 /* GameScene.sks */,
 				A143A7921DEBF53A004DBC84 /* Actions.sks */,
@@ -132,6 +174,56 @@
 				A143A7B61DEBF53A004DBC84 /* Info.plist */,
 			);
 			path = MakeUITests;
+			sourceTree = "<group>";
+		};
+		A1564ABD1E05A5A500632031 /* Core Data Properties */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBE0E31E067CDF0053758F /* SCMethod+CoreDataProperties.swift */,
+				A1DBE0E41E067CDF0053758F /* SCScene+CoreDataProperties.swift */,
+				A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */,
+				A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */,
+				A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */,
+				A1DBE0EC1E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift */,
+				A1DBE0ED1E067CDF0053758F /* SCClass+CoreDataProperties.swift */,
+				A1DBE0EE1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift */,
+			);
+			name = "Core Data Properties";
+			sourceTree = "<group>";
+		};
+		A1564B0F1E066E5E00632031 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */,
+				A1DBE1111E0688270053758F /* SCStatement.swift */,
+				A1DBE1131E0688D50053758F /* SCBlock.swift */,
+			);
+			name = Method;
+			sourceTree = "<group>";
+		};
+		A1564B131E066F8100632031 /* Object Code */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBE10F1E067F140053758F /* OCObject.swift */,
+			);
+			name = "Object Code";
+			sourceTree = "<group>";
+		};
+		A16376CC1DF1656500231007 /* Source Code */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */,
+				A1564ABD1E05A5A500632031 /* Core Data Properties */,
+				A1564B0F1E066E5E00632031 /* Method */,
+				A1DBE0BD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift */,
+				A1DBE0C51E0671770053758F /* SCNamedEntity+CoreDataClass.swift */,
+				A1DBE0DF1E0672760053758F /* SCClass+CoreDataClass.swift */,
+				A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */,
+				A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */,
+				A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */,
+				A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */,
+			);
+			name = "Source Code";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +364,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */,
+				A1DBE0E11E0672760053758F /* SCClass+CoreDataClass.swift in Sources */,
+				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
+				A1DBE1101E067F140053758F /* OCObject.swift in Sources */,
+				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
+				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
+				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,
+				A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */,
+				A1DBE0CD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift in Sources */,
+				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
+				A1DBE0FA1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
+				A1DBE0D51E0671770053758F /* SCNamedEntity+CoreDataClass.swift in Sources */,
+				A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */,
+				A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */,
+				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
+				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
+				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
+				A1DBE0F81E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
+				A1DBE0F91E067CDF0053758F /* SCClass+CoreDataProperties.swift in Sources */,
+				A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +637,7 @@
 				A143A7BB1DEBF53A004DBC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A143A7BC1DEBF53A004DBC84 /* Build configuration list for PBXNativeTarget "MakeTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +646,7 @@
 				A143A7BE1DEBF53A004DBC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A143A7BF1DEBF53A004DBC84 /* Build configuration list for PBXNativeTarget "MakeUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,8 +655,23 @@
 				A143A7C11DEBF53A004DBC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1DBE0791E0670590053758F /* SCModel.xcdatamodel */,
+			);
+			currentVersion = A1DBE0791E0670590053758F /* SCModel.xcdatamodel */;
+			name = SCModel.xcdatamodeld;
+			path = SourceCode/SCModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A143A7831DEBF539004DBC84 /* Project object */;
 }

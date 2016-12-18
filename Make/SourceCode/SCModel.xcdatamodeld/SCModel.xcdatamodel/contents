@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Class" representedClassName=".SCClass" syncable="YES">
+        <relationship name="methods" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="definition" inverseEntity="Method" syncable="YES"/>
+        <relationship name="variables" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="definition" inverseEntity="Variable" syncable="YES"/>
+    </entity>
+    <entity name="IndexedEntity" representedClassName=".SCIndexedEntity" syncable="YES">
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="Method" representedClassName=".SCMethod" syncable="YES">
+        <attribute name="code" attributeType="Transformable" customClassName="SCBlock" syncable="YES"/>
+        <relationship name="definition" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="methods" inverseEntity="Class" syncable="YES"/>
+    </entity>
+    <entity name="NamedEntity" representedClassName=".SCNamedEntity" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Scene" representedClassName=".SCScene" syncable="YES">
+        <relationship name="sprites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sprite" inverseName="scenes" inverseEntity="Sprite" syncable="YES"/>
+        <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="scenes" inverseEntity="World" syncable="YES"/>
+    </entity>
+    <entity name="Sprite" representedClassName=".SCSprite" syncable="YES">
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="sprites" inverseEntity="Scene" syncable="YES"/>
+    </entity>
+    <entity name="Variable" representedClassName=".SCVariable" syncable="YES">
+        <attribute name="data" attributeType="Transformable" syncable="YES"/>
+        <relationship name="definition" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="variables" inverseEntity="Class" syncable="YES"/>
+    </entity>
+    <entity name="World" representedClassName=".SCWorld" syncable="YES">
+        <relationship name="scenes" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Scene" inverseName="world" inverseEntity="Scene" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Class" positionX="-693" positionY="213" width="128" height="73"/>
+        <element name="IndexedEntity" positionX="-693" positionY="18" width="128" height="58"/>
+        <element name="Method" positionX="-524" positionY="233" width="128" height="73"/>
+        <element name="NamedEntity" positionX="-693" positionY="99" width="128" height="73"/>
+        <element name="Scene" positionX="-693" positionY="375" width="128" height="73"/>
+        <element name="Sprite" positionX="-522" positionY="390" width="128" height="58"/>
+        <element name="Variable" positionX="-864" positionY="234" width="128" height="73"/>
+        <element name="World" positionX="-864" positionY="360" width="128" height="58"/>
+    </elements>
+</model>
