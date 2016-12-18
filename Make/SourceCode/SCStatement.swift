@@ -9,12 +9,12 @@
 import Foundation
 
 
-class SCStatement: NSCoding {
-    required init?(coder aDecoder: NSCoder) {
+public class SCStatement: NSObject, NSCoding {
+    public required init?(coder aDecoder: NSCoder) {
     
     }
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
     
     }
 }

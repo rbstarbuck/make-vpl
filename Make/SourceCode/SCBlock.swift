@@ -9,12 +9,12 @@
 import Foundation
 
 
-class SCBlock: SCStatement {
-    required init?(coder aDecoder: NSCoder) {
+public class SCBlock: SCStatement {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func encode(with aCoder: NSCoder) {
+    public override func encode(with aCoder: NSCoder) {
     
     }
 }
