@@ -2,7 +2,7 @@
 //  SCWorld+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/18/16.
+//  Created by Richmond Starbuck on 12/20/16.
 //
 //
 
@@ -17,6 +17,8 @@ extension SCWorld {
     }
 
     @NSManaged public var scenes: NSOrderedSet?
+    @NSManaged public var graphics: NSSet?
+    @NSManaged public var sprites: NSSet?
 
 }
 
@@ -52,5 +54,39 @@ extension SCWorld {
 
     @objc(removeScenes:)
     @NSManaged public func removeFromScenes(_ values: NSOrderedSet)
+
+}
+
+// MARK: Generated accessors for graphics
+extension SCWorld {
+
+    @objc(addGraphicsObject:)
+    @NSManaged public func addToGraphics(_ value: SCGraphic)
+
+    @objc(removeGraphicsObject:)
+    @NSManaged public func removeFromGraphics(_ value: SCGraphic)
+
+    @objc(addGraphics:)
+    @NSManaged public func addToGraphics(_ values: NSSet)
+
+    @objc(removeGraphics:)
+    @NSManaged public func removeFromGraphics(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for sprites
+extension SCWorld {
+
+    @objc(addSpritesObject:)
+    @NSManaged public func addToSprites(_ value: SCSprite)
+
+    @objc(removeSpritesObject:)
+    @NSManaged public func removeFromSprites(_ value: SCSprite)
+
+    @objc(addSprites:)
+    @NSManaged public func addToSprites(_ values: NSSet)
+
+    @objc(removeSprites:)
+    @NSManaged public func removeFromSprites(_ values: NSSet)
 
 }
