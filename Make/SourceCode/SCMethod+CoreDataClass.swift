@@ -11,5 +11,12 @@ import CoreData
 
 
 public class SCMethod: SCNamedEntity {
+    override public class func entityName() -> String {
+        return "Method"
+    }
+    
+    
+    @NSManaged public var code: SCBlock
+    @NSManaged public var definition: SCClass
 
 }

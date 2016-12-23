@@ -2,7 +2,7 @@
 //  SCNamedEntity+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/20/16.
+//  Created by Richmond Starbuck on 12/23/16.
 //
 //
 
@@ -15,8 +15,5 @@ extension SCNamedEntity {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SCNamedEntity> {
         return NSFetchRequest<SCNamedEntity>(entityName: "NamedEntity");
     }
-
-    @NSManaged public var comment: String?
-    @NSManaged public var name: String?
 
 }

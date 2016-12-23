@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class FrameEditorController: RelationshipListener {
+class FrameEditorController: EntityListener {
     
     var frame: SCFrame? {
         didSet {
@@ -19,15 +19,27 @@ class FrameEditorController: RelationshipListener {
         }
     }
     
-    func willChangeRelationship(_ key: String) {
-        <#code#>
+    func willChangeEntity(_ key: String) {
+        if key == frame?.layerObserver.key {
+            
+        }
     }
     
-    func onChangeRelationship(_ key: String, entity: NSManagedObject, type: NSFetchedResultsChangeType, oldIndex: Int?, newIndex: Int?) {
-        <#code#>
+    func onChangeEntity(_ key: String, entity: NSManagedObject, type: NSFetchedResultsChangeType,
+                        oldIndex: IndexPath?, newIndex: IndexPath?) {
+        if key == frame?.layerObserver.key {
+            switch type {
+            case .delete: break
+            case .insert: break
+            case .move: break
+            case .update: break
+            }
+        }
     }
     
-    func didChangeRelationship(_ key: String) {
-        <#code#>
+    func didChangeEntity(_ key: String) {
+        if key == frame?.layerObserver.key {
+            
+        }
     }
 }

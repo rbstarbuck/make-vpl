@@ -9,24 +9,24 @@
 import Foundation
 
 
-class Observable<T>: NSCoding {
-    var listeners = WeakSet<(T, T) -> Void>()
+public class Observable<T>: NSCoding {
+    public var listeners = WeakSet<(T, T) -> Void>()
     
     private var value: T
     
-    init(_ initialValue: T) {
+    public init(_ initialValue: T) {
         value = initialValue
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         value = aDecoder.decodeObject(forKey: "value") as! T
     }
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(value, forKey: "value")
     }
     
-    func set(newValue: T) {
+    public func set(newValue: T) {
         let oldValue = value
         value = newValue
         for listener in listeners {
@@ -34,7 +34,7 @@ class Observable<T>: NSCoding {
         }
     }
     
-    func get() -> T {
+    public func get() -> T {
         return value
     }
 }

@@ -11,5 +11,7 @@ import CoreData
 
 
 public class SCVariable: SCNamedEntity {
-
+    override public class func entityName() -> String {
+        return "Variable"
+    }
 }

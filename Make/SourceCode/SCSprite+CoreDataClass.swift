@@ -11,5 +11,7 @@ import CoreData
 
 
 public class SCSprite: SCClass {
-
+    override public class func entityName() -> String {
+        return "Sprite"
+    }
 }

@@ -2,7 +2,7 @@
 //  SCClass+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/20/16.
+//  Created by Richmond Starbuck on 12/23/16.
 //
 //
 
@@ -15,10 +15,7 @@ extension SCClass {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SCClass> {
         return NSFetchRequest<SCClass>(entityName: "Class");
     }
-
-    @NSManaged public var methods: NSSet?
-    @NSManaged public var variables: NSSet?
-
+    
 }
 
 // MARK: Generated accessors for methods

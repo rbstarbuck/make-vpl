@@ -11,5 +11,7 @@ import CoreData
 
 
 public class SCScene: SCClass {
-
+    override public class func entityName() -> String {
+        return "Scene"
+    }
 }

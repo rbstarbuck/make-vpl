@@ -2,7 +2,7 @@
 //  SCLayer+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/20/16.
+//  Created by Richmond Starbuck on 12/21/16.
 //
 //
 
@@ -16,8 +16,5 @@ extension SCLayer {
         return NSFetchRequest<SCLayer>(entityName: "Layer");
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var image: UIImage?
-    @NSManaged public var frame: SCFrame?
 
 }

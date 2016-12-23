@@ -17,9 +17,6 @@ extension SCGraphic {
     }
 
     @NSManaged public var animationFPS: Double
-    @NSManaged public var frames: NSOrderedSet?
-    @NSManaged public var world: SCWorld?
-    @NSManaged public var sprites: NSSet?
 
 }
 
@@ -66,10 +63,10 @@ extension SCGraphic {
 
     @objc(removeSpritesObject:)
     @NSManaged public func removeFromSprites(_ value: SCSprite)
-
+    
     @objc(addSprites:)
     @NSManaged public func addToSprites(_ values: NSSet)
-
+    
     @objc(removeSprites:)
     @NSManaged public func removeFromSprites(_ values: NSSet)
 
