@@ -16,4 +16,9 @@ extension SCMethod {
         return NSFetchRequest<SCMethod>(entityName: "Method");
     }
 
+    @NSManaged public var comment: String?
+    @NSManaged public var scene: SCScene?
+    @NSManaged public var sprite: SCSprite?
+    @NSManaged public var world: SCWorld?
+
 }

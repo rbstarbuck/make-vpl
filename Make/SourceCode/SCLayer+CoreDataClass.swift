@@ -11,25 +11,8 @@ import CoreData
 
 
 public class SCLayer: NSManagedObject {
-    public class func entityName() -> String {
-        return "Layer"
-    }
-    
-    
-    @NSManaged public var frame: SCFrame
-    @NSManaged public var name: String
-    
-    
-    public var index: Int {
-        get {
-            return coreDataGetter("index", in: self)!
-        }
-        set {
-            coreDataSetter("index", value: newValue, in: self) {
-                self.setImageViewZIndex()
-            }
-        }
-    }
+    public static let entityName = "Layer"
+
     
     public var image: UIImage {
         get {
@@ -37,12 +20,15 @@ public class SCLayer: NSManagedObject {
         }
         set {
             coreDataSetter("image", value: newValue, in: self) {
-                if self.imageView_ != nil {
-                    self.imageView_?.image = newValue
-                }
+                self.imageView_?.image = newValue
             }
         }
     }
+    
+    @NSManaged public var index: Int
+    @NSManaged public var name: String
+    @NSManaged public var frame: SCFrame
+
     
     private var imageView_: UIImageView?
     public var imageView: UIImageView {
@@ -55,14 +41,19 @@ public class SCLayer: NSManagedObject {
         }
     }
     
+    
+    override public func awakeFromInsert() {
+        self.image = UIImage()
+    }
+    
     public func move(to newIndex: Int) {
         let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.frame.layers.count ? self.frame.layers.count - 1 : newIndex))
-        let mod = (safeIndex < self.index ? 1 : -1)
         let from = min(safeIndex, self.index)
         let to = max(safeIndex, self.index)
+        let increment = (safeIndex < self.index ? 1 : -1)
         for layer in self.frame.layers {
             if layer.index >= from && layer.index <= to {
-                layer.index += mod
+                layer.index += increment
             }
         }
         self.index = safeIndex
@@ -81,4 +72,5 @@ public class SCLayer: NSManagedObject {
             imageView.layer.zPosition = CGFloat(self.index)
         }
     }
+    
 }

@@ -19,25 +19,22 @@
 		A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */; };
 		A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F26CC1E0D0F900057FB74 /* CoreData.framework */; };
 		A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD0C1E0D332000102431 /* SCConnector.swift */; };
+		A1C5CD5A1E0DCF6A00102431 /* SCFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */; };
+		A1C5CD5B1E0DCF6A00102431 /* SCGraphicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */; };
+		A1C5CD5D1E0EA4D200102431 /* SCLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD5C1E0EA4D200102431 /* SCLayerTests.swift */; };
+		A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */; };
 		A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */; };
-		A1CA78681E0BB83100B7B4FA /* SCGraphicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7A91DEBF53A004DBC84 /* SCGraphicTests.swift */; };
 		A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */; };
-		A1DBE0CD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift */; };
 		A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */; };
 		A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */; };
 		A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */; };
-		A1DBE0D51E0671770053758F /* SCNamedEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C51E0671770053758F /* SCNamedEntity+CoreDataClass.swift */; };
 		A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */; };
 		A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */; };
-		A1DBE0E11E0672760053758F /* SCClass+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0DF1E0672760053758F /* SCClass+CoreDataClass.swift */; };
 		A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E31E067CDF0053758F /* SCMethod+CoreDataProperties.swift */; };
 		A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E41E067CDF0053758F /* SCScene+CoreDataProperties.swift */; };
 		A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */; };
 		A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */; };
 		A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */; };
-		A1DBE0F81E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0EC1E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift */; };
-		A1DBE0F91E067CDF0053758F /* SCClass+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0ED1E067CDF0053758F /* SCClass+CoreDataProperties.swift */; };
-		A1DBE0FA1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0EE1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift */; };
 		A1DBE1101E067F140053758F /* OCObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE10F1E067F140053758F /* OCObject.swift */; };
 		A1DBE1121E0688270053758F /* SCStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE1111E0688270053758F /* SCStatement.swift */; };
 		A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE1131E0688D50053758F /* SCBlock.swift */; };
@@ -95,7 +92,6 @@
 		A143A79E1DEBF53A004DBC84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A143A7A01DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A143A7A51DEBF53A004DBC84 /* MakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A143A7A91DEBF53A004DBC84 /* SCGraphicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCGraphicTests.swift; sourceTree = "<group>"; };
 		A143A7AB1DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A143A7B01DEBF53A004DBC84 /* MakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITests.swift; sourceTree = "<group>"; };
@@ -103,24 +99,22 @@
 		A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTestStack.swift; path = Utility/CoreDataTestStack.swift; sourceTree = "<group>"; };
 		A18F26CC1E0D0F900057FB74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A1C5CD0C1E0D332000102431 /* SCConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConnector.swift; path = SourceCode/SCConnector.swift; sourceTree = "<group>"; };
+		A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCFrameTests.swift; path = SourceCode/SCFrameTests.swift; sourceTree = "<group>"; };
+		A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCGraphicTests.swift; path = SourceCode/SCGraphicTests.swift; sourceTree = "<group>"; };
+		A1C5CD5C1E0EA4D200102431 /* SCLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLayerTests.swift; path = SourceCode/SCLayerTests.swift; sourceTree = "<group>"; };
+		A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConstants.swift; path = SourceCode/SCConstants.swift; sourceTree = "<group>"; };
 		A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Utility/CoreDataExtensions.swift; sourceTree = "<group>"; };
 		A1DBE0791E0670590053758F /* SCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCModel.xcdatamodel; sourceTree = "<group>"; };
-		A1DBE0BD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCIndexedEntity+CoreDataClass.swift"; path = "SourceCode/SCIndexedEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataClass.swift"; path = "SourceCode/SCWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCMethod+CoreDataClass.swift"; path = "SourceCode/SCMethod+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCScene+CoreDataClass.swift"; path = "SourceCode/SCScene+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1DBE0C51E0671770053758F /* SCNamedEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCNamedEntity+CoreDataClass.swift"; path = "SourceCode/SCNamedEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCSprite+CoreDataClass.swift"; path = "SourceCode/SCSprite+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCVariable+CoreDataClass.swift"; path = "SourceCode/SCVariable+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1DBE0DF1E0672760053758F /* SCClass+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCClass+CoreDataClass.swift"; path = "SourceCode/SCClass+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0E31E067CDF0053758F /* SCMethod+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCMethod+CoreDataProperties.swift"; path = "SourceCode/SCMethod+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1DBE0E41E067CDF0053758F /* SCScene+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCScene+CoreDataProperties.swift"; path = "SourceCode/SCScene+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCVariable+CoreDataProperties.swift"; path = "SourceCode/SCVariable+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataProperties.swift"; path = "SourceCode/SCWorld+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCSprite+CoreDataProperties.swift"; path = "SourceCode/SCSprite+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A1DBE0EC1E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCNamedEntity+CoreDataProperties.swift"; path = "SourceCode/SCNamedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A1DBE0ED1E067CDF0053758F /* SCClass+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCClass+CoreDataProperties.swift"; path = "SourceCode/SCClass+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A1DBE0EE1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCIndexedEntity+CoreDataProperties.swift"; path = "SourceCode/SCIndexedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1DBE10F1E067F140053758F /* OCObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCObject.swift; path = ObjectCode/OCObject.swift; sourceTree = "<group>"; };
 		A1DBE1111E0688270053758F /* SCStatement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCStatement.swift; path = SourceCode/SCStatement.swift; sourceTree = "<group>"; };
 		A1DBE1131E0688D50053758F /* SCBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCBlock.swift; path = SourceCode/SCBlock.swift; sourceTree = "<group>"; };
@@ -219,7 +213,7 @@
 		A143A7A81DEBF53A004DBC84 /* MakeTests */ = {
 			isa = PBXGroup;
 			children = (
-				A143A7A91DEBF53A004DBC84 /* SCGraphicTests.swift */,
+				A1C5CD571E0DCF0300102431 /* Source Code Tests */,
 				A143A7AB1DEBF53A004DBC84 /* Info.plist */,
 			);
 			path = MakeTests;
@@ -242,9 +236,6 @@
 				A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */,
 				A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */,
 				A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */,
-				A1DBE0EC1E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift */,
-				A1DBE0ED1E067CDF0053758F /* SCClass+CoreDataProperties.swift */,
-				A1DBE0EE1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift */,
 				A1F5203A1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift */,
 				A1F520261E09DFD900443ABB /* SCFrame+CoreDataProperties.swift */,
 				A1F5201D1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift */,
@@ -276,12 +267,10 @@
 				A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */,
 				A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */,
 				A1C5CD0C1E0D332000102431 /* SCConnector.swift */,
+				A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */,
 				A1564ABD1E05A5A500632031 /* Core Data Properties */,
 				A1564B0F1E066E5E00632031 /* Method */,
 				A1F5203D1E09E0A500443ABB /* Graphic */,
-				A1DBE0BD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift */,
-				A1DBE0C51E0671770053758F /* SCNamedEntity+CoreDataClass.swift */,
-				A1DBE0DF1E0672760053758F /* SCClass+CoreDataClass.swift */,
 				A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */,
 				A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */,
 				A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */,
@@ -296,6 +285,16 @@
 				A18F26CC1E0D0F900057FB74 /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1C5CD571E0DCF0300102431 /* Source Code Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */,
+				A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */,
+				A1C5CD5C1E0EA4D200102431 /* SCLayerTests.swift */,
+			);
+			name = "Source Code Tests";
 			sourceTree = "<group>";
 		};
 		A1F51FF71E08E90600443ABB /* Graphics */ = {
@@ -421,6 +420,7 @@
 					A143A7A41DEBF53A004DBC84 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = L9BCMT7FCU;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A143A78A1DEBF539004DBC84;
 					};
@@ -488,11 +488,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */,
-				A1DBE0E11E0672760053758F /* SCClass+CoreDataClass.swift in Sources */,
 				A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */,
 				A1F51FF91E08E93C00443ABB /* StrokeView.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
+				A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */,
 				A1F520141E09A64800443ABB /* LayerView.swift in Sources */,
 				A1F51FFB1E08EA0D00443ABB /* StrokeController.swift in Sources */,
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
@@ -507,14 +507,11 @@
 				A1F5203C1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift in Sources */,
 				A1F5202A1E09DFD900443ABB /* SCLayer+CoreDataClass.swift in Sources */,
 				A1F520181E09C2B000443ABB /* ObservableArray.swift in Sources */,
-				A1DBE0CD1E0671770053758F /* SCIndexedEntity+CoreDataClass.swift in Sources */,
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
-				A1DBE0FA1E067CDF0053758F /* SCIndexedEntity+CoreDataProperties.swift in Sources */,
 				A1F520011E08FA9500443ABB /* LayerController.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
-				A1DBE0D51E0671770053758F /* SCNamedEntity+CoreDataClass.swift in Sources */,
 				A1F520081E091DDA00443ABB /* LayerModel.swift in Sources */,
 				A1F5200E1E09200300443ABB /* FrameworkExtensions.swift in Sources */,
 				A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */,
@@ -525,11 +522,9 @@
 				A1F520061E090B8800443ABB /* StrokeDelegate.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
-				A1DBE0F81E067CDF0053758F /* SCNamedEntity+CoreDataProperties.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
 				A1F5203B1E09E08600443ABB /* SCGraphic+CoreDataClass.swift in Sources */,
-				A1DBE0F91E067CDF0053758F /* SCClass+CoreDataProperties.swift in Sources */,
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
@@ -542,7 +537,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1CA78681E0BB83100B7B4FA /* SCGraphicTests.swift in Sources */,
+				A1C5CD5B1E0DCF6A00102431 /* SCGraphicTests.swift in Sources */,
+				A1C5CD5A1E0DCF6A00102431 /* SCFrameTests.swift in Sources */,
+				A1C5CD5D1E0EA4D200102431 /* SCLayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,11 +710,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;
 				INFOPLIST_FILE = MakeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richstarbuck.MakeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Make.app/Make";
 			};
@@ -728,6 +727,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;
 				INFOPLIST_FILE = MakeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

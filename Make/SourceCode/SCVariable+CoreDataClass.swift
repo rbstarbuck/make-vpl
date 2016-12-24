@@ -10,8 +10,11 @@ import Foundation
 import CoreData
 
 
-public class SCVariable: SCNamedEntity {
-    override public class func entityName() -> String {
-        return "Variable"
-    }
+public class SCVariable: NSManagedObject {
+    public static let entityName = "Variable"
+
+    
+    @NSManaged public var data: NSObject
+    @NSManaged public var name: String
+    
 }

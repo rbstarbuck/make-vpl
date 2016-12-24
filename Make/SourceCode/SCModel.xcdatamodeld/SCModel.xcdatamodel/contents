@@ -1,64 +1,81 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Class" representedClassName=".SCClass" syncable="YES">
-        <relationship name="methods" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="definition" inverseEntity="Method" syncable="YES"/>
-        <relationship name="variables" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="definition" inverseEntity="Variable" syncable="YES"/>
-    </entity>
     <entity name="Frame" representedClassName=".SCFrame" syncable="YES">
-        <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="index" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="graphic" maxCount="1" deletionRule="Nullify" destinationEntity="Graphic" inverseName="frames" inverseEntity="Graphic" syncable="YES"/>
         <relationship name="layers" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Layer" inverseName="frame" inverseEntity="Layer" syncable="YES"/>
     </entity>
     <entity name="Graphic" representedClassName=".SCGraphic" syncable="YES">
-        <attribute name="animationFPS" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="animationFPS" attributeType="Double" defaultValueString="4" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="frames" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Frame" inverseName="graphic" inverseEntity="Frame" syncable="YES"/>
         <relationship name="sprites" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Sprite" inverseName="graphic" inverseEntity="Sprite" syncable="YES"/>
         <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="graphics" inverseEntity="World" syncable="YES"/>
     </entity>
-    <entity name="IndexedEntity" representedClassName=".SCIndexedEntity" syncable="YES">
-        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
-    </entity>
     <entity name="Layer" representedClassName=".SCLayer" syncable="YES">
         <attribute name="image" attributeType="Transformable" customClassName="UIImage" syncable="YES"/>
-        <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="index" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="frame" maxCount="1" deletionRule="Nullify" destinationEntity="Frame" inverseName="layers" inverseEntity="Frame" syncable="YES"/>
     </entity>
     <entity name="Method" representedClassName=".SCMethod" syncable="YES">
         <attribute name="code" attributeType="Transformable" customClassName="SCBlock" syncable="YES"/>
-        <relationship name="definition" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="methods" inverseEntity="Class" syncable="YES"/>
-    </entity>
-    <entity name="NamedEntity" representedClassName=".SCNamedEntity" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <relationship name="scene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="methods" inverseEntity="Scene" syncable="YES"/>
+        <relationship name="sprite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="methods" inverseEntity="Sprite" syncable="YES"/>
+        <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="methods" inverseEntity="World" syncable="YES"/>
+        <fetchedProperty name="owner" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Method" predicateString="SELF.id == $FETCH_SOURCE.ownerId"/>
+        </fetchedProperty>
     </entity>
     <entity name="Scene" representedClassName=".SCScene" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <relationship name="methods" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="scene" inverseEntity="Method" syncable="YES"/>
+        <relationship name="variables" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="scene" inverseEntity="Variable" syncable="YES"/>
         <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="scenes" inverseEntity="World" syncable="YES"/>
     </entity>
     <entity name="Sprite" representedClassName=".SCSprite" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="graphic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Graphic" inverseName="sprites" inverseEntity="Graphic" syncable="YES"/>
+        <relationship name="methods" toMany="YES" deletionRule="Nullify" destinationEntity="Method" inverseName="sprite" inverseEntity="Method" syncable="YES"/>
+        <relationship name="variables" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="sprite" inverseEntity="Variable" syncable="YES"/>
         <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="sprites" inverseEntity="World" syncable="YES"/>
     </entity>
     <entity name="Variable" representedClassName=".SCVariable" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" attributeType="Transformable" syncable="YES"/>
-        <relationship name="definition" maxCount="1" deletionRule="Nullify" destinationEntity="Class" inverseName="variables" inverseEntity="Class" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <relationship name="scene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="variables" inverseEntity="Scene" syncable="YES"/>
+        <relationship name="sprite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="variables" inverseEntity="Sprite" syncable="YES"/>
+        <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="variables" inverseEntity="World" syncable="YES"/>
+        <fetchedProperty name="owner" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Variable" predicateString="SELF.id == $FETCH_SOURCE.ownerId"/>
+        </fetchedProperty>
     </entity>
     <entity name="World" representedClassName=".SCWorld" syncable="YES">
-        <relationship name="graphics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Graphic" inverseName="world" inverseEntity="Graphic" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <relationship name="graphics" toMany="YES" deletionRule="Cascade" destinationEntity="Graphic" inverseName="world" inverseEntity="Graphic" syncable="YES"/>
+        <relationship name="methods" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="world" inverseEntity="Method" syncable="YES"/>
         <relationship name="scenes" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Scene" inverseName="world" inverseEntity="Scene" syncable="YES"/>
-        <relationship name="sprites" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Sprite" inverseName="world" inverseEntity="Sprite" syncable="YES"/>
+        <relationship name="sprites" toMany="YES" deletionRule="Cascade" destinationEntity="Sprite" inverseName="world" inverseEntity="Sprite" syncable="YES"/>
+        <relationship name="variables" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="world" inverseEntity="Variable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Class" positionX="-693" positionY="213" width="128" height="75"/>
-        <element name="Frame" positionX="-1017" positionY="414" width="128" height="90"/>
-        <element name="Graphic" positionX="-857" positionY="387" width="128" height="105"/>
-        <element name="IndexedEntity" positionX="-693" positionY="18" width="128" height="60"/>
-        <element name="Layer" positionX="-1179" positionY="435" width="128" height="105"/>
-        <element name="Method" positionX="-524" positionY="233" width="128" height="75"/>
-        <element name="NamedEntity" positionX="-693" positionY="99" width="128" height="75"/>
-        <element name="Scene" positionX="-522" positionY="378" width="128" height="60"/>
-        <element name="Sprite" positionX="-531" positionY="486" width="128" height="75"/>
-        <element name="Variable" positionX="-864" positionY="234" width="128" height="75"/>
-        <element name="World" positionX="-693" positionY="360" width="128" height="90"/>
+        <element name="Frame" positionX="-1017" positionY="414" width="128" height="88"/>
+        <element name="Graphic" positionX="-857" positionY="387" width="128" height="133"/>
+        <element name="Layer" positionX="-1179" positionY="435" width="128" height="103"/>
+        <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>
+        <element name="Scene" positionX="-522" positionY="378" width="128" height="133"/>
+        <element name="Sprite" positionX="-531" positionY="486" width="128" height="148"/>
+        <element name="Variable" positionX="-864" positionY="234" width="128" height="161"/>
+        <element name="World" positionX="-693" positionY="360" width="128" height="163"/>
     </elements>
 </model>

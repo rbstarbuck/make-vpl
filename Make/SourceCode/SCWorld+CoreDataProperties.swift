@@ -16,6 +16,8 @@ extension SCWorld {
         return NSFetchRequest<SCWorld>(entityName: "World");
     }
 
+    @NSManaged public var comment: String?
+
 }
 
 // MARK: Generated accessors for graphics
@@ -66,5 +68,39 @@ extension SCWorld {
 
     @objc(removeSprites:)
     @NSManaged public func removeFromSprites(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for methods
+extension SCWorld {
+
+    @objc(addMethodsObject:)
+    @NSManaged public func addToMethods(_ value: SCMethod)
+
+    @objc(removeMethodsObject:)
+    @NSManaged public func removeFromMethods(_ value: SCMethod)
+
+    @objc(addMethods:)
+    @NSManaged public func addToMethods(_ values: NSSet)
+
+    @objc(removeMethods:)
+    @NSManaged public func removeFromMethods(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for variables
+extension SCWorld {
+
+    @objc(addVariablesObject:)
+    @NSManaged public func addToVariables(_ value: SCVariable)
+
+    @objc(removeVariablesObject:)
+    @NSManaged public func removeFromVariables(_ value: SCVariable)
+
+    @objc(addVariables:)
+    @NSManaged public func addToVariables(_ values: NSSet)
+
+    @objc(removeVariables:)
+    @NSManaged public func removeFromVariables(_ values: NSSet)
 
 }

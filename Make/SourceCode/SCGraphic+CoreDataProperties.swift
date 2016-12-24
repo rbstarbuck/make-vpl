@@ -2,7 +2,7 @@
 //  SCGraphic+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/20/16.
+//  Created by Richmond Starbuck on 12/23/16.
 //
 //
 
@@ -23,24 +23,6 @@ extension SCGraphic {
 // MARK: Generated accessors for frames
 extension SCGraphic {
 
-    @objc(insertObject:inFramesAtIndex:)
-    @NSManaged public func insertIntoFrames(_ value: SCFrame, at idx: Int)
-
-    @objc(removeObjectFromFramesAtIndex:)
-    @NSManaged public func removeFromFrames(at idx: Int)
-
-    @objc(insertFrames:atIndexes:)
-    @NSManaged public func insertIntoFrames(_ values: [SCFrame], at indexes: NSIndexSet)
-
-    @objc(removeFramesAtIndexes:)
-    @NSManaged public func removeFromFrames(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInFramesAtIndex:withObject:)
-    @NSManaged public func replaceFrames(at idx: Int, with value: SCFrame)
-
-    @objc(replaceFramesAtIndexes:withFrames:)
-    @NSManaged public func replaceFrames(at indexes: NSIndexSet, with values: [SCFrame])
-
     @objc(addFramesObject:)
     @NSManaged public func addToFrames(_ value: SCFrame)
 
@@ -48,10 +30,10 @@ extension SCGraphic {
     @NSManaged public func removeFromFrames(_ value: SCFrame)
 
     @objc(addFrames:)
-    @NSManaged public func addToFrames(_ values: NSOrderedSet)
+    @NSManaged public func addToFrames(_ values: NSSet)
 
     @objc(removeFrames:)
-    @NSManaged public func removeFromFrames(_ values: NSOrderedSet)
+    @NSManaged public func removeFromFrames(_ values: NSSet)
 
 }
 
@@ -63,10 +45,10 @@ extension SCGraphic {
 
     @objc(removeSpritesObject:)
     @NSManaged public func removeFromSprites(_ value: SCSprite)
-    
+
     @objc(addSprites:)
     @NSManaged public func addToSprites(_ values: NSSet)
-    
+
     @objc(removeSprites:)
     @NSManaged public func removeFromSprites(_ values: NSSet)
 

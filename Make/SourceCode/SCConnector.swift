@@ -48,9 +48,10 @@ public class SCConnector {
         return entity
     }
     
-    public func createWorld() -> SCWorld? {
-        let world: SCWorld? = self.createEntity(SCWorld.entityName())
-        world?.connector = self
+    public func createWorld() -> SCWorld {
+        let world: SCWorld = self.createEntity(SCWorld.entityName)!
+        world.connector = self
+        world.createScene()
         return world
     }
 

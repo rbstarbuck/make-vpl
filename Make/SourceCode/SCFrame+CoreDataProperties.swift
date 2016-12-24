@@ -2,7 +2,7 @@
 //  SCFrame+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/21/16.
+//  Created by Richmond Starbuck on 12/23/16.
 //
 //
 
@@ -15,7 +15,6 @@ extension SCFrame {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SCFrame> {
         return NSFetchRequest<SCFrame>(entityName: "Frame");
     }
-
 
 }
 

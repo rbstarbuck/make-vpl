@@ -2,7 +2,7 @@
 //  SCVariable+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/20/16.
+//  Created by Richmond Starbuck on 12/23/16.
 //
 //
 
@@ -16,7 +16,9 @@ extension SCVariable {
         return NSFetchRequest<SCVariable>(entityName: "Variable");
     }
 
-    @NSManaged public var data: NSObject?
-    @NSManaged public var definition: SCClass?
+    @NSManaged public var comment: String?
+    @NSManaged public var sprite: SCSprite?
+    @NSManaged public var scene: SCScene?
+    @NSManaged public var world: SCWorld?
 
 }
