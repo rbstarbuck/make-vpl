@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GraphicsEditorViewController" customModule="Make" customModuleProvider="target">
             <connections>
+                <outlet property="canvasView" destination="zBy-kF-bPq" id="1jd-5B-Uzl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

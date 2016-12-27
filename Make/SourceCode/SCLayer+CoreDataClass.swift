@@ -14,6 +14,17 @@ public class SCLayer: NSManagedObject {
     public static let entityName = "Layer"
 
     
+    public var index: Int {
+        get {
+            return coreDataGetter("index", in: self)!
+        }
+        set {
+            coreDataSetter("index", value: newValue, in: self) {
+                self.imageView_?.layer.zPosition = CGFloat(self.index)
+            }
+        }
+    }
+    
     public var image: UIImage {
         get {
             return coreDataGetter("image", in: self)!
@@ -25,19 +36,27 @@ public class SCLayer: NSManagedObject {
         }
     }
     
-    @NSManaged public var index: Int
     @NSManaged public var name: String
     @NSManaged public var frame: SCFrame
-
     
-    private var imageView_: UIImageView?
+    public var world: SCWorld {
+        get {
+            return self.frame.world
+        }
+    }
+    
+    
+    private weak var imageView_: UIImageView?
     public var imageView: UIImageView {
         get {
-            if self.imageView_ == nil {
-                self.imageView_ = UIImageView(image: self.image)
-                self.setImageViewZIndex()
+            var view = self.imageView_
+            if view == nil {
+                view = UIImageView(image: self.image)
+                view!.image = self.image
+                view!.layer.zPosition = CGFloat(self.index)
+                self.imageView_ = view
             }
-            return self.imageView_!
+            return view!
         }
     }
     
@@ -57,6 +76,7 @@ public class SCLayer: NSManagedObject {
             }
         }
         self.index = safeIndex
+        self.world.connector.saveContext()
     }
     
     public func moveUp() {
@@ -67,10 +87,13 @@ public class SCLayer: NSManagedObject {
         self.move(to: self.index - 1)
     }
     
-    private func setImageViewZIndex() {
-        if let imageView = self.imageView_ {
-            imageView.layer.zPosition = CGFloat(self.index)
+    @discardableResult
+    public func delete() -> Bool {
+        if self.frame.layers.count < 2 {
+            
         }
+        self.world.connector.context.delete(self)
+        return self.world.connector.saveContext()
     }
     
 }

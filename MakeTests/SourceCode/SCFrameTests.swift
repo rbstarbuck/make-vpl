@@ -10,7 +10,7 @@ import XCTest
 import CoreData
 @testable import Make
 
-class SCFrameTests: XCTestCase {
+class SCFrameTests: XCTestCase, EntityListener {
     
     var connector: SCConnector!
     var graphic: SCGraphic!
@@ -116,6 +116,72 @@ class SCFrameTests: XCTestCase {
         catch {
             XCTAssert(false)
         }
+    }
+    
+    func testDelete() {
+        self.graphic.createFrame()
+        
+        XCTAssert(self.frame.delete())
+        
+        let req: NSFetchRequest<SCFrame> = SCFrame.fetchRequest()
+        do {
+            let result = try self.connector.context.fetch(req)
+            XCTAssert(result.count == 1)
+        }
+        catch {
+            XCTAssert(false)
+        }
+    }
+    
+    
+    var isChanging = false
+    var onChangeType: NSFetchedResultsChangeType = .insert
+    var onChangeObject: NSManagedObject?
+    var onChangeOldIndex: IndexPath?
+    var onChangeNewIndex: IndexPath?
+    
+    func testFrameObserver() {
+        self.frame.layerObserver.addListener(self)
+        let layer1 = self.frame.createLayer()
+        
+        let layer2 = self.frame.createLayer()
+        XCTAssert(self.onChangeType == .insert)
+        XCTAssert(self.onChangeObject == layer2)
+        XCTAssert(self.onChangeOldIndex == nil)
+        XCTAssert(self.onChangeNewIndex!.section == 0)
+        XCTAssert(self.onChangeNewIndex!.row == 2)
+        
+        layer2.move(to: 0)
+        XCTAssert(self.onChangeType == .move)
+        XCTAssert(self.onChangeObject == layer2)
+        XCTAssert(self.onChangeOldIndex!.section == 0)
+        XCTAssert(self.onChangeOldIndex!.row == 2)
+        XCTAssert(self.onChangeNewIndex!.section == 0)
+        XCTAssert(self.onChangeNewIndex!.row == 0)
+        
+        layer1.delete()
+        XCTAssert(self.onChangeType == .delete)
+        XCTAssert(self.onChangeObject == layer1)
+        XCTAssert(self.onChangeOldIndex!.section == 0)
+        XCTAssert(self.onChangeOldIndex!.row == 2)
+        XCTAssert(self.onChangeNewIndex == nil)
+    }
+    
+    func willChangeEntity(_ key: String) {
+        self.isChanging = true
+    }
+    
+    func onChangeEntity(_ key: String, entity: NSManagedObject, type: NSFetchedResultsChangeType, oldIndex: IndexPath?, newIndex: IndexPath?) {
+        XCTAssert(self.isChanging)
+        XCTAssert(key == SCFrame.layerObserverKey)
+        self.onChangeType = type
+        self.onChangeObject = entity
+        self.onChangeOldIndex = oldIndex
+        self.onChangeNewIndex = newIndex
+    }
+    
+    func didChangeEntity(_ key: String) {
+        self.isChanging = false
     }
     
 }

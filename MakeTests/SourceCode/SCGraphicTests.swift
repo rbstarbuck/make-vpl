@@ -11,7 +11,7 @@ import CoreData
 @testable import Make
 
 
-class SCGraphicTests: XCTestCase {
+class SCGraphicTests: XCTestCase, EntityListener {
     
     var connector: SCConnector!
     var graphic: SCGraphic!
@@ -93,6 +93,70 @@ class SCGraphicTests: XCTestCase {
         catch {
             XCTAssert(false)
         }
+    }
+    
+    func testDelete() {
+        XCTAssert(self.graphic.delete())
+        
+        let req: NSFetchRequest<SCGraphic> = SCGraphic.fetchRequest()
+        do {
+            let result = try self.connector.context.fetch(req)
+            XCTAssert(result.count == 0)
+        }
+        catch {
+            XCTAssert(false)
+        }
+    }
+    
+    
+    var isChanging = false
+    var onChangeType: NSFetchedResultsChangeType = .insert
+    var onChangeObject: NSManagedObject?
+    var onChangeOldIndex: IndexPath?
+    var onChangeNewIndex: IndexPath?
+    
+    func testFrameObserver() {
+        self.graphic.frameObserver.addListener(self)
+        let frame1 = self.graphic.createFrame()
+        
+        let frame2 = self.graphic.createFrame()
+        XCTAssert(self.onChangeType == .insert)
+        XCTAssert(self.onChangeObject == frame2)
+        XCTAssert(self.onChangeOldIndex == nil)
+        XCTAssert(self.onChangeNewIndex!.section == 0)
+        XCTAssert(self.onChangeNewIndex!.row == 2)
+        
+        frame2.move(to: 0)
+        XCTAssert(self.onChangeType == .move)
+        XCTAssert(self.onChangeObject == frame2)
+        XCTAssert(self.onChangeOldIndex!.section == 0)
+        XCTAssert(self.onChangeOldIndex!.row == 2)
+        XCTAssert(self.onChangeNewIndex!.section == 0)
+        XCTAssert(self.onChangeNewIndex!.row == 0)
+        
+        frame1.delete()
+        XCTAssert(self.onChangeType == .delete)
+        XCTAssert(self.onChangeObject == frame1)
+        XCTAssert(self.onChangeOldIndex!.section == 0)
+        XCTAssert(self.onChangeOldIndex!.row == 2)
+        XCTAssert(self.onChangeNewIndex == nil)
+    }
+    
+    func willChangeEntity(_ key: String) {
+        self.isChanging = true
+    }
+    
+    func onChangeEntity(_ key: String, entity: NSManagedObject, type: NSFetchedResultsChangeType, oldIndex: IndexPath?, newIndex: IndexPath?) {
+        XCTAssert(self.isChanging)
+        XCTAssert(key == SCGraphic.frameObserverKey)
+        self.onChangeType = type
+        self.onChangeObject = entity
+        self.onChangeOldIndex = oldIndex
+        self.onChangeNewIndex = newIndex
+    }
+    
+    func didChangeEntity(_ key: String) {
+        self.isChanging = false
     }
     
 }

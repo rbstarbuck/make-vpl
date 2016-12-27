@@ -79,4 +79,19 @@ class SCLayerTests: XCTestCase {
         }
     }
     
+    func testDelete() {
+        self.frame.createLayer()
+        
+        XCTAssert(self.layer.delete())
+        
+        let req: NSFetchRequest<SCLayer> = SCLayer.fetchRequest()
+        do {
+            let result = try self.connector.context.fetch(req)
+            XCTAssert(result.count == 1)
+        }
+        catch {
+            XCTAssert(false)
+        }
+    }
+    
 }

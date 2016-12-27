@@ -60,6 +60,7 @@ public class SCFrame: NSManagedObject {
         layer.name = "\(SCConstants.LAYER_DISPLAY_TITLE) \(self.layers.count + 1)"
         self.addToLayers(layer)
         
+        self.world.connector.saveContext()
         return layer
     }
     
@@ -69,6 +70,7 @@ public class SCFrame: NSManagedObject {
             layer.image = otherLayer.image
             layer.name = otherLayer.name
         }
+        self.world.connector.saveContext()
     }
     
     public func copyLayers(to other: SCFrame) {
@@ -86,6 +88,7 @@ public class SCFrame: NSManagedObject {
             }
         }
         self.index = safeIndex
+        self.world.connector.saveContext()
     }
     
     public func moveUp() {
@@ -94,6 +97,15 @@ public class SCFrame: NSManagedObject {
     
     public func moveDown() {
         self.move(to: self.index - 1)
+    }
+    
+    @discardableResult
+    public func delete() -> Bool {
+        if self.graphic.frames.count < 2 {
+            return false
+        }
+        self.world.connector.context.delete(self)
+        return self.world.connector.saveContext()
     }
     
 }

@@ -23,6 +23,8 @@
 		A1C5CD5B1E0DCF6A00102431 /* SCGraphicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */; };
 		A1C5CD5D1E0EA4D200102431 /* SCLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD5C1E0EA4D200102431 /* SCLayerTests.swift */; };
 		A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */; };
+		A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD661E122F8000102431 /* CanvasView.swift */; };
+		A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */; };
 		A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */; };
 		A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */; };
 		A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */; };
@@ -38,18 +40,11 @@
 		A1DBE1101E067F140053758F /* OCObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE10F1E067F140053758F /* OCObject.swift */; };
 		A1DBE1121E0688270053758F /* SCStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE1111E0688270053758F /* SCStatement.swift */; };
 		A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE1131E0688D50053758F /* SCBlock.swift */; };
-		A1F51FF91E08E93C00443ABB /* StrokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F51FF81E08E93C00443ABB /* StrokeView.swift */; };
-		A1F51FFB1E08EA0D00443ABB /* StrokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F51FFA1E08EA0D00443ABB /* StrokeController.swift */; };
 		A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F51FFC1E08EF0600443ABB /* GraphicsEditorViewController.swift */; };
 		A1F51FFF1E08EF0600443ABB /* GraphicsEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F51FFD1E08EF0600443ABB /* GraphicsEditorViewController.xib */; };
-		A1F520011E08FA9500443ABB /* LayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520001E08FA9500443ABB /* LayerController.swift */; };
-		A1F520041E09098000443ABB /* LayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520031E09098000443ABB /* LayerDelegate.swift */; };
-		A1F520061E090B8800443ABB /* StrokeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520051E090B8800443ABB /* StrokeDelegate.swift */; };
-		A1F520081E091DDA00443ABB /* LayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520071E091DDA00443ABB /* LayerModel.swift */; };
 		A1F5200E1E09200300443ABB /* FrameworkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5200B1E09200300443ABB /* FrameworkExtensions.swift */; };
 		A1F5200F1E09200300443ABB /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5200C1E09200300443ABB /* Weak.swift */; };
 		A1F520101E09200300443ABB /* WeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5200D1E09200300443ABB /* WeakSet.swift */; };
-		A1F520141E09A64800443ABB /* LayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520131E09A64800443ABB /* LayerView.swift */; };
 		A1F520161E09B9A200443ABB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520151E09B9A200443ABB /* Observable.swift */; };
 		A1F520181E09C2B000443ABB /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520171E09C2B000443ABB /* ObservableArray.swift */; };
 		A1F5202A1E09DFD900443ABB /* SCLayer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5201C1E09DFD900443ABB /* SCLayer+CoreDataClass.swift */; };
@@ -58,7 +53,7 @@
 		A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520261E09DFD900443ABB /* SCFrame+CoreDataProperties.swift */; };
 		A1F5203B1E09E08600443ABB /* SCGraphic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520391E09E08600443ABB /* SCGraphic+CoreDataClass.swift */; };
 		A1F5203C1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F5203A1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift */; };
-		A1F520551E0A4C5100443ABB /* FrameEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520541E0A4C5100443ABB /* FrameEditorController.swift */; };
+		A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520541E0A4C5100443ABB /* CanvasController.swift */; };
 		A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */; };
 		A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520581E0A72E800443ABB /* ObservableEntity.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +98,8 @@
 		A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCGraphicTests.swift; path = SourceCode/SCGraphicTests.swift; sourceTree = "<group>"; };
 		A1C5CD5C1E0EA4D200102431 /* SCLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLayerTests.swift; path = SourceCode/SCLayerTests.swift; sourceTree = "<group>"; };
 		A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConstants.swift; path = SourceCode/SCConstants.swift; sourceTree = "<group>"; };
+		A1C5CD661E122F8000102431 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasView.swift; path = Graphics/CanvasView.swift; sourceTree = "<group>"; };
+		A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasDelegate.swift; path = Graphics/CanvasDelegate.swift; sourceTree = "<group>"; };
 		A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Utility/CoreDataExtensions.swift; sourceTree = "<group>"; };
 		A1DBE0791E0670590053758F /* SCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCModel.xcdatamodel; sourceTree = "<group>"; };
 		A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataClass.swift"; path = "SourceCode/SCWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -118,18 +115,11 @@
 		A1DBE10F1E067F140053758F /* OCObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCObject.swift; path = ObjectCode/OCObject.swift; sourceTree = "<group>"; };
 		A1DBE1111E0688270053758F /* SCStatement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCStatement.swift; path = SourceCode/SCStatement.swift; sourceTree = "<group>"; };
 		A1DBE1131E0688D50053758F /* SCBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCBlock.swift; path = SourceCode/SCBlock.swift; sourceTree = "<group>"; };
-		A1F51FF81E08E93C00443ABB /* StrokeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StrokeView.swift; path = Graphics/StrokeView.swift; sourceTree = "<group>"; };
-		A1F51FFA1E08EA0D00443ABB /* StrokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StrokeController.swift; path = Graphics/StrokeController.swift; sourceTree = "<group>"; };
 		A1F51FFC1E08EF0600443ABB /* GraphicsEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicsEditorViewController.swift; path = Graphics/GraphicsEditorViewController.swift; sourceTree = "<group>"; };
 		A1F51FFD1E08EF0600443ABB /* GraphicsEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GraphicsEditorViewController.xib; path = Graphics/GraphicsEditorViewController.xib; sourceTree = "<group>"; };
-		A1F520001E08FA9500443ABB /* LayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerController.swift; path = Graphics/LayerController.swift; sourceTree = "<group>"; };
-		A1F520031E09098000443ABB /* LayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerDelegate.swift; path = Graphics/LayerDelegate.swift; sourceTree = "<group>"; };
-		A1F520051E090B8800443ABB /* StrokeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StrokeDelegate.swift; path = Graphics/StrokeDelegate.swift; sourceTree = "<group>"; };
-		A1F520071E091DDA00443ABB /* LayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerModel.swift; path = Graphics/LayerModel.swift; sourceTree = "<group>"; };
 		A1F5200B1E09200300443ABB /* FrameworkExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameworkExtensions.swift; path = Utility/FrameworkExtensions.swift; sourceTree = "<group>"; };
 		A1F5200C1E09200300443ABB /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weak.swift; path = Utility/Weak.swift; sourceTree = "<group>"; };
 		A1F5200D1E09200300443ABB /* WeakSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeakSet.swift; path = Utility/WeakSet.swift; sourceTree = "<group>"; };
-		A1F520131E09A64800443ABB /* LayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerView.swift; path = Graphics/LayerView.swift; sourceTree = "<group>"; };
 		A1F520151E09B9A200443ABB /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observable.swift; path = Utility/Observable.swift; sourceTree = "<group>"; };
 		A1F520171E09C2B000443ABB /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservableArray.swift; path = Utility/ObservableArray.swift; sourceTree = "<group>"; };
 		A1F5201C1E09DFD900443ABB /* SCLayer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCLayer+CoreDataClass.swift"; path = "SourceCode/SCLayer+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -138,7 +128,7 @@
 		A1F520261E09DFD900443ABB /* SCFrame+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCFrame+CoreDataProperties.swift"; path = "SourceCode/SCFrame+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1F520391E09E08600443ABB /* SCGraphic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCGraphic+CoreDataClass.swift"; path = "SourceCode/SCGraphic+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1F5203A1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCGraphic+CoreDataProperties.swift"; path = "SourceCode/SCGraphic+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A1F520541E0A4C5100443ABB /* FrameEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameEditorController.swift; path = Graphics/FrameEditorController.swift; sourceTree = "<group>"; };
+		A1F520541E0A4C5100443ABB /* CanvasController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasController.swift; path = Graphics/CanvasController.swift; sourceTree = "<group>"; };
 		A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCCoreDataStack.swift; path = SourceCode/SCCoreDataStack.swift; sourceTree = "<group>"; };
 		A1F520581E0A72E800443ABB /* ObservableEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservableEntity.swift; path = Utility/ObservableEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -310,14 +300,9 @@
 		A1F520021E08FD2400443ABB /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				A1F520541E0A4C5100443ABB /* FrameEditorController.swift */,
-				A1F520031E09098000443ABB /* LayerDelegate.swift */,
-				A1F520001E08FA9500443ABB /* LayerController.swift */,
-				A1F520071E091DDA00443ABB /* LayerModel.swift */,
-				A1F520131E09A64800443ABB /* LayerView.swift */,
-				A1F520051E090B8800443ABB /* StrokeDelegate.swift */,
-				A1F51FFA1E08EA0D00443ABB /* StrokeController.swift */,
-				A1F51FF81E08E93C00443ABB /* StrokeView.swift */,
+				A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */,
+				A1F520541E0A4C5100443ABB /* CanvasController.swift */,
+				A1C5CD661E122F8000102431 /* CanvasView.swift */,
 			);
 			name = Canvas;
 			sourceTree = "<group>";
@@ -489,12 +474,10 @@
 			files = (
 				A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */,
 				A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */,
-				A1F51FF91E08E93C00443ABB /* StrokeView.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
 				A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */,
-				A1F520141E09A64800443ABB /* LayerView.swift in Sources */,
-				A1F51FFB1E08EA0D00443ABB /* StrokeController.swift in Sources */,
+				A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */,
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
 				A1DBE1101E067F140053758F /* OCObject.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
@@ -510,17 +493,15 @@
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
-				A1F520011E08FA9500443ABB /* LayerController.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
-				A1F520081E091DDA00443ABB /* LayerModel.swift in Sources */,
 				A1F5200E1E09200300443ABB /* FrameworkExtensions.swift in Sources */,
 				A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */,
 				A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */,
-				A1F520551E0A4C5100443ABB /* FrameEditorController.swift in Sources */,
+				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
-				A1F520061E090B8800443ABB /* StrokeDelegate.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
+				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
@@ -528,7 +509,6 @@
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
-				A1F520041E09098000443ABB /* LayerDelegate.swift in Sources */,
 				A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

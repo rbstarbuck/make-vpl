@@ -80,6 +80,11 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any,
                            at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        // ignore .update call when .move will be used
+        if type == .update && indexPath != nil && newIndexPath != nil {
+            return
+        }
+        
         for listener in listeners {
             listener.onChangeEntity(key, entity: anObject as! NSManagedObject,
                                     type: type, oldIndex: indexPath, newIndex: newIndexPath)
@@ -88,7 +93,7 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                            sectionIndexTitleForSectionName sectionName: String) -> String? {
-        return (sectionTitleDelegate == nil ? sectionName : sectionTitleDelegate!.sectionTitleForSection(sectionName))
+        return (sectionTitleDelegate == nil ? sectionName : sectionTitleDelegate!.sectionTitle(for: sectionName))
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
@@ -133,6 +138,6 @@ public extension EntityListener {
 
 
 public protocol SectionTitleDelegate: class {
-    func sectionTitleForSection(_ sectionName: String) -> String?
+    func sectionTitle(for sectionName: String) -> String?
 }
 

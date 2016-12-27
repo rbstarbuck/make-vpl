@@ -31,6 +31,16 @@ public class SCGraphic: NSManagedObject {
         }
     }
     
+    public lazy var frameObserver: ObservableEntity = {
+        let observer = ObservableEntity(key: SCGraphic.frameObserverKey,
+                                        entity: SCFrame.entityName,
+                                        context: self.world.connector.context)
+        observer.predicate = NSPredicate(format: "graphic == %@", self)
+        observer.sortDescriptors.append(NSSortDescriptor(key: "index", ascending: true))
+        observer.startObserving()
+        return observer
+    }()
+    
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
@@ -49,6 +59,13 @@ public class SCGraphic: NSManagedObject {
         
         frame.createLayer()
         
+        self.world.connector.saveContext()
         return frame
+    }
+    
+    @discardableResult
+    public func delete() -> Bool {
+        self.world.connector.context.delete(self)
+        return self.world.connector.saveContext()
     }
 }
