@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LayerTableViewCell: UITableViewCell {
+class LayerTableViewCell: CoreDataTableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

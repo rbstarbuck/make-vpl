@@ -44,6 +44,9 @@ class LayerController: CoreDataTableViewController, LayerDelegate {
         
         self.attach(graphic: self.graphic, populate: false)
         self.attach(frame: self.frame, populate: false)
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler(_:)))
+        self.tableView.addGestureRecognizer(longPress)
     }
     
     func attach(graphic: SCGraphic, populate: Bool = true) {
@@ -65,13 +68,42 @@ class LayerController: CoreDataTableViewController, LayerDelegate {
     }
     
     
+    func longPressHandler(_ sender: UILongPressGestureRecognizer) {
+        let location = sender.location(in: self.tableView)
+        
+        switch sender.state {
+        case .began:
+            self.beginDraggingCell(at: location)
+            break
+            
+        case .changed:
+            self.onCellDrag(to: location)
+            break
+            
+        default:
+            self.endDraggingCell(at: location)
+            break
+        }
+    }
+    
+    
+    // MARK: - CoreDataTableViewController methods
+    
     override func configureTableViewController() {
         
     }
     
-    override func configureCell(_ cell: UITableViewCell, entity: NSManagedObject) {
+    override func configureCell(_ cell: CoreDataTableViewCell, entity: NSManagedObject) {
+        super.configureCell(cell, entity: entity)
+        
         if let layerCell = cell as? LayerTableViewCell, let layer = entity as? SCLayer {
             layerCell.nameLabel.text = layer.name
+        }
+    }
+    
+    override func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath) {
+        if let layer = entity as? SCLayer {
+            layer.move(to: toIndex.row)
         }
     }
     

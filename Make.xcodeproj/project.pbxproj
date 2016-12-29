@@ -10,6 +10,7 @@
 		A12FE7D81E153B5D0015989D /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */; };
 		A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */; };
 		A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */; };
+		A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7DF1E1584280015989D /* CoreDataTableViewCell.swift */; };
 		A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */; };
 		A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A143A7901DEBF53A004DBC84 /* GameScene.sks */; };
 		A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A143A7921DEBF53A004DBC84 /* Actions.sks */; };
@@ -84,6 +85,7 @@
 		A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewController.swift; path = Utility/CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerTableViewCell.swift; path = Graphics/LayerTableViewCell.swift; sourceTree = "<group>"; };
 		A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LayerTableViewCell.xib; path = Graphics/LayerTableViewCell.xib; sourceTree = "<group>"; };
+		A12FE7DF1E1584280015989D /* CoreDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewCell.swift; path = Utility/CoreDataTableViewCell.swift; sourceTree = "<group>"; };
 		A143A78B1DEBF53A004DBC84 /* Make.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Make.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A143A7901DEBF53A004DBC84 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				A1F520171E09C2B000443ABB /* ObservableArray.swift */,
 				A1F520581E0A72E800443ABB /* ObservableEntity.swift */,
 				A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */,
+				A12FE7DF1E1584280015989D /* CoreDataTableViewCell.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
+				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,
 				A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

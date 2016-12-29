@@ -10,7 +10,30 @@ import UIKit
 import CoreData
 
 
-class CoreDataTableViewController: NSObject {
+protocol CoreDataTableViewDelegate {
+    
+    var tableView: UITableView { get }
+    var cellIdentifier: String { get }
+    var observer: ObservableEntity { get }
+    
+    // (optional) implement to modify default base class properties (e.g. animation types)
+    func configureTableViewController()
+    
+    // override to configure class-specific cell properties (must call super method)
+    func configureCell(_ cell: CoreDataTableViewCell, entity: NSManagedObject)
+    
+    // (optional) implement if enabling cell reordering via dragging
+    func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath)
+    
+    // call from CoreDataTableViewCell if implementing reordering via dragging (do not override)
+    func beginDraggingCell(at point: CGPoint)
+    func onCellDrag(to point: CGPoint)
+    func endDraggingCell(at point: CGPoint)
+    
+}
+
+
+class CoreDataTableViewController: NSObject, CoreDataTableViewDelegate {
 
     var tableView: UITableView {
         didSet {
@@ -31,11 +54,15 @@ class CoreDataTableViewController: NSObject {
         }
     }
     
-    // optionally set in configureTableViewController
     var insertRowAnimation = UITableViewRowAnimation.fade
     var deleteRowAnimation = UITableViewRowAnimation.fade
     var insertSectionAnimation = UITableViewRowAnimation.fade
     var deleteSectionAnimation = UITableViewRowAnimation.fade
+
+    
+    var cellSnapshot: UIView?
+    var draggedCell: CoreDataTableViewCell?
+    var previousDragIndexPath = IndexPath()
     
     
     init(view: UITableView, cellIdentifier: String, observer: ObservableEntity, populate: Bool = true) {
@@ -62,15 +89,98 @@ class CoreDataTableViewController: NSObject {
         view.delegate = nil
         view.dataSource = nil
     }
+    
+    func configureTableViewController() {}
+    
+    func configureCell(_ cell: CoreDataTableViewCell, entity: NSManagedObject) {
+        cell.delegate = self
+        cell.entity = entity
+    }
+}
 
+
+extension CoreDataTableViewController {
     
-    func configureCell(_ cell: UITableViewCell, entity: NSManagedObject) {
-        // REQUIRED in subclass
+    func beginDraggingCell(at point: CGPoint) {
+        if self.draggedCell != nil {
+            self.endDraggingCell(at: point)
+        }
+        
+        if let indexPath = self.tableView.indexPathForRow(at: point),
+            let draggedCell = self.tableView.cellForRow(at: indexPath) as? CoreDataTableViewCell,
+            let cellSnapshot = self.snapshot(from: draggedCell) {
+            
+            self.previousDragIndexPath = indexPath
+            self.draggedCell = draggedCell
+            self.cellSnapshot = cellSnapshot
+            
+            cellSnapshot.center = draggedCell.center
+            cellSnapshot.alpha = 0.0
+            
+            self.tableView.addSubview(cellSnapshot)
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                cellSnapshot.center.y = point.y
+                cellSnapshot.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                cellSnapshot.alpha = 0.98
+                draggedCell.alpha = 0.0
+            }, completion: {_ in
+                draggedCell.isHidden = true
+            })
+        }
     }
     
-    func configureTableViewController() {
-        // OPTIONAL in subclass
+    func onCellDrag(to point: CGPoint) {
+        if let cellSnapshot = self.cellSnapshot,
+            let newIndexPath = self.tableView.indexPathForRow(at: point) {
+            
+            cellSnapshot.center.y = point.y
+            
+            if newIndexPath != self.previousDragIndexPath {
+                self.moveEntity(self.draggedCell!.entity, from: self.previousDragIndexPath, to: newIndexPath)
+                self.previousDragIndexPath = newIndexPath
+            }
+        }
     }
+    
+    func endDraggingCell(at point: CGPoint) {
+        if let draggedCell = self.draggedCell {
+            draggedCell.isHidden = false
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                if let cellSnapshot = self.cellSnapshot {
+                    cellSnapshot.center = draggedCell.center
+                    cellSnapshot.transform = CGAffineTransform.identity
+                    cellSnapshot.alpha = 0.0
+                }
+                draggedCell.alpha = 1.0
+            }, completion: {_ in
+                self.cellSnapshot?.removeFromSuperview()
+                self.cellSnapshot = nil
+            })
+            
+            self.draggedCell = nil
+        }
+    }
+    
+    func snapshot(from view: UIView) -> UIView? {
+        if let snapshot = view.snapshotView(afterScreenUpdates: true) {
+            snapshot.layer.masksToBounds = false
+            snapshot.layer.cornerRadius = 0.0
+            snapshot.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+            snapshot.layer.shadowRadius = 4.0
+            snapshot.layer.shadowOpacity = 1.0
+            
+            return snapshot
+        }
+        else {
+            print("ERROR: couldn't create snapshot from \(view)")
+        }
+        
+        return nil
+    }
+    
+    func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath) {}
 }
 
 
@@ -86,8 +196,10 @@ extension CoreDataTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         
-        if let entity = self.frc?.object(at: indexPath) as? NSManagedObject {
-            self.configureCell(cell, entity: entity)
+        if let entity = self.frc?.object(at: indexPath) as? NSManagedObject,
+            let coreDataCell = cell as? CoreDataTableViewCell {
+            
+            self.configureCell(coreDataCell, entity: entity)
         }
         
         return cell
@@ -153,8 +265,9 @@ extension CoreDataTableViewController: EntityListener {
                 
             case .update:
                 if let updateIndex = oldIndex,
-                    let cell = self.tableView.cellForRow(at: updateIndex),
+                    let cell = self.tableView.cellForRow(at: updateIndex) as? CoreDataTableViewCell,
                     let entity = self.frc?.object(at: updateIndex) as? NSManagedObject {
+                    
                     self.configureCell(cell, entity: entity)
                 }
                 break
