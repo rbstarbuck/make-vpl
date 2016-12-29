@@ -12,34 +12,29 @@ import CoreData
 
 class CanvasController: CanvasDelegate {
     
-    var frame: SCFrame? {
-        didSet {
-            if self.frame !== oldValue {
-                oldValue?.layerObserver.removeListener(self)
-                if let frame = self.frame {
-                    frame.layerObserver.addListener(self)
-                    self.fillCanvasViewLayers()
-                    self.currentLayer = frame.sortedLayers.last!
-                }
-            }
-        }
-    }
-    
-    var canvasView: CanvasView? {
+    var canvasView: CanvasView {
         didSet {
             if self.canvasView !== oldValue {
-                oldValue?.delegate = nil
-                self.canvasView?.delegate = self
-                self.fillCanvasViewLayers()
+                self.detach(view: oldValue)
+                self.attach(view: self.canvasView)
             }
         }
     }
     
-    var currentLayer: SCLayer? {
+    var graphic: SCGraphic {
         didSet {
-            if let currentLayer = self.currentLayer {
-                let zIndex = CGFloat(currentLayer.index) + 0.5
-                self.inkingSurface.layer.zPosition = zIndex
+            if self.graphic !== oldValue {
+                self.detach(graphic: oldValue)
+                self.attach(graphic: self.graphic)
+            }
+        }
+    }
+    
+    var frame: SCFrame {
+        didSet {
+            if self.frame !== oldValue {
+                self.detach(frame: oldValue)
+                self.attach(frame: self.frame)
             }
         }
     }
@@ -51,21 +46,55 @@ class CanvasController: CanvasDelegate {
     var brushOpacity: CGFloat = 1.0
     
     
-    private func fillCanvasViewLayers() {
-        if let canvasView = self.canvasView {
-            canvasView.removeAllLayers()
-            canvasView.insertLayer(self.inkingSurface)
-            if let frame = self.frame {
-                for layer in frame.layers {
-                    canvasView.insertLayer(layer.imageView)
-                }
-            }
+    // MARK: - Initialization
+    
+    init(view: CanvasView, graphic: SCGraphic) {
+        self.canvasView = view
+        self.graphic = graphic
+        self.frame = graphic.selectedFrame.value!
+        
+        self.attach(graphic: self.graphic, populate: false)
+        self.attach(frame: self.frame, populate: false)
+        self.attach(view: self.canvasView, populate: true)
+    }
+    
+    func attach(graphic: SCGraphic, populate: Bool = true) {
+        graphic.selectedFrame.addListener(self, populate: populate)
+    }
+    
+    func attach(frame: SCFrame, populate: Bool = true) {
+        frame.layerObserver.addListener(self, populate: populate)
+        frame.selectedLayer.addListener(self, populate: populate)
+    }
+    
+    func attach(view: CanvasView, populate: Bool = true) {
+        view.delegate = self
+        view.insertLayer(self.inkingSurface)
+        if populate {
+            self.frame.layerObserver.populateListener(self)
         }
     }
     
+    func detach(graphic: SCGraphic) {
+        graphic.selectedFrame.removeListener(self)
+    }
+    
+    func detach(frame: SCFrame) {
+        frame.layerObserver.removeListener(self, depopulate: true)
+        frame.selectedLayer.removeListener(self)
+    }
+    
+    func detach(view: CanvasView) {
+        view.removeAllLayers()
+        view.delegate = nil
+    }
+    
+    
     // MARK: - CanvasDelegate drawing callbacks
     
-    func beginDrawing() {}
+    func beginDrawing() {
+        // no drawing initialization needed (yet)
+    }
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
         let surfaceSize = self.inkingSurface.frame.size
@@ -97,20 +126,22 @@ class CanvasController: CanvasDelegate {
     }
     
     func commitDrawing() {
-        if let currentImageView = self.currentLayer?.imageView {
+        if let layer = self.frame.selectedLayer.value {
             let surfaceSize = self.inkingSurface.frame.size
-            UIGraphicsBeginImageContext(currentImageView.frame.size)
+            UIGraphicsBeginImageContext(layer.imageView.frame.size)
             
             let imageRect = CGRect(x: 0, y: 0, width: surfaceSize.width, height: surfaceSize.height)
-            currentImageView.image?.draw(in: imageRect, blendMode: .normal, alpha: 1.0)
+            layer.imageView.image?.draw(in: imageRect, blendMode: .normal, alpha: 1.0)
             self.inkingSurface.image?.draw(in: imageRect, blendMode: .normal, alpha: self.brushOpacity)
             
             if let imageContext = UIGraphicsGetImageFromCurrentImageContext() {
-                currentImageView.image = imageContext
+                layer.image = imageContext
             }
             
-            self.inkingSurface.image = nil
             UIGraphicsEndImageContext()
+            
+            self.inkingSurface.image = nil
+            layer.world.connector.saveContext()
         }
     }
     
@@ -131,10 +162,10 @@ extension CanvasController: EntityListener {
             if let layer = entity as? SCLayer {
                 switch type {
                 case .delete:
-                    self.canvasView?.removeLayer(layer.imageView)
+                    self.canvasView.removeLayer(layer.imageView)
                     break
                 case .insert:
-                    self.canvasView?.insertLayer(layer.imageView)
+                    self.canvasView.insertLayer(layer.imageView)
                     break
                 case .move: break
                 case .update: break
@@ -148,4 +179,26 @@ extension CanvasController: EntityListener {
             
         //}
     }
+}
+
+
+extension CanvasController: PropertyListener {
+    
+    func onPropertyChange(key: String, newValue: Any?, oldValue: Any?) {
+        switch key {
+        case SCGraphic.selectedFrameObserverKey:
+            self.frame = newValue as! SCFrame
+            break
+            
+        case SCFrame.selectedLayerObserverKey:
+            if let selectedLayer = newValue as? SCLayer {
+                let zIndex = CGFloat(selectedLayer.index) + 0.5
+                self.inkingSurface.layer.zPosition = zIndex
+            }
+            break
+            
+        default: break
+        }
+    }
+    
 }

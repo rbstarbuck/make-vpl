@@ -13,6 +13,7 @@ import CoreData
 public class SCGraphic: NSManagedObject {
     public static let entityName = "Graphic"
     public static let frameObserverKey = "Graphic->>Frame"
+    public static let selectedFrameObserverKey = "selectedFrame"
     
     
     @NSManaged public var id: String
@@ -39,6 +40,11 @@ public class SCGraphic: NSManagedObject {
         observer.sortDescriptors.append(NSSortDescriptor(key: "index", ascending: true))
         observer.startObserving()
         return observer
+    }()
+    
+    public lazy var selectedFrame: Observable<SCFrame> = {
+        return Observable<SCFrame>(key: SCGraphic.selectedFrameObserverKey,
+                                   initialValue: self.sortedFrames.first!)
     }()
     
     

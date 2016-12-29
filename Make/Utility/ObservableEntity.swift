@@ -20,12 +20,15 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
     public var sortDescriptors = [NSSortDescriptor]()
     public var sectionNameKeyPath: String?
     
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    
     public var sectionTitleDelegate: SectionTitleDelegate?
     
     private var isObserving = false
     private var listeners = WeakSet<EntityListener>()
-    private var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
+    
+    // MARK: - Initialization
     
     public init(key: String, entity: String, context: NSManagedObjectContext) {
         self.key = key
@@ -33,20 +36,23 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
         self.managedObjectContext = context
     }
     
+    
+    // MARK: - Listener handling
+    
     public func startObserving() {
         isObserving = true
         if listeners.count > 0 {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-            fetchRequest.predicate = predicate
-            fetchRequest.sortDescriptors = sortDescriptors
+            fetchRequest.predicate = self.predicate
+            fetchRequest.sortDescriptors = self.sortDescriptors
             
-            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                                  managedObjectContext: managedObjectContext,
-                                                                  sectionNameKeyPath: sectionNameKeyPath,
-                                                                  cacheName: nil)
-            fetchedResultsController!.delegate = self
+            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                       managedObjectContext: self.managedObjectContext,
+                                                                       sectionNameKeyPath: self.sectionNameKeyPath,
+                                                                       cacheName: nil)
+            self.fetchedResultsController!.delegate = self
             do {
-                try fetchedResultsController?.performFetch()
+                try self.fetchedResultsController!.performFetch()
             }
             catch let error as NSError {
                 print("ERROR: \(error.localizedDescription)")
@@ -55,26 +61,59 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
     }
     
     public func stopObserving() {
-        isObserving = false
-        fetchedResultsController?.delegate = nil
+        self.isObserving = false
+        self.fetchedResultsController?.delegate = nil
     }
     
-    public func addListener(_ listener: EntityListener) {
-        listeners.insert(listener)
-        if listeners.count == 1 && isObserving {
-            startObserving()
+    public func addListener(_ listener: EntityListener, populate: Bool = false) {
+        self.listeners.insert(listener)
+        if self.listeners.count == 1 && self.isObserving {
+            self.startObserving()
+        }
+        if populate {
+            self.populateListener(listener)
         }
     }
     
-    public func removeListener(_ listener: EntityListener) {
-        if listeners.remove(listener) && listeners.count == 0 {
-            fetchedResultsController?.delegate = nil
+    public func removeListener(_ listener: EntityListener, depopulate: Bool = false) {
+        if self.listeners.remove(listener) && self.listeners.count == 0 {
+            self.fetchedResultsController?.delegate = nil
+        }
+        if depopulate {
+            self.depopulateListener(listener)
         }
     }
+    
+    public func populateListener(_ listener: EntityListener) {
+        if let fetchedObjects = self.fetchedResultsController?.fetchedObjects {
+            listener.willChangeEntity(self.key)
+            for fetchedObject in fetchedObjects {
+                let entity = fetchedObject as! NSManagedObject
+                let indexPath = self.fetchedResultsController!.indexPath(forObject: fetchedObject)
+                listener.onChangeEntity(self.key, entity: entity, type: .insert, oldIndex: nil, newIndex: indexPath)
+            }
+            listener.didChangeEntity(self.key)
+        }
+    }
+    
+    public func depopulateListener(_ listener: EntityListener) {
+        if let fetchedObjects = self.fetchedResultsController?.fetchedObjects {
+            listener.willChangeEntity(self.key)
+            for fetchedObject in fetchedObjects {
+                let entity = fetchedObject as! NSManagedObject
+                let indexPath = self.fetchedResultsController!.indexPath(forObject: fetchedObject)
+                listener.onChangeEntity(self.key, entity: entity, type: .delete, oldIndex: indexPath, newIndex: nil)
+            }
+            listener.didChangeEntity(self.key)
+        }
+    }
+    
+    
+    // MARK: - NSFetchedResultsControllerDelegate methods
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        for listener in listeners {
-            listener.willChangeEntity(key)
+        for listener in self.listeners {
+            listener.willChangeEntity(self.key)
         }
     }
     
@@ -85,28 +124,28 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
             return
         }
         
-        for listener in listeners {
-            listener.onChangeEntity(key, entity: anObject as! NSManagedObject,
+        for listener in self.listeners {
+            listener.onChangeEntity(self.key, entity: anObject as! NSManagedObject,
                                     type: type, oldIndex: indexPath, newIndex: newIndexPath)
         }
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                            sectionIndexTitleForSectionName sectionName: String) -> String? {
-        return (sectionTitleDelegate == nil ? sectionName : sectionTitleDelegate!.sectionTitle(for: sectionName))
+        return (self.sectionTitleDelegate == nil ? sectionName : self.sectionTitleDelegate!.sectionTitle(for: sectionName))
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                            didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int,
                            for type: NSFetchedResultsChangeType) {
-        for listener in listeners {
-            listener.onChangeSectionInfo(key, info: sectionInfo, at: sectionIndex, type: type)
+        for listener in self.listeners {
+            listener.onChangeSectionInfo(self.key, info: sectionInfo, at: sectionIndex, type: type)
         }
     }
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        for listener in listeners {
-            listener.didChangeEntity(key)
+        for listener in self.listeners {
+            listener.didChangeEntity(self.key)
         }
     }
 }

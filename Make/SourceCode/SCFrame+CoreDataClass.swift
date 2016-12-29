@@ -13,6 +13,7 @@ import CoreData
 public class SCFrame: NSManagedObject {
     public static let entityName = "Frame"
     public static let layerObserverKey = "Frame->>Layer"
+    public static let selectedLayerObserverKey = "selectedLayer"
     
     
     @NSManaged public var index: Int
@@ -43,6 +44,11 @@ public class SCFrame: NSManagedObject {
         observer.sortDescriptors.append(NSSortDescriptor(key: "index", ascending: true))
         observer.startObserving()
         return observer
+    }()
+    
+    public lazy var selectedLayer: Observable<SCLayer> = {
+        return Observable<SCLayer>(key: SCFrame.selectedLayerObserverKey,
+                                   initialValue: self.sortedLayers.first!)
     }()
     
     
@@ -79,15 +85,26 @@ public class SCFrame: NSManagedObject {
     
     public func move(to newIndex: Int) {
         let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.graphic.frames.count ?  self.graphic.frames.count - 1 : newIndex))
-        let from = min(safeIndex, self.index)
-        let to = max(safeIndex, self.index)
-        let increment = (safeIndex < self.index ? 1 : -1)
+        
+        var from, to, increment: Int!
+        if safeIndex < self.index {
+            from = safeIndex
+            to = self.index - 1
+            increment = 1
+        }
+        else {
+            from = self.index + 1
+            to = safeIndex
+            increment = -1
+        }
+        
         for frame in self.graphic.frames {
             if frame.index >= from && frame.index <= to {
                 frame.index += increment
             }
         }
         self.index = safeIndex
+        
         self.world.connector.saveContext()
     }
     

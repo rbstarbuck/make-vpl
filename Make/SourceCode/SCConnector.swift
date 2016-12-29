@@ -54,6 +54,22 @@ public class SCConnector {
         world.createScene()
         return world
     }
+    
+    public func getWorlds() -> [SCWorld] {
+        let request: NSFetchRequest<SCWorld> = SCWorld.fetchRequest()
+        do {
+            let worlds = try self.context.fetch(request)
+            for world in worlds {
+                world.connector = self
+            }
+            return worlds
+        }
+        catch let error as NSError {
+            print("ERROR: \(error.localizedDescription)")
+        }
+        
+        return []
+    }
 
 }
 

@@ -12,11 +12,7 @@ class CanvasView: UIView {
     
     var delegate: CanvasDelegate? {
         didSet {
-            if self.delegate !== oldValue {
-                oldValue?.canvasView = nil
-                self.delegate?.canvasView = self
-                self.isUserInteractionEnabled = (self.delegate != nil)
-            }
+            self.isUserInteractionEnabled = (self.delegate != nil)
         }
     }
     

@@ -11,9 +11,9 @@ import UIKit
 
 protocol CanvasDelegate: class {
     
-    var canvasView: CanvasView? { get set }
+    var canvasView: CanvasView { get set }
+    var graphic: SCGraphic { get set }
     
-    var currentLayer: SCLayer? { get set }
     
     var brushColor: UIColor { get set }
     var brushWidth: CGFloat { get set }

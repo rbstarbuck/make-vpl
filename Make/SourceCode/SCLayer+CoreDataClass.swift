@@ -16,10 +16,10 @@ public class SCLayer: NSManagedObject {
     
     public var index: Int {
         get {
-            return coreDataGetter("index", in: self)!
+            return CoreDataHelper.getter("index", in: self)!
         }
         set {
-            coreDataSetter("index", value: newValue, in: self) {
+            CoreDataHelper.setter("index", value: newValue, in: self) {
                 self.imageView_?.layer.zPosition = CGFloat(self.index)
             }
         }
@@ -27,10 +27,10 @@ public class SCLayer: NSManagedObject {
     
     public var image: UIImage {
         get {
-            return coreDataGetter("image", in: self)!
+            return CoreDataHelper.getter("image", in: self)!
         }
         set {
-            coreDataSetter("image", value: newValue, in: self) {
+            CoreDataHelper.setter("image", value: newValue, in: self) {
                 self.imageView_?.image = newValue
             }
         }
@@ -44,7 +44,6 @@ public class SCLayer: NSManagedObject {
             return self.frame.world
         }
     }
-    
     
     private weak var imageView_: UIImageView?
     public var imageView: UIImageView {
@@ -67,9 +66,19 @@ public class SCLayer: NSManagedObject {
     
     public func move(to newIndex: Int) {
         let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.frame.layers.count ? self.frame.layers.count - 1 : newIndex))
-        let from = min(safeIndex, self.index)
-        let to = max(safeIndex, self.index)
-        let increment = (safeIndex < self.index ? 1 : -1)
+        
+        var from, to, increment: Int!
+        if safeIndex < self.index {
+            from = safeIndex
+            to = self.index - 1
+            increment = 1
+        }
+        else {
+            from = self.index + 1
+            to = safeIndex
+            increment = -1
+        }
+        
         for layer in self.frame.layers {
             if layer.index >= from && layer.index <= to {
                 layer.index += increment

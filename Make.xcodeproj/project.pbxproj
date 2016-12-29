@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12FE7D81E153B5D0015989D /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */; };
+		A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */; };
+		A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */; };
 		A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */; };
 		A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A143A7901DEBF53A004DBC84 /* GameScene.sks */; };
 		A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A143A7921DEBF53A004DBC84 /* Actions.sks */; };
@@ -25,6 +28,8 @@
 		A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */; };
 		A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD661E122F8000102431 /* CanvasView.swift */; };
 		A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */; };
+		A1C5CD6C1E1374BA00102431 /* LayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD6B1E1374BA00102431 /* LayerDelegate.swift */; };
+		A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD6D1E1374D500102431 /* LayerController.swift */; };
 		A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */; };
 		A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */; };
 		A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */; };
@@ -76,6 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewController.swift; path = Utility/CoreDataTableViewController.swift; sourceTree = "<group>"; };
+		A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerTableViewCell.swift; path = Graphics/LayerTableViewCell.swift; sourceTree = "<group>"; };
+		A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LayerTableViewCell.xib; path = Graphics/LayerTableViewCell.xib; sourceTree = "<group>"; };
 		A143A78B1DEBF53A004DBC84 /* Make.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Make.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A143A7901DEBF53A004DBC84 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -100,6 +108,8 @@
 		A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConstants.swift; path = SourceCode/SCConstants.swift; sourceTree = "<group>"; };
 		A1C5CD661E122F8000102431 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasView.swift; path = Graphics/CanvasView.swift; sourceTree = "<group>"; };
 		A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasDelegate.swift; path = Graphics/CanvasDelegate.swift; sourceTree = "<group>"; };
+		A1C5CD6B1E1374BA00102431 /* LayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerDelegate.swift; path = Graphics/LayerDelegate.swift; sourceTree = "<group>"; };
+		A1C5CD6D1E1374D500102431 /* LayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerController.swift; path = Graphics/LayerController.swift; sourceTree = "<group>"; };
 		A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Utility/CoreDataExtensions.swift; sourceTree = "<group>"; };
 		A1DBE0791E0670590053758F /* SCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCModel.xcdatamodel; sourceTree = "<group>"; };
 		A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataClass.swift"; path = "SourceCode/SCWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -287,12 +297,24 @@
 			name = "Source Code Tests";
 			sourceTree = "<group>";
 		};
+		A1C5CD6A1E1372E400102431 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				A1C5CD6B1E1374BA00102431 /* LayerDelegate.swift */,
+				A1C5CD6D1E1374D500102431 /* LayerController.swift */,
+				A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */,
+				A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */,
+			);
+			name = Layer;
+			sourceTree = "<group>";
+		};
 		A1F51FF71E08E90600443ABB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
 				A1F51FFC1E08EF0600443ABB /* GraphicsEditorViewController.swift */,
 				A1F51FFD1E08EF0600443ABB /* GraphicsEditorViewController.xib */,
 				A1F520021E08FD2400443ABB /* Canvas */,
+				A1C5CD6A1E1372E400102431 /* Layer */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -318,6 +340,7 @@
 				A1F520151E09B9A200443ABB /* Observable.swift */,
 				A1F520171E09C2B000443ABB /* ObservableArray.swift */,
 				A1F520581E0A72E800443ABB /* ObservableEntity.swift */,
+				A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -448,6 +471,7 @@
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
 				A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */,
 				A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */,
+				A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +505,7 @@
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
 				A1DBE1101E067F140053758F /* OCObject.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
+				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
 				A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */,
@@ -488,6 +513,7 @@
 				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,
 				A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */,
 				A1F5203C1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift in Sources */,
+				A12FE7D81E153B5D0015989D /* CoreDataTableViewController.swift in Sources */,
 				A1F5202A1E09DFD900443ABB /* SCLayer+CoreDataClass.swift in Sources */,
 				A1F520181E09C2B000443ABB /* ObservableArray.swift in Sources */,
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
@@ -496,10 +522,12 @@
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
 				A1F5200E1E09200300443ABB /* FrameworkExtensions.swift in Sources */,
 				A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */,
+				A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */,
 				A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */,
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
+				A1C5CD6C1E1374BA00102431 /* LayerDelegate.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,

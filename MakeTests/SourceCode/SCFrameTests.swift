@@ -10,7 +10,7 @@ import XCTest
 import CoreData
 @testable import Make
 
-class SCFrameTests: XCTestCase, EntityListener {
+class SCFrameTests: XCTestCase, EntityListener, PropertyListener {
     
     var connector: SCConnector!
     var graphic: SCGraphic!
@@ -131,6 +131,36 @@ class SCFrameTests: XCTestCase, EntityListener {
         catch {
             XCTAssert(false)
         }
+    }
+    
+    
+    var newSelectedLayer: SCLayer?
+    var oldSelectedLayer: SCLayer?
+    
+    func testSelectedFrameObserver() {
+        let layer0 = self.frame.layers.first!
+        self.frame.selectedLayer.addListener(self, populate: true)
+        
+        XCTAssert(self.newSelectedLayer == layer0)
+        XCTAssert(self.oldSelectedLayer == nil)
+        
+        let layer1 = self.frame.createLayer()
+        self.frame.selectedLayer.value = layer1
+        
+        XCTAssert(self.newSelectedLayer == layer1)
+        XCTAssert(self.oldSelectedLayer == layer0)
+        
+        let didRemove = self.frame.selectedLayer.removeListener(self, depopulate: true)
+        
+        XCTAssert(didRemove)
+        XCTAssert(self.newSelectedLayer == nil)
+        XCTAssert(self.oldSelectedLayer == layer1)
+    }
+    
+    func onPropertyChange(key: String, newValue: Any?, oldValue: Any?) {
+        XCTAssert(key == SCFrame.selectedLayerObserverKey)
+        self.newSelectedLayer = newValue as? SCLayer
+        self.oldSelectedLayer = oldValue as? SCLayer
     }
     
     

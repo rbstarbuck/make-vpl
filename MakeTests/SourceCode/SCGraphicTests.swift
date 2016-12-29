@@ -116,8 +116,8 @@ class SCGraphicTests: XCTestCase, EntityListener {
     var onChangeNewIndex: IndexPath?
     
     func testFrameObserver() {
-        self.graphic.frameObserver.addListener(self)
         let frame1 = self.graphic.createFrame()
+        self.graphic.frameObserver.addListener(self)
         
         let frame2 = self.graphic.createFrame()
         XCTAssert(self.onChangeType == .insert)
