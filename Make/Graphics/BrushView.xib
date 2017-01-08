@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BrushView" customModule="Make" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-jP-Yyb">
+                    <rect key="frame" x="16" y="110" width="343" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks2-6Z-sOJ">
+                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
+                            <state key="normal" title="Black"/>
+                            <connections>
+                                <action selector="blackTouch:" destination="-1" eventType="touchUpInside" id="EJ4-UM-8it"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsu-rb-tXq">
+                            <rect key="frame" x="89.5" y="0.0" width="74.5" height="30"/>
+                            <state key="normal" title="Red"/>
+                            <connections>
+                                <action selector="redTouch:" destination="-1" eventType="touchUpInside" id="KFg-BW-vR6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdy-zN-e7v">
+                            <rect key="frame" x="179" y="0.0" width="74.5" height="30"/>
+                            <state key="normal" title="Green"/>
+                            <connections>
+                                <action selector="greenTouch:" destination="-1" eventType="touchUpInside" id="Mvd-Gf-B32"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSs-cq-0F9">
+                            <rect key="frame" x="268.5" y="0.0" width="74.5" height="30"/>
+                            <state key="normal" title="Blue"/>
+                            <connections>
+                                <action selector="blueTouch:" destination="-1" eventType="touchUpInside" id="chG-MC-3ne"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lbl-jP-Yyb" secondAttribute="trailing" constant="16" id="91j-iW-iP8"/>
+                <constraint firstItem="lbl-jP-Yyb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="APC-OP-NPN"/>
+                <constraint firstItem="lbl-jP-Yyb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="PeS-Yi-pXV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.5" y="-123.5"/>
+        </view>
+    </objects>
+</document>

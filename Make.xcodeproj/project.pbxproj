@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */; };
+		A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */; };
 		A12FE7D81E153B5D0015989D /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */; };
 		A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */; };
 		A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */; };
 		A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7DF1E1584280015989D /* CoreDataTableViewCell.swift */; };
+		A12FE7E31E1597F30015989D /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7E21E1597F30015989D /* Brush.swift */; };
+		A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7E41E1598FE0015989D /* BrushDelegate.swift */; };
+		A12FE7E71E1599430015989D /* BrushController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7E61E1599430015989D /* BrushController.swift */; };
+		A12FE7E91E1599A70015989D /* BrushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7E81E1599A70015989D /* BrushView.swift */; };
+		A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12FE7EA1E15A1AA0015989D /* BrushView.xib */; };
 		A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */; };
 		A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A143A7901DEBF53A004DBC84 /* GameScene.sks */; };
 		A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A143A7921DEBF53A004DBC84 /* Actions.sks */; };
@@ -20,6 +27,11 @@
 		A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143A79B1DEBF53A004DBC84 /* Assets.xcassets */; };
 		A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143A79D1DEBF53A004DBC84 /* LaunchScreen.storyboard */; };
 		A143A7B51DEBF53A004DBC84 /* MakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */; };
+		A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */; };
+		A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */; };
+		A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D161E1837FA0079EBBE /* FrameController.swift */; };
+		A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D181E18385F0079EBBE /* FrameCollectionViewCell.swift */; };
+		A18B0D1B1E18385F0079EBBE /* FrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18B0D191E18385F0079EBBE /* FrameCollectionViewCell.xib */; };
 		A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */; };
 		A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F26CC1E0D0F900057FB74 /* CoreData.framework */; };
 		A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD0C1E0D332000102431 /* SCConnector.swift */; };
@@ -29,7 +41,6 @@
 		A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */; };
 		A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD661E122F8000102431 /* CanvasView.swift */; };
 		A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */; };
-		A1C5CD6C1E1374BA00102431 /* LayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD6B1E1374BA00102431 /* LayerDelegate.swift */; };
 		A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD6D1E1374D500102431 /* LayerController.swift */; };
 		A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */; };
 		A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */; };
@@ -82,10 +93,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFrameCollectionViewCell.swift; path = Graphics/AddFrameCollectionViewCell.swift; sourceTree = "<group>"; };
+		A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFrameCollectionViewCell.xib; path = Graphics/AddFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewController.swift; path = Utility/CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerTableViewCell.swift; path = Graphics/LayerTableViewCell.swift; sourceTree = "<group>"; };
 		A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LayerTableViewCell.xib; path = Graphics/LayerTableViewCell.xib; sourceTree = "<group>"; };
 		A12FE7DF1E1584280015989D /* CoreDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewCell.swift; path = Utility/CoreDataTableViewCell.swift; sourceTree = "<group>"; };
+		A12FE7E21E1597F30015989D /* Brush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Brush.swift; path = Graphics/Brush.swift; sourceTree = "<group>"; };
+		A12FE7E41E1598FE0015989D /* BrushDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushDelegate.swift; path = Graphics/BrushDelegate.swift; sourceTree = "<group>"; };
+		A12FE7E61E1599430015989D /* BrushController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushController.swift; path = Graphics/BrushController.swift; sourceTree = "<group>"; };
+		A12FE7E81E1599A70015989D /* BrushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushView.swift; path = Graphics/BrushView.swift; sourceTree = "<group>"; };
+		A12FE7EA1E15A1AA0015989D /* BrushView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BrushView.xib; path = Graphics/BrushView.xib; sourceTree = "<group>"; };
 		A143A78B1DEBF53A004DBC84 /* Make.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Make.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A143A7901DEBF53A004DBC84 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -101,6 +119,11 @@
 		A143A7B01DEBF53A004DBC84 /* MakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITests.swift; sourceTree = "<group>"; };
 		A143A7B61DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewController.swift; path = Utility/CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
+		A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewCell.swift; path = Utility/CoreDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		A18B0D161E1837FA0079EBBE /* FrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameController.swift; path = Graphics/FrameController.swift; sourceTree = "<group>"; };
+		A18B0D181E18385F0079EBBE /* FrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameCollectionViewCell.swift; path = Graphics/FrameCollectionViewCell.swift; sourceTree = "<group>"; };
+		A18B0D191E18385F0079EBBE /* FrameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FrameCollectionViewCell.xib; path = Graphics/FrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTestStack.swift; path = Utility/CoreDataTestStack.swift; sourceTree = "<group>"; };
 		A18F26CC1E0D0F900057FB74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A1C5CD0C1E0D332000102431 /* SCConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConnector.swift; path = SourceCode/SCConnector.swift; sourceTree = "<group>"; };
@@ -110,7 +133,6 @@
 		A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConstants.swift; path = SourceCode/SCConstants.swift; sourceTree = "<group>"; };
 		A1C5CD661E122F8000102431 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasView.swift; path = Graphics/CanvasView.swift; sourceTree = "<group>"; };
 		A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasDelegate.swift; path = Graphics/CanvasDelegate.swift; sourceTree = "<group>"; };
-		A1C5CD6B1E1374BA00102431 /* LayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerDelegate.swift; path = Graphics/LayerDelegate.swift; sourceTree = "<group>"; };
 		A1C5CD6D1E1374D500102431 /* LayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerController.swift; path = Graphics/LayerController.swift; sourceTree = "<group>"; };
 		A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Utility/CoreDataExtensions.swift; sourceTree = "<group>"; };
 		A1DBE0791E0670590053758F /* SCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCModel.xcdatamodel; sourceTree = "<group>"; };
@@ -171,6 +193,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A12FE7E11E1597E00015989D /* Brush */ = {
+			isa = PBXGroup;
+			children = (
+				A12FE7E41E1598FE0015989D /* BrushDelegate.swift */,
+				A12FE7E61E1599430015989D /* BrushController.swift */,
+				A12FE7E81E1599A70015989D /* BrushView.swift */,
+				A12FE7EA1E15A1AA0015989D /* BrushView.xib */,
+				A12FE7E21E1597F30015989D /* Brush.swift */,
+			);
+			name = Brush;
+			sourceTree = "<group>";
+		};
 		A143A7821DEBF539004DBC84 = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +315,18 @@
 			name = "Source Code";
 			sourceTree = "<group>";
 		};
+		A18B0D151E1837C70079EBBE /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				A18B0D161E1837FA0079EBBE /* FrameController.swift */,
+				A18B0D181E18385F0079EBBE /* FrameCollectionViewCell.swift */,
+				A18B0D191E18385F0079EBBE /* FrameCollectionViewCell.xib */,
+				A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */,
+				A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */,
+			);
+			name = Frame;
+			sourceTree = "<group>";
+		};
 		A18F26CB1E0D0F900057FB74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +348,6 @@
 		A1C5CD6A1E1372E400102431 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
-				A1C5CD6B1E1374BA00102431 /* LayerDelegate.swift */,
 				A1C5CD6D1E1374D500102431 /* LayerController.swift */,
 				A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */,
 				A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */,
@@ -315,8 +360,10 @@
 			children = (
 				A1F51FFC1E08EF0600443ABB /* GraphicsEditorViewController.swift */,
 				A1F51FFD1E08EF0600443ABB /* GraphicsEditorViewController.xib */,
-				A1F520021E08FD2400443ABB /* Canvas */,
+				A12FE7E11E1597E00015989D /* Brush */,
+				A18B0D151E1837C70079EBBE /* Frame */,
 				A1C5CD6A1E1372E400102431 /* Layer */,
+				A1F520021E08FD2400443ABB /* Canvas */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -344,6 +391,8 @@
 				A1F520581E0A72E800443ABB /* ObservableEntity.swift */,
 				A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */,
 				A12FE7DF1E1584280015989D /* CoreDataTableViewCell.swift */,
+				A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */,
+				A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -473,8 +522,11 @@
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
 				A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */,
+				A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */,
+				A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */,
 				A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */,
 				A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */,
+				A18B0D1B1E18385F0079EBBE /* FrameCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,16 +554,22 @@
 				A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */,
 				A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
+				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
 				A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */,
+				A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */,
 				A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */,
+				A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */,
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
 				A1DBE1101E067F140053758F /* OCObject.swift in Sources */,
+				A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
+				A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */,
 				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
 				A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */,
+				A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */,
 				A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */,
 				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,
 				A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */,
@@ -523,6 +581,7 @@
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
+				A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */,
 				A1F5200E1E09200300443ABB /* FrameworkExtensions.swift in Sources */,
 				A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */,
 				A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */,
@@ -530,14 +589,15 @@
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
-				A1C5CD6C1E1374BA00102431 /* LayerDelegate.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
 				A1F5203B1E09E08600443ABB /* SCGraphic+CoreDataClass.swift in Sources */,
+				A12FE7E91E1599A70015989D /* BrushView.swift in Sources */,
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
+				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
 				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,

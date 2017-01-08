@@ -39,52 +39,52 @@ class CanvasController: CanvasDelegate {
         }
     }
     
-    var inkingSurface = UIImageView()
+    var brush: Brush
     
-    var brushColor: UIColor = .black
-    var brushWidth: CGFloat = 10.0
-    var brushOpacity: CGFloat = 1.0
+    var inkingSurface = UIImageView()
     
     
     // MARK: - Initialization
     
-    init(view: CanvasView, graphic: SCGraphic) {
+    init(view: CanvasView, graphic: SCGraphic, brush: Brush) {
         self.canvasView = view
         self.graphic = graphic
         self.frame = graphic.selectedFrame.value!
+        self.brush = brush
         
         self.attach(graphic: self.graphic, populate: false)
         self.attach(frame: self.frame, populate: false)
         self.attach(view: self.canvasView, populate: true)
     }
     
-    func attach(graphic: SCGraphic, populate: Bool = true) {
+    private func attach(graphic: SCGraphic, populate: Bool = true) {
         graphic.selectedFrame.addListener(self, populate: populate)
     }
     
-    func attach(frame: SCFrame, populate: Bool = true) {
+    private func attach(frame: SCFrame, populate: Bool = true) {
         frame.layerObserver.addListener(self, populate: populate)
         frame.selectedLayer.addListener(self, populate: populate)
     }
     
-    func attach(view: CanvasView, populate: Bool = true) {
+    private func attach(view: CanvasView, populate: Bool = true) {
         view.delegate = self
-        view.insertLayer(self.inkingSurface)
         if populate {
             self.frame.layerObserver.populateListener(self)
         }
+        view.insertView(self.inkingSurface)
     }
     
-    func detach(graphic: SCGraphic) {
+    private func detach(graphic: SCGraphic) {
         graphic.selectedFrame.removeListener(self)
     }
     
-    func detach(frame: SCFrame) {
+    private func detach(frame: SCFrame) {
+        self.canvasView.removeAllLayers()
         frame.layerObserver.removeListener(self, depopulate: true)
         frame.selectedLayer.removeListener(self)
     }
     
-    func detach(view: CanvasView) {
+    private func detach(view: CanvasView) {
         view.removeAllLayers()
         view.delegate = nil
     }
@@ -108,14 +108,14 @@ class CanvasController: CanvasDelegate {
             context.addLine(to: toPoint)
             
             context.setLineCap(.round)
-            context.setLineWidth(self.brushWidth)
-            context.setStrokeColor(self.brushColor.cgColor)
+            context.setLineWidth(self.brush.width)
+            context.setStrokeColor(self.brush.color.cgColor)
             context.setBlendMode(.normal)
             
             context.strokePath()
             
             self.inkingSurface.image = UIGraphicsGetImageFromCurrentImageContext()
-            self.inkingSurface.alpha = self.brushOpacity
+            self.inkingSurface.alpha = self.brush.opacity
         }
         
         UIGraphicsEndImageContext()
@@ -128,11 +128,11 @@ class CanvasController: CanvasDelegate {
     func commitDrawing() {
         if let layer = self.frame.selectedLayer.value {
             let surfaceSize = self.inkingSurface.frame.size
-            UIGraphicsBeginImageContext(layer.imageView.frame.size)
+            UIGraphicsBeginImageContext(surfaceSize)
             
             let imageRect = CGRect(x: 0, y: 0, width: surfaceSize.width, height: surfaceSize.height)
-            layer.imageView.image?.draw(in: imageRect, blendMode: .normal, alpha: 1.0)
-            self.inkingSurface.image?.draw(in: imageRect, blendMode: .normal, alpha: self.brushOpacity)
+            layer.image.draw(in: imageRect, blendMode: .normal, alpha: 1.0)
+            self.inkingSurface.image?.draw(in: imageRect, blendMode: .normal, alpha: self.brush.opacity)
             
             if let imageContext = UIGraphicsGetImageFromCurrentImageContext() {
                 layer.image = imageContext
@@ -162,10 +162,10 @@ extension CanvasController: EntityListener {
             if let layer = entity as? SCLayer {
                 switch type {
                 case .delete:
-                    self.canvasView.removeLayer(layer.imageView)
+                    self.canvasView.removeLayer(layer)
                     break
                 case .insert:
-                    self.canvasView.insertLayer(layer.imageView)
+                    self.canvasView.insertLayer(layer)
                     break
                 case .move: break
                 case .update: break
@@ -187,7 +187,9 @@ extension CanvasController: PropertyListener {
     func onPropertyChange(key: String, newValue: Any?, oldValue: Any?) {
         switch key {
         case SCGraphic.selectedFrameObserverKey:
-            self.frame = newValue as! SCFrame
+            if let frame = newValue as? SCFrame {
+                self.frame = frame
+            }
             break
             
         case SCFrame.selectedLayerObserverKey:

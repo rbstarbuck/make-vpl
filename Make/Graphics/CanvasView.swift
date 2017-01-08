@@ -28,21 +28,25 @@ class CanvasView: UIView {
         
     // MARK: - Layer handling
     
-    func insertLayer(_ layer: UIImageView) {
-        layer.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(layer)
+    func insertLayer(_ layer: SCLayer) {
+        let imageView = layer.makeImageView()
+        self.insertView(imageView)
+    }
+    
+    func insertView(_ view: UIImageView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(view)
+        view.constrainEdgesToParent(self)
         
-        let viewDict = ["layer": layer]
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[layer]-0-|", options: [], metrics: nil, views: viewDict)
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[layer]-0-|", options: [], metrics: nil, views: viewDict)
-        self.addConstraints(vConstraints + hConstraints)
     }
     
     @discardableResult
-    func removeLayer(_ layer: UIImageView) -> Bool {
-        if self.subviews.contains(layer) {
-            layer.removeFromSuperview()
-            return true
+    func removeLayer(_ layer: SCLayer) -> Bool {
+        for view in self.subviews {
+            if view.layer.zPosition == CGFloat(layer.index) {
+                view.removeFromSuperview()
+                return true
+            }
         }
         return false
     }

@@ -19,13 +19,10 @@ protocol CoreDataTableViewDelegate {
     // (optional) implement to modify default base class properties (e.g. animation types)
     func configureTableViewController()
     
-    // override to configure class-specific cell properties (must call super method)
-    func configureCell(_ cell: CoreDataTableViewCell, entity: NSManagedObject)
-    
     // (optional) implement if enabling cell reordering via dragging
     func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath)
     
-    // call from CoreDataTableViewCell if implementing reordering via dragging (do not override)
+    // call if implementing reordering via dragging (do not override)
     func beginDraggingCell(at point: CGPoint)
     func onCellDrag(to point: CGPoint)
     func endDraggingCell(at point: CGPoint)
@@ -33,7 +30,7 @@ protocol CoreDataTableViewDelegate {
 }
 
 
-class CoreDataTableViewController: NSObject, CoreDataTableViewDelegate {
+class CoreDataTableViewController: NSObject {
 
     var tableView: UITableView {
         didSet {
@@ -50,7 +47,10 @@ class CoreDataTableViewController: NSObject, CoreDataTableViewDelegate {
     
     var frc: NSFetchedResultsController<NSFetchRequestResult>? {
         get {
-            return self.observer.fetchedResultsController
+            if self.observer.containsListener(self) {
+                return self.observer.fetchedResultsController
+            }
+            return nil
         }
     }
     
@@ -72,13 +72,13 @@ class CoreDataTableViewController: NSObject, CoreDataTableViewDelegate {
         
         super.init()
         
-        self.configureTableViewController()
         self.attach(view: self.tableView, populate: populate)
     }
     
     func attach(view: UITableView, populate: Bool = true) {
         view.delegate = self
         view.dataSource = self
+        self.configureTableViewController()
         if populate {
             self.observer.populateListener(self)
         }
@@ -92,14 +92,10 @@ class CoreDataTableViewController: NSObject, CoreDataTableViewDelegate {
     
     func configureTableViewController() {}
     
-    func configureCell(_ cell: CoreDataTableViewCell, entity: NSManagedObject) {
-        cell.delegate = self
-        cell.entity = entity
-    }
 }
 
 
-extension CoreDataTableViewController {
+extension CoreDataTableViewController: CoreDataTableViewDelegate {
     
     func beginDraggingCell(at point: CGPoint) {
         if self.draggedCell != nil {
@@ -181,6 +177,7 @@ extension CoreDataTableViewController {
     }
     
     func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath) {}
+    
 }
 
 
@@ -194,12 +191,12 @@ extension CoreDataTableViewController: UITableViewDelegate {
 extension CoreDataTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         
         if let entity = self.frc?.object(at: indexPath) as? NSManagedObject,
             let coreDataCell = cell as? CoreDataTableViewCell {
             
-            self.configureCell(coreDataCell, entity: entity)
+            coreDataCell.configure(delegate: self, entity: entity)
         }
         
         return cell
@@ -219,7 +216,7 @@ extension CoreDataTableViewController: UITableViewDataSource {
             return sections.count
         }
         
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -268,7 +265,7 @@ extension CoreDataTableViewController: EntityListener {
                     let cell = self.tableView.cellForRow(at: updateIndex) as? CoreDataTableViewCell,
                     let entity = self.frc?.object(at: updateIndex) as? NSManagedObject {
                     
-                    self.configureCell(cell, entity: entity)
+                    cell.configure(delegate: self, entity: entity)
                 }
                 break
                 

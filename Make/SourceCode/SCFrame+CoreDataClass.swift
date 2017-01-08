@@ -14,6 +14,7 @@ public class SCFrame: NSManagedObject {
     public static let entityName = "Frame"
     public static let layerObserverKey = "Frame->>Layer"
     public static let selectedLayerObserverKey = "selectedLayer"
+    public static let imageObserverKey = "image"
     
     
     @NSManaged public var index: Int
@@ -36,6 +37,28 @@ public class SCFrame: NSManagedObject {
         }
     }
     
+    public var sortedLayersReversed: [SCLayer] {
+        get {
+            let sorted = self.layers.sorted(by: {(lhs: SCLayer, rhs: SCLayer) -> Bool in
+                return lhs.index > rhs.index
+            })
+            return sorted
+        }
+    }
+    
+    public var firstLayer: SCLayer {
+        get {
+            return self.layers.first(where: {$0.index == 0})!
+        }
+    }
+    
+    public var lastLayer: SCLayer {
+        get {
+            let index = self.layers.count - 1
+            return self.layers.first(where: {$0.index == index})!
+        }
+    }
+    
     public lazy var layerObserver: ObservableEntity = {
         let observer = ObservableEntity(key: SCFrame.layerObserverKey,
                                         entity: SCLayer.entityName,
@@ -45,6 +68,14 @@ public class SCFrame: NSManagedObject {
         observer.startObserving()
         return observer
     }()
+    
+    private var imageViews = WeakSet<UIImageView>()
+    public func makeImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.image = self.makeImageFromLayers()
+        self.imageViews.insert(imageView)
+        return imageView
+    }
     
     public lazy var selectedLayer: Observable<SCLayer> = {
         return Observable<SCLayer>(key: SCFrame.selectedLayerObserverKey,
@@ -83,8 +114,20 @@ public class SCFrame: NSManagedObject {
         other.copyLayers(from: self)
     }
     
+    @discardableResult
+    public func copyFrame() -> SCFrame {
+        let newFrame = self.graphic.createFrame()
+        
+        newFrame.layers.removeAll()
+        newFrame.copyLayers(from: self)
+        
+        newFrame.move(to: self.index + 1)
+        
+        return newFrame
+    }
+    
     public func move(to newIndex: Int) {
-        let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.graphic.frames.count ?  self.graphic.frames.count - 1 : newIndex))
+        let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.graphic.frames.count ? self.graphic.frames.count - 1 : newIndex))
         
         var from, to, increment: Int!
         if safeIndex < self.index {
@@ -123,6 +166,30 @@ public class SCFrame: NSManagedObject {
         }
         self.world.connector.context.delete(self)
         return self.world.connector.saveContext()
+    }
+    
+    func onLayerImageChange() {
+        if imageViews.count > 0 {
+            let image = self.makeImageFromLayers()
+            for imageView in imageViews {
+                imageView.image = image
+            }
+        }
+    }
+    
+    private func makeImageFromLayers() -> UIImage {
+        let sortedLayers = self.sortedLayers
+        let size = sortedLayers.first!.image.size
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        
+        UIGraphicsBeginImageContext(size)
+        for layer in sortedLayers {
+            layer.image.draw(in: rect)
+        }
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return (image != nil ? image! : UIImage())
     }
     
 }

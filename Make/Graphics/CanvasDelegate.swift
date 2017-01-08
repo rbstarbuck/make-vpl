@@ -15,11 +15,6 @@ protocol CanvasDelegate: class {
     var graphic: SCGraphic { get set }
     
     
-    var brushColor: UIColor { get set }
-    var brushWidth: CGFloat { get set }
-    var brushOpacity: CGFloat { get set }
-    
-    
     func beginDrawing()
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint)
     func drawPoint(at point: CGPoint)

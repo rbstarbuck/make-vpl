@@ -84,6 +84,10 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
         }
     }
     
+    public func containsListener(_ listener: EntityListener) -> Bool {
+        return self.listeners.contains(where: {$0 === listener})
+    }
+    
     public func populateListener(_ listener: EntityListener) {
         if let fetchedObjects = self.fetchedResultsController?.fetchedObjects {
             listener.willChangeEntity(self.key)
@@ -120,7 +124,7 @@ public class ObservableEntity: NSObject, NSFetchedResultsControllerDelegate {
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any,
                            at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         // ignore .update call when .move will be used
-        if type == .update && indexPath != nil && newIndexPath != nil {
+        if type == .update && indexPath != newIndexPath {
             return
         }
         

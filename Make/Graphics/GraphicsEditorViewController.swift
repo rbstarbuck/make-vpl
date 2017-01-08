@@ -13,11 +13,15 @@ import CoreData
 class GraphicsEditorViewController: UIViewController {
     
     @IBOutlet weak var layerTableView: UITableView!
+    @IBOutlet weak var frameCollectionView: UICollectionView!
     @IBOutlet weak var canvasView: CanvasView!
+    @IBOutlet weak var brushView: BrushView!
     
     var canvasController: CanvasController!
+    var frameController: FrameController!
     var layerController: LayerController!
-
+    var brushController: BrushController!
+    
     var world: SCWorld!
     var graphic: SCGraphic!
     
@@ -41,7 +45,11 @@ class GraphicsEditorViewController: UIViewController {
             self.graphic = self.world.createGraphic()
         }
         
-        self.canvasController = CanvasController(view: self.canvasView, graphic: self.graphic)
+        let brush = Brush()
+        
+        self.brushController = BrushController(view: self.brushView, brush: brush)
+        self.frameController = FrameController(view: self.frameCollectionView, graphic: self.graphic)
+        self.canvasController = CanvasController(view: self.canvasView, graphic: self.graphic, brush: brush)
         self.layerController = LayerController(view: self.layerTableView, graphic: self.graphic)
     }
     

@@ -20,18 +20,28 @@ public class SCLayer: NSManagedObject {
         }
         set {
             CoreDataHelper.setter("index", value: newValue, in: self) {
-                self.imageView_?.layer.zPosition = CGFloat(self.index)
+                for imageView in self.imageViews {
+                    imageView.layer.zPosition = CGFloat(self.index)
+                }
             }
         }
     }
     
     public var image: UIImage {
         get {
-            return CoreDataHelper.getter("image", in: self)!
+            if let image: UIImage = CoreDataHelper.getter("image", in: self) {
+                return image
+            }
+            let image = UIImage()
+            self.image = image
+            return image
         }
         set {
             CoreDataHelper.setter("image", value: newValue, in: self) {
-                self.imageView_?.image = newValue
+                for imageView in self.imageViews {
+                    imageView.image = newValue
+                }
+                self.frame.onLayerImageChange()
             }
         }
     }
@@ -45,24 +55,15 @@ public class SCLayer: NSManagedObject {
         }
     }
     
-    private weak var imageView_: UIImageView?
-    public var imageView: UIImageView {
-        get {
-            var view = self.imageView_
-            if view == nil {
-                view = UIImageView(image: self.image)
-                view!.image = self.image
-                view!.layer.zPosition = CGFloat(self.index)
-                self.imageView_ = view
-            }
-            return view!
-        }
+    private var imageViews = WeakSet<UIImageView>()
+    
+    public func makeImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.image = self.image
+        self.imageViews.insert(imageView)
+        return imageView
     }
     
-    
-    override public func awakeFromInsert() {
-        self.image = UIImage()
-    }
     
     public func move(to newIndex: Int) {
         let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.frame.layers.count ? self.frame.layers.count - 1 : newIndex))
@@ -85,6 +86,8 @@ public class SCLayer: NSManagedObject {
             }
         }
         self.index = safeIndex
+        
+        self.frame.onLayerImageChange()
         self.world.connector.saveContext()
     }
     

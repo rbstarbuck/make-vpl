@@ -32,6 +32,19 @@ public class SCGraphic: NSManagedObject {
         }
     }
     
+    public var firstFrame: SCFrame {
+        get {
+            return self.frames.first(where: {$0.index == 0})!
+        }
+    }
+    
+    public var lastFrame: SCFrame {
+        get {
+            let index = self.frames.count - 1
+            return self.frames.first(where: {$0.index == index})!
+        }
+    }
+    
     public lazy var frameObserver: ObservableEntity = {
         let observer = ObservableEntity(key: SCGraphic.frameObserverKey,
                                         entity: SCFrame.entityName,
