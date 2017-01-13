@@ -35,15 +35,6 @@ class SCLayerTests: XCTestCase {
         XCTAssert(self.layer.index == 0)
     }
     
-    func testImageView() {
-        XCTAssert(self.layer.imageView.image === self.layer.image)
-        let oldImageViewImage = self.layer.imageView.image
-        
-        self.layer.image = UIImage()
-        XCTAssert(self.layer.imageView.image === self.layer.image)
-        XCTAssert(oldImageViewImage !== self.layer.image)
-    }
-    
     func testSave() {
         XCTAssert(self.connector.saveContext())
         
@@ -81,8 +72,39 @@ class SCLayerTests: XCTestCase {
     
     func testDelete() {
         self.frame.createLayer()
+        self.frame.createLayer()
+        self.frame.createLayer()
+        self.frame.createLayer()
         
-        XCTAssert(self.layer.delete())
+        // delete a middle layer
+        var target = self.frame.sortedLayers[2]
+        XCTAssert(target.index == 2)
+        self.frame.selectedLayer.value = target
+        target.delete()
+        
+        XCTAssert(self.frame.layers.count == 4)
+        var layers = self.frame.sortedLayers
+        for i in 0..<4 {
+            XCTAssert(layers[i].index == i)
+        }
+        XCTAssert(self.frame.selectedLayer.value == layers[2])
+        
+        // delete the last layer
+        target = self.frame.sortedLayers.last!
+        self.frame.selectedLayer.value = target
+        target.delete()
+        
+        XCTAssert(self.frame.layers.count == 3)
+        layers = self.frame.sortedLayers
+        for i in 0..<3 {
+            XCTAssert(layers[i].index == i)
+        }
+        XCTAssert(self.frame.selectedLayer.value == layers.last!)
+        
+        // delete remaining
+        XCTAssert(self.frame.sortedLayers.first!.delete())
+        XCTAssert(self.frame.sortedLayers.first!.delete())
+        XCTAssert(!self.frame.sortedLayers.first!.delete())
         
         let req: NSFetchRequest<SCLayer> = SCLayer.fetchRequest()
         do {

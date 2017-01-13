@@ -41,7 +41,7 @@ class CanvasController: CanvasDelegate {
     
     var brush: Brush
     
-    var inkingSurface = UIImageView()
+    let inkingSurface = UIImageView()
     
     
     // MARK: - Initialization
@@ -53,8 +53,8 @@ class CanvasController: CanvasDelegate {
         self.brush = brush
         
         self.attach(graphic: self.graphic, populate: false)
-        self.attach(frame: self.frame, populate: false)
-        self.attach(view: self.canvasView, populate: true)
+        self.attach(view: self.canvasView, populate: false)
+        self.attach(frame: self.frame, populate: true)
     }
     
     private func attach(graphic: SCGraphic, populate: Bool = true) {
@@ -71,7 +71,6 @@ class CanvasController: CanvasDelegate {
         if populate {
             self.frame.layerObserver.populateListener(self)
         }
-        view.insertView(self.inkingSurface)
     }
     
     private func detach(graphic: SCGraphic) {
@@ -167,7 +166,9 @@ extension CanvasController: EntityListener {
                 case .insert:
                     self.canvasView.insertLayer(layer)
                     break
-                case .move: break
+                case .move:
+                    self.canvasView.setNeedsLayout()
+                    break
                 case .update: break
                 }
             }
@@ -194,8 +195,7 @@ extension CanvasController: PropertyListener {
             
         case SCFrame.selectedLayerObserverKey:
             if let selectedLayer = newValue as? SCLayer {
-                let zIndex = CGFloat(selectedLayer.index) + 0.5
-                self.inkingSurface.layer.zPosition = zIndex
+                self.canvasView.insertInkingSurface(self.inkingSurface, above: selectedLayer)
             }
             break
             

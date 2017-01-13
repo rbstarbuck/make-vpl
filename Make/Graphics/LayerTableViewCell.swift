@@ -17,6 +17,8 @@ class LayerTableViewCell: CoreDataTableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    var deleteAction: ((UITableViewCell) -> Void)?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,25 +31,23 @@ class LayerTableViewCell: CoreDataTableViewCell {
         if let layer = entity as? SCLayer {
             self.layerImageView.image = layer.image
             self.nameLabel.text = layer.name
-            
-            /*if layer.image.size.height > 0 {
-                let imageAspectRatio = layer.image.size.width / layer.image.size.height
-                let imageViewWidth = self.layerImageView.frame.height * imageAspectRatio
-                self.layerImageViewWidthConstraint.constant = imageViewWidth
-            }*/
+            self.deleteAction = { (cell) in
+                layer.delete()
+            }
         }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        //super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
         if selected {
             self.nameLabel.font = UIFont.boldSystemFont(ofSize: 22)
         }
         else {
             self.nameLabel.font = UIFont.systemFont(ofSize: 22)
         }
+    }
+    
+    @IBAction func deleteLayerTouch(_ sender: Any) {
+        self.deleteAction?(self)
     }
     
 }

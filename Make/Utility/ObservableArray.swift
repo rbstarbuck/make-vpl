@@ -1,6 +1,5 @@
 //
 //  ObservableArray.swift
-//  Make
 //
 //  Created by Richmond Starbuck on 12/20/16.
 //

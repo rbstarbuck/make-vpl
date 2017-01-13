@@ -1,6 +1,5 @@
 //
 //  CoreDataTestStack.swift
-//  Make
 //
 //  Created by Richmond Starbuck on 12/23/16.
 //

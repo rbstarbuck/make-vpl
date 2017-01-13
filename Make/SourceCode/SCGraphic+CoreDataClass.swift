@@ -25,9 +25,7 @@ public class SCGraphic: NSManagedObject {
     
     public var sortedFrames: [SCFrame] {
         get {
-            let sorted = self.frames.sorted(by: {(lhs: SCFrame, rhs: SCFrame) -> Bool in
-                return lhs.index < rhs.index
-            })
+            let sorted = self.frames.sorted(by: {$0.index < $1.index})
             return sorted
         }
     }
@@ -69,11 +67,8 @@ public class SCGraphic: NSManagedObject {
     
     @discardableResult
     public func createFrame() -> SCFrame {
-        let max = self.frames.map({$0.index}).max()
-        let index = (max == nil ? 0 : max! + 1)
-        
         let frame: SCFrame = self.world.connector.createEntity(SCFrame.entityName)!
-        frame.index = index
+        frame.index = self.frames.count
         self.addToFrames(frame)
         
         frame.createLayer()

@@ -1,6 +1,5 @@
 //
 //  CoreDataTableViewCell.swift
-//  Make
 //
 //  Created by Richmond Starbuck on 12/29/16.
 //

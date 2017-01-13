@@ -59,4 +59,9 @@ class GraphicsEditorViewController: UIViewController {
             frame.selectedLayer.value = layer
         }
     }
+    
+    @IBAction func deleteFrameTouch(_ sender: Any) {
+        self.graphic.selectedFrame.value?.delete()
+    }
+    
 }

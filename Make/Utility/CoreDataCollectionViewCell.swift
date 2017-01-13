@@ -1,6 +1,5 @@
 //
 //  CoreDataCollectionViewCell.swift
-//  Make
 //
 //  Created by Richmond Starbuck on 12/31/16.
 //
@@ -20,4 +19,5 @@ class CoreDataCollectionViewCell: UICollectionViewCell {
         self.delegate = delegate
         self.entity = entity
     }
+    
 }

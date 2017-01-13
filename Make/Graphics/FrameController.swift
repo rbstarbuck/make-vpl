@@ -27,21 +27,11 @@ class FrameController: CoreDataCollectionViewController {
         }
     }
     
-    var frame: SCFrame {
-        didSet {
-            if self.frame !== oldValue {
-                self.detach(frame: oldValue)
-                self.attach(frame: self.frame)
-            }
-        }
-    }
-    
     
     // MARK: - Initialization
     
     init(view: UICollectionView, graphic: SCGraphic) {
         self.graphic = graphic
-        self.frame = graphic.selectedFrame.value!
         
         let frameNib = UINib(nibName: reuseIdentifier, bundle: nil)
         let addFrameNib = UINib(nibName: addFrameReuseIdentifier, bundle: nil)
@@ -52,7 +42,6 @@ class FrameController: CoreDataCollectionViewController {
         super.init(view: view, cellIdentifier: reuseIdentifier, observer: self.graphic.frameObserver, populate: false)
         
         self.attach(graphic: self.graphic, populate: false)
-        self.attach(frame: self.frame, populate: true)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler(_:)))
         self.collectionView.addGestureRecognizer(longPress)
@@ -64,15 +53,9 @@ class FrameController: CoreDataCollectionViewController {
         graphic.selectedFrame.addListener(self, populate: populate)
     }
     
-    private func attach(frame: SCFrame, populate: Bool = true) {
-    }
-    
     private func detach(graphic: SCGraphic) {
         graphic.frameObserver.removeListener(self, depopulate: true)
         graphic.selectedFrame.removeListener(self)
-    }
-    
-    private func detach(frame: SCFrame) {
     }
     
     
@@ -127,6 +110,10 @@ class FrameController: CoreDataCollectionViewController {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, targetIndexPathForMoveFromItemAt originalIndexPath: IndexPath,
                         toProposedIndexPath proposedIndexPath: IndexPath) -> IndexPath {
         if proposedIndexPath.section == 0 {
@@ -134,6 +121,7 @@ class FrameController: CoreDataCollectionViewController {
         }
         return originalIndexPath
     }
+    
 }
 
 
@@ -166,17 +154,15 @@ extension FrameController {
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
-        return indexPath.section == 0
-    }
-    
 }
 
 
 extension FrameController: PropertyListener {
     
     func onPropertyChange(key: String, newValue: Any?, oldValue: Any?) {
-        
+        /*if key == SCGraphic.selectedFrameObserverKey {
+            
+        }*/
     }
     
 }

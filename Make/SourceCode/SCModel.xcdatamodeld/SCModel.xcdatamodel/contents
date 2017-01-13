@@ -16,7 +16,7 @@
     <entity name="Layer" representedClassName=".SCLayer" syncable="YES">
         <attribute name="image" attributeType="Transformable" customClassName="UIImage" syncable="YES"/>
         <attribute name="index" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="name" attributeType="String" minValueString="1" defaultValueString="Layer" syncable="YES"/>
         <relationship name="frame" maxCount="1" deletionRule="Nullify" destinationEntity="Frame" inverseName="layers" inverseEntity="Frame" syncable="YES"/>
     </entity>
     <entity name="Method" representedClassName=".SCMethod" syncable="YES">
@@ -71,7 +71,7 @@
     <elements>
         <element name="Frame" positionX="-1017" positionY="414" width="128" height="88"/>
         <element name="Graphic" positionX="-857" positionY="387" width="128" height="133"/>
-        <element name="Layer" positionX="-1179" positionY="435" width="128" height="103"/>
+        <element name="Layer" positionX="-1179" positionY="435" width="128" height="105"/>
         <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>
         <element name="Scene" positionX="-522" positionY="378" width="128" height="133"/>
         <element name="Sprite" positionX="-531" positionY="486" width="128" height="148"/>

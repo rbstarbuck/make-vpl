@@ -120,8 +120,39 @@ class SCFrameTests: XCTestCase, EntityListener, PropertyListener {
     
     func testDelete() {
         self.graphic.createFrame()
+        self.graphic.createFrame()
+        self.graphic.createFrame()
+        self.graphic.createFrame()
         
-        XCTAssert(self.frame.delete())
+        // delete a middle frame
+        var target = self.graphic.sortedFrames[2]
+        XCTAssert(target.index == 2)
+        self.graphic.selectedFrame.value = target
+        target.delete()
+        
+        XCTAssert(self.graphic.frames.count == 4)
+        var frames = self.graphic.sortedFrames
+        for i in 0..<4 {
+            XCTAssert(frames[i].index == i)
+        }
+        XCTAssert(self.graphic.selectedFrame.value == frames[2])
+        
+        // delete the last frame
+        target = self.graphic.sortedFrames.last!
+        self.graphic.selectedFrame.value = target
+        target.delete()
+        
+        XCTAssert(self.graphic.frames.count == 3)
+        frames = self.graphic.sortedFrames
+        for i in 0..<3 {
+            XCTAssert(frames[i].index == i)
+        }
+        XCTAssert(self.graphic.selectedFrame.value == frames.last!)
+        
+        // delete remaining
+        XCTAssert(self.graphic.sortedFrames.first!.delete())
+        XCTAssert(self.graphic.sortedFrames.first!.delete())
+        XCTAssert(!self.graphic.sortedFrames.first!.delete())
         
         let req: NSFetchRequest<SCFrame> = SCFrame.fetchRequest()
         do {

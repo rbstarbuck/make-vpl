@@ -19,6 +19,8 @@ class CanvasView: UIView {
     var lastPoint = CGPoint()
     var swiped = false
     
+    var layerSubviews = [SCLayer: UIImageView]()
+    
     
     override func willMove(toWindow newWindow: UIWindow?) {
         self.isMultipleTouchEnabled = false
@@ -30,30 +32,31 @@ class CanvasView: UIView {
     
     func insertLayer(_ layer: SCLayer) {
         let imageView = layer.makeImageView()
-        self.insertView(imageView)
+        self.layerSubviews[layer] = imageView
+        self.addSubview(imageView)
+        imageView.constrainEdgesToParent(self)
     }
     
-    func insertView(_ view: UIImageView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(view)
-        view.constrainEdgesToParent(self)
-        
+    func insertInkingSurface(_ inkingSurface: UIImageView, above layer: SCLayer) {
+        if let layerSubview = self.layerSubviews[layer] {
+            inkingSurface.removeFromSuperview()
+            self.insertSubview(inkingSurface, aboveSubview: layerSubview)
+            inkingSurface.constrainEdgesToParent(self)
+        }
     }
     
     @discardableResult
     func removeLayer(_ layer: SCLayer) -> Bool {
-        for view in self.subviews {
-            if view.layer.zPosition == CGFloat(layer.index) {
-                view.removeFromSuperview()
-                return true
-            }
+        if let subview = self.layerSubviews.removeValue(forKey: layer) {
+            subview.removeFromSuperview()
+            return true
         }
         return false
     }
     
     func removeAllLayers() {
-        for view in self.subviews {
-            view.removeFromSuperview()
+        for pair in self.layerSubviews {
+            self.removeLayer(pair.key)
         }
     }
     

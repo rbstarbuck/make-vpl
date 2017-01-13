@@ -1,6 +1,5 @@
 //
 //  CoreDataExtensions.swift
-//  Make
 //
 //  Created by Richmond Starbuck on 12/21/16.
 //

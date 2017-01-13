@@ -30,9 +30,7 @@ public class SCFrame: NSManagedObject {
     
     public var sortedLayers: [SCLayer] {
         get {
-            let sorted = self.layers.sorted(by: {(lhs: SCLayer, rhs: SCLayer) -> Bool in
-                return lhs.index < rhs.index
-            })
+            let sorted = self.layers.sorted(by: {$0.index < $1.index})
             return sorted
         }
     }
@@ -89,23 +87,24 @@ public class SCFrame: NSManagedObject {
     
     @discardableResult
     public func createLayer() -> SCLayer {
-        let max = self.layers.map({$0.index}).max()
-        let index = (max == nil ? 0 : max! + 1)
+        let index = self.layers.count
         
         let layer: SCLayer = self.world.connector.createEntity(SCLayer.entityName)!
-        layer.index = index
-        layer.name = "\(SCConstants.LAYER_DISPLAY_TITLE) \(self.layers.count + 1)"
         self.addToLayers(layer)
+        layer.index = index
+        layer.name = "\(SCConstants.LAYER_DISPLAY_TITLE) \(index + 1)"
+        layer.image = UIImage()
         
         self.world.connector.saveContext()
+        
         return layer
     }
     
     public func copyLayers(from other: SCFrame) {
         for otherLayer in other.sortedLayers {
             let layer = self.createLayer()
-            layer.image = otherLayer.image
             layer.name = otherLayer.name
+            layer.image = otherLayer.image
         }
         self.world.connector.saveContext()
     }
@@ -117,12 +116,14 @@ public class SCFrame: NSManagedObject {
     @discardableResult
     public func copyFrame() -> SCFrame {
         let newFrame = self.graphic.createFrame()
+        let initialLayer = newFrame.layers.first!
         
-        newFrame.layers.removeAll()
         newFrame.copyLayers(from: self)
+        initialLayer.delete()
         
         newFrame.move(to: self.index + 1)
         
+        self.world.connector.saveContext()
         return newFrame
     }
     
@@ -164,8 +165,22 @@ public class SCFrame: NSManagedObject {
         if self.graphic.frames.count < 2 {
             return false
         }
-        self.world.connector.context.delete(self)
-        return self.world.connector.saveContext()
+        
+        let connector = self.world.connector!
+        let sortedFrames = self.graphic.sortedFrames
+        
+        connector.context.delete(self)
+        
+        for index in self.index+1..<sortedFrames.count {
+            sortedFrames[index].index -= 1
+        }
+        
+        if self.graphic.selectedFrame.value == self {
+            let nextFrame = (self == sortedFrames.last! ? sortedFrames[sortedFrames.count - 2] : sortedFrames[self.index + 1])
+            self.graphic.selectedFrame.value = nextFrame
+        }
+        
+        return connector.saveContext()
     }
     
     func onLayerImageChange() {

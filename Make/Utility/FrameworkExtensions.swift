@@ -1,9 +1,7 @@
 //
 //  FrameworkExtensions.swift
-//  PlanIt
 //
 //  Created by Richmond Starbuck on 10/16/16.
-//  Copyright © 2016 OneTwo Productions. All rights reserved.
 //
 
 import UIKit
@@ -45,7 +43,6 @@ extension UIView {
             return nil
         }
         self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.constrainEdgesToParent(self)
         return view
     }
@@ -55,6 +52,8 @@ extension UIView {
         let vfl = "|-\(margin)-[view]-\(margin)-|"
         let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:\(vfl)", options: [], metrics: nil, views: viewDict)
         let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:\(vfl)", options: [], metrics: nil, views: viewDict)
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         parent.addConstraints(vConstraints + hConstraints)
     }
     

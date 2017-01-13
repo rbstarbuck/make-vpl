@@ -1,9 +1,7 @@
 //
 //  Weak.swift
-//  PlanIt
 //
 //  Created by Richmond Starbuck on 10/14/16.
-//  Copyright © 2016 OneTwo Productions. All rights reserved.
 //
 
 import Foundation
