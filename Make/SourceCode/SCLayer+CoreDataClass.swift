@@ -65,6 +65,10 @@ public class SCLayer: NSManagedObject {
     }
     
     
+    public func select() {
+        self.frame.selectedLayer.value = self
+    }
+    
     public func move(to newIndex: Int) {
         let safeIndex = (newIndex < 0 ? 0 : (newIndex >= self.frame.layers.count ? self.frame.layers.count - 1 : newIndex))
         
@@ -108,13 +112,13 @@ public class SCLayer: NSManagedObject {
         let sortedLayers = self.frame.sortedLayers
         self.world.connector.context.delete(self)
         
-        for index in self.index+1..<sortedLayers.count {
-            sortedLayers[index].index -= 1
-        }
-        
         if self.frame.selectedLayer.value == self {
             let nextLayer = (self == sortedLayers.last! ? sortedLayers[sortedLayers.count - 2] : sortedLayers[self.index + 1])
             self.frame.selectedLayer.value = nextLayer
+        }
+        
+        for index in self.index+1..<sortedLayers.count {
+            sortedLayers[index].index -= 1
         }
         
         self.frame.onLayerImageChange()

@@ -92,6 +92,12 @@ class LayerController: CoreDataTableViewController {
         
         switch sender.state {
         case .began:
+            if let indexPath = self.tableView.indexPathForRow(at: location),
+                let cell = self.tableView.cellForRow(at: indexPath) as? LayerTableViewCell,
+                let layer = cell.entity as? SCLayer {
+                
+                layer.select()
+            }
             self.beginDraggingCell(at: location)
             break
             
@@ -116,7 +122,7 @@ extension LayerController {
     }*/
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66
+        return 75
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

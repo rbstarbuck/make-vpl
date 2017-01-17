@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 
 
+private var imageViewBorderWidth = CGFloat(2)
+private var imageViewBorderColor = UIColor.gray
+
+
 class LayerTableViewCell: CoreDataTableViewCell {
 
     @IBOutlet weak var layerImageView: UIImageView!
@@ -23,6 +27,8 @@ class LayerTableViewCell: CoreDataTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.layerImageView.layer.borderWidth = imageViewBorderWidth
+        self.layerImageView.layer.borderColor = imageViewBorderColor.cgColor
     }
 
     override func configure(delegate: CoreDataTableViewDelegate, entity: NSManagedObject) {

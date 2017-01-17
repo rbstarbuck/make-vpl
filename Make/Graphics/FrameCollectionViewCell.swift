@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 
+private let selectedBorderColor = UIColor.yellow
+
+
 class FrameCollectionViewCell: CoreDataCollectionViewCell {
 
     var imageView: UIImageView?
@@ -17,8 +20,12 @@ class FrameCollectionViewCell: CoreDataCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let selectedBackgroundView = UIView(frame: self.contentView.frame)
+        selectedBackgroundView.backgroundColor = selectedBorderColor
+        self.selectedBackgroundView = selectedBackgroundView
     }
+    
     
     override func configure(delegate: CoreDataCollectionViewDelegate, entity: NSManagedObject) {
         super.configure(delegate: delegate, entity: entity)

@@ -9,8 +9,10 @@
 import UIKit
 import CoreData
 
+
 private let reuseIdentifier = "FrameCollectionViewCell"
 private let addFrameReuseIdentifier = "AddFrameCollectionViewCell"
+
 private let cellInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 private let sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
 private let cellAspectRatio = CGFloat(1)
@@ -45,6 +47,9 @@ class FrameController: CoreDataCollectionViewController {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressHandler(_:)))
         self.collectionView.addGestureRecognizer(longPress)
+        
+        let initialItemIndexPath = IndexPath(row: 0, section: 0)
+        self.collectionView.selectItem(at: initialItemIndexPath, animated: false, scrollPosition: .centeredHorizontally)
     }
     
     private func attach(graphic: SCGraphic, populate: Bool = true) {
@@ -91,6 +96,12 @@ class FrameController: CoreDataCollectionViewController {
         
         switch sender.state {
         case .began:
+            if let indexPath = self.collectionView.indexPathForItem(at: location),
+                let cell = self.collectionView.cellForItem(at: indexPath) as? FrameCollectionViewCell,
+                let frame = cell.entity as? SCFrame {
+                
+                frame.select()
+            }
             self.beginDraggingCell(at: location)
             break
             
@@ -160,9 +171,12 @@ extension FrameController {
 extension FrameController: PropertyListener {
     
     func onPropertyChange(key: String, newValue: Any?, oldValue: Any?) {
-        /*if key == SCGraphic.selectedFrameObserverKey {
-            
-        }*/
+        if key == SCGraphic.selectedFrameObserverKey {
+            if let selectedFrame = newValue as? SCFrame {
+                let selectedIndexPath = IndexPath(row: selectedFrame.index, section: 0)
+                self.collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .centeredHorizontally)
+            }
+        }
     }
     
 }

@@ -31,7 +31,6 @@
                     </button>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Spw-2o-Y3x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Swo-VX-XDX"/>
                 <constraint firstItem="Spw-2o-Y3x" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="e98-t5-MuK"/>

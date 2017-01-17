@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Frame" representedClassName=".SCFrame" syncable="YES">
         <attribute name="index" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numLayersInserted" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="graphic" maxCount="1" deletionRule="Nullify" destinationEntity="Graphic" inverseName="frames" inverseEntity="Graphic" syncable="YES"/>
         <relationship name="layers" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Layer" inverseName="frame" inverseEntity="Layer" syncable="YES"/>
     </entity>
@@ -14,7 +15,7 @@
         <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="graphics" inverseEntity="World" syncable="YES"/>
     </entity>
     <entity name="Layer" representedClassName=".SCLayer" syncable="YES">
-        <attribute name="image" attributeType="Transformable" customClassName="UIImage" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" customClassName="UIImage" syncable="YES"/>
         <attribute name="index" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" defaultValueString="Layer" syncable="YES"/>
         <relationship name="frame" maxCount="1" deletionRule="Nullify" destinationEntity="Frame" inverseName="layers" inverseEntity="Frame" syncable="YES"/>
@@ -69,7 +70,7 @@
         <relationship name="variables" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="world" inverseEntity="Variable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Frame" positionX="-1017" positionY="414" width="128" height="88"/>
+        <element name="Frame" positionX="-1017" positionY="414" width="128" height="105"/>
         <element name="Graphic" positionX="-857" positionY="387" width="128" height="133"/>
         <element name="Layer" positionX="-1179" positionY="435" width="128" height="105"/>
         <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>

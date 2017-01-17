@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+private var imageViewBorderWidth = CGFloat(3)
+private var imageViewBorderColor = UIColor.gray
+
+
 class CanvasView: UIView {
     
     var delegate: CanvasDelegate? {
@@ -25,6 +30,9 @@ class CanvasView: UIView {
     override func willMove(toWindow newWindow: UIWindow?) {
         self.isMultipleTouchEnabled = false
         self.isUserInteractionEnabled = (self.delegate != nil)
+        
+        self.layer.borderWidth = imageViewBorderWidth
+        self.layer.borderColor = imageViewBorderColor.cgColor
     }
     
         

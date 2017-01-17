@@ -18,6 +18,7 @@ public class SCFrame: NSManagedObject {
     
     
     @NSManaged public var index: Int
+    @NSManaged public var numLayersInserted: Int
     @NSManaged public var layers: Set<SCLayer>
     @NSManaged public var graphic: SCGraphic
 
@@ -57,6 +58,12 @@ public class SCFrame: NSManagedObject {
         }
     }
     
+    public var isSelected: Bool {
+        get {
+            return self == self.graphic.selectedFrame.value
+        }
+    }
+    
     public lazy var layerObserver: ObservableEntity = {
         let observer = ObservableEntity(key: SCFrame.layerObserverKey,
                                         entity: SCLayer.entityName,
@@ -85,15 +92,21 @@ public class SCFrame: NSManagedObject {
         self.layers = Set<SCLayer>()
     }
     
+    
+    public func select() {
+        self.graphic.selectedFrame.value = self
+    }
+    
     @discardableResult
     public func createLayer() -> SCLayer {
-        let index = self.layers.count
+        self.numLayersInserted += 1
         
+        let index = self.layers.count
         let layer: SCLayer = self.world.connector.createEntity(SCLayer.entityName)!
         self.addToLayers(layer)
+        
         layer.index = index
-        layer.name = "\(SCConstants.LAYER_DISPLAY_TITLE) \(index + 1)"
-        layer.image = UIImage()
+        layer.name = "\(SCConstants.LAYER_DISPLAY_TITLE) \(self.numLayersInserted)"
         
         self.world.connector.saveContext()
         
@@ -119,6 +132,7 @@ public class SCFrame: NSManagedObject {
         let initialLayer = newFrame.layers.first!
         
         newFrame.copyLayers(from: self)
+        newFrame.numLayersInserted = self.numLayersInserted
         initialLayer.delete()
         
         newFrame.move(to: self.index + 1)
