@@ -14,8 +14,6 @@ class OCGraphic {
     
     let source: SCGraphic
     
-    //var textureAtlas: SKTextureAtlas
-    
     var frames = [SKTexture]()
     
     var timePerFrame: Double
@@ -25,13 +23,13 @@ class OCGraphic {
         self.source = source
         self.timePerFrame = 1.0 / source.animationFPS
         
-        var textureAtlasDict = [String: UIImage]()
-        let sortedFrames = self.source.sortedFrames
-        let numFrames = sortedFrames.count
+        let graphic = source.makeGraphicFromFrames()
+        let numFrames = graphic.count
+        var textureAtlasDict = [String: UIImage](minimumCapacity: graphic.count)
         for index in 0..<numFrames {
-            let imageView = sortedFrames[index].makeImageView()
-            textureAtlasDict["\(index)"] = imageView.image!
+            textureAtlasDict["\(index)"] = graphic[index]
         }
+        
         let textureAtlas = SKTextureAtlas(dictionary: textureAtlasDict)
         
         self.frames.reserveCapacity(numFrames)

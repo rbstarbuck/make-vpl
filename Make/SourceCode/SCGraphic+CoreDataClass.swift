@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
@@ -81,5 +81,18 @@ public class SCGraphic: NSManagedObject {
     public func delete() -> Bool {
         self.world.connector.context.delete(self)
         return self.world.connector.saveContext()
+    }
+    
+    
+    func makeGraphicFromFrames() -> [UIImage] {
+        var frames = [UIImage]()
+        frames.reserveCapacity(self.frames.count)
+        
+        for frame in self.sortedFrames {
+            let image = frame.makeImageFromLayers()
+            frames.append(image)
+        }
+        
+        return frames
     }
 }

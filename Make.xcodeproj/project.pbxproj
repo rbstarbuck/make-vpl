@@ -74,6 +74,11 @@
 		A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520541E0A4C5100443ABB /* CanvasController.swift */; };
 		A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */; };
 		A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520581E0A72E800443ABB /* ObservableEntity.swift */; };
+		A1F9074B1E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */; };
+		A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9074A1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift */; };
+		A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */; };
+		A1F907561E301E4F0015DAFE /* PhysicsPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */; };
+		A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +172,11 @@
 		A1F520541E0A4C5100443ABB /* CanvasController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasController.swift; path = Graphics/CanvasController.swift; sourceTree = "<group>"; };
 		A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCCoreDataStack.swift; path = SourceCode/SCCoreDataStack.swift; sourceTree = "<group>"; };
 		A1F520581E0A72E800443ABB /* ObservableEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservableEntity.swift; path = Utility/ObservableEntity.swift; sourceTree = "<group>"; };
+		A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCPhysicsBody+CoreDataClass.swift"; path = "SourceCode/SCPhysicsBody+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A1F9074A1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCPhysicsBody+CoreDataProperties.swift"; path = "SourceCode/SCPhysicsBody+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCPhysicsBodyShape.swift; path = SourceCode/SCPhysicsBodyShape.swift; sourceTree = "<group>"; };
+		A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsPropertiesView.swift; path = Sprites/PhysicsPropertiesView.swift; sourceTree = "<group>"; };
+		A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhysicsPropertiesView.xib; path = Sprites/PhysicsPropertiesView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +245,7 @@
 				A16376CC1DF1656500231007 /* Source Code */,
 				A1564B131E066F8100632031 /* Object Code */,
 				A1F51FF71E08E90600443ABB /* Graphics */,
+				A1F907541E301DF50015DAFE /* Sprites */,
 				A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */,
 				A143A7901DEBF53A004DBC84 /* GameScene.sks */,
 				A143A7921DEBF53A004DBC84 /* Actions.sks */,
@@ -275,6 +286,7 @@
 				A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */,
 				A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */,
 				A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */,
+				A1F9074A1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift */,
 				A1F5203A1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift */,
 				A1F520261E09DFD900443ABB /* SCFrame+CoreDataProperties.swift */,
 				A1F5201D1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift */,
@@ -310,10 +322,10 @@
 				A1564ABD1E05A5A500632031 /* Core Data Properties */,
 				A1564B0F1E066E5E00632031 /* Method */,
 				A1F5203D1E09E0A500443ABB /* Graphic */,
+				A1F9074D1E3019BF0015DAFE /* Sprite */,
 				A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */,
 				A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */,
 				A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */,
-				A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */,
 			);
 			name = "Source Code";
 			sourceTree = "<group>";
@@ -410,6 +422,25 @@
 			name = Graphic;
 			sourceTree = "<group>";
 		};
+		A1F9074D1E3019BF0015DAFE /* Sprite */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */,
+				A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */,
+				A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */,
+			);
+			name = Sprite;
+			sourceTree = "<group>";
+		};
+		A1F907541E301DF50015DAFE /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */,
+				A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,7 +504,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					A143A78A1DEBF539004DBC84 = {
 						CreatedOnToolsVersion = 8.1;
@@ -525,6 +556,7 @@
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
 				A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */,
+				A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */,
 				A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */,
 				A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */,
 				A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */,
@@ -563,6 +595,7 @@
 				A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */,
 				A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */,
 				A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */,
+				A1F907561E301E4F0015DAFE /* PhysicsPropertiesView.swift in Sources */,
 				A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */,
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
 				A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */,
@@ -572,6 +605,7 @@
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
 				A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */,
+				A1F9074B1E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift in Sources */,
 				A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */,
 				A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */,
 				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,
@@ -594,6 +628,7 @@
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
+				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
@@ -601,6 +636,7 @@
 				A12FE7E91E1599A70015989D /* BrushView.swift in Sources */,
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
+				A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
 				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,
@@ -680,6 +716,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -730,6 +767,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

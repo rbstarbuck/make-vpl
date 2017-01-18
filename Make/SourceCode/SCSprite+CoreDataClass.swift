@@ -19,6 +19,7 @@ public class SCSprite: NSManagedObject {
     @NSManaged public var methods: Set<SCMethod>
     @NSManaged public var variables: Set<SCVariable>
     @NSManaged public var world: SCWorld
+    @NSManaged public var physicsBody: SCPhysicsBody
     
     
     override public func awakeFromInsert() {

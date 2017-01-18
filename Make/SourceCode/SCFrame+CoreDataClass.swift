@@ -206,7 +206,7 @@ public class SCFrame: NSManagedObject {
         }
     }
     
-    private func makeImageFromLayers() -> UIImage {
+    func makeImageFromLayers() -> UIImage {
         let sortedLayers = self.sortedLayers
         let size = sortedLayers.first!.image.size
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
