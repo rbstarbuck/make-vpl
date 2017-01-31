@@ -21,6 +21,19 @@ public class SCScene: NSManagedObject {
     @NSManaged public var world: SCWorld
     
     
+    public var gravityDirection: GravityDirection {
+        get {
+            return self.world.gravityDirection
+        }
+    }
+    
+    public var gravityMagnitude: Double {
+        get {
+            return self.world.gravityMagnitude
+        }
+    }
+    
+    
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
         self.methods = Set<SCMethod>()

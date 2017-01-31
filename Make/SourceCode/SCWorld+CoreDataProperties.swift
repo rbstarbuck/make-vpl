@@ -17,6 +17,7 @@ extension SCWorld {
     }
 
     @NSManaged public var comment: String?
+    @NSManaged public var gravityMagnitude: Double
 
 }
 

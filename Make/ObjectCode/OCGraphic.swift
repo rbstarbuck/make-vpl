@@ -10,16 +10,16 @@ import UIKit
 import SpriteKit
 
 
-class OCGraphic {
+public class OCGraphic {
     
-    let source: SCGraphic
+    public let source: SCGraphic
     
-    var frames = [SKTexture]()
+    public var frames = [SKTexture]()
     
-    var timePerFrame: Double
+    public var timePerFrame: Double
     
     
-    init(from source: SCGraphic) {
+    public init(from source: SCGraphic) {
         self.source = source
         self.timePerFrame = 1.0 / source.animationFPS
         

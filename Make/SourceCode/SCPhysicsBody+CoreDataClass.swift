@@ -18,4 +18,9 @@ public class SCPhysicsBody: NSManagedObject {
     @NSManaged public var shape: SCPhysicsBodyShape
     @NSManaged public var sprite: SCSprite
     
+    
+    public override func awakeFromInsert() {
+        self.shape = SCPhysicsBodyShapeRectangle()
+    }
+    
 }

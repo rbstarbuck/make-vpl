@@ -10,6 +10,12 @@ import Foundation
 import CoreData
 
 
+@objc
+public enum GravityDirection: Int32 {
+    case down = 0, left, right, up;
+}
+
+
 public class SCWorld: NSManagedObject {
     public static let entityName = "World"
 
@@ -18,6 +24,7 @@ public class SCWorld: NSManagedObject {
     
     @NSManaged public var id: String
     @NSManaged public var name: String
+    @NSManaged public var gravityDirection: GravityDirection
     @NSManaged public var graphics: Set<SCGraphic>
     @NSManaged public var scenes: Set<SCScene>
     @NSManaged public var sprites: Set<SCSprite>
@@ -57,7 +64,6 @@ public class SCWorld: NSManagedObject {
         let sprite: SCSprite = self.connector.createEntity(SCSprite.entityName)!
         sprite.name = "\(SCConstants.SPRITE_DISPLAY_TITLE) \(self.sprites.count + 1)"
         sprite.physicsBody = self.connector.createEntity(SCPhysicsBody.entityName)!
-        sprite.physicsBody.shape = SCPhysicsBodyShapeRectangle()
         self.addToSprites(sprite)
         return sprite
     }

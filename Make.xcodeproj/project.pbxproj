@@ -36,6 +36,10 @@
 		A18B0D1B1E18385F0079EBBE /* FrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18B0D191E18385F0079EBBE /* FrameCollectionViewCell.xib */; };
 		A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */; };
 		A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F26CC1E0D0F900057FB74 /* CoreData.framework */; };
+		A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */; };
+		A1A11DCE1E405B210002F5EE /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCD1E405B210002F5EE /* Variable.swift */; };
+		A1A11DD11E405B690002F5EE /* ReferenceVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DD01E405B690002F5EE /* ReferenceVariable.swift */; };
+		A1A11DD31E406C2A0002F5EE /* OCWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DD21E406C2A0002F5EE /* OCWorld.swift */; };
 		A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD0C1E0D332000102431 /* SCConnector.swift */; };
 		A1C5CD5A1E0DCF6A00102431 /* SCFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */; };
 		A1C5CD5B1E0DCF6A00102431 /* SCGraphicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */; };
@@ -45,6 +49,8 @@
 		A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */; };
 		A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD6D1E1374D500102431 /* LayerController.swift */; };
 		A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */; };
+		A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */; };
+		A1D8B6D91E3E8A610069FFF5 /* OCScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */; };
 		A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0781E0670590053758F /* SCModel.xcdatamodeld */; };
 		A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */; };
 		A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */; };
@@ -79,6 +85,9 @@
 		A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */; };
 		A1F907561E301E4F0015DAFE /* PhysicsPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */; };
 		A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */; };
+		A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */; };
+		A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */; };
+		A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +143,10 @@
 		A18B0D191E18385F0079EBBE /* FrameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FrameCollectionViewCell.xib; path = Graphics/FrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTestStack.swift; path = Utility/CoreDataTestStack.swift; sourceTree = "<group>"; };
 		A18F26CC1E0D0F900057FB74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSceneView.swift; path = ObjectCode/OCSceneView.swift; sourceTree = "<group>"; };
+		A1A11DCD1E405B210002F5EE /* Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variable.swift; path = SourceCode/Variable.swift; sourceTree = "<group>"; };
+		A1A11DD01E405B690002F5EE /* ReferenceVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReferenceVariable.swift; path = SourceCode/ReferenceVariable.swift; sourceTree = "<group>"; };
+		A1A11DD21E406C2A0002F5EE /* OCWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCWorld.swift; path = ObjectCode/OCWorld.swift; sourceTree = "<group>"; };
 		A1C5CD0C1E0D332000102431 /* SCConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConnector.swift; path = SourceCode/SCConnector.swift; sourceTree = "<group>"; };
 		A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCFrameTests.swift; path = SourceCode/SCFrameTests.swift; sourceTree = "<group>"; };
 		A1C5CD591E0DCF6A00102431 /* SCGraphicTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCGraphicTests.swift; path = SourceCode/SCGraphicTests.swift; sourceTree = "<group>"; };
@@ -143,6 +156,8 @@
 		A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasDelegate.swift; path = Graphics/CanvasDelegate.swift; sourceTree = "<group>"; };
 		A1C5CD6D1E1374D500102431 /* LayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerController.swift; path = Graphics/LayerController.swift; sourceTree = "<group>"; };
 		A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Utility/CoreDataExtensions.swift; sourceTree = "<group>"; };
+		A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSceneController.swift; path = ObjectCode/OCSceneController.swift; sourceTree = "<group>"; };
+		A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCScene.swift; path = ObjectCode/OCScene.swift; sourceTree = "<group>"; };
 		A1DBE0791E0670590053758F /* SCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCModel.xcdatamodel; sourceTree = "<group>"; };
 		A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCWorld+CoreDataClass.swift"; path = "SourceCode/SCWorld+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1DBE0C11E0671770053758F /* SCMethod+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCMethod+CoreDataClass.swift"; path = "SourceCode/SCMethod+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -177,6 +192,9 @@
 		A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCPhysicsBodyShape.swift; path = SourceCode/SCPhysicsBodyShape.swift; sourceTree = "<group>"; };
 		A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsPropertiesView.swift; path = Sprites/PhysicsPropertiesView.swift; sourceTree = "<group>"; };
 		A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhysicsPropertiesView.xib; path = Sprites/PhysicsPropertiesView.xib; sourceTree = "<group>"; };
+		A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesEditorViewController.swift; path = Sprites/SpritesEditorViewController.swift; sourceTree = "<group>"; };
+		A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpritesEditorViewController.xib; path = Sprites/SpritesEditorViewController.xib; sourceTree = "<group>"; };
+		A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsPropertiesController.swift; path = Sprites/PhysicsPropertiesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +325,9 @@
 		A1564B131E066F8100632031 /* Object Code */ = {
 			isa = PBXGroup;
 			children = (
-				A13C8ED81E2AC0E200FA33AD /* OCGraphic.swift */,
+				A1D8B6D51E3E87690069FFF5 /* Scene */,
+				A1D8B6DA1E3E97CE0069FFF5 /* Graphic */,
+				A1A11DD21E406C2A0002F5EE /* OCWorld.swift */,
 			);
 			name = "Object Code";
 			sourceTree = "<group>";
@@ -323,7 +343,7 @@
 				A1564B0F1E066E5E00632031 /* Method */,
 				A1F5203D1E09E0A500443ABB /* Graphic */,
 				A1F9074D1E3019BF0015DAFE /* Sprite */,
-				A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */,
+				A1A11DCF1E405B250002F5EE /* Variable */,
 				A1DBE0BF1E0671770053758F /* SCWorld+CoreDataClass.swift */,
 				A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */,
 			);
@@ -350,6 +370,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1A11DCF1E405B250002F5EE /* Variable */ = {
+			isa = PBXGroup;
+			children = (
+				A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */,
+				A1A11DCD1E405B210002F5EE /* Variable.swift */,
+				A1A11DD01E405B690002F5EE /* ReferenceVariable.swift */,
+			);
+			name = Variable;
+			sourceTree = "<group>";
+		};
 		A1C5CD571E0DCF0300102431 /* Source Code Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +398,24 @@
 				A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */,
 			);
 			name = Layer;
+			sourceTree = "<group>";
+		};
+		A1D8B6D51E3E87690069FFF5 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */,
+				A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */,
+				A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		A1D8B6DA1E3E97CE0069FFF5 /* Graphic */ = {
+			isa = PBXGroup;
+			children = (
+				A13C8ED81E2AC0E200FA33AD /* OCGraphic.swift */,
+			);
+			name = Graphic;
 			sourceTree = "<group>";
 		};
 		A1F51FF71E08E90600443ABB /* Graphics */ = {
@@ -435,10 +483,21 @@
 		A1F907541E301DF50015DAFE /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */,
+				A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */,
+				A1F989A11E31C28000B9409F /* Physics */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		A1F989A11E31C28000B9409F /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */,
 				A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */,
 				A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */,
 			);
-			name = Sprites;
+			name = Physics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +568,7 @@
 					A143A78A1DEBF539004DBC84 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = L9BCMT7FCU;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					A143A7A41DEBF53A004DBC84 = {
@@ -555,6 +615,7 @@
 				A143A79A1DEBF53A004DBC84 /* Main.storyboard in Resources */,
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
+				A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */,
 				A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */,
 				A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */,
 				A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */,
@@ -588,7 +649,9 @@
 			files = (
 				A1DBE1141E0688D50053758F /* SCBlock.swift in Sources */,
 				A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */,
+				A1A11DD31E406C2A0002F5EE /* OCWorld.swift in Sources */,
 				A13C8ED91E2AC0E200FA33AD /* OCGraphic.swift in Sources */,
+				A1A11DCE1E405B210002F5EE /* Variable.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
@@ -608,6 +671,7 @@
 				A1F9074B1E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift in Sources */,
 				A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */,
 				A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */,
+				A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */,
 				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,
 				A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */,
 				A1F5203C1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift in Sources */,
@@ -616,11 +680,13 @@
 				A1F520181E09C2B000443ABB /* ObservableArray.swift in Sources */,
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
+				A1A11DD11E405B690002F5EE /* ReferenceVariable.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
 				A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */,
 				A1F5200E1E09200300443ABB /* FrameworkExtensions.swift in Sources */,
 				A1DBE0F31E067CDF0053758F /* SCSprite+CoreDataProperties.swift in Sources */,
+				A1D8B6D91E3E8A610069FFF5 /* OCScene.swift in Sources */,
 				A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */,
 				A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */,
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
@@ -635,6 +701,9 @@
 				A1F5203B1E09E08600443ABB /* SCGraphic+CoreDataClass.swift in Sources */,
 				A12FE7E91E1599A70015989D /* BrushView.swift in Sources */,
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
+				A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */,
+				A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */,
+				A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */,
 				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
 				A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
@@ -797,11 +866,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;
 				INFOPLIST_FILE = Make/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richstarbuck.Make;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -810,6 +881,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;
 				INFOPLIST_FILE = Make/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

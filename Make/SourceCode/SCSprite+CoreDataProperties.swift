@@ -17,7 +17,6 @@ extension SCSprite {
     }
 
     @NSManaged public var comment: String?
-    @NSManaged public var graphic: SCGraphic?
 
 }
 

@@ -14,7 +14,8 @@ public class SCVariable: NSManagedObject {
     public static let entityName = "Variable"
 
     
-    @NSManaged public var data: NSObject
+    @NSManaged public var data: Variable
     @NSManaged public var name: String
+    
     
 }

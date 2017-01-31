@@ -32,10 +32,14 @@
         </fetchedProperty>
     </entity>
     <entity name="PhysicsBody" representedClassName="SCPhysicsBody" syncable="YES">
+        <attribute name="angularDamping" attributeType="Double" defaultValueString="0.2" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="canRotate" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="density" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="friction" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="0.2" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isAffectedByGravity" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isDynamic" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isEnabled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="linearDamping" attributeType="Double" defaultValueString="0.2" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="restitution" attributeType="Double" minValueString="0" maxValueString="1" defaultValueString="0.2" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="shape" optional="YES" attributeType="Transformable" customClassName="SCPhysicsBodyShape" syncable="YES"/>
         <relationship name="sprite" maxCount="1" deletionRule="Deny" destinationEntity="Sprite" inverseName="physicsBody" inverseEntity="Sprite" syncable="YES"/>
@@ -52,7 +56,7 @@
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
-        <relationship name="graphic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Graphic" inverseName="sprites" inverseEntity="Graphic" syncable="YES"/>
+        <relationship name="graphic" maxCount="1" deletionRule="Nullify" destinationEntity="Graphic" inverseName="sprites" inverseEntity="Graphic" syncable="YES"/>
         <relationship name="methods" toMany="YES" deletionRule="Nullify" destinationEntity="Method" inverseName="sprite" inverseEntity="Method" syncable="YES"/>
         <relationship name="physicsBody" maxCount="1" deletionRule="Cascade" destinationEntity="PhysicsBody" inverseName="sprite" inverseEntity="PhysicsBody" syncable="YES"/>
         <relationship name="variables" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="sprite" inverseEntity="Variable" syncable="YES"/>
@@ -60,7 +64,7 @@
     </entity>
     <entity name="Variable" representedClassName=".SCVariable" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="data" attributeType="Transformable" syncable="YES"/>
+        <attribute name="data" attributeType="Transformable" customClassName="Variable" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="scene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="variables" inverseEntity="Scene" syncable="YES"/>
         <relationship name="sprite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="variables" inverseEntity="Sprite" syncable="YES"/>
@@ -71,6 +75,8 @@
     </entity>
     <entity name="World" representedClassName=".SCWorld" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gravityDirection" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="gravityMagnitude" attributeType="Double" defaultValueString="9.800000000000001" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="graphics" toMany="YES" deletionRule="Cascade" destinationEntity="Graphic" inverseName="world" inverseEntity="Graphic" syncable="YES"/>
@@ -84,10 +90,10 @@
         <element name="Graphic" positionX="-857" positionY="387" width="128" height="133"/>
         <element name="Layer" positionX="-1179" positionY="435" width="128" height="105"/>
         <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>
+        <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="210"/>
         <element name="Scene" positionX="-522" positionY="378" width="128" height="133"/>
-        <element name="Sprite" positionX="-531" positionY="486" width="128" height="163"/>
-        <element name="Variable" positionX="-864" positionY="234" width="128" height="161"/>
-        <element name="World" positionX="-693" positionY="360" width="128" height="163"/>
-        <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="150"/>
+        <element name="Sprite" positionX="-531" positionY="486" width="128" height="165"/>
+        <element name="Variable" positionX="-864" positionY="234" width="128" height="164"/>
+        <element name="World" positionX="-693" positionY="360" width="128" height="195"/>
     </elements>
 </model>
