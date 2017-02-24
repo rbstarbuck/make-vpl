@@ -12,23 +12,8 @@ import CoreData
 
 public class OCWorld {
     
-    public var source: SCWorld
+    public var connector: SCConnector!
     
-    public var graphics = [String: OCGraphic]()
+    public var variables = Variables()
     
-    
-    public init(from source: SCWorld) {
-        self.source = source
-        
-        let request: NSFetchRequest<SCGraphic> = SCGraphic.fetchRequest()
-        do {
-            let graphics = try self.source.connector.context.fetch(request)
-            for graphic in graphics {
-                self.graphics[graphic.id] = OCGraphic(from: graphic)
-            }
-        }
-        catch let error {
-            debugPrint("ERROR: couldn't fetch graphics from world: \(error.localizedDescription)")
-        }
-    }
 }
