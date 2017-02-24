@@ -48,6 +48,16 @@ public class SCConnector {
         return entity
     }
     
+    public func fetchEntities<T>(_ request: NSFetchRequest<T>) -> [T]? {
+        do {
+            return try self.context.fetch(request)
+        }
+        catch let error {
+            debugPrint("ERROR: couldn't fetch entities from connector: \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
     public func createWorld() -> SCWorld {
         let world: SCWorld = self.createEntity(SCWorld.entityName)!
         world.connector = self

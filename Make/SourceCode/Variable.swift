@@ -10,8 +10,14 @@ import Foundation
 
 
 @objc
-public protocol Variable: class {
+public enum VariableType: Int {
+    case number, string, boolean, reference
+}
+
+
+@objc
+public protocol Variable: NSCoding {
     
-    func instantiate(in scene: OCScene)
+    var type: VariableType { get }
     
 }

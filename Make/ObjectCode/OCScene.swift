@@ -12,10 +12,13 @@ import SpriteKit
 
 public class OCScene: SKScene {
     
-    public var world: OCWorld
+    public var world: OCWorld!
     
-    public var gravityMagnitude: Double
-    public var gravityDirection: GravityDirection
+    public var variables = Variables()
+    
+    public var gravityMagnitude = 9.8
+    public var gravityDirection = GravityDirection.down
+    
     
     public var gravityVector: CGVector {
         get {
@@ -29,17 +32,14 @@ public class OCScene: SKScene {
         }
     }
     
-    
-    public init(from source: SCScene, in world: OCWorld) {
-        self.world = world
-        self.gravityMagnitude = source.gravityMagnitude
-        self.gravityDirection = source.gravityDirection
-        
-        super.init()
-        
-        for variable in source.variables {
-            variable.data.instantiate(in: self)
+    public var connector: SCConnector {
+        get {
+            return self.world.connector
         }
+    }
+
+    public override init() {
+        super.init()
     }
     
     public required init?(coder aDecoder: NSCoder) {

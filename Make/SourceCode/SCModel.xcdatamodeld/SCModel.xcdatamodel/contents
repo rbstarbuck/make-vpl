@@ -65,13 +65,11 @@
     <entity name="Variable" representedClassName=".SCVariable" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" attributeType="Transformable" customClassName="Variable" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="scene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="variables" inverseEntity="Scene" syncable="YES"/>
         <relationship name="sprite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="variables" inverseEntity="Sprite" syncable="YES"/>
         <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="variables" inverseEntity="World" syncable="YES"/>
-        <fetchedProperty name="owner" optional="YES" syncable="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Variable" predicateString="SELF.id == $FETCH_SOURCE.ownerId"/>
-        </fetchedProperty>
     </entity>
     <entity name="World" representedClassName=".SCWorld" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
@@ -93,7 +91,7 @@
         <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="210"/>
         <element name="Scene" positionX="-522" positionY="378" width="128" height="133"/>
         <element name="Sprite" positionX="-531" positionY="486" width="128" height="165"/>
-        <element name="Variable" positionX="-864" positionY="234" width="128" height="164"/>
+        <element name="Variable" positionX="-864" positionY="234" width="128" height="150"/>
         <element name="World" positionX="-693" positionY="360" width="128" height="195"/>
     </elements>
 </model>

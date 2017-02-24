@@ -25,7 +25,6 @@ public class SCSprite: NSManagedObject {
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
-        self.graphic = self.world.createGraphic()
         self.methods = Set<SCMethod>()
         self.variables = Set<SCVariable>()
     }

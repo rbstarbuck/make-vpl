@@ -11,7 +11,13 @@ import SpriteKit
 import CoreData
 
 
-public class ReferenceVariable: NSObject, NSCoding, Variable {
+public class ReferenceVariable: NSObject, Variable {
+    
+    public var type: VariableType {
+        get {
+            return .reference
+        }
+    }
     
     public let sourceId: String
     public let graphicId: String
@@ -42,16 +48,4 @@ public class ReferenceVariable: NSObject, NSCoding, Variable {
         aCoder.encode(self.rotation, forKey: "rotation")
     }
     
-    
-    public func instantiate(in scene: OCScene) {
-        if let graphic = scene.world.graphics[self.graphicId] {
-            let sprite = SKSpriteNode(texture: graphic.frames.first!)
-            sprite.position = CGPoint(x: self.position.x * scene.size.width,
-                                      y: self.position.y * scene.size.height)
-            sprite.setScale(CGFloat(self.scale))
-            sprite.zRotation = CGFloat(self.rotation)
-            
-            scene.addChild(sprite)
-        }
-    }
 }

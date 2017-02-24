@@ -64,6 +64,7 @@ public class SCWorld: NSManagedObject {
         let sprite: SCSprite = self.connector.createEntity(SCSprite.entityName)!
         sprite.name = "\(SCConstants.SPRITE_DISPLAY_TITLE) \(self.sprites.count + 1)"
         sprite.physicsBody = self.connector.createEntity(SCPhysicsBody.entityName)!
+        sprite.graphic = self.createGraphic()
         self.addToSprites(sprite)
         return sprite
     }

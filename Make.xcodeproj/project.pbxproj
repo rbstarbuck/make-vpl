@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */; };
 		A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */; };
+		A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121B64E1E60C4C90093A1FC /* Variables.swift */; };
 		A12FE7D81E153B5D0015989D /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */; };
 		A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */; };
 		A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */; };
@@ -88,6 +89,7 @@
 		A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */; };
 		A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */; };
 		A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */; };
+		A1FFB9BC1E417C2D00770BF1 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FFB9BB1E417C2D00770BF1 /* Compiler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,7 @@
 /* Begin PBXFileReference section */
 		A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFrameCollectionViewCell.swift; path = Graphics/AddFrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFrameCollectionViewCell.xib; path = Graphics/AddFrameCollectionViewCell.xib; sourceTree = "<group>"; };
+		A121B64E1E60C4C90093A1FC /* Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variables.swift; path = ObjectCode/Variables.swift; sourceTree = "<group>"; };
 		A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewController.swift; path = Utility/CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerTableViewCell.swift; path = Graphics/LayerTableViewCell.swift; sourceTree = "<group>"; };
 		A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LayerTableViewCell.xib; path = Graphics/LayerTableViewCell.xib; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 		A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesEditorViewController.swift; path = Sprites/SpritesEditorViewController.swift; sourceTree = "<group>"; };
 		A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpritesEditorViewController.xib; path = Sprites/SpritesEditorViewController.xib; sourceTree = "<group>"; };
 		A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsPropertiesController.swift; path = Sprites/PhysicsPropertiesController.swift; sourceTree = "<group>"; };
+		A1FFB9BB1E417C2D00770BF1 /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compiler.swift; path = Compiler/Compiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,7 @@
 				A1F51FF71E08E90600443ABB /* Graphics */,
 				A1F907541E301DF50015DAFE /* Sprites */,
 				A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */,
+				A1FFB9BA1E417C1500770BF1 /* Compiler */,
 				A143A7901DEBF53A004DBC84 /* GameScene.sks */,
 				A143A7921DEBF53A004DBC84 /* Actions.sks */,
 				A143A7941DEBF53A004DBC84 /* GameScene.swift */,
@@ -327,7 +332,6 @@
 			children = (
 				A1D8B6D51E3E87690069FFF5 /* Scene */,
 				A1D8B6DA1E3E97CE0069FFF5 /* Graphic */,
-				A1A11DD21E406C2A0002F5EE /* OCWorld.swift */,
 			);
 			name = "Object Code";
 			sourceTree = "<group>";
@@ -403,9 +407,11 @@
 		A1D8B6D51E3E87690069FFF5 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				A1A11DD21E406C2A0002F5EE /* OCWorld.swift */,
 				A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */,
 				A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */,
 				A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */,
+				A121B64E1E60C4C90093A1FC /* Variables.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -498,6 +504,14 @@
 				A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */,
 			);
 			name = Physics;
+			sourceTree = "<group>";
+		};
+		A1FFB9BA1E417C1500770BF1 /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				A1FFB9BB1E417C2D00770BF1 /* Compiler.swift */,
+			);
+			name = Compiler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +678,7 @@
 				A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
 				A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */,
+				A1FFB9BC1E417C2D00770BF1 /* Compiler.swift in Sources */,
 				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
@@ -697,6 +712,7 @@
 				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
+				A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
 				A1F5203B1E09E08600443ABB /* SCGraphic+CoreDataClass.swift in Sources */,
 				A12FE7E91E1599A70015989D /* BrushView.swift in Sources */,
