@@ -15,7 +15,7 @@ public class SCVariable: NSManagedObject {
 
     
     @NSManaged public var id: String
-    @NSManaged public var data: Variable
+    @NSManaged public var data: SCVariableData
     @NSManaged public var name: String
     
     

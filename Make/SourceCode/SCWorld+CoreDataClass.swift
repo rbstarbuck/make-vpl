@@ -24,6 +24,7 @@ public class SCWorld: NSManagedObject {
     
     @NSManaged public var id: String
     @NSManaged public var name: String
+    @NSManaged public var initialScene: String
     @NSManaged public var gravityDirection: GravityDirection
     @NSManaged public var graphics: Set<SCGraphic>
     @NSManaged public var scenes: Set<SCScene>
@@ -35,11 +36,6 @@ public class SCWorld: NSManagedObject {
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
         self.name = "Hello World!"
-        self.graphics = Set<SCGraphic>()
-        self.scenes = Set<SCScene>()
-        self.sprites = Set<SCSprite>()
-        self.methods = Set<SCMethod>()
-        self.variables = Set<SCVariable>()
     }
     
     @discardableResult

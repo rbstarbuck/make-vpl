@@ -61,8 +61,6 @@ public class SCGraphic: NSManagedObject {
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
-        self.frames = Set<SCFrame>()
-        self.sprites = Set<SCSprite>()
     }
     
     @discardableResult

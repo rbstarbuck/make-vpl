@@ -61,7 +61,8 @@ public class SCConnector {
     public func createWorld() -> SCWorld {
         let world: SCWorld = self.createEntity(SCWorld.entityName)!
         world.connector = self
-        world.createScene()
+        let initialScene = world.createScene()
+        world.initialScene = initialScene.id
         return world
     }
     

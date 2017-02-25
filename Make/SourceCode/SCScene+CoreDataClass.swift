@@ -17,6 +17,7 @@ public class SCScene: NSManagedObject {
     @NSManaged public var id: String
     @NSManaged public var name: String
     @NSManaged public var methods: Set<SCMethod>
+    @NSManaged public var references: Set<SCReference>
     @NSManaged public var variables: Set<SCVariable>
     @NSManaged public var world: SCWorld
     
@@ -36,8 +37,6 @@ public class SCScene: NSManagedObject {
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
-        self.methods = Set<SCMethod>()
-        self.variables = Set<SCVariable>()
     }
     
     @discardableResult
@@ -54,6 +53,14 @@ public class SCScene: NSManagedObject {
         variable.name = "\(SCConstants.VARIABLE_DISPLAY_TITLE) \(self.variables.count + 1)"
         self.addToVariables(variable)
         return variable
+    }
+    
+    @discardableResult
+    public func createReference(to sprite: SCSprite) -> SCReference {
+        let reference: SCReference = self.world.connector.createEntity(SCReference.entityName)!
+        reference.sprite = sprite
+        self.addToReferences(reference)
+        return reference
     }
     
 }

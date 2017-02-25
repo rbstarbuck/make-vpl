@@ -23,6 +23,8 @@ class OCSceneController: NSObject {
         super.init()
         
         self.scene.delegate = self
+        self.scene.scaleMode = .fill
+        self.sceneView.presentScene(self.scene)
     }
     
 }

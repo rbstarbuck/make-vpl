@@ -2,7 +2,7 @@
 //  SCSprite+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 1/18/17.
+//  Created by Richmond Starbuck on 2/25/17.
 //
 //
 

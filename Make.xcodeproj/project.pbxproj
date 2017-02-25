@@ -10,6 +10,8 @@
 		A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */; };
 		A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */; };
 		A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121B64E1E60C4C90093A1FC /* Variables.swift */; };
+		A121B6511E60D2F10093A1FC /* OCVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121B6501E60D2F10093A1FC /* OCVariable.swift */; };
+		A121B6531E60D36D0093A1FC /* OCSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121B6521E60D36D0093A1FC /* OCSprite.swift */; };
 		A12FE7D81E153B5D0015989D /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */; };
 		A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */; };
 		A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */; };
@@ -30,6 +32,10 @@
 		A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143A79B1DEBF53A004DBC84 /* Assets.xcassets */; };
 		A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143A79D1DEBF53A004DBC84 /* LaunchScreen.storyboard */; };
 		A143A7B51DEBF53A004DBC84 /* MakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */; };
+		A17C79571E61F1EE0001F43C /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79551E61F1EE0001F43C /* GameplayViewController.swift */; };
+		A17C79581E61F1EE0001F43C /* GameplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79561E61F1EE0001F43C /* GameplayViewController.xib */; };
+		A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */; };
+		A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */; };
 		A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */; };
 		A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */; };
 		A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D161E1837FA0079EBBE /* FrameController.swift */; };
@@ -38,8 +44,7 @@
 		A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */; };
 		A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F26CC1E0D0F900057FB74 /* CoreData.framework */; };
 		A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */; };
-		A1A11DCE1E405B210002F5EE /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCD1E405B210002F5EE /* Variable.swift */; };
-		A1A11DD11E405B690002F5EE /* ReferenceVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DD01E405B690002F5EE /* ReferenceVariable.swift */; };
+		A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCD1E405B210002F5EE /* SCVariableData.swift */; };
 		A1A11DD31E406C2A0002F5EE /* OCWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DD21E406C2A0002F5EE /* OCWorld.swift */; };
 		A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD0C1E0D332000102431 /* SCConnector.swift */; };
 		A1C5CD5A1E0DCF6A00102431 /* SCFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */; };
@@ -89,7 +94,6 @@
 		A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */; };
 		A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */; };
 		A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */; };
-		A1FFB9BC1E417C2D00770BF1 /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FFB9BB1E417C2D00770BF1 /* Compiler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,8 @@
 		A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFrameCollectionViewCell.swift; path = Graphics/AddFrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFrameCollectionViewCell.xib; path = Graphics/AddFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		A121B64E1E60C4C90093A1FC /* Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variables.swift; path = ObjectCode/Variables.swift; sourceTree = "<group>"; };
+		A121B6501E60D2F10093A1FC /* OCVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCVariable.swift; path = ObjectCode/OCVariable.swift; sourceTree = "<group>"; };
+		A121B6521E60D36D0093A1FC /* OCSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSprite.swift; path = ObjectCode/OCSprite.swift; sourceTree = "<group>"; };
 		A12FE7D71E153B5D0015989D /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTableViewController.swift; path = Utility/CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		A12FE7D91E15454A0015989D /* LayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerTableViewCell.swift; path = Graphics/LayerTableViewCell.swift; sourceTree = "<group>"; };
 		A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LayerTableViewCell.xib; path = Graphics/LayerTableViewCell.xib; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 		A143A7B01DEBF53A004DBC84 /* MakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITests.swift; sourceTree = "<group>"; };
 		A143A7B61DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A17C79551E61F1EE0001F43C /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayViewController.swift; path = ObjectCode/GameplayViewController.swift; sourceTree = "<group>"; };
+		A17C79561E61F1EE0001F43C /* GameplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameplayViewController.xib; path = ObjectCode/GameplayViewController.xib; sourceTree = "<group>"; };
+		A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataClass.swift"; path = "SourceCode/SCReference+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataProperties.swift"; path = "SourceCode/SCReference+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewController.swift; path = Utility/CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
 		A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewCell.swift; path = Utility/CoreDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A18B0D161E1837FA0079EBBE /* FrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameController.swift; path = Graphics/FrameController.swift; sourceTree = "<group>"; };
@@ -147,8 +157,7 @@
 		A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTestStack.swift; path = Utility/CoreDataTestStack.swift; sourceTree = "<group>"; };
 		A18F26CC1E0D0F900057FB74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSceneView.swift; path = ObjectCode/OCSceneView.swift; sourceTree = "<group>"; };
-		A1A11DCD1E405B210002F5EE /* Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variable.swift; path = SourceCode/Variable.swift; sourceTree = "<group>"; };
-		A1A11DD01E405B690002F5EE /* ReferenceVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReferenceVariable.swift; path = SourceCode/ReferenceVariable.swift; sourceTree = "<group>"; };
+		A1A11DCD1E405B210002F5EE /* SCVariableData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCVariableData.swift; path = SourceCode/SCVariableData.swift; sourceTree = "<group>"; };
 		A1A11DD21E406C2A0002F5EE /* OCWorld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCWorld.swift; path = ObjectCode/OCWorld.swift; sourceTree = "<group>"; };
 		A1C5CD0C1E0D332000102431 /* SCConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCConnector.swift; path = SourceCode/SCConnector.swift; sourceTree = "<group>"; };
 		A1C5CD581E0DCF6A00102431 /* SCFrameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCFrameTests.swift; path = SourceCode/SCFrameTests.swift; sourceTree = "<group>"; };
@@ -198,7 +207,6 @@
 		A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesEditorViewController.swift; path = Sprites/SpritesEditorViewController.swift; sourceTree = "<group>"; };
 		A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpritesEditorViewController.xib; path = Sprites/SpritesEditorViewController.xib; sourceTree = "<group>"; };
 		A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsPropertiesController.swift; path = Sprites/PhysicsPropertiesController.swift; sourceTree = "<group>"; };
-		A1FFB9BB1E417C2D00770BF1 /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compiler.swift; path = Compiler/Compiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,7 +277,6 @@
 				A1F51FF71E08E90600443ABB /* Graphics */,
 				A1F907541E301DF50015DAFE /* Sprites */,
 				A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */,
-				A1FFB9BA1E417C1500770BF1 /* Compiler */,
 				A143A7901DEBF53A004DBC84 /* GameScene.sks */,
 				A143A7921DEBF53A004DBC84 /* Actions.sks */,
 				A143A7941DEBF53A004DBC84 /* GameScene.swift */,
@@ -309,6 +316,7 @@
 				A1DBE0E51E067CDF0053758F /* SCVariable+CoreDataProperties.swift */,
 				A1DBE0E61E067CDF0053758F /* SCWorld+CoreDataProperties.swift */,
 				A1DBE0E71E067CDF0053758F /* SCSprite+CoreDataProperties.swift */,
+				A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */,
 				A1F9074A1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift */,
 				A1F5203A1E09E08600443ABB /* SCGraphic+CoreDataProperties.swift */,
 				A1F520261E09DFD900443ABB /* SCFrame+CoreDataProperties.swift */,
@@ -330,7 +338,10 @@
 		A1564B131E066F8100632031 /* Object Code */ = {
 			isa = PBXGroup;
 			children = (
+				A17C79551E61F1EE0001F43C /* GameplayViewController.swift */,
+				A17C79561E61F1EE0001F43C /* GameplayViewController.xib */,
 				A1D8B6D51E3E87690069FFF5 /* Scene */,
+				A17C79541E61BF6A0001F43C /* Variable */,
 				A1D8B6DA1E3E97CE0069FFF5 /* Graphic */,
 			);
 			name = "Object Code";
@@ -352,6 +363,15 @@
 				A1DBE0C31E0671770053758F /* SCScene+CoreDataClass.swift */,
 			);
 			name = "Source Code";
+			sourceTree = "<group>";
+		};
+		A17C79541E61BF6A0001F43C /* Variable */ = {
+			isa = PBXGroup;
+			children = (
+				A121B64E1E60C4C90093A1FC /* Variables.swift */,
+				A121B6501E60D2F10093A1FC /* OCVariable.swift */,
+			);
+			name = Variable;
 			sourceTree = "<group>";
 		};
 		A18B0D151E1837C70079EBBE /* Frame */ = {
@@ -378,8 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				A1DBE0CB1E0671770053758F /* SCVariable+CoreDataClass.swift */,
-				A1A11DCD1E405B210002F5EE /* Variable.swift */,
-				A1A11DD01E405B690002F5EE /* ReferenceVariable.swift */,
+				A1A11DCD1E405B210002F5EE /* SCVariableData.swift */,
 			);
 			name = Variable;
 			sourceTree = "<group>";
@@ -411,7 +430,7 @@
 				A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */,
 				A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */,
 				A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */,
-				A121B64E1E60C4C90093A1FC /* Variables.swift */,
+				A121B6521E60D36D0093A1FC /* OCSprite.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -480,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				A1DBE0C71E0671770053758F /* SCSprite+CoreDataClass.swift */,
+				A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */,
 				A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */,
 				A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */,
 			);
@@ -504,14 +524,6 @@
 				A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */,
 			);
 			name = Physics;
-			sourceTree = "<group>";
-		};
-		A1FFB9BA1E417C1500770BF1 /* Compiler */ = {
-			isa = PBXGroup;
-			children = (
-				A1FFB9BB1E417C2D00770BF1 /* Compiler.swift */,
-			);
-			name = Compiler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F51FFF1E08EF0600443ABB /* GraphicsEditorViewController.xib in Resources */,
+				A17C79581E61F1EE0001F43C /* GameplayViewController.xib in Resources */,
 				A143A79A1DEBF53A004DBC84 /* Main.storyboard in Resources */,
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
@@ -665,7 +678,7 @@
 				A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */,
 				A1A11DD31E406C2A0002F5EE /* OCWorld.swift in Sources */,
 				A13C8ED91E2AC0E200FA33AD /* OCGraphic.swift in Sources */,
-				A1A11DCE1E405B210002F5EE /* Variable.swift in Sources */,
+				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
@@ -678,7 +691,6 @@
 				A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
 				A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */,
-				A1FFB9BC1E417C2D00770BF1 /* Compiler.swift in Sources */,
 				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
@@ -695,7 +707,6 @@
 				A1F520181E09C2B000443ABB /* ObservableArray.swift in Sources */,
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
-				A1A11DD11E405B690002F5EE /* ReferenceVariable.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
 				A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */,
@@ -707,10 +718,12 @@
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
+				A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
+				A121B6531E60D36D0093A1FC /* OCSprite.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
@@ -719,10 +732,13 @@
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */,
 				A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */,
+				A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */,
+				A17C79571E61F1EE0001F43C /* GameplayViewController.swift in Sources */,
 				A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */,
 				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
 				A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
+				A121B6511E60D2F10093A1FC /* OCVariable.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
 				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,
 				A130A2011E26DBE10073CD51 /* MainNavigationController.swift in Sources */,

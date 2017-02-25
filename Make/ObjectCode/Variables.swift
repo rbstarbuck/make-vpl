@@ -12,23 +12,27 @@ import SpriteKit
 
 public class Variables {
     
-    public var numbers = [String: NSNumber]()
-    public var strings = [String: String]()
-    public var booleans = [String: Bool]()
+    public var parent: Variables?
+    public var variables = [String: OCVariable]()
     
     
-    public func insert(_ copy: Variables) {
-        for (k, v) in copy.numbers {
-            self.numbers[k] = v
+    public init() { }
+    
+    public init(parent: Variables) {
+        self.parent = parent
+    }
+    
+    
+    public func insert(_ ocVariable: OCVariable) {
+        self.variables[ocVariable.id] = ocVariable
+    }
+    
+    public subscript(_ id: String) -> OCVariable? {
+        var variable = self.variables[id]
+        if variable == nil {
+            variable = self.parent?[id]
         }
-        
-        for (k, v) in copy.strings {
-            self.strings[k] = v
-        }
-        
-        for (k, v) in copy.booleans {
-            self.booleans[k] = v
-        }
+        return variable
     }
     
 }

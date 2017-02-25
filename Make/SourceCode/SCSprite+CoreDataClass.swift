@@ -18,6 +18,7 @@ public class SCSprite: NSManagedObject {
     @NSManaged public var name: String
     @NSManaged public var graphic: SCGraphic
     @NSManaged public var methods: Set<SCMethod>
+    @NSManaged public var references: Set<SCReference>
     @NSManaged public var variables: Set<SCVariable>
     @NSManaged public var world: SCWorld
     @NSManaged public var physicsBody: SCPhysicsBody
@@ -25,8 +26,6 @@ public class SCSprite: NSManagedObject {
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
-        self.methods = Set<SCMethod>()
-        self.variables = Set<SCVariable>()
     }
     
     @discardableResult

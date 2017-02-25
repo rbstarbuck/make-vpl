@@ -88,10 +88,6 @@ public class SCFrame: NSManagedObject {
     }()
     
     
-    override public func awakeFromInsert() {
-        self.layers = Set<SCLayer>()
-    }
-    
     
     public func select() {
         self.graphic.selectedFrame.value = self

@@ -2,7 +2,7 @@
 //  SCScene+CoreDataProperties.swift
 //  Make
 //
-//  Created by Richmond Starbuck on 12/23/16.
+//  Created by Richmond Starbuck on 2/25/17.
 //
 //
 
@@ -51,5 +51,22 @@ extension SCScene {
 
     @objc(removeVariables:)
     @NSManaged public func removeFromVariables(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for references
+extension SCScene {
+
+    @objc(addReferencesObject:)
+    @NSManaged public func addToReferences(_ value: SCReference)
+
+    @objc(removeReferencesObject:)
+    @NSManaged public func removeFromReferences(_ value: SCReference)
+
+    @objc(addReferences:)
+    @NSManaged public func addToReferences(_ values: NSSet)
+
+    @objc(removeReferences:)
+    @NSManaged public func removeFromReferences(_ values: NSSet)
 
 }
