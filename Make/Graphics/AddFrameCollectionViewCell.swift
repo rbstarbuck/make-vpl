@@ -8,12 +8,8 @@
 
 import UIKit
 
-class AddFrameCollectionViewCell: CoreDataCollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+class AddFrameCollectionViewCell: CoreDataCollectionViewCell {
 
     @IBAction func addFrameTouch(_ sender: Any) {
         if let viewController = self.parentViewController, let graphic = self.entity as? SCGraphic {

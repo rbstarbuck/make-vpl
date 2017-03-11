@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CEAF07A1516B1438FC86889 /* Pods_Make.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A45F00CEA8514814B6334F /* Pods_Make.framework */; };
+		7BB0B0F614E82EC89ABC5451 /* Pods_MakeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2FBFB7264A64A35B43F664 /* Pods_MakeUITests.framework */; };
 		A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */; };
 		A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */; };
 		A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A121B64E1E60C4C90093A1FC /* Variables.swift */; };
@@ -32,10 +34,16 @@
 		A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143A79B1DEBF53A004DBC84 /* Assets.xcassets */; };
 		A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143A79D1DEBF53A004DBC84 /* LaunchScreen.storyboard */; };
 		A143A7B51DEBF53A004DBC84 /* MakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */; };
-		A17C79571E61F1EE0001F43C /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79551E61F1EE0001F43C /* GameplayViewController.swift */; };
-		A17C79581E61F1EE0001F43C /* GameplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79561E61F1EE0001F43C /* GameplayViewController.xib */; };
 		A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */; };
 		A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */; };
+		A17C79681E6318F90001F43C /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79661E6318F90001F43C /* GameplayViewController.swift */; };
+		A17C79691E6318F90001F43C /* GameplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79671E6318F90001F43C /* GameplayViewController.xib */; };
+		A17C796F1E6327F70001F43C /* WorldEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C796D1E6327F70001F43C /* WorldEditorViewController.swift */; };
+		A17C79701E6327F70001F43C /* WorldEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */; };
+		A17C79781E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */; };
+		A17C79791E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */; };
+		A1818B851E73443E00D76C05 /* AddEntityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */; };
+		A1818B861E73443E00D76C05 /* AddEntityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */; };
 		A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */; };
 		A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */; };
 		A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D161E1837FA0079EBBE /* FrameController.swift */; };
@@ -86,6 +94,9 @@
 		A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520541E0A4C5100443ABB /* CanvasController.swift */; };
 		A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */; };
 		A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F520581E0A72E800443ABB /* ObservableEntity.swift */; };
+		A1F6427A1E70F4B20034292D /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F642791E70F4B20034292D /* SelectionView.swift */; };
+		A1F6427C1E70F4CB0034292D /* SelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F6427B1E70F4CB0034292D /* SelectionView.xib */; };
+		A1F6427E1E70F6B40034292D /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6427D1E70F6B40034292D /* SelectionController.swift */; };
 		A1F9074B1E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */; };
 		A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9074A1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift */; };
 		A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */; };
@@ -94,6 +105,7 @@
 		A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */; };
 		A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */; };
 		A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */; };
+		D64BEF8394B94FF6CE11C0A1 /* Pods_MakeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A45BD1DA3AC7B8CAA7062F /* Pods_MakeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +126,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B2FBFB7264A64A35B43F664 /* Pods_MakeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C6F2864828AB8C3F0964EC2 /* Pods-MakeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeUITests/Pods-MakeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E8ECE33E6B8B238150C964D /* Pods-Make.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Make.release.xcconfig"; path = "Pods/Target Support Files/Pods-Make/Pods-Make.release.xcconfig"; sourceTree = "<group>"; };
+		21362B54C8066E9CED37A356 /* Pods-MakeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeTests/Pods-MakeTests.release.xcconfig"; sourceTree = "<group>"; };
+		54A45F00CEA8514814B6334F /* Pods_Make.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Make.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61A45BD1DA3AC7B8CAA7062F /* Pods_MakeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11712751E2140CC00C7C791 /* AddFrameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFrameCollectionViewCell.swift; path = Graphics/AddFrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		A11712761E2140CC00C7C791 /* AddFrameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddFrameCollectionViewCell.xib; path = Graphics/AddFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		A121B64E1E60C4C90093A1FC /* Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Variables.swift; path = ObjectCode/Variables.swift; sourceTree = "<group>"; };
@@ -145,10 +163,17 @@
 		A143A7B01DEBF53A004DBC84 /* MakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITests.swift; sourceTree = "<group>"; };
 		A143A7B61DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A17C79551E61F1EE0001F43C /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayViewController.swift; path = ObjectCode/GameplayViewController.swift; sourceTree = "<group>"; };
-		A17C79561E61F1EE0001F43C /* GameplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameplayViewController.xib; path = ObjectCode/GameplayViewController.xib; sourceTree = "<group>"; };
+		A168376AF0F9FD137E28FA91 /* Pods-MakeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeTests/Pods-MakeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataClass.swift"; path = "SourceCode/SCReference+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataProperties.swift"; path = "SourceCode/SCReference+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A17C79661E6318F90001F43C /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayViewController.swift; path = Gameplay/GameplayViewController.swift; sourceTree = "<group>"; };
+		A17C79671E6318F90001F43C /* GameplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameplayViewController.xib; path = Gameplay/GameplayViewController.xib; sourceTree = "<group>"; };
+		A17C796D1E6327F70001F43C /* WorldEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldEditorViewController.swift; path = World/WorldEditorViewController.swift; sourceTree = "<group>"; };
+		A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WorldEditorViewController.xib; path = World/WorldEditorViewController.xib; sourceTree = "<group>"; };
+		A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicSelectionCollectionViewCell.swift; path = World/GraphicSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GraphicSelectionCollectionViewCell.xib; path = World/GraphicSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEntityCollectionViewCell.swift; path = Editor/AddEntityCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddEntityCollectionViewCell.xib; path = Editor/AddEntityCollectionViewCell.xib; sourceTree = "<group>"; };
 		A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewController.swift; path = Utility/CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
 		A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewCell.swift; path = Utility/CoreDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A18B0D161E1837FA0079EBBE /* FrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameController.swift; path = Graphics/FrameController.swift; sourceTree = "<group>"; };
@@ -199,6 +224,9 @@
 		A1F520541E0A4C5100443ABB /* CanvasController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasController.swift; path = Graphics/CanvasController.swift; sourceTree = "<group>"; };
 		A1F520561E0A528C00443ABB /* SCCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCCoreDataStack.swift; path = SourceCode/SCCoreDataStack.swift; sourceTree = "<group>"; };
 		A1F520581E0A72E800443ABB /* ObservableEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservableEntity.swift; path = Utility/ObservableEntity.swift; sourceTree = "<group>"; };
+		A1F642791E70F4B20034292D /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionView.swift; path = Editor/SelectionView.swift; sourceTree = "<group>"; };
+		A1F6427B1E70F4CB0034292D /* SelectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectionView.xib; path = Editor/SelectionView.xib; sourceTree = "<group>"; };
+		A1F6427D1E70F6B40034292D /* SelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionController.swift; path = Editor/SelectionController.swift; sourceTree = "<group>"; };
 		A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCPhysicsBody+CoreDataClass.swift"; path = "SourceCode/SCPhysicsBody+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A1F9074A1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCPhysicsBody+CoreDataProperties.swift"; path = "SourceCode/SCPhysicsBody+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCPhysicsBodyShape.swift; path = SourceCode/SCPhysicsBodyShape.swift; sourceTree = "<group>"; };
@@ -207,6 +235,8 @@
 		A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesEditorViewController.swift; path = Sprites/SpritesEditorViewController.swift; sourceTree = "<group>"; };
 		A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpritesEditorViewController.xib; path = Sprites/SpritesEditorViewController.xib; sourceTree = "<group>"; };
 		A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsPropertiesController.swift; path = Sprites/PhysicsPropertiesController.swift; sourceTree = "<group>"; };
+		B6B71204BB46685F658E2028 /* Pods-Make.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Make.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Make/Pods-Make.debug.xcconfig"; sourceTree = "<group>"; };
+		F7E7D72645B1C33F5629723C /* Pods-MakeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MakeUITests/Pods-MakeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */,
+				0CEAF07A1516B1438FC86889 /* Pods_Make.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64BEF8394B94FF6CE11C0A1 /* Pods_MakeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,12 +261,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB0B0F614E82EC89ABC5451 /* Pods_MakeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3ADEB2E28659F13D17B44375 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6B71204BB46685F658E2028 /* Pods-Make.debug.xcconfig */,
+				1E8ECE33E6B8B238150C964D /* Pods-Make.release.xcconfig */,
+				A168376AF0F9FD137E28FA91 /* Pods-MakeTests.debug.xcconfig */,
+				21362B54C8066E9CED37A356 /* Pods-MakeTests.release.xcconfig */,
+				1C6F2864828AB8C3F0964EC2 /* Pods-MakeUITests.debug.xcconfig */,
+				F7E7D72645B1C33F5629723C /* Pods-MakeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A12FE7E11E1597E00015989D /* Brush */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +301,7 @@
 				A143A7B31DEBF53A004DBC84 /* MakeUITests */,
 				A143A78C1DEBF53A004DBC84 /* Products */,
 				A18F26CB1E0D0F900057FB74 /* Frameworks */,
+				3ADEB2E28659F13D17B44375 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,18 +321,15 @@
 				A1F520091E091FE400443ABB /* Utility */,
 				A16376CC1DF1656500231007 /* Source Code */,
 				A1564B131E066F8100632031 /* Object Code */,
-				A1F51FF71E08E90600443ABB /* Graphics */,
-				A1F907541E301DF50015DAFE /* Sprites */,
+				A17C796A1E63193E0001F43C /* Editor */,
+				A17C79651E63188F0001F43C /* Gameplay */,
 				A143A78E1DEBF53A004DBC84 /* AppDelegate.swift */,
-				A143A7901DEBF53A004DBC84 /* GameScene.sks */,
-				A143A7921DEBF53A004DBC84 /* Actions.sks */,
-				A143A7941DEBF53A004DBC84 /* GameScene.swift */,
-				A143A7961DEBF53A004DBC84 /* GameViewController.swift */,
-				A143A7981DEBF53A004DBC84 /* Main.storyboard */,
 				A130A2001E26DBE10073CD51 /* MainNavigationController.swift */,
+				A143A7981DEBF53A004DBC84 /* Main.storyboard */,
 				A143A79B1DEBF53A004DBC84 /* Assets.xcassets */,
 				A143A79D1DEBF53A004DBC84 /* LaunchScreen.storyboard */,
 				A143A7A01DEBF53A004DBC84 /* Info.plist */,
+				A17C796B1E63197B0001F43C /* Junk */,
 			);
 			path = Make;
 			sourceTree = "<group>";
@@ -338,8 +382,7 @@
 		A1564B131E066F8100632031 /* Object Code */ = {
 			isa = PBXGroup;
 			children = (
-				A17C79551E61F1EE0001F43C /* GameplayViewController.swift */,
-				A17C79561E61F1EE0001F43C /* GameplayViewController.xib */,
+				A1A11DD21E406C2A0002F5EE /* OCWorld.swift */,
 				A1D8B6D51E3E87690069FFF5 /* Scene */,
 				A17C79541E61BF6A0001F43C /* Variable */,
 				A1D8B6DA1E3E97CE0069FFF5 /* Graphic */,
@@ -374,6 +417,68 @@
 			name = Variable;
 			sourceTree = "<group>";
 		};
+		A17C79651E63188F0001F43C /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				A17C79661E6318F90001F43C /* GameplayViewController.swift */,
+				A17C79671E6318F90001F43C /* GameplayViewController.xib */,
+			);
+			name = Gameplay;
+			sourceTree = "<group>";
+		};
+		A17C796A1E63193E0001F43C /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				A181688F1E73B410003B9CE9 /* Selection View */,
+				A17C796C1E6327CC0001F43C /* World */,
+				A1F907541E301DF50015DAFE /* Sprites */,
+				A1F51FF71E08E90600443ABB /* Graphics */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
+		A17C796B1E63197B0001F43C /* Junk */ = {
+			isa = PBXGroup;
+			children = (
+				A143A7901DEBF53A004DBC84 /* GameScene.sks */,
+				A143A7921DEBF53A004DBC84 /* Actions.sks */,
+				A143A7941DEBF53A004DBC84 /* GameScene.swift */,
+				A143A7961DEBF53A004DBC84 /* GameViewController.swift */,
+			);
+			name = Junk;
+			sourceTree = "<group>";
+		};
+		A17C796C1E6327CC0001F43C /* World */ = {
+			isa = PBXGroup;
+			children = (
+				A17C796D1E6327F70001F43C /* WorldEditorViewController.swift */,
+				A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */,
+				A17C79721E6329DE0001F43C /* Selection Cells */,
+			);
+			name = World;
+			sourceTree = "<group>";
+		};
+		A17C79721E6329DE0001F43C /* Selection Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */,
+				A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */,
+			);
+			name = "Selection Cells";
+			sourceTree = "<group>";
+		};
+		A181688F1E73B410003B9CE9 /* Selection View */ = {
+			isa = PBXGroup;
+			children = (
+				A1F642791E70F4B20034292D /* SelectionView.swift */,
+				A1F6427B1E70F4CB0034292D /* SelectionView.xib */,
+				A1F6427D1E70F6B40034292D /* SelectionController.swift */,
+				A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */,
+				A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */,
+			);
+			name = "Selection View";
+			sourceTree = "<group>";
+		};
 		A18B0D151E1837C70079EBBE /* Frame */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +495,9 @@
 			isa = PBXGroup;
 			children = (
 				A18F26CC1E0D0F900057FB74 /* CoreData.framework */,
+				54A45F00CEA8514814B6334F /* Pods_Make.framework */,
+				61A45BD1DA3AC7B8CAA7062F /* Pods_MakeTests.framework */,
+				1B2FBFB7264A64A35B43F664 /* Pods_MakeUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -426,7 +534,6 @@
 		A1D8B6D51E3E87690069FFF5 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A1A11DD21E406C2A0002F5EE /* OCWorld.swift */,
 				A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */,
 				A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */,
 				A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */,
@@ -533,9 +640,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A143A7B91DEBF53A004DBC84 /* Build configuration list for PBXNativeTarget "Make" */;
 			buildPhases = (
+				8184E485C9C24097D3AD0F39 /* [CP] Check Pods Manifest.lock */,
 				A143A7871DEBF539004DBC84 /* Sources */,
 				A143A7881DEBF539004DBC84 /* Frameworks */,
 				A143A7891DEBF539004DBC84 /* Resources */,
+				2AE111B891E4A06819ACFE23 /* [CP] Embed Pods Frameworks */,
+				3444B00F5D01DB1A2A29B593 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -550,9 +660,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A143A7BC1DEBF53A004DBC84 /* Build configuration list for PBXNativeTarget "MakeTests" */;
 			buildPhases = (
+				62922165130765354A92DB87 /* [CP] Check Pods Manifest.lock */,
 				A143A7A11DEBF53A004DBC84 /* Sources */,
 				A143A7A21DEBF53A004DBC84 /* Frameworks */,
 				A143A7A31DEBF53A004DBC84 /* Resources */,
+				4F183FD343CD7FED7EED4DB7 /* [CP] Embed Pods Frameworks */,
+				E3CE16BEC3AE9B07809A5196 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -568,9 +681,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A143A7BF1DEBF53A004DBC84 /* Build configuration list for PBXNativeTarget "MakeUITests" */;
 			buildPhases = (
+				94C49C287D33F2CB337F2520 /* [CP] Check Pods Manifest.lock */,
 				A143A7AC1DEBF53A004DBC84 /* Sources */,
 				A143A7AD1DEBF53A004DBC84 /* Frameworks */,
 				A143A7AE1DEBF53A004DBC84 /* Resources */,
+				13B80C8A2F01E0B036570944 /* [CP] Embed Pods Frameworks */,
+				17685A503E7110D08AC9E294 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -638,14 +754,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F51FFF1E08EF0600443ABB /* GraphicsEditorViewController.xib in Resources */,
-				A17C79581E61F1EE0001F43C /* GameplayViewController.xib in Resources */,
+				A17C79691E6318F90001F43C /* GameplayViewController.xib in Resources */,
+				A17C79701E6327F70001F43C /* WorldEditorViewController.xib in Resources */,
+				A1F6427C1E70F4CB0034292D /* SelectionView.xib in Resources */,
 				A143A79A1DEBF53A004DBC84 /* Main.storyboard in Resources */,
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
 				A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */,
 				A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */,
+				A1818B861E73443E00D76C05 /* AddEntityCollectionViewCell.xib in Resources */,
 				A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */,
 				A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */,
+				A17C79791E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib in Resources */,
 				A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */,
 				A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */,
 				A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */,
@@ -669,6 +789,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13B80C8A2F01E0B036570944 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MakeUITests/Pods-MakeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17685A503E7110D08AC9E294 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MakeUITests/Pods-MakeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AE111B891E4A06819ACFE23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Make/Pods-Make-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3444B00F5D01DB1A2A29B593 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Make/Pods-Make-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F183FD343CD7FED7EED4DB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MakeTests/Pods-MakeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62922165130765354A92DB87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8184E485C9C24097D3AD0F39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94C49C287D33F2CB337F2520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3CE16BEC3AE9B07809A5196 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MakeTests/Pods-MakeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A143A7871DEBF539004DBC84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -681,6 +939,7 @@
 				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
+				A1F6427E1E70F6B40034292D /* SelectionController.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
 				A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */,
 				A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */,
@@ -692,6 +951,7 @@
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
 				A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */,
 				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
+				A1F6427A1E70F4B20034292D /* SelectionView.swift in Sources */,
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
 				A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */,
@@ -706,6 +966,7 @@
 				A1F5202A1E09DFD900443ABB /* SCLayer+CoreDataClass.swift in Sources */,
 				A1F520181E09C2B000443ABB /* ObservableArray.swift in Sources */,
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
+				A17C79681E6318F90001F43C /* GameplayViewController.swift in Sources */,
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
@@ -727,13 +988,14 @@
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
+				A17C796F1E6327F70001F43C /* WorldEditorViewController.swift in Sources */,
+				A1818B851E73443E00D76C05 /* AddEntityCollectionViewCell.swift in Sources */,
 				A1F5203B1E09E08600443ABB /* SCGraphic+CoreDataClass.swift in Sources */,
 				A12FE7E91E1599A70015989D /* BrushView.swift in Sources */,
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */,
 				A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */,
 				A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */,
-				A17C79571E61F1EE0001F43C /* GameplayViewController.swift in Sources */,
 				A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */,
 				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
 				A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */,
@@ -742,6 +1004,7 @@
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
 				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,
 				A130A2011E26DBE10073CD51 /* MainNavigationController.swift in Sources */,
+				A17C79781E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift in Sources */,
 				A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,6 +1159,7 @@
 		};
 		A143A7BA1DEBF53A004DBC84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B71204BB46685F658E2028 /* Pods-Make.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -911,6 +1175,7 @@
 		};
 		A143A7BB1DEBF53A004DBC84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E8ECE33E6B8B238150C964D /* Pods-Make.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -925,6 +1190,7 @@
 		};
 		A143A7BD1DEBF53A004DBC84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A168376AF0F9FD137E28FA91 /* Pods-MakeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -942,6 +1208,7 @@
 		};
 		A143A7BE1DEBF53A004DBC84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21362B54C8066E9CED37A356 /* Pods-MakeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -958,6 +1225,7 @@
 		};
 		A143A7C01DEBF53A004DBC84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C6F2864828AB8C3F0964EC2 /* Pods-MakeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;
@@ -972,6 +1240,7 @@
 		};
 		A143A7C11DEBF53A004DBC84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7E7D72645B1C33F5629723C /* Pods-MakeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;

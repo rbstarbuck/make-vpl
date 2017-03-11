@@ -10,15 +10,14 @@ import UIKit
 import CoreData
 
 
-private let reuseIdentifier = "FrameCollectionViewCell"
-private let addFrameReuseIdentifier = "AddFrameCollectionViewCell"
-
 private let cellInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
 private let sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
 private let cellAspectRatio = CGFloat(1)
 
 
 class FrameController: CoreDataCollectionViewController {
+    static let frameCellIdentifier = "FrameCollectionViewCell"
+    static let addFrameCellIdentifier = "AddFrameCollectionViewCell"
     
     var graphic: SCGraphic {
         didSet {
@@ -35,13 +34,14 @@ class FrameController: CoreDataCollectionViewController {
     init(view: UICollectionView, graphic: SCGraphic) {
         self.graphic = graphic
         
-        let frameNib = UINib(nibName: reuseIdentifier, bundle: nil)
-        let addFrameNib = UINib(nibName: addFrameReuseIdentifier, bundle: nil)
+        let frameNib = UINib(nibName: FrameController.frameCellIdentifier, bundle: nil)
+        let addFrameNib = UINib(nibName: FrameController.addFrameCellIdentifier, bundle: nil)
         
-        view.register(frameNib, forCellWithReuseIdentifier: reuseIdentifier)
-        view.register(addFrameNib, forCellWithReuseIdentifier: addFrameReuseIdentifier)
+        view.register(frameNib, forCellWithReuseIdentifier: FrameController.frameCellIdentifier)
+        view.register(addFrameNib, forCellWithReuseIdentifier: FrameController.addFrameCellIdentifier)
         
-        super.init(view: view, cellIdentifier: reuseIdentifier, observer: self.graphic.frameObserver, populate: false)
+        super.init(view: view, cellIdentifier: FrameController.frameCellIdentifier,
+                   observer: self.graphic.frameObserver, populate: false)
         
         self.attach(graphic: self.graphic, populate: false)
         
@@ -144,7 +144,7 @@ extension FrameController {
             return super.collectionView(collectionView, cellForItemAt: indexPath)
         }
         
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: addFrameReuseIdentifier, for: indexPath)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: FrameController.addFrameCellIdentifier, for: indexPath)
         
         if let coreDataCell = cell as? CoreDataCollectionViewCell {
             coreDataCell.configure(delegate: self, entity: self.graphic)

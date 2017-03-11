@@ -40,16 +40,9 @@ public class OCSprite: SKSpriteNode {
         self.setScale(CGFloat(scReference.scale))
         self.zRotation = CGFloat(scReference.rotation)
         
-        let physicsBody = scSprite.physicsBody.shape.instantiate(for: self)
-        physicsBody.isDynamic = scSprite.physicsBody.isDynamic
-        physicsBody.affectedByGravity = scSprite.physicsBody.isAffectedByGravity
-        physicsBody.allowsRotation = scSprite.physicsBody.canRotate
-        physicsBody.density = CGFloat(scSprite.physicsBody.density)
-        physicsBody.friction = CGFloat(scSprite.physicsBody.friction)
-        physicsBody.restitution = CGFloat(scSprite.physicsBody.restitution)
-        physicsBody.linearDamping = CGFloat(scSprite.physicsBody.linearDamping)
-        physicsBody.angularDamping = CGFloat(scSprite.physicsBody.angularDamping)
-        self.physicsBody = physicsBody
+        if scSprite.physicsBody.isEnabled {
+            self.physicsBody = self.makePhysicsBody(from: scSprite.physicsBody)
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -62,4 +55,19 @@ public class OCSprite: SKSpriteNode {
         super.encode(with: aCoder)
     }
     
+    
+    public func makePhysicsBody(from scPhysicsBody: SCPhysicsBody) -> SKPhysicsBody {
+        let physicsBody = scPhysicsBody.shape.instantiate(for: self)
+        
+        physicsBody.isDynamic = scPhysicsBody.isDynamic
+        physicsBody.affectedByGravity = scPhysicsBody.isAffectedByGravity
+        physicsBody.allowsRotation = scPhysicsBody.canRotate
+        physicsBody.density = CGFloat(scPhysicsBody.density)
+        physicsBody.friction = CGFloat(scPhysicsBody.friction)
+        physicsBody.restitution = CGFloat(scPhysicsBody.restitution)
+        physicsBody.linearDamping = CGFloat(scPhysicsBody.linearDamping)
+        physicsBody.angularDamping = CGFloat(scPhysicsBody.angularDamping)
+        
+        return physicsBody
+    }
 }

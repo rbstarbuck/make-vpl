@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ehZ-vy-hUv">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Aw-Kl-mBj">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,70 +9,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
-            <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
-                        <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
-                    </layoutGuides>
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
         <!--Graphics Editor View Controller-->
         <scene sceneID="GhK-C1-QkN">
             <objects>
                 <viewController id="S38-gp-3ra" customClass="GraphicsEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="php-vR-uJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112" y="801"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="LVc-Xo-6bf">
-            <objects>
-                <tableViewController id="58X-Qa-RfW" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wGr-wx-2Hi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qat-QS-4JC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qat-QS-4JC" id="OdA-SN-gHX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="58X-Qa-RfW" id="oXc-oo-NCp"/>
-                            <outlet property="delegate" destination="58X-Qa-RfW" id="JFF-iz-68M"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Ytg-87-uLa"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e5a-2x-qXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1071" y="1466"/>
+            <point key="canvasLocation" x="1595" y="2408"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="kHT-nB-blf">
             <objects>
                 <navigationController id="6Aw-Kl-mBj" customClass="MainNavigationController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="He1-Gp-Q7p">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="He1-Gp-Q7p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="58X-Qa-RfW" kind="relationship" relationship="rootViewController" id="KO0-pR-dWI"/>
+                        <segue destination="wge-wF-lmF" kind="relationship" relationship="rootViewController" id="L3w-xP-wSd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2u8-e5-zuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +40,7 @@
                 <viewController id="HKz-Mt-R1J" customClass="SpritesEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBA-Oc-Dhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="2155"/>
+            <point key="canvasLocation" x="1595" y="1463"/>
         </scene>
         <!--Gameplay View Controller-->
         <scene sceneID="d9S-bC-zxl">
@@ -93,7 +48,21 @@
                 <viewController id="ehZ-vy-hUv" customClass="GameplayViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leQ-Tq-PW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="2822"/>
+            <point key="canvasLocation" x="118" y="2484"/>
+        </scene>
+        <!--World Editor View Controller-->
+        <scene sceneID="ncS-jF-zYX">
+            <objects>
+                <viewController id="wge-wF-lmF" customClass="WorldEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yj5-iI-Bck"/>
+                    <connections>
+                        <segue destination="HKz-Mt-R1J" kind="show" identifier="SpritesEditorViewControllerSegue" id="RdF-0n-qBq"/>
+                        <segue destination="S38-gp-3ra" kind="show" identifier="GraphicsEditorViewControllerSegue" id="gDn-QP-mIQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZo-dD-Wfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="858" y="1464"/>
         </scene>
     </scenes>
 </document>

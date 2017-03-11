@@ -18,6 +18,7 @@ public class SCGraphic: NSManagedObject {
     
     @NSManaged public var id: String
     @NSManaged public var name: String
+    @NSManaged public var dateCreated: Date
     @NSManaged public var frames: Set<SCFrame>
     @NSManaged public var sprites: Set<SCSprite>?
     @NSManaged public var world: SCWorld
@@ -61,6 +62,7 @@ public class SCGraphic: NSManagedObject {
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
+        self.dateCreated = Date()
     }
     
     @discardableResult

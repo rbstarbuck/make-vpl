@@ -9,10 +9,9 @@
 import UIKit
 import CoreData
 
-private let reuseIdentifier = "LayerTableViewCell"
-
 
 class LayerController: CoreDataTableViewController {
+    static let layerCellIdentifier = "LayerTableViewCell"
     
     var graphic: SCGraphic {
         didSet {
@@ -39,10 +38,10 @@ class LayerController: CoreDataTableViewController {
         self.graphic = graphic
         self.frame = graphic.selectedFrame.value!
         
-        let nib = UINib(nibName: reuseIdentifier, bundle: nil)
-        view.register(nib, forCellReuseIdentifier: reuseIdentifier)
+        let nib = UINib(nibName: LayerController.layerCellIdentifier, bundle: nil)
+        view.register(nib, forCellReuseIdentifier: LayerController.layerCellIdentifier)
         
-        super.init(view: view, cellIdentifier: reuseIdentifier, observer: self.frame.layerObserver, populate: false)
+        super.init(view: view, cellIdentifier: LayerController.layerCellIdentifier, observer: self.frame.layerObserver, populate: false)
         
         self.attach(graphic: self.graphic, populate: false)
         self.attach(frame: self.frame, populate: true)

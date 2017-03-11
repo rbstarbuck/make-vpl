@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class GameplayViewController: UIViewController {
     
     @IBOutlet weak var sceneView: OCSceneView!
@@ -42,12 +43,36 @@ class GameplayViewController: UIViewController {
             scene.createReference(to: sprite)
             self.connector.saveContext()
         }
-        scWorld.gravityMagnitude = 0.05
-        scWorld.gravityDirection = .up
+        else if scWorld.sprites.count == 1 {
+            let graphic = scWorld.graphics.first
+            let sprite = scWorld.createSprite()
+            if graphic != nil {
+                sprite.graphic = graphic!
+            }
+            sprite.physicsBody.isDynamic = true
+            let scene = scWorld.scenes.first!
+            let lowerRef = scene.createReference(to: sprite)
+            lowerRef.positionY = 0.75
+            self.connector.saveContext()
+        }
+        scWorld.gravityMagnitude = 0.5
+        scWorld.gravityDirection = .down
         
-        let sprite = scWorld.sprites.first!
-        sprite.physicsBody.isDynamic = true
-        sprite.physicsBody.isAffectedByGravity = true
+        for sprite in scWorld.sprites {
+            sprite.physicsBody.isEnabled = true
+            sprite.physicsBody.isDynamic = true
+            sprite.physicsBody.restitution = 1.0
+            sprite.physicsBody.canRotate = true
+            if sprite.references.first!.positionY > 0.6 {
+                sprite.references.first!.positionX = 0.65
+                sprite.references.first!.positionY = 0.9
+                sprite.physicsBody.isAffectedByGravity = true
+            }
+            else {
+                sprite.references.first!.positionY = 0.2
+                sprite.physicsBody.density = 3.0
+            }
+        }
         
         self.world = OCWorld(from: scWorld)
         // end test code

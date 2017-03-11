@@ -17,33 +17,20 @@ class GraphicsEditorViewController: UIViewController {
     @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var brushView: BrushView!
     
+    var connector: SCConnector!
+    var graphic: SCGraphic!
+    
     var canvasController: CanvasController!
     var frameController: FrameController!
     var layerController: LayerController!
     var brushController: BrushController!
     
-    var world: SCWorld!
-    var graphic: SCGraphic!
-    
-    var connector = SCConnector(context: SCCoreDataStack())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let worlds = self.connector.getWorlds()
-        if let world = worlds.first {
-            self.world = world
-        }
-        else {
-            self.world = self.connector.createWorld()
-        }
-        
-        if let graphic = self.world.graphics.first {
-            self.graphic = graphic
-        }
-        else {
-            self.graphic = self.world.createGraphic()
-        }
+        self.title = "\(SCConstants.GRAPHIC_DISPLAY_TITLE): \"\(self.graphic.name)\""
+        self.edgesForExtendedLayout = UIRectEdge()
+        self.view.layoutSubviews()
         
         let brush = Brush()
         
