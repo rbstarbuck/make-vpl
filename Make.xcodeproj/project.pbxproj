@@ -42,6 +42,9 @@
 		A17C79701E6327F70001F43C /* WorldEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */; };
 		A17C79781E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */; };
 		A17C79791E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */; };
+		A18168931E749ADF003B9CE9 /* SpritesParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168921E749ADF003B9CE9 /* SpritesParametersView.swift */; };
+		A18168951E749AEF003B9CE9 /* SpritesParametersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18168941E749AEF003B9CE9 /* SpritesParametersView.xib */; };
+		A18168991E749F67003B9CE9 /* SpritesParametersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168981E749F67003B9CE9 /* SpritesParametersController.swift */; };
 		A1818B851E73443E00D76C05 /* AddEntityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */; };
 		A1818B861E73443E00D76C05 /* AddEntityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */; };
 		A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */; };
@@ -172,6 +175,9 @@
 		A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WorldEditorViewController.xib; path = World/WorldEditorViewController.xib; sourceTree = "<group>"; };
 		A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicSelectionCollectionViewCell.swift; path = World/GraphicSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GraphicSelectionCollectionViewCell.xib; path = World/GraphicSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		A18168921E749ADF003B9CE9 /* SpritesParametersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesParametersView.swift; path = Sprites/SpritesParametersView.swift; sourceTree = "<group>"; };
+		A18168941E749AEF003B9CE9 /* SpritesParametersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpritesParametersView.xib; path = Sprites/SpritesParametersView.xib; sourceTree = "<group>"; };
+		A18168981E749F67003B9CE9 /* SpritesParametersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesParametersController.swift; path = Sprites/SpritesParametersController.swift; sourceTree = "<group>"; };
 		A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEntityCollectionViewCell.swift; path = Editor/AddEntityCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddEntityCollectionViewCell.xib; path = Editor/AddEntityCollectionViewCell.xib; sourceTree = "<group>"; };
 		A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewController.swift; path = Utility/CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
@@ -429,7 +435,7 @@
 		A17C796A1E63193E0001F43C /* Editor */ = {
 			isa = PBXGroup;
 			children = (
-				A181688F1E73B410003B9CE9 /* Selection View */,
+				A18168901E749875003B9CE9 /* Utility */,
 				A17C796C1E6327CC0001F43C /* World */,
 				A1F907541E301DF50015DAFE /* Sprites */,
 				A1F51FF71E08E90600443ABB /* Graphics */,
@@ -477,6 +483,24 @@
 				A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */,
 			);
 			name = "Selection View";
+			sourceTree = "<group>";
+		};
+		A18168901E749875003B9CE9 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A181688F1E73B410003B9CE9 /* Selection View */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		A18168911E749A8C003B9CE9 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				A18168921E749ADF003B9CE9 /* SpritesParametersView.swift */,
+				A18168941E749AEF003B9CE9 /* SpritesParametersView.xib */,
+				A18168981E749F67003B9CE9 /* SpritesParametersController.swift */,
+			);
+			name = Parameters;
 			sourceTree = "<group>";
 		};
 		A18B0D151E1837C70079EBBE /* Frame */ = {
@@ -616,6 +640,7 @@
 		A1F907541E301DF50015DAFE /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				A18168911E749A8C003B9CE9 /* Parameters */,
 				A1F907591E3192AA0015DAFE /* SpritesEditorViewController.swift */,
 				A1F9075A1E3192AA0015DAFE /* SpritesEditorViewController.xib */,
 				A1F989A11E31C28000B9409F /* Physics */,
@@ -756,6 +781,7 @@
 				A1F51FFF1E08EF0600443ABB /* GraphicsEditorViewController.xib in Resources */,
 				A17C79691E6318F90001F43C /* GameplayViewController.xib in Resources */,
 				A17C79701E6327F70001F43C /* WorldEditorViewController.xib in Resources */,
+				A18168951E749AEF003B9CE9 /* SpritesParametersView.xib in Resources */,
 				A1F6427C1E70F4CB0034292D /* SelectionView.xib in Resources */,
 				A143A79A1DEBF53A004DBC84 /* Main.storyboard in Resources */,
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
@@ -950,6 +976,7 @@
 				A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
 				A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */,
+				A18168991E749F67003B9CE9 /* SpritesParametersController.swift in Sources */,
 				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
 				A1F6427A1E70F4B20034292D /* SelectionView.swift in Sources */,
 				A1DBE0F21E067CDF0053758F /* SCWorld+CoreDataProperties.swift in Sources */,
@@ -981,6 +1008,7 @@
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
 				A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
+				A18168931E749ADF003B9CE9 /* SpritesParametersView.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,

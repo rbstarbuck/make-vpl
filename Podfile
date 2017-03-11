@@ -6,7 +6,7 @@ target 'Make' do
   use_frameworks!
 
   # Pods for Make
-  pod 'Material', '~> 2.0'
+  pod 'Material', '~> 2.5.2'
 
   target 'MakeTests' do
     inherit! :search_paths

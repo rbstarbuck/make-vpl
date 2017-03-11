@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SpritesEditorViewController: UIViewController {
     
     @IBOutlet weak var physicsPropertiesView: PhysicsPropertiesView!
