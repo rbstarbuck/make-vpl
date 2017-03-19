@@ -27,10 +27,16 @@ public class OCSprite: SKSpriteNode {
         
         let request = NSFetchRequest<SCSprite>(entityName: SCSprite.entityName)
         request.predicate = NSPredicate(format: "id == %@", scReference.sprite.id)
-        
         let scSprite = ocScene.world.connector.fetchEntities(request)!.first!
-        let graphic = ocScene.world.graphics[scSprite.graphic.id]!
-        let texture = graphic.frames.first!
+        
+        var texture: SKTexture!
+        if let scGraphic = scSprite.graphic {
+            let ocGraphic = ocScene.world.graphics[scGraphic.id]!
+            texture = ocGraphic.frames.first!
+        }
+        else {
+            texture = SKTexture(imageNamed: "Placeholder image")
+        }
         
         super.init(texture: texture, color: UIColor.red, size: texture.size())
         

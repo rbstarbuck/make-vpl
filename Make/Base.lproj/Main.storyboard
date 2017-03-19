@@ -25,6 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.94577074049999998" green="0.0" blue="0.52862353316318778" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="wge-wF-lmF" kind="relationship" relationship="rootViewController" id="L3w-xP-wSd"/>
@@ -37,10 +38,22 @@
         <!--Sprites Editor View Controller-->
         <scene sceneID="o5N-Wi-EFe">
             <objects>
-                <viewController id="HKz-Mt-R1J" customClass="SpritesEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController id="HKz-Mt-R1J" customClass="SpritesEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="bLy-xp-LPJ" kind="show" identifier="GraphicsEditorViewControllerSegue" id="Xqd-wo-Zch"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBA-Oc-Dhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1595" y="1463"/>
+        </scene>
+        <!--Graphics Editor View Controller-->
+        <scene sceneID="pJx-w2-mLI">
+            <objects>
+                <viewController id="bLy-xp-LPJ" customClass="GraphicsEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcp-1C-MDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2343" y="1463"/>
         </scene>
         <!--Gameplay View Controller-->
         <scene sceneID="d9S-bC-zxl">

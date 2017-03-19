@@ -11,14 +11,11 @@ import CoreData
 
 
 class GraphicSelectionCollectionViewCell: CoreDataCollectionViewCell {
+    static let cellIdentifier = "GraphicSelectionCollectionViewCell"
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var editImageButton: UIButton!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     
     override func configure(delegate: CoreDataCollectionViewDelegate, entity: NSManagedObject) {
         super.configure(delegate: delegate, entity: entity)

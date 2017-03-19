@@ -19,6 +19,7 @@ public enum GravityDirection: Int32 {
 public class SCWorld: NSManagedObject {
     public static let entityName = "World"
     public static let graphicObserverKey = "World->>Graphic"
+    public static let spriteObserverKey = "World->>Sprite"
 
     
     public var connector: SCConnector!
@@ -37,6 +38,16 @@ public class SCWorld: NSManagedObject {
     public lazy var graphicObserver: ObservableEntity = {
         let observer = ObservableEntity(key: SCWorld.graphicObserverKey,
                                         entity: SCGraphic.entityName,
+                                        context: self.connector.context)
+        observer.predicate = NSPredicate(format: "world == %@", self)
+        observer.sortDescriptors.append(NSSortDescriptor(key: "dateCreated", ascending: false))
+        observer.startObserving()
+        return observer
+    }()
+    
+    public lazy var spriteObserver: ObservableEntity = {
+        let observer = ObservableEntity(key: SCWorld.spriteObserverKey,
+                                        entity: SCSprite.entityName,
                                         context: self.connector.context)
         observer.predicate = NSPredicate(format: "world == %@", self)
         observer.sortDescriptors.append(NSSortDescriptor(key: "dateCreated", ascending: false))
@@ -72,7 +83,6 @@ public class SCWorld: NSManagedObject {
         let sprite: SCSprite = self.connector.createEntity(SCSprite.entityName)!
         sprite.name = "\(SCConstants.SPRITE_DISPLAY_TITLE) \(self.sprites.count + 1)"
         sprite.physicsBody = self.connector.createEntity(SCPhysicsBody.entityName)!
-        sprite.graphic = self.createGraphic()
         self.addToSprites(sprite)
         return sprite
     }

@@ -14,15 +14,15 @@ class WorldEditorViewController: UIViewController {
     static let graphicsEditorSegueIdentifier = "GraphicsEditorViewControllerSegue"
     static let spritesEditorSegueIdentifier = "SpritesEditorViewControllerSegue"
     
-    static let graphicCellIdentifier = "GraphicSelectionCollectionViewCell"
-    
     
     @IBOutlet weak var graphicSelectionView: SelectionView!
+    @IBOutlet weak var spriteSelectionView: SelectionView!
     
     var connector: SCConnector!
     var world: SCWorld!
     
     var graphicSelectionController: SelectionController!
+    var spriteSelectionController: SelectionController!
     
     var selectedEntity: NSManagedObject?
     
@@ -53,12 +53,19 @@ class WorldEditorViewController: UIViewController {
         self.graphicSelectionController = SelectionController(dataSource: self,
                                                               view: self.graphicSelectionView,
                                                               name: SCConstants.GRAPHIC_DISPLAY_TITLE,
-                                                              cellIdentifier: WorldEditorViewController.graphicCellIdentifier,
+                                                              cellIdentifier: GraphicSelectionCollectionViewCell.cellIdentifier,
                                                               observer: self.world.graphicObserver)
+        
+        self.spriteSelectionController = SelectionController(dataSource: self,
+                                                             view: self.spriteSelectionView,
+                                                             name: SCConstants.SPRITE_DISPLAY_TITLE,
+                                                             cellIdentifier: SpriteSelectionCollectionViewCell.cellIdentifier,
+                                                             observer: self.world.spriteObserver)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.graphicSelectionView.collectionView.reloadData()
+        self.connector.saveContext()
     }
     
     
@@ -94,7 +101,8 @@ extension WorldEditorViewController: SelectionDataSource {
         var entity: NSManagedObject!
         
         switch name {
-        case SCConstants.SCENE_DISPLAY_TITLE: return
+        case SCConstants.SCENE_DISPLAY_TITLE:
+            entity = self.world.createScene()
             
         case SCConstants.SPRITE_DISPLAY_TITLE:
             entity = self.world.createSprite()

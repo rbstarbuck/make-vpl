@@ -16,7 +16,8 @@ public class SCSprite: NSManagedObject {
     
     @NSManaged public var id: String
     @NSManaged public var name: String
-    @NSManaged public var graphic: SCGraphic
+    @NSManaged public var dateCreated: Date
+    @NSManaged public var graphic: SCGraphic?
     @NSManaged public var methods: Set<SCMethod>
     @NSManaged public var references: Set<SCReference>
     @NSManaged public var variables: Set<SCVariable>
@@ -26,6 +27,7 @@ public class SCSprite: NSManagedObject {
     
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
+        self.dateCreated = Date()
     }
     
     @discardableResult

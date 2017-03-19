@@ -14,8 +14,16 @@ protocol SelectionDelegate: class {
     
     var isSelecting: Bool { get set }
     
-    func createEntity()
+    var name: String { get set }
+    var textColor: UIColor { get set}
+    var borderColor: UIColor { get set }
+    var scrollDirection: UICollectionViewScrollDirection { get set }
+    var minimumCellSize: CGFloat { get set }
+    var cellInsetSize: CGFloat { get set }
     
+    func applyParameters()
+    
+    func createEntity()
     func deleteSelected()
     
 }
@@ -24,9 +32,7 @@ protocol SelectionDelegate: class {
 protocol SelectionDataSource: class {
     
     func createEntity(name: String)
-    
     func didSelectEntity(_ entity: NSManagedObject, name: String)
-    
     func deleteEntities(_ entities: [NSManagedObject], name: String)
     
 }
