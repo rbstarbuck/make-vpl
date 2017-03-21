@@ -25,17 +25,7 @@ class PhysicsPropertiesView: UIViewFromNib {
     
     var delegate: PhysicsPropertiesDelegate! {
         didSet {
-            self.dynamicPropertiesEnabled = delegate.isDynamic
-            self.rotationEnabled = delegate.canRotate
-            
-            self.isDynamicSwitch.isOn = delegate.isDynamic
-            self.isAffectedByGravitySwitch.isOn = delegate.isAffectedByGravity
-            self.canRotateSwitch.isOn = delegate.canRotate
-            self.densitySlider.value = Float(delegate.density)
-            self.frictionSlider.value = Float(delegate.friction)
-            self.restitutionSlider.value = Float(delegate.restitution)
-            self.linearDampingSlider.value = Float(delegate.linearDamping)
-            self.angularDampingSlider.value = Float(delegate.angularDamping)
+            self.configure()
         }
     }
     
@@ -73,6 +63,21 @@ class PhysicsPropertiesView: UIViewFromNib {
                 self.angularDampingSlider.isEnabled = rotationEnabled
             }
         }
+    }
+    
+    
+    func configure() {
+        self.dynamicPropertiesEnabled = delegate.isDynamic
+        self.rotationEnabled = delegate.canRotate
+        
+        self.isDynamicSwitch.isOn = delegate.isDynamic
+        self.isAffectedByGravitySwitch.isOn = delegate.isAffectedByGravity
+        self.canRotateSwitch.isOn = delegate.canRotate
+        self.densitySlider.value = Float(delegate.density)
+        self.frictionSlider.value = Float(delegate.friction)
+        self.restitutionSlider.value = Float(delegate.restitution)
+        self.linearDampingSlider.value = Float(delegate.linearDamping)
+        self.angularDampingSlider.value = Float(delegate.angularDamping)
     }
     
     

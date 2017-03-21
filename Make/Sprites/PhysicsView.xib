@@ -5,16 +5,50 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhysicsView" customModule="Make" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhysicsView" customModule="Make" customModuleProvider="target">
+            <connections>
+                <outlet property="propertiesView" destination="sTz-wR-7ea" id="4sX-Oz-gzq"/>
+                <outlet property="shapeView" destination="8YB-qf-rRA" id="XRh-xL-ntd"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="590" height="542"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YB-qf-rRA" customClass="PhysicsShapeView" customModule="Make" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="295" height="295"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8YB-qf-rRA" secondAttribute="height" id="rIQ-2i-fgJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-wR-7ea" customClass="PhysicsPropertiesView" customModule="Make" customModuleProvider="target">
+                    <rect key="frame" x="303" y="0.0" width="287" height="295"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="sTz-wR-7ea" firstAttribute="height" secondItem="8YB-qf-rRA" secondAttribute="height" id="3kq-Tb-DXb"/>
+                <constraint firstItem="8YB-qf-rRA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="90c-d1-Q9i"/>
+                <constraint firstItem="sTz-wR-7ea" firstAttribute="leading" secondItem="8YB-qf-rRA" secondAttribute="trailing" constant="8" id="OI2-Ed-oa2"/>
+                <constraint firstItem="8YB-qf-rRA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="P1G-xT-EjQ"/>
+                <constraint firstItem="8YB-qf-rRA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="UxJ-Cw-yew"/>
+                <constraint firstItem="sTz-wR-7ea" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mIK-3N-N73"/>
+                <constraint firstAttribute="trailing" secondItem="sTz-wR-7ea" secondAttribute="trailing" id="v9x-Mk-D7l"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="132" y="-10"/>
         </view>
     </objects>
 </document>

@@ -37,7 +37,7 @@ class SpritesEditorViewController: UIViewController {
     var connector: SCConnector!
     var sprite: SCSprite!
     
-    var physicsPropertiesController: PhysicsPropertiesDelegate!
+    var physicsController: PhysicsDelegate!
     var graphicsSelectionController: SelectionController!
     
     
@@ -52,10 +52,9 @@ class SpritesEditorViewController: UIViewController {
         self.contentPageView.layer.cornerRadius = pageCornerRadius
         self.contentPageView.layer.masksToBounds = true
         
-        let physicsPropertiesView = PhysicsPropertiesView()
-        self.physicsPropertiesController = PhysicsPropertiesController(view: physicsPropertiesView,
-                                                                       physicsBody: self.sprite.physicsBody)
-        self.contentPageView.addPage(physicsPropertiesView, key: physicsViewPageKey)
+        let physicsView = PhysicsView()
+        self.physicsController = PhysicsController(view: physicsView, sprite: self.sprite)
+        self.contentPageView.addPage(physicsView, key: physicsViewPageKey)
         
         let graphicsSelectionView = SelectionView()
         self.graphicsSelectionController = SelectionController(dataSource: self,
@@ -111,6 +110,7 @@ extension SpritesEditorViewController: SpritesParametersDelegate {
         }
         set {
             self.sprite.graphic = newValue
+            self.physicsController.configure()
         }
     }
     

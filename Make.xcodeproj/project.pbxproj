@@ -51,8 +51,15 @@
 		A18168B41E7EDE79003B9CE9 /* PhysicsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18168B31E7EDE79003B9CE9 /* PhysicsView.xib */; };
 		A18168B61E7EDF1F003B9CE9 /* PhysicsShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168B51E7EDF1F003B9CE9 /* PhysicsShapeView.swift */; };
 		A18168B81E7EDF35003B9CE9 /* PhysicsShapeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18168B71E7EDF35003B9CE9 /* PhysicsShapeView.xib */; };
+		A18168BA1E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168B91E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift */; };
+		A18168BC1E7EE3C5003B9CE9 /* PhysicsShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168BB1E7EE3C5003B9CE9 /* PhysicsShapeController.swift */; };
+		A18168BE1E7EFB8E003B9CE9 /* PhysicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168BD1E7EFB8E003B9CE9 /* PhysicsController.swift */; };
 		A1818B851E73443E00D76C05 /* AddEntityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */; };
 		A1818B861E73443E00D76C05 /* AddEntityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */; };
+		A185B8761E80784100D51455 /* PhysicsShapeRectangleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185B8751E80784100D51455 /* PhysicsShapeRectangleController.swift */; };
+		A185B87E1E80BFBA00D51455 /* PhysicsShapeCircleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185B87D1E80BFBA00D51455 /* PhysicsShapeCircleController.swift */; };
+		A185B8801E80D0CC00D51455 /* SCPhysicsBodyShapeRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185B87F1E80D0CC00D51455 /* SCPhysicsBodyShapeRectangle.swift */; };
+		A185B8821E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A185B8811E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift */; };
 		A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */; };
 		A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */; };
 		A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18B0D161E1837FA0079EBBE /* FrameController.swift */; };
@@ -190,8 +197,15 @@
 		A18168B31E7EDE79003B9CE9 /* PhysicsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhysicsView.xib; path = Sprites/PhysicsView.xib; sourceTree = "<group>"; };
 		A18168B51E7EDF1F003B9CE9 /* PhysicsShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsShapeView.swift; path = Sprites/PhysicsShapeView.swift; sourceTree = "<group>"; };
 		A18168B71E7EDF35003B9CE9 /* PhysicsShapeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhysicsShapeView.xib; path = Sprites/PhysicsShapeView.xib; sourceTree = "<group>"; };
+		A18168B91E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsShapeOutlineView.swift; path = Sprites/PhysicsShapeOutlineView.swift; sourceTree = "<group>"; };
+		A18168BB1E7EE3C5003B9CE9 /* PhysicsShapeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsShapeController.swift; path = Sprites/PhysicsShapeController.swift; sourceTree = "<group>"; };
+		A18168BD1E7EFB8E003B9CE9 /* PhysicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsController.swift; path = Sprites/PhysicsController.swift; sourceTree = "<group>"; };
 		A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEntityCollectionViewCell.swift; path = Editor/AddEntityCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddEntityCollectionViewCell.xib; path = Editor/AddEntityCollectionViewCell.xib; sourceTree = "<group>"; };
+		A185B8751E80784100D51455 /* PhysicsShapeRectangleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsShapeRectangleController.swift; path = Sprites/PhysicsShapeRectangleController.swift; sourceTree = "<group>"; };
+		A185B87D1E80BFBA00D51455 /* PhysicsShapeCircleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsShapeCircleController.swift; path = Sprites/PhysicsShapeCircleController.swift; sourceTree = "<group>"; };
+		A185B87F1E80D0CC00D51455 /* SCPhysicsBodyShapeRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCPhysicsBodyShapeRectangle.swift; path = SourceCode/SCPhysicsBodyShapeRectangle.swift; sourceTree = "<group>"; };
+		A185B8811E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCPhysicsBodyShapeCircle.swift; path = SourceCode/SCPhysicsBodyShapeCircle.swift; sourceTree = "<group>"; };
 		A18B0D111E182EA10079EBBE /* CoreDataCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewController.swift; path = Utility/CoreDataCollectionViewController.swift; sourceTree = "<group>"; };
 		A18B0D131E1830620079EBBE /* CoreDataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCollectionViewCell.swift; path = Utility/CoreDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		A18B0D161E1837FA0079EBBE /* FrameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrameController.swift; path = Graphics/FrameController.swift; sourceTree = "<group>"; };
@@ -655,6 +669,8 @@
 				A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */,
 				A1F907491E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift */,
 				A1F907521E301B520015DAFE /* SCPhysicsBodyShape.swift */,
+				A185B87F1E80D0CC00D51455 /* SCPhysicsBodyShapeRectangle.swift */,
+				A185B8811E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift */,
 			);
 			name = Sprite;
 			sourceTree = "<group>";
@@ -673,13 +689,18 @@
 		A1F989A11E31C28000B9409F /* Physics */ = {
 			isa = PBXGroup;
 			children = (
+				A18168BD1E7EFB8E003B9CE9 /* PhysicsController.swift */,
 				A18168B11E7EDE65003B9CE9 /* PhysicsView.swift */,
 				A18168B31E7EDE79003B9CE9 /* PhysicsView.xib */,
 				A1F9899F1E31B54B00B9409F /* PhysicsPropertiesController.swift */,
 				A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */,
 				A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */,
+				A18168BB1E7EE3C5003B9CE9 /* PhysicsShapeController.swift */,
+				A185B8751E80784100D51455 /* PhysicsShapeRectangleController.swift */,
+				A185B87D1E80BFBA00D51455 /* PhysicsShapeCircleController.swift */,
 				A18168B51E7EDF1F003B9CE9 /* PhysicsShapeView.swift */,
 				A18168B71E7EDF35003B9CE9 /* PhysicsShapeView.xib */,
+				A18168B91E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift */,
 			);
 			name = Physics;
 			sourceTree = "<group>";
@@ -994,11 +1015,13 @@
 				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
+				A18168BA1E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift in Sources */,
 				A1F6427E1E70F6B40034292D /* SelectionController.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
 				A1C5CD5F1E0EBF3F00102431 /* SCConstants.swift in Sources */,
 				A18B0D171E1837FA0079EBBE /* FrameController.swift in Sources */,
 				A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */,
+				A185B8761E80784100D51455 /* PhysicsShapeRectangleController.swift in Sources */,
 				A1F907561E301E4F0015DAFE /* PhysicsPropertiesView.swift in Sources */,
 				A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */,
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
@@ -1013,6 +1036,7 @@
 				A1F9074B1E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift in Sources */,
 				A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */,
 				A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */,
+				A18168BE1E7EFB8E003B9CE9 /* PhysicsController.swift in Sources */,
 				A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */,
 				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,
 				A1DBE0F11E067CDF0053758F /* SCVariable+CoreDataProperties.swift in Sources */,
@@ -1023,6 +1047,7 @@
 				A1F520101E09200300443ABB /* WeakSet.swift in Sources */,
 				A17C79681E6318F90001F43C /* GameplayViewController.swift in Sources */,
 				A1DBE0F01E067CDF0053758F /* SCScene+CoreDataProperties.swift in Sources */,
+				A185B87E1E80BFBA00D51455 /* PhysicsShapeCircleController.swift in Sources */,
 				A1F5200F1E09200300443ABB /* Weak.swift in Sources */,
 				A143A7951DEBF53A004DBC84 /* GameScene.swift in Sources */,
 				A11712771E2140CC00C7C791 /* AddFrameCollectionViewCell.swift in Sources */,
@@ -1042,6 +1067,7 @@
 				A18168931E749ADF003B9CE9 /* SpritesParametersView.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
+				A185B8821E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
 				A121B6531E60D36D0093A1FC /* OCSprite.swift in Sources */,
 				A181689C1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.swift in Sources */,
@@ -1055,12 +1081,14 @@
 				A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */,
 				A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */,
 				A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */,
+				A185B8801E80D0CC00D51455 /* SCPhysicsBodyShapeRectangle.swift in Sources */,
 				A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */,
 				A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */,
 				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
 				A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */,
 				A1F520591E0A72E800443ABB /* ObservableEntity.swift in Sources */,
 				A121B6511E60D2F10093A1FC /* OCVariable.swift in Sources */,
+				A18168BC1E7EE3C5003B9CE9 /* PhysicsShapeController.swift in Sources */,
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
 				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,
 				A130A2011E26DBE10073CD51 /* MainNavigationController.swift in Sources */,

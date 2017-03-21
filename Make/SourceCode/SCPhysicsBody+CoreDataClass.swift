@@ -21,7 +21,7 @@ public class SCPhysicsBody: NSManagedObject {
     
     
     public override func awakeFromInsert() {
-        self.shape = SCPhysicsBodyShapeRectangle()
+        self.shape = SCPhysicsBodyShapeCircle()
     }
     
 }

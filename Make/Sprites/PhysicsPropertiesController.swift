@@ -20,10 +20,14 @@ protocol PhysicsPropertiesDelegate {
     var linearDamping: Double { get set }
     var angularDamping: Double { get set }
     
+    func configure()
+    
 }
 
 
 class PhysicsPropertiesController: PhysicsPropertiesDelegate {
+    
+    var view: PhysicsPropertiesView
     
     var physicsBody: SCPhysicsBody
     
@@ -115,8 +119,14 @@ class PhysicsPropertiesController: PhysicsPropertiesDelegate {
     
     
     init(view: PhysicsPropertiesView, physicsBody: SCPhysicsBody) {
+        self.view = view
         self.physicsBody = physicsBody
         view.delegate = self
+    }
+    
+    
+    func configure() {
+        self.view.configure()
     }
     
 }
