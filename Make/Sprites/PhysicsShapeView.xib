@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,6 +15,7 @@
             <connections>
                 <outlet property="graphicImageView" destination="3QV-Zf-a9o" id="375-Bw-t2F"/>
                 <outlet property="outlineView" destination="Hhd-l1-9aS" id="pVu-c5-E6x"/>
+                <outlet property="shapeControl" destination="7dc-ZG-Qgv" id="xKf-ze-1V8"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,16 +37,40 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-ZG-Qgv">
+                    <rect key="frame" x="73" y="8" width="90" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="y8W-y5-051"/>
+                    </constraints>
+                    <segments>
+                        <segment title="" image="Circle"/>
+                        <segment title="" image="Rectangle"/>
+                    </segments>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="shapeControlValueChanged:" destination="-1" eventType="valueChanged" id="BfW-zy-AEV"/>
+                    </connections>
+                </segmentedControl>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hhd-l1-9aS" customClass="PhysicsShapeOutlineView" customModule="Make" customModuleProvider="target">
                     <rect key="frame" x="102" y="116" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shape" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke9-2l-z39">
+                    <rect key="frame" x="12" y="12" width="49" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="3QV-Zf-a9o" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0a9-Sp-fb5"/>
+                <constraint firstItem="ke9-2l-z39" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="6B5-IB-J6B"/>
                 <constraint firstItem="3QV-Zf-a9o" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="6Qb-9m-P8l"/>
                 <constraint firstItem="3QV-Zf-a9o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Mf5-Fr-8ha"/>
+                <constraint firstItem="7dc-ZG-Qgv" firstAttribute="leading" secondItem="ke9-2l-z39" secondAttribute="trailing" constant="12" id="cLk-Xg-SAs"/>
+                <constraint firstItem="ke9-2l-z39" firstAttribute="centerY" secondItem="7dc-ZG-Qgv" secondAttribute="centerY" id="mi8-vz-rGL"/>
+                <constraint firstItem="7dc-ZG-Qgv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="zYe-5e-tym"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -54,4 +79,8 @@
             <point key="canvasLocation" x="25.5" y="-118.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Circle" width="20" height="20"/>
+        <image name="Rectangle" width="20" height="20"/>
+    </resources>
 </document>

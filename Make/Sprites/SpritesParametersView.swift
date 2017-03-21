@@ -13,7 +13,7 @@ import Material
 private let noGraphicName = "None Selected"
 
 private let graphicBorderColor = UIColor.lightGray
-private let graphicBorderWidth = CGFloat(2)
+private let graphicBorderWidth = CGFloat(1)
 
 
 class SpritesParametersView: UIViewFromNib {

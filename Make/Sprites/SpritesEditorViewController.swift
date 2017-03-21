@@ -51,6 +51,8 @@ class SpritesEditorViewController: UIViewController {
         
         self.contentPageView.layer.cornerRadius = pageCornerRadius
         self.contentPageView.layer.masksToBounds = true
+        self.contentPageView.borderColor = UIColor.lightGray
+        self.contentPageView.borderWidth = 0.5
         
         let physicsView = PhysicsView()
         self.physicsController = PhysicsController(view: physicsView, sprite: self.sprite)
@@ -62,8 +64,6 @@ class SpritesEditorViewController: UIViewController {
                                                                name: SCConstants.GRAPHIC_DISPLAY_TITLE,
                                                                cellIdentifier: GraphicSelectionCollectionViewCell.cellIdentifier,
                                                                observer: self.sprite.world.graphicObserver)
-        self.graphicsSelectionController.borderColor = UIColor.lightGray
-        self.graphicsSelectionController.textColor = UIColor.black
         self.graphicsSelectionController.applyParameters()
         self.contentPageView.addPage(graphicsSelectionView, key: graphicsViewPageKey)
     }

@@ -696,8 +696,8 @@
 				A1F907551E301E4F0015DAFE /* PhysicsPropertiesView.swift */,
 				A1F907571E301E6D0015DAFE /* PhysicsPropertiesView.xib */,
 				A18168BB1E7EE3C5003B9CE9 /* PhysicsShapeController.swift */,
-				A185B8751E80784100D51455 /* PhysicsShapeRectangleController.swift */,
 				A185B87D1E80BFBA00D51455 /* PhysicsShapeCircleController.swift */,
+				A185B8751E80784100D51455 /* PhysicsShapeRectangleController.swift */,
 				A18168B51E7EDF1F003B9CE9 /* PhysicsShapeView.swift */,
 				A18168B71E7EDF35003B9CE9 /* PhysicsShapeView.xib */,
 				A18168B91E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift */,
@@ -1249,6 +1249,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6B71204BB46685F658E2028 /* Pods-Make.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;
@@ -1265,6 +1266,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1E8ECE33E6B8B238150C964D /* Pods-Make.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = L9BCMT7FCU;

@@ -19,7 +19,7 @@ public enum PhysicsShape: Int32 {
 @objc
 public protocol SCPhysicsBodyShape: NSCoding {
     
-    var shape: PhysicsShape { get }
+    var type: PhysicsShape { get }
     
     func instantiate(for sprite: SKSpriteNode) -> SKPhysicsBody
     

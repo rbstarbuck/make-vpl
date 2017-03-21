@@ -15,7 +15,7 @@ public class SCPhysicsBodyShapeRectangle: NSObject, SCPhysicsBodyShape {
     public let center: CGPoint
     public let size: CGSize
     
-    public var shape: PhysicsShape {
+    public var type: PhysicsShape {
         get {
             return .rectangle
         }

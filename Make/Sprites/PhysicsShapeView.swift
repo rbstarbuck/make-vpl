@@ -12,21 +12,30 @@ import UIKit
 private var imageViewBorderWidth = CGFloat(1.5)
 private var imageViewBorderColor = UIColor.lightGray
 
+private var shapeControlIndexes = [PhysicsShape.circle, PhysicsShape.rectangle]
+
 
 class PhysicsShapeView: UIViewFromNib {
     
     @IBOutlet weak var graphicImageView: UIImageView!
     @IBOutlet weak var outlineView: PhysicsShapeOutlineView!
     
+    @IBOutlet weak var shapeControl: UISegmentedControl!
+    
     
     var delegate: PhysicsShapeDelegate? {
         didSet {
-            if let previousDelegate = oldValue {
-                previousDelegate.saveShape()
+            if self.delegate !== oldValue {
+                self.outlineView.delegate = delegate
+                
+                if let delegate = self.delegate {
+                    let shapeControlIndex = shapeControlIndexes.index(of: delegate.sprite.physicsBody.shape.type)
+                    self.shapeControl.selectedSegmentIndex = shapeControlIndex!
+                    delegate.setOutlineView()
+                }
+                
+                self.configure()
             }
-            self.outlineView.delegate = delegate
-            self.configure()
-            self.delegate?.setOutlineView()
         }
     }
     
@@ -68,11 +77,15 @@ class PhysicsShapeView: UIViewFromNib {
     func onPan(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began:
-            self.delegate?.panBegan(sender)
+            if sender.minimumNumberOfTouches > 0 {
+                self.delegate?.panBegan(sender)
+            }
             break
             
         case .changed:
-            self.delegate?.panChanged(sender)
+            if sender.minimumNumberOfTouches > 0 {
+                self.delegate?.panChanged(sender)
+            }
             break
             
         case .possible: break
@@ -84,23 +97,29 @@ class PhysicsShapeView: UIViewFromNib {
     }
     
     func onPinch(_ sender: UIPinchGestureRecognizer) {
-        if sender.numberOfTouches > 1 {
-            switch sender.state {
-            case .began:
+        switch sender.state {
+        case .began:
+            if sender.numberOfTouches > 1 {
                 self.delegate?.pinchBegan(sender)
-                break
-                
-            case .changed:
-                self.delegate?.pinchChanged(sender)
-                break
-                
-            case .possible: break
-                
-            default:
-                self.delegate?.pinchEnded(sender)
-                break
             }
+            break
+            
+            case .changed:
+            if sender.numberOfTouches > 1 {
+                self.delegate?.pinchChanged(sender)
+            }
+            break
+            
+        case .possible: break
+            
+        default:
+            self.delegate?.pinchEnded(sender)
+            break
         }
     }
     
+    @IBAction func shapeControlValueChanged(_ sender: Any) {
+        let type = shapeControlIndexes[self.shapeControl.selectedSegmentIndex]
+        self.delegate?.changeShape(type)
+    }
 }

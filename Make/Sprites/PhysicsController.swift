@@ -15,6 +15,8 @@ protocol PhysicsDelegate {
     
     func configure()
     
+    func setShape(_ type: PhysicsShape)
+    
 }
 
 
@@ -34,7 +36,7 @@ class PhysicsController: PhysicsDelegate {
         
         self.propertiesController = PhysicsPropertiesController(view: view.propertiesView, physicsBody: sprite.physicsBody)
         
-        switch sprite.physicsBody.shape.shape {
+        switch sprite.physicsBody.shape.type {
         case .rectangle:
             self.shapeController = PhysicsShapeRectangleController(view: view.shapeView, sprite: self.sprite)
             break
@@ -43,6 +45,8 @@ class PhysicsController: PhysicsDelegate {
             self.shapeController = PhysicsShapeCircleController(view: view.shapeView, sprite: self.sprite)
             break
         }
+        
+        self.shapeController.delegate = self
     }
     
     
@@ -51,4 +55,22 @@ class PhysicsController: PhysicsDelegate {
         self.propertiesController.configure()
     }
     
+    func setShape(_ type: PhysicsShape) {
+        if let view = self.view {
+            var controller: PhysicsShapeController!
+            
+            switch type {
+            case .rectangle:
+                controller = PhysicsShapeRectangleController(view: view.shapeView, previous: self.shapeController)
+                break
+                
+            case .circle:
+                controller = PhysicsShapeCircleController(view: view.shapeView, previous: self.shapeController)
+                break
+            }
+            
+            controller.delegate = self
+            self.shapeController = controller
+        }
+    }
 }

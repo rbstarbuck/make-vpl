@@ -15,6 +15,28 @@ class PhysicsShapeRectangleController: PhysicsShapeController {
     var previousTouch2: CGPoint!
     
     
+    override init(view: PhysicsShapeView, sprite: SCSprite) {
+        super.init(view: view, sprite: sprite)
+        
+        self.configure()
+    }
+    
+    init(view: PhysicsShapeView, previous: PhysicsShapeDelegate) {
+        super.init(view: view, sprite: previous.sprite)
+        
+        let width = view.outlineView.bounds.width / view.graphicImageView.bounds.width
+        let height = view.outlineView.bounds.height / view.graphicImageView.bounds.height
+        let size = CGSize(width: width, height: height)
+        
+        let shape = SCPhysicsBodyShapeRectangle(center: self.outlineCenterPct, size: size)
+        
+        self.sprite.physicsBody.setValue(shape, forKey: "shape")
+        self.sprite.world.connector.saveContext()
+        
+        self.configure()
+    }
+    
+    
     override func setOutlineView() {
         if let view = self.view, let rectangle = self.sprite.physicsBody.shape as? SCPhysicsBodyShapeRectangle {
             let imageOrigin = view.convert(view.graphicImageView.frame.origin, to: view)

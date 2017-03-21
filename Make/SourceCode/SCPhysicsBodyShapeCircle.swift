@@ -15,7 +15,7 @@ public class SCPhysicsBodyShapeCircle: NSObject, SCPhysicsBodyShape {
     public let center: CGPoint
     public let radius: Double
     
-    public var shape: PhysicsShape {
+    public var type: PhysicsShape {
         get {
             return .circle
         }

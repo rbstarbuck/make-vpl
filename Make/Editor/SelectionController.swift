@@ -45,8 +45,8 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
     weak var view: SelectionView?
     
     var name: String
-    var textColor = UIColor.white
-    var borderColor = UIColor.gray
+    var textColor = UIColor.black
+    var borderColor = UIColor(hex: 0xEFEFF4)
     var scrollDirection = UICollectionViewScrollDirection.vertical
     var minimumCellSize = CGFloat(110)
     var cellInsetSize = CGFloat(1.5)

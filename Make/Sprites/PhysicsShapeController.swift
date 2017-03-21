@@ -9,15 +9,18 @@
 import UIKit
 
 
-protocol PhysicsShapeDelegate {
+protocol PhysicsShapeDelegate: class {
     
     var sprite: SCSprite { get }
     var outlineWidth: CGFloat { get }
     var outlineColor: UIColor { get }
     var minimumSize: CGFloat { get }
     
+    var delegate: PhysicsDelegate? { get set }
+    
     func configure()
     func setOutlineView()
+    func changeShape(_ type: PhysicsShape)
     func saveShape()
     func drawShape(in view: UIView, with context: CGContext)
     
@@ -46,31 +49,42 @@ class PhysicsShapeController: PhysicsShapeDelegate {
     }
     var halfOutlineWidth = CGFloat(1.5)
     
+    var delegate: PhysicsDelegate?
+    
+    var outlineCenterPct: CGPoint {
+        get {
+            if let view = self.view {
+                let outlineCenter = view.convert(view.outlineView.center, to: view)
+                let graphicOrigin = view.convert(view.graphicImageView.frame.origin, to: view)
+                let centerX = (outlineCenter.x - graphicOrigin.x) / view.graphicImageView.width
+                let centerY = (outlineCenter.y - graphicOrigin.x) / view.graphicImageView.height
+                return CGPoint(x: centerX, y: centerY)
+            }
+            else {
+                return CGPoint()
+            }
+        }
+    }
+    
     
     init(view: PhysicsShapeView, sprite: SCSprite) {
         self.view = view
         self.sprite = sprite
-        
-        view.delegate = self
-    }
-    
-    deinit {
-        self.saveShape()
     }
     
     
     func configure() {
+        self.view?.delegate = self
         self.setOutlineView()
-        if let view = self.view {
-            view.configure()
-            view.outlineView.setNeedsDisplay()
-        }
     }
     
     func setOutlineView() { }
     func saveShape() { }
     func drawShape(in view: UIView, with context: CGContext) { }
     
+    func changeShape(_ type: PhysicsShape){
+        self.delegate?.setShape(type)
+    }
     
     func panBegan(_ sender: UIPanGestureRecognizer) { }
     

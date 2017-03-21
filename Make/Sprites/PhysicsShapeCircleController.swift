@@ -10,7 +10,32 @@ import UIKit
 
 
 class PhysicsShapeCircleController: PhysicsShapeController {
+    
+    var previousTouch1: CGPoint!
+    var previousTouch2: CGPoint!
+    
+    
+    override init(view: PhysicsShapeView, sprite: SCSprite) {
+        super.init(view: view, sprite: sprite)
         
+        self.configure()
+    }
+    
+    init(view: PhysicsShapeView, previous: PhysicsShapeDelegate) {
+        super.init(view: view, sprite: previous.sprite)
+        
+        let outlineViewSize = min(view.outlineView.bounds.width, view.outlineView.bounds.height)
+        let radius = outlineViewSize / view.graphicImageView.bounds.width / 2.0
+        
+        let shape = SCPhysicsBodyShapeCircle(center: self.outlineCenterPct, radius: Double(radius))
+        
+        self.sprite.physicsBody.setValue(shape, forKey: "shape")
+        self.sprite.world.connector.saveContext()
+        
+        self.configure()
+    }
+    
+    
     override func setOutlineView() {
         if let view = self.view, let circle = self.sprite.physicsBody.shape as? SCPhysicsBodyShapeCircle {
             let imageOrigin = view.convert(view.graphicImageView.frame.origin, to: view)
@@ -25,12 +50,26 @@ class PhysicsShapeCircleController: PhysicsShapeController {
         }
     }
     
+    func distance(from p1: CGPoint, to p2: CGPoint) -> CGFloat {
+        return hypot(p1.x - p2.x, p1.y - p2.y)
+    }
+    
+    override func pinchBegan(_ sender: UIPinchGestureRecognizer) {
+        self.previousTouch1 = sender.location(ofTouch: 0, in: self.view!)
+        self.previousTouch2 = sender.location(ofTouch: 1, in: self.view!)
+    }
+    
     override func pinchChanged(_ sender: UIPinchGestureRecognizer) {
+        let touch1 = sender.location(ofTouch: 0, in: self.view!)
+        let touch2 = sender.location(ofTouch: 1, in: self.view!)
         let outlineViewPosition = self.view!.outlineView.convert(self.view!.outlineView.bounds.origin, to: self.view!)
         
-        let size = sender.scale * self.view!.outlineView.width
-        let translation = (size - self.view!.outlineView.width) / 2.0
+        let prevDistance = self.distance(from: self.previousTouch1, to: self.previousTouch2)
+        let currDistance = self.distance(from: touch1, to: touch2)
         
+        let diff = currDistance - prevDistance
+        let size = self.view!.outlineView.width + diff
+        let translation = (size - self.view!.outlineView.width) / 2.0
         let posX = outlineViewPosition.x - translation
         let posY = outlineViewPosition.y - translation
         
@@ -38,7 +77,8 @@ class PhysicsShapeCircleController: PhysicsShapeController {
                 && posY >= 0 && posY + size <= self.view!.bounds.height {
             self.view!.outlineView.frame = CGRect(x: posX, y: posY, width: size, height: size)
             self.view!.outlineView.setNeedsDisplay()
-            sender.scale = 1
+            self.previousTouch1 = touch1
+            self.previousTouch2 = touch2
         }
     }
     
