@@ -17,6 +17,7 @@ protocol CoreDataCollectionViewDelegate {
     
     func configureCollectionViewController()
     func configureCollectionViewLayout()
+    func configureCollectionViewCell(_ cell: CoreDataCollectionViewCell)
     
     func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath)
     
@@ -119,6 +120,8 @@ extension CoreDataCollectionViewController: CoreDataCollectionViewDelegate {
     
     func configureCollectionViewLayout() {}
     
+    func configureCollectionViewCell(_ cell: CoreDataCollectionViewCell){ }
+    
     func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath) {
         // override if enabling item moving
     }
@@ -137,9 +140,9 @@ extension CoreDataCollectionViewController: UICollectionViewDataSource {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath)
         
         if let entity = self.frc?.object(at: indexPath) as? NSManagedObject,
-            let coreDataCell = cell as? CoreDataCollectionViewCell {
-            
+                let coreDataCell = cell as? CoreDataCollectionViewCell {
             coreDataCell.configure(delegate: self, entity: entity)
+            self.configureCollectionViewCell(coreDataCell)
         }
         
         return cell

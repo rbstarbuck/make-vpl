@@ -41,9 +41,9 @@ public class OCSprite: SKSpriteNode {
         super.init(texture: texture, color: UIColor.red, size: texture.size())
         
         self.name = scReference.id
-        self.position = CGPoint(x: CGFloat(scReference.positionX) * ocScene.size.width,
-                                y: CGFloat(scReference.positionY) * ocScene.size.height)
-        self.setScale(CGFloat(scReference.scale))
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.position = scReference.center(in: ocScene.frame)
+        self.setScale(scReference.scale(in: ocScene.size))
         self.zRotation = CGFloat(scReference.rotation)
         
         if scSprite.physicsBody.isEnabled {

@@ -57,6 +57,14 @@ extension UIView {
         parent.addConstraints(vConstraints + hConstraints)
     }
     
+    func contains(view: UIView) -> Bool {
+        let viewOrigin = self.convert(view.frame.origin, to: self)
+        return viewOrigin.x >= 0
+                && viewOrigin.y >= 0
+                && viewOrigin.x + view.bounds.width <= self.bounds.width
+                && viewOrigin.y + view.bounds.height <= self.bounds.height
+    }
+    
     var parentViewController: UIViewController? {
         get {
             if let controller = self.next as? UIViewController {
@@ -76,11 +84,15 @@ class UIViewFromNib: UIView {
     override required init(frame: CGRect) {
         super.init(frame: frame)
         self.fromNib()
+        self.initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.fromNib()
+        self.initialize()
     }
+    
+    func initialize() { }
     
 }

@@ -1,8 +1,8 @@
 //
 //  SCSprite+CoreDataProperties.swift
-//  Make
+//  
 //
-//  Created by Richmond Starbuck on 2/25/17.
+//  Created by Richmond Starbuck on 3/23/17.
 //
 //
 
@@ -15,8 +15,6 @@ extension SCSprite {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SCSprite> {
         return NSFetchRequest<SCSprite>(entityName: "Sprite");
     }
-
-    @NSManaged public var comment: String?
 
 }
 
@@ -34,6 +32,23 @@ extension SCSprite {
 
     @objc(removeMethods:)
     @NSManaged public func removeFromMethods(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for references
+extension SCSprite {
+
+    @objc(addReferencesObject:)
+    @NSManaged public func addToReferences(_ value: SCReference)
+
+    @objc(removeReferencesObject:)
+    @NSManaged public func removeFromReferences(_ value: SCReference)
+
+    @objc(addReferences:)
+    @NSManaged public func addToReferences(_ values: NSSet)
+
+    @objc(removeReferences:)
+    @NSManaged public func removeFromReferences(_ values: NSSet)
 
 }
 

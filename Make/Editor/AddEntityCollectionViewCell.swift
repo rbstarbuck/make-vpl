@@ -10,7 +10,15 @@ import UIKit
 
 class AddEntityCollectionViewCell: UICollectionViewCell {
     
-    var delegate: SelectionDelegate?
+    var delegate: SelectionDelegate? {
+        didSet {
+            if let delegate = self.delegate {
+                label.text = "Add \(delegate.name)"
+            }
+        }
+    }
+    
+    @IBOutlet weak var label: UILabel!
     
     
     @IBAction func addButtonTouch(_ sender: Any) {

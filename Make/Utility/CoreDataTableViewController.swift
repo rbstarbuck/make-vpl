@@ -17,6 +17,7 @@ protocol CoreDataTableViewDelegate {
     
     // (optional) implement to modify default base class properties (e.g. animation types)
     func configureTableViewController()
+    func configureTableViewCell(_ cell: CoreDataTableViewCell)
     
     // (optional) implement if enabling cell reordering via dragging
     func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath)
@@ -175,7 +176,9 @@ extension CoreDataTableViewController: CoreDataTableViewDelegate {
         return nil
     }
     
-    func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath) {}
+    func configureTableViewCell(_ cell: CoreDataTableViewCell) { }
+    
+    func moveEntity(_ entity: NSManagedObject, from fromIndex: IndexPath, to toIndex: IndexPath) { }
     
 }
 
@@ -193,9 +196,9 @@ extension CoreDataTableViewController: UITableViewDataSource {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
         
         if let entity = self.frc?.object(at: indexPath) as? NSManagedObject,
-            let coreDataCell = cell as? CoreDataTableViewCell {
-            
+                let coreDataCell = cell as? CoreDataTableViewCell {
             coreDataCell.configure(delegate: self, entity: entity)
+            self.configureTableViewCell(coreDataCell)
         }
         
         return cell

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,22 +24,15 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBy-kF-bPq" customClass="CanvasView" customModule="Make" customModuleProvider="target">
-                    <rect key="frame" x="347" y="68" width="661" height="554"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-2x-Whc">
-                    <rect key="frame" x="20" y="58" width="319" height="442"/>
+                    <rect key="frame" x="20" y="58" width="378" height="442"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="319" id="Rml-Of-tmD"/>
-                    </constraints>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-b4-r0g">
-                    <rect key="frame" x="20" y="12" width="319" height="30"/>
+                    <rect key="frame" x="20" y="12" width="378" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzA-2L-DHQ">
-                            <rect key="frame" x="0.0" y="0.0" width="319" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="30"/>
                             <state key="normal" title="Create Layer"/>
                             <connections>
                                 <action selector="createLayerTouch:" destination="-1" eventType="touchUpInside" id="mAY-Bi-BJq"/>
@@ -47,17 +41,17 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enU-XB-wsW" customClass="BrushView" customModule="Make" customModuleProvider="target">
-                    <rect key="frame" x="20" y="508" width="319" height="240"/>
+                    <rect key="frame" x="20" y="508" width="378" height="240"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="240" id="lQa-vx-jbo"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ReJ-pg-btu">
-                    <rect key="frame" x="347" y="630" width="661" height="118"/>
+                    <rect key="frame" x="406" y="630" width="602" height="118"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="118" id="rmL-gq-HOg"/>
+                        <constraint firstAttribute="height" constant="118" id="4as-nM-ccx"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y3j-fJ-qNB">
                         <size key="itemSize" width="50" height="50"/>
@@ -67,10 +61,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-26-AhT">
-                    <rect key="frame" x="347" y="30" width="661" height="30"/>
+                    <rect key="frame" x="406" y="30" width="602" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMe-1J-1Ap">
-                            <rect key="frame" x="0.0" y="0.0" width="661" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="602" height="30"/>
                             <state key="normal" title="Delete Frame"/>
                             <connections>
                                 <action selector="deleteFrameTouch:" destination="-1" eventType="touchUpInside" id="z9t-qZ-N4t"/>
@@ -78,10 +72,18 @@
                         </button>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBy-kF-bPq" customClass="CanvasView" customModule="Make" customModuleProvider="target">
+                    <rect key="frame" x="406" y="20" width="602" height="602"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zBy-kF-bPq" secondAttribute="height" id="Lkh-dI-4fV"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="zBy-kF-bPq" secondAttribute="trailing" constant="16" id="32j-lh-AKO"/>
+                <constraint firstItem="zBy-kF-bPq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="3oU-gv-13b"/>
                 <constraint firstItem="p2t-b4-r0g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="5eD-wU-JIg"/>
                 <constraint firstAttribute="bottom" secondItem="enU-XB-wsW" secondAttribute="bottom" constant="20" id="6ZP-Fd-zTA"/>
                 <constraint firstItem="M2e-26-AhT" firstAttribute="trailing" secondItem="zBy-kF-bPq" secondAttribute="trailing" id="GdH-X7-o5C"/>
@@ -99,7 +101,6 @@
                 <constraint firstItem="enU-XB-wsW" firstAttribute="top" secondItem="Vur-2x-Whc" secondAttribute="bottom" constant="8" id="qPY-G1-NJY"/>
                 <constraint firstItem="ReJ-pg-btu" firstAttribute="leading" secondItem="zBy-kF-bPq" secondAttribute="leading" id="sWX-Fl-QXj"/>
                 <constraint firstItem="Vur-2x-Whc" firstAttribute="top" secondItem="p2t-b4-r0g" secondAttribute="bottom" constant="16" id="zgW-pL-rrA"/>
-                <constraint firstItem="zBy-kF-bPq" firstAttribute="top" secondItem="M2e-26-AhT" secondAttribute="bottom" constant="8" id="zon-ZA-LFk"/>
             </constraints>
             <point key="canvasLocation" x="25" y="51"/>
         </view>

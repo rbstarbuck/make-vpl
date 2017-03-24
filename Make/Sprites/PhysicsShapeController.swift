@@ -75,6 +75,7 @@ class PhysicsShapeController: PhysicsShapeDelegate {
     
     func configure() {
         self.view?.delegate = self
+        self.view?.configure()
         self.setOutlineView()
     }
     

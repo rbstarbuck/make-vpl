@@ -62,14 +62,24 @@ class SpritesEditorViewController: UIViewController {
         self.graphicsSelectionController = SelectionController(dataSource: self,
                                                                view: graphicsSelectionView,
                                                                name: SCConstants.GRAPHIC_DISPLAY_TITLE,
-                                                               cellIdentifier: GraphicSelectionCollectionViewCell.cellIdentifier,
                                                                observer: self.sprite.world.graphicObserver)
-        self.graphicsSelectionController.applyParameters()
+        
+        self.graphicsSelectionController.getImage = { entity in
+            let graphic = entity as! SCGraphic
+            return graphic.firstFrame.makeImageFromLayers()
+        }
+        
+        self.graphicsSelectionController.getLabel = { entity in
+            let graphic = entity as! SCGraphic
+            return graphic.name
+        }
+        
         self.contentPageView.addPage(graphicsSelectionView, key: graphicsViewPageKey)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.parametersView.configure()
+        self.physicsController.configure()
         self.graphicsSelectionController.view?.collectionView.reloadData()
     }
     

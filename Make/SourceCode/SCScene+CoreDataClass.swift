@@ -58,7 +58,7 @@ public class SCScene: NSManagedObject {
     @discardableResult
     public func createReference(to sprite: SCSprite) -> SCReference {
         let reference: SCReference = self.world.connector.createEntity(SCReference.entityName)!
-        reference.sprite = sprite
+        sprite.addToReferences(reference)
         self.addToReferences(reference)
         return reference
     }

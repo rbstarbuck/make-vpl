@@ -34,18 +34,23 @@
 		A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A143A79B1DEBF53A004DBC84 /* Assets.xcassets */; };
 		A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A143A79D1DEBF53A004DBC84 /* LaunchScreen.storyboard */; };
 		A143A7B51DEBF53A004DBC84 /* MakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */; };
+		A16D16A21E81F0C700DD0DA9 /* ScenesEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16A01E81F0C700DD0DA9 /* ScenesEditorViewController.swift */; };
+		A16D16A31E81F0C700DD0DA9 /* ScenesEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16D16A11E81F0C700DD0DA9 /* ScenesEditorViewController.xib */; };
+		A16D16A61E81F10400DD0DA9 /* ScenesPlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16A51E81F10400DD0DA9 /* ScenesPlacementView.swift */; };
+		A16D16A81E81F11200DD0DA9 /* ScenesPlacementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16D16A71E81F11200DD0DA9 /* ScenesPlacementView.xib */; };
+		A16D16AA1E81F12300DD0DA9 /* ScenesPlacementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16A91E81F12300DD0DA9 /* ScenesPlacementController.swift */; };
+		A16D16AC1E83100200DD0DA9 /* ScenesReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16AB1E83100200DD0DA9 /* ScenesReferenceView.swift */; };
+		A16D16B01E837D0C00DD0DA9 /* ScenesReferenceDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16AF1E837D0C00DD0DA9 /* ScenesReferenceDragView.swift */; };
+		A16D16B31E83906B00DD0DA9 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16B11E83906B00DD0DA9 /* SelectionCollectionViewCell.swift */; };
+		A16D16B41E83906B00DD0DA9 /* SelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */; };
 		A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */; };
 		A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */; };
 		A17C79681E6318F90001F43C /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79661E6318F90001F43C /* GameplayViewController.swift */; };
 		A17C79691E6318F90001F43C /* GameplayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79671E6318F90001F43C /* GameplayViewController.xib */; };
 		A17C796F1E6327F70001F43C /* WorldEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C796D1E6327F70001F43C /* WorldEditorViewController.swift */; };
 		A17C79701E6327F70001F43C /* WorldEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */; };
-		A17C79781E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */; };
-		A17C79791E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */; };
 		A18168931E749ADF003B9CE9 /* SpritesParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168921E749ADF003B9CE9 /* SpritesParametersView.swift */; };
 		A18168951E749AEF003B9CE9 /* SpritesParametersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18168941E749AEF003B9CE9 /* SpritesParametersView.xib */; };
-		A181689C1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A181689A1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.swift */; };
-		A181689D1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A181689B1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.xib */; };
 		A18168B01E7C3C20003B9CE9 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168AF1E7C3C20003B9CE9 /* PageView.swift */; };
 		A18168B21E7EDE65003B9CE9 /* PhysicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18168B11E7EDE65003B9CE9 /* PhysicsView.swift */; };
 		A18168B41E7EDE79003B9CE9 /* PhysicsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18168B31E7EDE79003B9CE9 /* PhysicsView.xib */; };
@@ -180,18 +185,23 @@
 		A143A7B41DEBF53A004DBC84 /* MakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUITests.swift; sourceTree = "<group>"; };
 		A143A7B61DEBF53A004DBC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A168376AF0F9FD137E28FA91 /* Pods-MakeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MakeTests/Pods-MakeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A16D16A01E81F0C700DD0DA9 /* ScenesEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesEditorViewController.swift; path = Scenes/ScenesEditorViewController.swift; sourceTree = "<group>"; };
+		A16D16A11E81F0C700DD0DA9 /* ScenesEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScenesEditorViewController.xib; path = Scenes/ScenesEditorViewController.xib; sourceTree = "<group>"; };
+		A16D16A51E81F10400DD0DA9 /* ScenesPlacementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesPlacementView.swift; path = Scenes/ScenesPlacementView.swift; sourceTree = "<group>"; };
+		A16D16A71E81F11200DD0DA9 /* ScenesPlacementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScenesPlacementView.xib; path = Scenes/ScenesPlacementView.xib; sourceTree = "<group>"; };
+		A16D16A91E81F12300DD0DA9 /* ScenesPlacementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesPlacementController.swift; path = Scenes/ScenesPlacementController.swift; sourceTree = "<group>"; };
+		A16D16AB1E83100200DD0DA9 /* ScenesReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesReferenceView.swift; path = Scenes/ScenesReferenceView.swift; sourceTree = "<group>"; };
+		A16D16AF1E837D0C00DD0DA9 /* ScenesReferenceDragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesReferenceDragView.swift; path = Scenes/ScenesReferenceDragView.swift; sourceTree = "<group>"; };
+		A16D16B11E83906B00DD0DA9 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionCollectionViewCell.swift; path = Editor/SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectionCollectionViewCell.xib; path = Editor/SelectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataClass.swift"; path = "SourceCode/SCReference+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataProperties.swift"; path = "SourceCode/SCReference+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A17C79661E6318F90001F43C /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayViewController.swift; path = Gameplay/GameplayViewController.swift; sourceTree = "<group>"; };
 		A17C79671E6318F90001F43C /* GameplayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameplayViewController.xib; path = Gameplay/GameplayViewController.xib; sourceTree = "<group>"; };
 		A17C796D1E6327F70001F43C /* WorldEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorldEditorViewController.swift; path = World/WorldEditorViewController.swift; sourceTree = "<group>"; };
 		A17C796E1E6327F70001F43C /* WorldEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WorldEditorViewController.xib; path = World/WorldEditorViewController.xib; sourceTree = "<group>"; };
-		A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicSelectionCollectionViewCell.swift; path = World/GraphicSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
-		A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GraphicSelectionCollectionViewCell.xib; path = World/GraphicSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A18168921E749ADF003B9CE9 /* SpritesParametersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpritesParametersView.swift; path = Sprites/SpritesParametersView.swift; sourceTree = "<group>"; };
 		A18168941E749AEF003B9CE9 /* SpritesParametersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpritesParametersView.xib; path = Sprites/SpritesParametersView.xib; sourceTree = "<group>"; };
-		A181689A1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpriteSelectionCollectionViewCell.swift; path = World/SpriteSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
-		A181689B1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpriteSelectionCollectionViewCell.xib; path = World/SpriteSelectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A18168AF1E7C3C20003B9CE9 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Editor/PageView.swift; sourceTree = "<group>"; };
 		A18168B11E7EDE65003B9CE9 /* PhysicsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsView.swift; path = Sprites/PhysicsView.swift; sourceTree = "<group>"; };
 		A18168B31E7EDE79003B9CE9 /* PhysicsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhysicsView.xib; path = Sprites/PhysicsView.xib; sourceTree = "<group>"; };
@@ -440,6 +450,28 @@
 			name = "Source Code";
 			sourceTree = "<group>";
 		};
+		A16D169F1E81F08800DD0DA9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A16D16A01E81F0C700DD0DA9 /* ScenesEditorViewController.swift */,
+				A16D16A11E81F0C700DD0DA9 /* ScenesEditorViewController.xib */,
+				A16D16A41E81F0CC00DD0DA9 /* References */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		A16D16A41E81F0CC00DD0DA9 /* References */ = {
+			isa = PBXGroup;
+			children = (
+				A16D16A91E81F12300DD0DA9 /* ScenesPlacementController.swift */,
+				A16D16A51E81F10400DD0DA9 /* ScenesPlacementView.swift */,
+				A16D16A71E81F11200DD0DA9 /* ScenesPlacementView.xib */,
+				A16D16AB1E83100200DD0DA9 /* ScenesReferenceView.swift */,
+				A16D16AF1E837D0C00DD0DA9 /* ScenesReferenceDragView.swift */,
+			);
+			name = References;
+			sourceTree = "<group>";
+		};
 		A17C79541E61BF6A0001F43C /* Variable */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,8 +494,8 @@
 			isa = PBXGroup;
 			children = (
 				A18168901E749875003B9CE9 /* Utility */,
-				A17C79721E6329DE0001F43C /* Selection Cells */,
 				A17C796C1E6327CC0001F43C /* World */,
+				A16D169F1E81F08800DD0DA9 /* Scenes */,
 				A1F907541E301DF50015DAFE /* Sprites */,
 				A1F51FF71E08E90600443ABB /* Graphics */,
 			);
@@ -490,23 +522,14 @@
 			name = World;
 			sourceTree = "<group>";
 		};
-		A17C79721E6329DE0001F43C /* Selection Cells */ = {
-			isa = PBXGroup;
-			children = (
-				A17C79761E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift */,
-				A17C79771E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib */,
-				A181689A1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.swift */,
-				A181689B1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.xib */,
-			);
-			name = "Selection Cells";
-			sourceTree = "<group>";
-		};
 		A181688F1E73B410003B9CE9 /* Selection View */ = {
 			isa = PBXGroup;
 			children = (
 				A1F642791E70F4B20034292D /* SelectionView.swift */,
 				A1F6427B1E70F4CB0034292D /* SelectionView.xib */,
 				A1F6427D1E70F6B40034292D /* SelectionController.swift */,
+				A16D16B11E83906B00DD0DA9 /* SelectionCollectionViewCell.swift */,
+				A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */,
 				A1818B831E73443E00D76C05 /* AddEntityCollectionViewCell.swift */,
 				A1818B841E73443E00D76C05 /* AddEntityCollectionViewCell.xib */,
 			);
@@ -834,17 +857,18 @@
 				A143A79A1DEBF53A004DBC84 /* Main.storyboard in Resources */,
 				A18168B41E7EDE79003B9CE9 /* PhysicsView.xib in Resources */,
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
+				A16D16A81E81F11200DD0DA9 /* ScenesPlacementView.xib in Resources */,
 				A143A79C1DEBF53A004DBC84 /* Assets.xcassets in Resources */,
 				A1F9075C1E3192AA0015DAFE /* SpritesEditorViewController.xib in Resources */,
 				A143A79F1DEBF53A004DBC84 /* LaunchScreen.storyboard in Resources */,
 				A1818B861E73443E00D76C05 /* AddEntityCollectionViewCell.xib in Resources */,
 				A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */,
 				A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */,
-				A17C79791E632B5B0001F43C /* GraphicSelectionCollectionViewCell.xib in Resources */,
-				A181689D1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.xib in Resources */,
+				A16D16B41E83906B00DD0DA9 /* SelectionCollectionViewCell.xib in Resources */,
 				A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */,
 				A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */,
 				A12FE7DC1E15454A0015989D /* LayerTableViewCell.xib in Resources */,
+				A16D16A31E81F0C700DD0DA9 /* ScenesEditorViewController.xib in Resources */,
 				A18B0D1B1E18385F0079EBBE /* FrameCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1015,6 +1039,7 @@
 				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
+				A16D16B31E83906B00DD0DA9 /* SelectionCollectionViewCell.swift in Sources */,
 				A18168BA1E7EE3A6003B9CE9 /* PhysicsShapeOutlineView.swift in Sources */,
 				A1F6427E1E70F6B40034292D /* SelectionController.swift in Sources */,
 				A1F520341E09DFD900443ABB /* SCFrame+CoreDataProperties.swift in Sources */,
@@ -1025,7 +1050,9 @@
 				A1F907561E301E4F0015DAFE /* PhysicsPropertiesView.swift in Sources */,
 				A18B0D121E182EA10079EBBE /* CoreDataCollectionViewController.swift in Sources */,
 				A1F520331E09DFD900443ABB /* SCFrame+CoreDataClass.swift in Sources */,
+				A16D16B01E837D0C00DD0DA9 /* ScenesReferenceDragView.swift in Sources */,
 				A18B0D141E1830620079EBBE /* CoreDataCollectionViewCell.swift in Sources */,
+				A16D16A21E81F0C700DD0DA9 /* ScenesEditorViewController.swift in Sources */,
 				A1DBE1121E0688270053758F /* SCStatement.swift in Sources */,
 				A12FE7E51E1598FE0015989D /* BrushDelegate.swift in Sources */,
 				A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */,
@@ -1034,6 +1061,7 @@
 				A1F51FFE1E08EF0600443ABB /* GraphicsEditorViewController.swift in Sources */,
 				A1F520571E0A528C00443ABB /* SCCoreDataStack.swift in Sources */,
 				A1F9074B1E30198C0015DAFE /* SCPhysicsBody+CoreDataClass.swift in Sources */,
+				A16D16AC1E83100200DD0DA9 /* ScenesReferenceView.swift in Sources */,
 				A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */,
 				A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */,
 				A18168BE1E7EFB8E003B9CE9 /* PhysicsController.swift in Sources */,
@@ -1062,15 +1090,16 @@
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
+				A16D16A61E81F10400DD0DA9 /* ScenesPlacementView.swift in Sources */,
 				A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
+				A16D16AA1E81F12300DD0DA9 /* ScenesPlacementController.swift in Sources */,
 				A18168931E749ADF003B9CE9 /* SpritesParametersView.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
 				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
 				A185B8821E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
 				A121B6531E60D36D0093A1FC /* OCSprite.swift in Sources */,
-				A181689C1E74AC85003B9CE9 /* SpriteSelectionCollectionViewCell.swift in Sources */,
 				A143A78F1DEBF53A004DBC84 /* AppDelegate.swift in Sources */,
 				A121B64F1E60C4C90093A1FC /* Variables.swift in Sources */,
 				A1F520161E09B9A200443ABB /* Observable.swift in Sources */,
@@ -1092,7 +1121,6 @@
 				A1F5202B1E09DFD900443ABB /* SCLayer+CoreDataProperties.swift in Sources */,
 				A12FE7E01E1584280015989D /* CoreDataTableViewCell.swift in Sources */,
 				A130A2011E26DBE10073CD51 /* MainNavigationController.swift in Sources */,
-				A17C79781E632B5B0001F43C /* GraphicSelectionCollectionViewCell.swift in Sources */,
 				A1DBE07B1E0670590053758F /* SCModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,7 +52,7 @@ class GameplayViewController: UIViewController {
             sprite.physicsBody.isDynamic = true
             let scene = scWorld.scenes.first!
             let lowerRef = scene.createReference(to: sprite)
-            lowerRef.positionY = 0.75
+            lowerRef.centerY = 0.75
             self.connector.saveContext()
         }
         scWorld.gravityMagnitude = 0.5
@@ -63,13 +63,13 @@ class GameplayViewController: UIViewController {
             sprite.physicsBody.isDynamic = true
             sprite.physicsBody.restitution = 1.0
             sprite.physicsBody.canRotate = true
-            if sprite.references.first!.positionY > 0.6 {
-                sprite.references.first!.positionX = 0.65
-                sprite.references.first!.positionY = 0.9
+            if sprite.references.first!.centerY > 0.6 {
+                sprite.references.first!.centerX = 0.65
+                sprite.references.first!.centerY = 0.9
                 sprite.physicsBody.isAffectedByGravity = true
             }
             else {
-                sprite.references.first!.positionY = 0.2
+                sprite.references.first!.centerY = 0.2
                 sprite.physicsBody.density = 3.0
             }
         }

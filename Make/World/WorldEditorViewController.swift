@@ -53,14 +53,32 @@ class WorldEditorViewController: UIViewController {
         self.graphicSelectionController = SelectionController(dataSource: self,
                                                               view: self.graphicSelectionView,
                                                               name: SCConstants.GRAPHIC_DISPLAY_TITLE,
-                                                              cellIdentifier: GraphicSelectionCollectionViewCell.cellIdentifier,
                                                               observer: self.world.graphicObserver)
+        
+        self.graphicSelectionController.getImage = { entity in
+            let graphic = entity as! SCGraphic
+            return graphic.firstFrame.makeImageFromLayers()
+        }
+        
+        self.graphicSelectionController.getLabel = { entity in
+            let graphic = entity as! SCGraphic
+            return graphic.name
+        }
         
         self.spriteSelectionController = SelectionController(dataSource: self,
                                                              view: self.spriteSelectionView,
                                                              name: SCConstants.SPRITE_DISPLAY_TITLE,
-                                                             cellIdentifier: SpriteSelectionCollectionViewCell.cellIdentifier,
                                                              observer: self.world.spriteObserver)
+        
+        self.spriteSelectionController.getImage = { entity in
+            let sprite = entity as! SCSprite
+            return sprite.editorImage
+        }
+        
+        self.spriteSelectionController.getLabel = { entity in
+            let sprite = entity as! SCSprite
+            return sprite.name
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

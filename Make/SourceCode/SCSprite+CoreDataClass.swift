@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
@@ -16,6 +16,7 @@ public class SCSprite: NSManagedObject {
     
     @NSManaged public var id: String
     @NSManaged public var name: String
+    @NSManaged public var comment: String?
     @NSManaged public var dateCreated: Date
     @NSManaged public var graphic: SCGraphic?
     @NSManaged public var methods: Set<SCMethod>
@@ -25,10 +26,23 @@ public class SCSprite: NSManagedObject {
     @NSManaged public var physicsBody: SCPhysicsBody
     
     
+    var editorImage: UIImage {
+        get {
+            if let graphic = self.graphic {
+                return graphic.firstFrame.makeImageFromLayers()
+            }
+            else {
+                return UIImage(named: "Placeholder image")!
+            }
+        }
+    }
+    
+    
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
         self.dateCreated = Date()
     }
+    
     
     @discardableResult
     public func createMethod() -> SCMethod {
@@ -44,6 +58,14 @@ public class SCSprite: NSManagedObject {
         variable.name = "\(SCConstants.VARIABLE_DISPLAY_TITLE) \(self.variables.count + 1)"
         self.addToVariables(variable)
         return variable
+    }
+    
+    @discardableResult
+    public func createReference(in scene: SCScene) -> SCReference {
+        let reference: SCReference = self.world.connector.createEntity(SCReference.entityName)!
+        self.addToReferences(reference)
+        scene.addToReferences(reference)
+        return reference
     }
     
 }

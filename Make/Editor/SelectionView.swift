@@ -22,5 +22,10 @@ class SelectionView: UIViewFromNib {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.delegate?.applyParameters()
+    }
+    
 
 }

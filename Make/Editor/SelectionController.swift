@@ -14,11 +14,15 @@ protocol SelectionDelegate: class {
     
     var isSelecting: Bool { get set }
     
+    var getImage: ((NSManagedObject) -> (UIImage?))? { get }
+    var getLabel: ((NSManagedObject) -> (String))? { get }
+
     var name: String { get set }
     var textColor: UIColor { get set}
     var borderColor: UIColor { get set }
     var scrollDirection: UICollectionViewScrollDirection { get set }
-    var minimumCellSize: CGFloat { get set }
+    var cellLength: Int { get set }
+    var cellSizeDiff: CGFloat { get set }
     var cellInsetSize: CGFloat { get set }
     
     func applyParameters()
@@ -31,9 +35,18 @@ protocol SelectionDelegate: class {
 
 protocol SelectionDataSource: class {
     
+    func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String)
     func createEntity(name: String)
     func didSelectEntity(_ entity: NSManagedObject, name: String)
     func deleteEntities(_ entities: [NSManagedObject], name: String)
+    
+}
+
+extension SelectionDataSource {
+    
+    func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String) { }
+    func didSelectEntity(_ entity: NSManagedObject, name: String) { }
+    func deleteEntities(_ entities: [NSManagedObject], name: String) { }
     
 }
 
@@ -48,8 +61,9 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
     var textColor = UIColor.black
     var borderColor = UIColor(hex: 0xEFEFF4)
     var scrollDirection = UICollectionViewScrollDirection.vertical
-    var minimumCellSize = CGFloat(110)
-    var cellInsetSize = CGFloat(1.5)
+    var cellLength = 4
+    var cellSizeDiff = CGFloat(24)
+    var cellInsetSize = CGFloat(5)
     
     var isSelecting = false {
         didSet {
@@ -57,13 +71,16 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
         }
     }
     
+    var getImage: ((NSManagedObject) -> (UIImage?))? = nil
+    var getLabel: ((NSManagedObject) -> (String))? = nil
+
     func applyParameters() {
         self.configureCollectionViewController()
         self.configureCollectionViewLayout()
     }
     
     
-    init(dataSource: SelectionDataSource, view: SelectionView, name: String, cellIdentifier: String, observer: ObservableEntity) {
+    init(dataSource: SelectionDataSource, view: SelectionView, name: String, observer: ObservableEntity, cellIdentifier: String = SelectionCollectionViewCell.cellIdentifier) {
         self.view = view
         self.dataSource = dataSource
         self.name = name
@@ -94,14 +111,20 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
         if let layout = self.layout as? UICollectionViewFlowLayout {
             layout.scrollDirection = self.scrollDirection
             
-            let size = (self.scrollDirection == .vertical ? self.collectionView.frame.size.width : self.collectionView.frame.size.height)
-            let numCellsWide = max(1.0, floor(size / self.minimumCellSize))
-            let cellSize = size / numCellsWide //- (numCellsWide * self.cellInsetSize)
+            let size = (self.scrollDirection == .vertical ? self.view!.bounds.width : self.view!.bounds.height - self.view!.titleLabel.bounds.height)
+            let cellSize = size / CGFloat(self.cellLength) - self.cellInsetSize * CGFloat(self.cellLength - 1)
+            layout.minimumInteritemSpacing = 0
             
-            let sectionInsetSize = self.cellInsetSize * numCellsWide
-            layout.itemSize = CGSize(width: cellSize, height: cellSize)
-            layout.sectionInset = UIEdgeInsets(top: sectionInsetSize, left: sectionInsetSize,
-                                               bottom: sectionInsetSize, right: sectionInsetSize)
+            if self.scrollDirection == .vertical {
+                layout.itemSize = CGSize(width: cellSize, height: cellSize + self.cellSizeDiff)
+            }
+            else {
+                layout.itemSize = CGSize(width: cellSize - self.cellSizeDiff, height: cellSize)
+            }
+            
+            let borderSize = self.cellInsetSize * 2
+            layout.sectionInset = UIEdgeInsets(top: borderSize, left: borderSize,
+                                               bottom: borderSize, right: borderSize)
         }
     }
     
@@ -134,6 +157,11 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
             }
         }
     }
+    
+    override func configureCollectionViewCell(_ cell: CoreDataCollectionViewCell) {
+        self.dataSource?.configureSelectionCell(cell, name: self.name)
+    }
+    
 }
 
 extension SelectionController {
