@@ -58,11 +58,11 @@ extension UIView {
     }
     
     func contains(view: UIView) -> Bool {
-        let viewOrigin = self.convert(view.frame.origin, to: self)
-        return viewOrigin.x >= 0
-                && viewOrigin.y >= 0
-                && viewOrigin.x + view.bounds.width <= self.bounds.width
-                && viewOrigin.y + view.bounds.height <= self.bounds.height
+        if let masterView = self.parentViewController?.view {
+            let viewFrame = masterView.convert(view.frame, to: self)
+            return self.frame.contains(viewFrame)
+        }
+        return false
     }
     
     var parentViewController: UIViewController? {
@@ -75,6 +75,16 @@ extension UIView {
             }
             return nil
         }
+    }
+    
+    var rootViewController: UIViewController? {
+        if var controller = self.parentViewController {
+            while let next = controller.parent {
+                controller = next
+            }
+            return controller
+        }
+        return nil
     }
     
 }

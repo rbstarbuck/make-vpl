@@ -12,9 +12,9 @@ import CoreData
 
 public class SCReference: NSManagedObject {
     public static let entityName = "Reference"
-    public static let defaultScale = 0.2
+    public static let defaultRelativeWidth = 0.15
     
-    
+        
     @NSManaged public var id: String
     @NSManaged public var centerX: Double
     @NSManaged public var centerY: Double

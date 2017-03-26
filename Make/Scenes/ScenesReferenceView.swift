@@ -9,24 +9,36 @@
 import UIKit
 
 
-class ScenesReferenceView: UIView {
 
-    weak var imageView: UIImageView!
+class ScenesReferenceView: UIView {
     
+    static var outlineColor = UIColor.lightGray
+    
+    static var outlineWidth = CGFloat(3) {
+        didSet {
+            self.handleSize = self.outlineWidth * 2.0
+            self.halfHandleSize = self.handleSize / 2.0
+        }
+    }
+    
+    static var outlineDashLengths = [CGFloat(6), CGFloat(6)]
+    
+    private static var handleSize = CGFloat(9)
+    
+    private static var halfHandleSize = CGFloat(4.5)
+
+    
+    weak var imageView: UIImageView!
     
     var delegate: ScenesPlacementDelegate! {
         didSet {
-            if self.reference != nil && self.imageView != nil {
-                self.update()
-            }
+            self.initialize()
         }
     }
     
     var reference: SCReference! {
         didSet {
-            if self.delegate != nil && self.imageView != nil {
-                self.update()
-            }
+            self.initialize()
         }
     }
     
@@ -45,16 +57,19 @@ class ScenesReferenceView: UIView {
         imageView.constrainEdgesToParent(self)
         self.imageView = imageView
         
-        if self.delegate != nil && self.reference != nil {
+        self.initialize()
+    }
+    
+    
+    private func initialize() {
+        if self.delegate != nil && self.reference != nil && self.imageView != nil {
             self.update()
         }
     }
     
-    
     func update() {
         self.updateImage()
         self.updateTransform()
-        self.updatePosition()
     }
     
     func updateImage() {
@@ -63,16 +78,68 @@ class ScenesReferenceView: UIView {
     
     func updateTransform() {
         self.frame = self.reference.frame(in: self.delegate.gameplayViewFrame)
-        /*let scale = self.reference.scale(in: self.delegate.gameplayViewSize)
-        self.transform = CGAffineTransform.identity
-        self.transform = CGAffineTransform(scaleX: scale, y: scale)
-        self.transform = CGAffineTransform(rotationAngle: CGFloat(self.reference.rotation))*/
     }
     
-    func updatePosition() {
-        /*let gameplayViewSize = self.delegate.gameplayViewSize
-        self.center = CGPoint(x: CGFloat(self.reference.centerX) * gameplayViewSize.width,
-                              y: CGFloat(self.reference.centerY) * gameplayViewSize.height)*/
+    
+    func contains(gesture: UIGestureRecognizer) -> Bool {
+        let location = gesture.location(in: self)
+        return self.bounds.contains(location)
+    }
+    
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        if self.isSelected {
+            guard let context = UIGraphicsGetCurrentContext() else {
+                return
+            }
+            
+            let lineRect = CGRect(x: ScenesReferenceView.halfHandleSize,
+                                  y: ScenesReferenceView.halfHandleSize,
+                                  width: self.bounds.width - ScenesReferenceView.handleSize,
+                                  height: self.bounds.height - ScenesReferenceView.handleSize)
+            
+            context.setLineWidth(ScenesReferenceView.outlineWidth)
+            context.setStrokeColor(ScenesReferenceView.outlineColor.cgColor)
+            context.setLineDash(phase: 0, lengths: ScenesReferenceView.outlineDashLengths)
+            context.addRect(lineRect)
+            context.strokePath()
+            
+            
+            context.setFillColor(ScenesReferenceView.outlineColor.cgColor)
+            let x1 = self.bounds.width / 2.0 - ScenesReferenceView.halfHandleSize
+            let x2 = self.bounds.width - ScenesReferenceView.handleSize
+            let y1 = self.bounds.height / 2.0 - ScenesReferenceView.halfHandleSize
+            let y2 = self.bounds.height - ScenesReferenceView.handleSize
+            
+            var handleRect = CGRect(x: 0, y: 0,
+                                    width: ScenesReferenceView.handleSize,
+                                    height: ScenesReferenceView.handleSize)
+            context.fill(handleRect)
+            
+            handleRect.origin.x = x1
+            context.fill(handleRect)
+            
+            handleRect.origin.x = x2
+            context.fill(handleRect)
+            
+            handleRect.origin.y = y1
+            context.fill(handleRect)
+            
+            handleRect.origin.x = 0
+            context.fill(handleRect)
+            
+            handleRect.origin.y = y2
+            context.fill(handleRect)
+            
+            handleRect.origin.x = x1
+            context.fill(handleRect)
+            
+            handleRect.origin.x = x2
+            context.fill(handleRect)
+            
+        }
     }
     
 }

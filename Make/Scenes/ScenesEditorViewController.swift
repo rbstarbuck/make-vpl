@@ -10,8 +10,6 @@ import UIKit
 import CoreData
 
 
-private let draggingViewReturnDuration = 0.5
-
 private let placementViewPageKey = "placement"
 private let spriteEditorSegueIdentifier = "SpritesEditorViewControllerSegue"
 
@@ -29,9 +27,6 @@ class ScenesEditorViewController: UIViewController {
     
     var selectedEntity: NSManagedObject?
     
-    var draggingView: ScenesReferenceDragView?
-    var draggingViewReturnRect: CGRect?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +40,10 @@ class ScenesEditorViewController: UIViewController {
             let world = self.connector.createWorld()
             self.scene = world.scenes.first!
         }
+        // end delete        
+        self.title = "\(SCConstants.SCENE_DISPLAY_TITLE): \"\(self.scene.name)\""
+        self.edgesForExtendedLayout = UIRectEdge()
+        self.view.layoutSubviews()
         
         self.spriteSelectionController = SelectionController(dataSource: self,
                                                              view: self.spriteSelectionView,
@@ -66,10 +65,20 @@ class ScenesEditorViewController: UIViewController {
         let placementView = ScenesPlacementView()
         self.placementController = ScenesPlacementController(view: placementView, scene: self.scene)
         self.contentPageView.addPage(placementView, key: placementViewPageKey)
+        
+        let referencePanGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onReferencePan(_:)))
+        placementView.addGestureRecognizer(referencePanGesture)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onPlacementViewTap(_:)))
+        placementView.addGestureRecognizer(tapGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.spriteSelectionView.collectionView.reloadData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.placementController.reloadData()
     }
     
     
@@ -80,6 +89,55 @@ class ScenesEditorViewController: UIViewController {
             spritesEditor.sprite = self.selectedEntity as! SCSprite
         }
     }
+    
+    
+    func onPlacementViewTap(_ sender: UITapGestureRecognizer) {
+        self.placementController.onTap(sender)
+    }
+    
+    func onSpriteDrag(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            if sender.numberOfTouches > 0 {
+                self.placementController.dragBegan(sender, in: self.view)
+            }
+            break
+            
+        case .changed:
+            if sender.numberOfTouches > 0 {
+                self.placementController.dragChanged(sender, in: self.view)
+            }
+            break
+            
+        case .possible: break
+            
+        default:
+            self.placementController.dragEnded(sender, in: self.view)
+            break
+        }
+    }
+    
+    func onReferencePan(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            if sender.numberOfTouches > 0 {
+                self.placementController.moveBegan(sender)
+            }
+            break
+            
+        case .changed:
+            if sender.numberOfTouches > 0 {
+                self.placementController.moveChanged(sender)
+            }
+            break
+            
+        case .possible: break
+            
+        default:
+            self.placementController.moveEnded(sender)
+            break
+        }
+    }
 }
 
 
@@ -88,7 +146,7 @@ extension ScenesEditorViewController: SelectionDataSource {
     func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String) {
         if name == SCConstants.SPRITE_DISPLAY_TITLE {
             let selectionCell = cell as! SelectionCollectionViewCell
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onPan(_:)))
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onSpriteDrag(_:)))
             selectionCell.addGestureRecognizer(panGesture)
         }
     }
@@ -98,65 +156,6 @@ extension ScenesEditorViewController: SelectionDataSource {
             self.selectedEntity = self.scene.world.createSprite()
             self.performSegue(withIdentifier: spriteEditorSegueIdentifier, sender: self)
         }
-    }
-    
-    
-    func onPan(_ sender: UIPanGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            if sender.numberOfTouches > 0 {
-                self.onPanBegan(sender)
-            }
-            break
-            
-        case .changed:
-            if sender.numberOfTouches > 0 {
-                self.onPanChanged(sender)
-            }
-            break
-            
-        case .possible: break
-            
-        default:
-            self.onPanEnded(sender)
-            break
-        }
-    }
-    
-    func onPanBegan(_ sender: UIPanGestureRecognizer) {
-        if self.draggingView == nil {
-            if let source = sender.view as? SelectionCollectionViewCell {
-                self.draggingViewReturnRect = source.imageView.convert(source.imageView.bounds, to: self.view)
-                self.draggingView = ScenesReferenceDragView(frame: self.draggingViewReturnRect!)
-                self.draggingView!.sprite = source.entity as! SCSprite
-                self.view.addSubview(self.draggingView!)
-            }
-        }
-    }
-    
-    func onPanChanged(_ sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: self.view)
-        self.draggingView!.center.x += translation.x
-        self.draggingView!.center.y += translation.y
-        sender.setTranslation(CGPoint(), in: self.view)
-    }
-    
-    func onPanEnded(_ sender: UIPanGestureRecognizer) {
-        if self.placementController.drop(dragView: self.draggingView!) {
-            self.draggingView!.removeFromSuperview()
-        }
-        else {
-            let view = self.draggingView!
-            let returnRect = self.draggingViewReturnRect!
-            UIView.animate(withDuration: draggingViewReturnDuration, animations: {
-                view.frame = returnRect
-            }, completion: { _ in
-                view.removeFromSuperview()
-            })
-        }
-        
-        self.draggingView = nil
-        self.draggingViewReturnRect = nil
     }
     
 }

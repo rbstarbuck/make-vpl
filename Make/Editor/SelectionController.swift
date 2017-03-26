@@ -111,7 +111,7 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
         if let layout = self.layout as? UICollectionViewFlowLayout {
             layout.scrollDirection = self.scrollDirection
             
-            let size = (self.scrollDirection == .vertical ? self.view!.bounds.width : self.view!.bounds.height - self.view!.titleLabel.bounds.height)
+            let size = (self.scrollDirection == .vertical ? self.view!.bounds.width : self.view!.bounds.height - self.view!.titleLabel.bounds.height) - self.cellInsetSize * 4 - 1
             let cellSize = size / CGFloat(self.cellLength) - self.cellInsetSize * CGFloat(self.cellLength - 1)
             layout.minimumInteritemSpacing = 0
             
