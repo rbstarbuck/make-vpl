@@ -16,10 +16,12 @@ private let draggingViewAddDuration = 0.5
 protocol ScenesPlacementDelegate {
     
     var scene: SCScene { get }
+    var selectedReference: SCReference? { get }
     
     var gameplayViewFrame: CGRect { get }
     
     func reloadData()
+    func reloadSelectedReference()
     
     func onTap(_ sender: UITapGestureRecognizer)
     
@@ -40,7 +42,8 @@ protocol ScenesPlacementDelegate {
 
 class ScenesPlacementController: ScenesPlacementDelegate {
     
-    weak var view: ScenesPlacementView?
+    weak var placementView: ScenesPlacementView?
+    weak var parametersView: ScenesReferenceParametersView?
     var scene: SCScene
     
     var draggingView: UIImageView?
@@ -49,9 +52,14 @@ class ScenesPlacementController: ScenesPlacementDelegate {
     
     var isMoving = false
     
+    var previousTouch1: CGPoint!
+    var previousTouch2: CGPoint!
+    
+    var referenceViews = WeakArray<ScenesReferenceView>()
+    
     var gameplayViewFrame: CGRect {
         get {
-            if let gameplayView = self.view?.gameplayView {
+            if let gameplayView = self.placementView?.gameplayView {
                 return gameplayView.frame
             }
             else {
@@ -60,19 +68,28 @@ class ScenesPlacementController: ScenesPlacementDelegate {
         }
     }
     
-    var selectedReference: ScenesReferenceView? {
+    var selectedReferenceView: ScenesReferenceView? {
         didSet {
             oldValue?.isSelected = false
-            self.selectedReference?.isSelected = true
+            self.selectedReferenceView?.isSelected = true
+            self.parametersView?.configure()
         }
     }
     
-    var referenceViews = WeakArray<ScenesReferenceView>()
+    var selectedReference: SCReference? {
+        get {
+            return self.selectedReferenceView?.reference
+        }
+    }
     
     
-    init(view: ScenesPlacementView, scene: SCScene) {
-        self.view = view
+    init(placementView: ScenesPlacementView, parametersView: ScenesReferenceParametersView, scene: SCScene) {
+        self.placementView = placementView
+        self.parametersView = parametersView
         self.scene = scene
+        
+        placementView.delegate = self
+        parametersView.delegate = self
         
         for reference in self.scene.references {
             self.instantiate(reference)
@@ -82,7 +99,7 @@ class ScenesPlacementController: ScenesPlacementDelegate {
     
     @discardableResult
     func instantiate(_ reference: SCReference) -> ScenesReferenceView? {
-        if let view = self.view {
+        if let view = self.placementView {
             let referenceFrame = reference.frame(in: view.gameplayView.frame)
             let referenceView = ScenesReferenceView(frame: referenceFrame)
             
@@ -102,13 +119,18 @@ class ScenesPlacementController: ScenesPlacementDelegate {
             view.update()
         }
     }
-        
+    
+    func reloadSelectedReference() {
+        self.selectedReferenceView?.update()
+    }
+    
 }
+
 
 extension ScenesPlacementController {
     
     func onTap(_ sender: UITapGestureRecognizer) {
-        self.selectedReference = self.referenceViewAt(gesture: sender)
+        self.selectedReferenceView = self.referenceViewAt(gesture: sender)
     }
     
     func referenceViewAt(gesture: UIGestureRecognizer) -> ScenesReferenceView? {
@@ -126,7 +148,7 @@ extension ScenesPlacementController {
                 nextReferenceView = referenceView
             }
             
-            if referenceView == self.selectedReference {
+            if referenceView == self.selectedReferenceView {
                 hasSeenSelectedReferenceView = true
             }
         }
@@ -136,47 +158,6 @@ extension ScenesPlacementController {
     
 }
 
-extension ScenesPlacementController {
-    
-    func moveBegan(_ sender: UIPanGestureRecognizer) {
-        if self.selectedReference != nil && self.selectedReference!.contains(gesture: sender) {
-            self.isMoving = true
-        }
-        else if let nextReference = self.referenceViewAt(gesture: sender) {
-            self.selectedReference = nextReference
-            self.isMoving = true
-        }
-    }
-    
-    func moveChanged(_ sender: UIPanGestureRecognizer) {
-        if self.isMoving {
-            let frame = self.view!.convert(self.selectedReference!.frame, to: self.view!)
-            var translation = sender.translation(in: self.view)
-            let posX = frame.origin.x + translation.x
-            let posY = frame.origin.y + translation.y
-            
-            if posX >= 0 && posX + self.selectedReference!.bounds.width <= self.view!.bounds.width {
-                self.selectedReference!.center.x += translation.x
-                self.selectedReference!.reference.centerX += Double(translation.x) / Double(self.gameplayViewFrame.width)
-                translation.x = 0
-            }
-            
-            if posY >= 0 && posY + self.selectedReference!.bounds.height <= self.view!.bounds.height {
-                self.selectedReference!.center.y += translation.y
-                self.selectedReference!.reference.centerY += Double(translation.y) / Double(self.gameplayViewFrame.height)
-                translation.y = 0
-            }
-            
-            sender.setTranslation(translation, in: self.view!)
-        }
-    }
-    
-    func moveEnded(_ sender: UIPanGestureRecognizer) {
-        self.isMoving = false
-        self.scene.world.connector.saveContext()
-    }
-    
-}
 
 extension ScenesPlacementController {
     
@@ -232,7 +213,7 @@ extension ScenesPlacementController {
     }
     
     func drop(dragView: UIImageView) -> Bool {
-        if let view = self.view {
+        if let view = self.placementView {
             if view.contains(view: dragView) {
                 let reference = self.draggingSprite!.createReference(in: self.scene)
                 let dragCenter = view.parentViewController!.view.convert(dragView.center, to: view.gameplayView)
@@ -240,7 +221,7 @@ extension ScenesPlacementController {
                 reference.centerY = Double(dragCenter.y / view.gameplayView.bounds.height)
                 
                 self.scene.world.connector.saveContext()
-                self.selectedReference = self.instantiate(reference)
+                self.selectedReferenceView = self.instantiate(reference)
                 
                 return true
             }
@@ -251,18 +232,111 @@ extension ScenesPlacementController {
     
 }
 
+
+extension ScenesPlacementController {
+    
+    func moveBegan(_ sender: UIPanGestureRecognizer) {
+        if self.selectedReferenceView != nil && self.selectedReferenceView!.contains(gesture: sender) {
+            self.isMoving = true
+        }
+        else if let nextReference = self.referenceViewAt(gesture: sender) {
+            self.selectedReferenceView = nextReference
+            self.isMoving = true
+        }
+    }
+    
+    func moveChanged(_ sender: UIPanGestureRecognizer) {
+        if self.isMoving {
+            let frame = self.placementView!.convert(self.selectedReferenceView!.frame, to: self.placementView!)
+            var translation = sender.translation(in: self.placementView)
+            var translationReset = CGPoint()
+            
+            let posX = frame.origin.x + translation.x
+            let posY = frame.origin.y + translation.y
+            
+            if posX < 0 {
+                translationReset.x = translation.x + frame.origin.x
+                translation.x = -frame.origin.x
+            }
+            else if posX + frame.width > self.placementView!.bounds.width {
+                let diffX = self.placementView!.bounds.width - frame.origin.x - frame.width
+                translationReset.x = translation.x - diffX
+                translation.x = diffX
+            }
+            
+            if posY < 0 {
+                translationReset.y = translation.y + frame.origin.y
+                translation.y = -frame.origin.y
+            }
+            else if posY + frame.height > self.placementView!.bounds.height {
+                let diffY = self.placementView!.bounds.height - frame.origin.y - frame.height
+                translationReset.y = translation.y - diffY
+                translation.y = diffY
+            }
+            
+            self.selectedReference!.centerX += Double(translation.x) / Double(self.gameplayViewFrame.width)
+            self.selectedReference!.centerY += Double(translation.y) / Double(self.gameplayViewFrame.height)
+            self.selectedReferenceView!.updateTransform()
+            
+            sender.setTranslation(translationReset, in: self.placementView!)
+        }
+    }
+    
+    func moveEnded(_ sender: UIPanGestureRecognizer) {
+        self.isMoving = false
+        self.scene.world.connector.saveContext()
+    }
+    
+}
+
+
 extension ScenesPlacementController {
     
     func resizeBegan(_ sender: UIPinchGestureRecognizer) {
-        
+        if self.selectedReferenceView != nil {
+            self.previousTouch1 = sender.location(ofTouch: 0, in: self.placementView)
+            self.previousTouch2 = sender.location(ofTouch: 1, in: self.placementView)
+        }
     }
     
     func resizeChanged(_ sender: UIPinchGestureRecognizer) {
-        
+        if let selectedReferenceView = self.selectedReferenceView {
+            let touch1 = sender.location(ofTouch: 0, in: self.placementView!)
+            let touch2 = sender.location(ofTouch: 1, in: self.placementView!)
+            let referencePosition = self.placementView!.convert(selectedReferenceView.frame.origin, to: self.placementView!)
+            
+            let prevDistance = self.previousTouch1.distance(to: self.previousTouch2)
+            let currDistance = touch1.distance(to: touch2)
+            
+            let diff = currDistance - prevDistance
+            let size = selectedReferenceView.bounds.width + diff
+            let translation = (size - selectedReferenceView.bounds.width) / 2.0
+            let posX = referencePosition.x - translation
+            let posY = referencePosition.y - translation
+            
+            let scaleDiff = diff / self.placementView!.gameplayView.bounds.width
+            let relativeWidth = selectedReferenceView.reference.relativeWidth + Double(scaleDiff)
+            
+            if relativeWidth >= SCReference.minimumRelativeWidth
+                    && posX >= 0 && posX + size <= self.placementView!.bounds.width
+                    && posY >= 0 && posY + size <= self.placementView!.bounds.height {
+                selectedReferenceView.reference.relativeWidth = relativeWidth
+                selectedReferenceView.updateTransform()
+                self.parametersView?.configure()
+                self.previousTouch1 = touch1
+                self.previousTouch2 = touch2
+            }
+        }
     }
     
     func resizeEnded(_ sender: UIPinchGestureRecognizer) {
-        
+        self.selectedReferenceView?.updateTransform()
+    }
+    
+    func pinchDistance(of gesture: UIPinchGestureRecognizer) -> CGFloat {
+        let p1 = gesture.location(ofTouch: 0, in: self.placementView)
+        let p2 = gesture.location(ofTouch: 1, in: self.placementView)
+        return p1.distance(to: p2)
     }
     
 }

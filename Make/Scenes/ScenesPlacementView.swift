@@ -12,4 +12,6 @@ class ScenesPlacementView: UIViewFromNib {
     
     @IBOutlet weak var gameplayView: UIView!
     
+    var delegate: ScenesPlacementDelegate!
+    
 }

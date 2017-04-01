@@ -12,10 +12,14 @@ import CoreData
 
 public class SCReference: NSManagedObject {
     public static let entityName = "Reference"
+    
     public static let defaultRelativeWidth = 0.15
+    public static let minimumRelativeWidth = 0.025
+    public static let maximumRelativeWidth = 1.0
     
         
     @NSManaged public var id: String
+    @NSManaged public var animated: Bool
     @NSManaged public var centerX: Double
     @NSManaged public var centerY: Double
     @NSManaged public var relativeWidth: Double

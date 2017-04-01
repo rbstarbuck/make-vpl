@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScenesReferenceParametersView" customModule="Make" customModuleProvider="target">
+            <connections>
+                <outlet property="flipHorizontalButton" destination="Lsq-Fb-rHD" id="Hgc-2G-Gqr"/>
+                <outlet property="flipVerticalButton" destination="kv7-Ws-Ny6" id="SVW-mH-V36"/>
+                <outlet property="isAnimatedButton" destination="o7P-Uv-uKj" id="Jaw-gC-jef"/>
+                <outlet property="rotationSlider" destination="yaY-4l-Oip" id="AOG-gr-5u9"/>
+                <outlet property="scaleSlider" destination="1mc-Tw-7sC" id="VFR-WK-U8d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVp-Cp-v2O">
+                    <rect key="frame" x="8" y="8" width="184" height="48"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1mc-Tw-7sC">
+                            <rect key="frame" x="-2" y="18" width="188" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="9vl-Uh-hQT"/>
+                            </constraints>
+                            <connections>
+                                <action selector="scaleValueChanged:" destination="-1" eventType="valueChanged" id="H0i-qE-fhg"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbh-ni-mzT">
+                            <rect key="frame" x="0.0" y="0.0" width="28" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1mc-Tw-7sC" firstAttribute="leading" secondItem="vVp-Cp-v2O" secondAttribute="leading" id="6Wm-oK-qZ2"/>
+                        <constraint firstItem="Qbh-ni-mzT" firstAttribute="top" secondItem="vVp-Cp-v2O" secondAttribute="top" id="HL3-tm-26S"/>
+                        <constraint firstItem="Qbh-ni-mzT" firstAttribute="leading" secondItem="vVp-Cp-v2O" secondAttribute="leading" id="Tb0-rn-Ch6"/>
+                        <constraint firstAttribute="bottom" secondItem="1mc-Tw-7sC" secondAttribute="bottom" id="Zz7-HH-cT4"/>
+                        <constraint firstAttribute="height" constant="48" id="ewi-Wk-Fzg"/>
+                        <constraint firstAttribute="trailing" secondItem="1mc-Tw-7sC" secondAttribute="trailing" id="v7d-vC-dVI"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djR-ZM-KWt">
+                    <rect key="frame" x="8" y="76" width="184" height="48"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yaY-4l-Oip">
+                            <rect key="frame" x="-2" y="18" width="188" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="xUe-gc-WW1"/>
+                            </constraints>
+                            <connections>
+                                <action selector="rotationValueChanged:" destination="-1" eventType="valueChanged" id="hGH-ZZ-cWg"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1E-Bp-zlG">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="8x1-Wx-epN"/>
+                        <constraint firstAttribute="bottom" secondItem="yaY-4l-Oip" secondAttribute="bottom" id="I9A-Jc-yiI"/>
+                        <constraint firstItem="yaY-4l-Oip" firstAttribute="leading" secondItem="djR-ZM-KWt" secondAttribute="leading" id="Ij8-S2-S7o"/>
+                        <constraint firstItem="N1E-Bp-zlG" firstAttribute="leading" secondItem="djR-ZM-KWt" secondAttribute="leading" id="QgN-ix-xen"/>
+                        <constraint firstAttribute="trailing" secondItem="yaY-4l-Oip" secondAttribute="trailing" id="Yac-2d-6tx"/>
+                        <constraint firstItem="N1E-Bp-zlG" firstAttribute="top" secondItem="djR-ZM-KWt" secondAttribute="top" id="pEo-GP-ObZ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1M-8v-ePf">
+                    <rect key="frame" x="8" y="152" width="184" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7P-Uv-uKj" customClass="ToggleButton" customModule="Make" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="nKN-qh-ZBX"/>
+                                <constraint firstAttribute="height" constant="40" id="vh1-CA-097"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="Movie"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="isAnimatedTouch:" destination="-1" eventType="touchUpInside" id="omV-D8-3Ee"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsq-Fb-rHD" customClass="ToggleButton" customModule="Make" customModuleProvider="target">
+                            <rect key="frame" x="96" y="0.0" width="40" height="40"/>
+                            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="6Ei-wA-Xh3"/>
+                                <constraint firstAttribute="height" constant="40" id="d62-LW-EGI"/>
+                            </constraints>
+                            <state key="normal" image="Flip horizontal"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="flipHorizontalTouch:" destination="-1" eventType="touchUpInside" id="5LR-Q1-V1o"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kv7-Ws-Ny6" customClass="ToggleButton" customModule="Make" customModuleProvider="target">
+                            <rect key="frame" x="144" y="0.0" width="40" height="40"/>
+                            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="9xd-Bd-YSL"/>
+                                <constraint firstAttribute="height" constant="40" id="pLq-hV-e2e"/>
+                            </constraints>
+                            <state key="normal" image="Flip vertical"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="flipVerticalTouch:" destination="-1" eventType="touchUpInside" id="XiX-12-dCt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="kv7-Ws-Ny6" secondAttribute="bottom" id="63i-eD-8iB"/>
+                        <constraint firstItem="o7P-Uv-uKj" firstAttribute="top" secondItem="u1M-8v-ePf" secondAttribute="top" id="RoS-6e-IBp"/>
+                        <constraint firstItem="Lsq-Fb-rHD" firstAttribute="centerY" secondItem="kv7-Ws-Ny6" secondAttribute="centerY" id="SJD-Kb-srv"/>
+                        <constraint firstItem="kv7-Ws-Ny6" firstAttribute="top" secondItem="u1M-8v-ePf" secondAttribute="top" id="VOg-nn-oEh"/>
+                        <constraint firstItem="kv7-Ws-Ny6" firstAttribute="leading" secondItem="Lsq-Fb-rHD" secondAttribute="trailing" constant="8" id="kHO-ZI-lNd"/>
+                        <constraint firstAttribute="bottom" secondItem="o7P-Uv-uKj" secondAttribute="bottom" id="liF-Ha-6TT"/>
+                        <constraint firstItem="o7P-Uv-uKj" firstAttribute="leading" secondItem="u1M-8v-ePf" secondAttribute="leading" id="nmf-rV-yEU"/>
+                        <constraint firstAttribute="trailing" secondItem="kv7-Ws-Ny6" secondAttribute="trailing" id="rA6-pn-QZg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="u1M-8v-ePf" secondAttribute="bottom" constant="8" id="4aQ-aT-iAh"/>
+                <constraint firstItem="djR-ZM-KWt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="AJX-AU-j7b"/>
+                <constraint firstAttribute="trailing" secondItem="vVp-Cp-v2O" secondAttribute="trailing" constant="8" id="AtS-V4-vip"/>
+                <constraint firstItem="vVp-Cp-v2O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Pp8-Yz-FhR"/>
+                <constraint firstAttribute="trailing" secondItem="u1M-8v-ePf" secondAttribute="trailing" constant="8" id="d2a-iy-Dqd"/>
+                <constraint firstAttribute="trailing" secondItem="djR-ZM-KWt" secondAttribute="trailing" constant="8" id="eAg-ne-VyF"/>
+                <constraint firstItem="u1M-8v-ePf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="hYy-wX-T4Y"/>
+                <constraint firstItem="vVp-Cp-v2O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="nsg-CD-Rd7"/>
+                <constraint firstItem="djR-ZM-KWt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="nyl-6v-16B"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-215" y="-182"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Flip horizontal" width="30" height="30"/>
+        <image name="Flip vertical" width="30" height="30"/>
+        <image name="Movie" width="30" height="30"/>
+    </resources>
+</document>

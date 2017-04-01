@@ -14,18 +14,17 @@ class ScenesReferenceView: UIView {
     
     static var outlineColor = UIColor.lightGray
     
-    static var outlineWidth = CGFloat(3) {
+    static var outlineWidth = CGFloat(2) {
         didSet {
             self.handleSize = self.outlineWidth * 2.0
             self.halfHandleSize = self.handleSize / 2.0
         }
     }
     
-    static var outlineDashLengths = [CGFloat(6), CGFloat(6)]
+    static var outlineDashLengths = [CGFloat(4), CGFloat(4)]
     
-    private static var handleSize = CGFloat(9)
-    
-    private static var halfHandleSize = CGFloat(4.5)
+    private static var handleSize = CGFloat(6)
+    private static var halfHandleSize = CGFloat(3)
 
     
     weak var imageView: UIImageView!
@@ -77,7 +76,21 @@ class ScenesReferenceView: UIView {
     }
     
     func updateTransform() {
+        self.transform = CGAffineTransform.identity
+        
         self.frame = self.reference.frame(in: self.delegate.gameplayViewFrame)
+        
+        let cosA = CGFloat(cos(self.reference.rotation))
+        let sinA = CGFloat(sin(self.reference.rotation))
+        let flipX = CGFloat(self.reference.flipX ? -1 : 1)
+        let flipY = CGFloat(self.reference.flipY ? -1 : 1)
+        self.transform = CGAffineTransform(a: cosA * flipX,
+                                           b: sinA * flipX,
+                                           c: -sinA * flipY,
+                                           d: cosA * flipY,
+                                           tx: 0, ty: 0)
+        
+        self.setNeedsDisplay()
     }
     
     

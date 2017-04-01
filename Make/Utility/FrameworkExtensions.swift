@@ -106,3 +106,13 @@ class UIViewFromNib: UIView {
     func initialize() { }
     
 }
+
+extension CGPoint {
+    
+    func distance(to other: CGPoint) -> CGFloat {
+        let x = self.x - other.x
+        let y = self.y - other.y
+        return sqrt(x * x + y * y)
+    }
+    
+}

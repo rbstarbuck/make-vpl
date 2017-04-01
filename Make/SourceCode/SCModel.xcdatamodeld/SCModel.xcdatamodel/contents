@@ -46,6 +46,7 @@
         <relationship name="sprite" maxCount="1" deletionRule="Deny" destinationEntity="Sprite" inverseName="physicsBody" inverseEntity="Sprite" syncable="YES"/>
     </entity>
     <entity name="Reference" representedClassName=".SCReference" syncable="YES">
+        <attribute name="animated" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="centerX" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="centerY" attributeType="Double" defaultValueString="0.5" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="flipX" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -105,7 +106,7 @@
         <element name="Layer" positionX="-1179" positionY="435" width="128" height="105"/>
         <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>
         <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="210"/>
-        <element name="Reference" positionX="-981" positionY="378" width="128" height="180"/>
+        <element name="Reference" positionX="-981" positionY="378" width="128" height="195"/>
         <element name="Scene" positionX="-522" positionY="378" width="128" height="150"/>
         <element name="Sprite" positionX="-531" positionY="486" width="128" height="195"/>
         <element name="Variable" positionX="-864" positionY="234" width="128" height="150"/>

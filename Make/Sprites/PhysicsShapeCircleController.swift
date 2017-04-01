@@ -50,10 +50,6 @@ class PhysicsShapeCircleController: PhysicsShapeController {
         }
     }
     
-    func distance(from p1: CGPoint, to p2: CGPoint) -> CGFloat {
-        return hypot(p1.x - p2.x, p1.y - p2.y)
-    }
-    
     override func pinchBegan(_ sender: UIPinchGestureRecognizer) {
         self.previousTouch1 = sender.location(ofTouch: 0, in: self.view!)
         self.previousTouch2 = sender.location(ofTouch: 1, in: self.view!)
@@ -64,8 +60,8 @@ class PhysicsShapeCircleController: PhysicsShapeController {
         let touch2 = sender.location(ofTouch: 1, in: self.view!)
         let outlineViewPosition = self.view!.outlineView.convert(self.view!.outlineView.bounds.origin, to: self.view!)
         
-        let prevDistance = self.distance(from: self.previousTouch1, to: self.previousTouch2)
-        let currDistance = self.distance(from: touch1, to: touch2)
+        let prevDistance = self.previousTouch1.distance(to: self.previousTouch2)
+        let currDistance = touch1.distance(to: touch2)
         
         let diff = currDistance - prevDistance
         let size = self.view!.outlineView.width + diff

@@ -13,11 +13,17 @@ import CoreData
 private let placementViewPageKey = "placement"
 private let spriteEditorSegueIdentifier = "SpritesEditorViewControllerSegue"
 
+private let referenceParametersViewTrailingDistance = CGFloat(-216)
+private let referenceParametersViewHideAnimationDuration = 0.25
+
 
 class ScenesEditorViewController: UIViewController {
 
     @IBOutlet weak var contentPageView: PageView!
     @IBOutlet weak var spriteSelectionView: SelectionView!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var referenceParametersView: ScenesReferenceParametersView!
+    @IBOutlet weak var referenceParametersViewTrailingConstraint: NSLayoutConstraint!
     
     var connector: SCConnector!
     var scene: SCScene!
@@ -63,7 +69,9 @@ class ScenesEditorViewController: UIViewController {
         }
         
         let placementView = ScenesPlacementView()
-        self.placementController = ScenesPlacementController(view: placementView, scene: self.scene)
+        self.placementController = ScenesPlacementController(placementView: placementView,
+                                                             parametersView: self.referenceParametersView,
+                                                             scene: self.scene)
         self.contentPageView.addPage(placementView, key: placementViewPageKey)
         
         let referencePanGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onReferencePan(_:)))
@@ -71,6 +79,11 @@ class ScenesEditorViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onPlacementViewTap(_:)))
         placementView.addGestureRecognizer(tapGesture)
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.onPlacementViewPinch(_:)))
+        placementView.addGestureRecognizer(pinchGesture)
+        
+        self.setReferenceParametersViewIsHidden(animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,8 +104,24 @@ class ScenesEditorViewController: UIViewController {
     }
     
     
+    private func setReferenceParametersViewIsHidden(animated: Bool) {
+        let constant = (self.placementController.selectedReference == nil ? referenceParametersViewTrailingDistance : CGFloat(0))
+        
+        if animated {
+            UIView.animate(withDuration: referenceParametersViewHideAnimationDuration) {
+                self.referenceParametersViewTrailingConstraint.constant = constant
+                self.bottomView.layoutIfNeeded()
+            }
+        }
+        else {
+            self.referenceParametersViewTrailingConstraint.constant = constant
+        }
+    }
+    
+    
     func onPlacementViewTap(_ sender: UITapGestureRecognizer) {
         self.placementController.onTap(sender)
+        self.setReferenceParametersViewIsHidden(animated: true)
     }
     
     func onSpriteDrag(_ sender: UIPanGestureRecognizer) {
@@ -113,6 +142,7 @@ class ScenesEditorViewController: UIViewController {
             
         default:
             self.placementController.dragEnded(sender, in: self.view)
+            self.setReferenceParametersViewIsHidden(animated: true)
             break
         }
     }
@@ -135,6 +165,28 @@ class ScenesEditorViewController: UIViewController {
             
         default:
             self.placementController.moveEnded(sender)
+            break
+        }
+    }
+    
+    func onPlacementViewPinch(_ sender: UIPinchGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            if sender.numberOfTouches > 1 {
+                self.placementController.resizeBegan(sender)
+            }
+            break
+            
+        case .changed:
+            if sender.numberOfTouches > 1 {
+                self.placementController.resizeChanged(sender)
+            }
+            break
+            
+        case .possible: break
+            
+        default:
+            self.placementController.resizeEnded(sender)
             break
         }
     }
