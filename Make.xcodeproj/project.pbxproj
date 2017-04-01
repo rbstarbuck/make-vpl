@@ -73,6 +73,7 @@
 		A18DEB021E8EE7AA00EB2030 /* ScenesReferenceParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB011E8EE7AA00EB2030 /* ScenesReferenceParametersView.swift */; };
 		A18DEB041E8EE7BB00EB2030 /* ScenesReferenceParametersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18DEB031E8EE7BB00EB2030 /* ScenesReferenceParametersView.xib */; };
 		A18DEB0A1E8FFE8F00EB2030 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB091E8FFE8F00EB2030 /* ToggleButton.swift */; };
+		A18DEB0C1E90340000EB2030 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB0B1E90340000EB2030 /* README.md */; };
 		A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */; };
 		A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F26CC1E0D0F900057FB74 /* CoreData.framework */; };
 		A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */; };
@@ -227,6 +228,7 @@
 		A18DEB011E8EE7AA00EB2030 /* ScenesReferenceParametersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesReferenceParametersView.swift; path = Scenes/ScenesReferenceParametersView.swift; sourceTree = "<group>"; };
 		A18DEB031E8EE7BB00EB2030 /* ScenesReferenceParametersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScenesReferenceParametersView.xib; path = Scenes/ScenesReferenceParametersView.xib; sourceTree = "<group>"; };
 		A18DEB091E8FFE8F00EB2030 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToggleButton.swift; path = Editor/ToggleButton.swift; sourceTree = "<group>"; };
+		A18DEB0B1E90340000EB2030 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTestStack.swift; path = Utility/CoreDataTestStack.swift; sourceTree = "<group>"; };
 		A18F26CC1E0D0F900057FB74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSceneView.swift; path = ObjectCode/OCSceneView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		A143A7821DEBF539004DBC84 = {
 			isa = PBXGroup;
 			children = (
+				A18DEB0B1E90340000EB2030 /* README.md */,
 				A143A78D1DEBF53A004DBC84 /* Make */,
 				A143A7A81DEBF53A004DBC84 /* MakeTests */,
 				A143A7B31DEBF53A004DBC84 /* MakeUITests */,
@@ -1116,6 +1119,7 @@
 				A16C61DA1E86FE3100281D9F /* WeakArray.swift in Sources */,
 				A18168931E749ADF003B9CE9 /* SpritesParametersView.swift in Sources */,
 				A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */,
+				A18DEB0C1E90340000EB2030 /* README.md in Sources */,
 				A1F9074C1E30198C0015DAFE /* SCPhysicsBody+CoreDataProperties.swift in Sources */,
 				A185B8821E80D10100D51455 /* SCPhysicsBodyShapeCircle.swift in Sources */,
 				A143A7971DEBF53A004DBC84 /* GameViewController.swift in Sources */,
@@ -1239,7 +1243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1284,7 +1288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
