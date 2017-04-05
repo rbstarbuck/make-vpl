@@ -1,14 +1,17 @@
 PODS:
+  - ChromaColorPicker (1.3)
   - Material (2.5.2):
     - Material/Core (= 2.5.2)
   - Material/Core (2.5.2)
 
 DEPENDENCIES:
+  - ChromaColorPicker
   - Material (~> 2.5.2)
 
 SPEC CHECKSUMS:
+  ChromaColorPicker: fa1c6f52e0e76cb027b61149b42c83c0e78ef3a6
   Material: 00ae261fa04dd3f3f8584d07e44ac658fa1bc6fd
 
-PODFILE CHECKSUM: d11ec250e0e9f521fd3d737f8a81c7ea73fc2eb5
+PODFILE CHECKSUM: c0622f2ae3914a9149c68bfbfb86f32fda5d40fc
 
 COCOAPODS: 1.1.0.rc.2

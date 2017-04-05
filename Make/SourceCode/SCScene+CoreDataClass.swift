@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class SCScene: NSManagedObject {
+public class SCScene: NSManagedObject, SCNamedEntity {
     public static let entityName = "Scene"
 
     

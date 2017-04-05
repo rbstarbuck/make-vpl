@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-public class SCSprite: NSManagedObject {
+public class SCSprite: NSManagedObject, SCNamedEntity {
     public static let entityName = "Sprite"
 
     

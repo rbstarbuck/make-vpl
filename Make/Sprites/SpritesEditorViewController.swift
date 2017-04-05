@@ -12,8 +12,6 @@ import CoreData
 
 protocol SpritesParametersDelegate {
     
-    var spriteName: String { get set }
-    var spriteComment: String? { get set }
     var spriteGraphic: SCGraphic? { get set }
     
     func selectGraphics()
@@ -43,11 +41,13 @@ class SpritesEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "\(SCConstants.SPRITE_DISPLAY_TITLE): \"\(self.sprite.name)\""
+        self.setName(self.sprite.name)
         self.edgesForExtendedLayout = UIRectEdge()
         self.view.layoutSubviews()
         
         self.parametersView.delegate = self
+        self.parametersView.nameTextField.listeners.insert(self)
+        self.parametersView.nameTextField.entity = self.sprite
         
         self.contentPageView.layer.cornerRadius = pageCornerRadius
         self.contentPageView.layer.masksToBounds = true
@@ -93,26 +93,15 @@ class SpritesEditorViewController: UIViewController {
     
 }
 
+extension SpritesEditorViewController: NameTextFieldListener {
+    
+    func setName(_ name: String) {
+        self.title = "\(SCConstants.SPRITE_DISPLAY_TITLE): \"\(name)\""
+    }
+    
+}
+
 extension SpritesEditorViewController: SpritesParametersDelegate {
-    
-    var spriteName: String {
-        get {
-            return self.sprite.name
-        }
-        set {
-            self.sprite.name = newValue
-            self.title = "\(SCConstants.SPRITE_DISPLAY_TITLE): \"\(newValue)\""
-        }
-    }
-    
-    var spriteComment: String? {
-        get {
-            return self.sprite.comment
-        }
-        set {
-            self.sprite.comment = newValue
-        }
-    }
     
     var spriteGraphic: SCGraphic? {
         get {

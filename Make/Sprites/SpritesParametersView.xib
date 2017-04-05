@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +16,7 @@
                 <outlet property="graphicLabel" destination="wCk-vZ-mxU" id="PqA-Es-C5t"/>
                 <outlet property="graphicRemoveButton" destination="Ce0-U6-8Jl" id="GLY-JS-juw"/>
                 <outlet property="graphicSelectionView" destination="Zll-t9-Zsn" id="bbE-J9-zs0"/>
-                <outlet property="nameTextField" destination="RGj-A2-CTH" id="voY-ma-cFP"/>
+                <outlet property="nameTextField" destination="RGj-A2-CTH" id="qtf-99-lGF"/>
                 <outlet property="physicsArrowImageView" destination="aYe-ce-Q4W" id="6ix-Gi-q5Y"/>
                 <outlet property="physicsSelectionView" destination="cCb-9w-2Io" id="QW8-T6-bw6"/>
                 <outlet property="physicsSwitch" destination="rWo-8F-3Mf" id="h8P-u8-I5B"/>
@@ -95,7 +94,7 @@
                         <constraint firstAttribute="width" constant="40" id="Rau-JC-uXA"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGj-A2-CTH" customClass="TextField" customModule="Material">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGj-A2-CTH" customClass="NameTextField" customModule="Make" customModuleProvider="target">
                     <rect key="frame" x="56" y="136" width="256" height="47"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="tintColor" red="0.52543634370000003" green="0.0" blue="0.94577074049999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -109,10 +108,6 @@
                             <real key="value" value="11"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="lUj-gK-xr6"/>
-                        <action selector="nameEditingChanged:" destination="-1" eventType="editingChanged" id="aFs-sy-Fs1"/>
-                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCb-9w-2Io">
                     <rect key="frame" x="0.0" y="197" width="312" height="40"/>

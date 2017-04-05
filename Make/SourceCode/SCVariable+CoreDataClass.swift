@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class SCVariable: NSManagedObject {
+public class SCVariable: NSManagedObject, SCNamedEntity {
     public static let entityName = "Variable"
 
     

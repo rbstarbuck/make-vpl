@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ChromaColorPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Material-com.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +52,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2DD98FA3100825E61314CC2723C01606</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7681F54B65014064B37177FB3D3719E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>92185A41C8BC5F59B2A352E3061D2F0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>993283B23F4457B4C9B692E53F274A88</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7878F8DDA4FCCC8F8C71D4F65AD520D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

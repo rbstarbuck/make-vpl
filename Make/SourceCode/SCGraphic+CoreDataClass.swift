@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-public class SCGraphic: NSManagedObject {
+public class SCGraphic: NSManagedObject, SCNamedEntity {
     public static let entityName = "Graphic"
     public static let frameObserverKey = "Graphic->>Frame"
     public static let selectedFrameObserverKey = "selectedFrame"

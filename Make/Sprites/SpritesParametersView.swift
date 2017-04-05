@@ -18,7 +18,7 @@ private let graphicBorderWidth = CGFloat(1)
 
 class SpritesParametersView: UIViewFromNib {
 
-    @IBOutlet weak var nameTextField: TextField!
+    @IBOutlet weak var nameTextField: NameTextField!
     
     @IBOutlet weak var graphicSelectionView: UIView!
     @IBOutlet weak var graphicImageView: UIImageView!
@@ -39,9 +39,6 @@ class SpritesParametersView: UIViewFromNib {
     
     
     override func awakeFromNib() {
-        self.nameTextField.returnKeyType = .done
-        self.nameTextField.font = UIFont.systemFont(ofSize: 22.0)
-        
         self.graphicImageView.borderColor = graphicBorderColor
         self.graphicImageView.borderWidth = graphicBorderWidth
         self.graphicLabel.text = noGraphicName
@@ -55,8 +52,6 @@ class SpritesParametersView: UIViewFromNib {
     
     
     func configure() {
-        self.nameTextField.text = self.delegate.spriteName
-        
         if let graphic = self.delegate.spriteGraphic {
             self.graphicImageView.image = graphic.firstFrame.makeImageFromLayers()
             self.graphicLabel.text = graphic.name
@@ -80,15 +75,6 @@ class SpritesParametersView: UIViewFromNib {
     }
     
     
-    @IBAction func nameEditingChanged(_ sender: Any) {
-        if let name = self.nameTextField.text {
-            self.delegate.spriteName = name
-        }
-        else {
-            self.delegate.spriteName = ""
-        }
-    }
-    
     @IBAction func graphicRemoveTouch(_ sender: Any) {
         self.delegate.spriteGraphic = nil
         self.configure()
@@ -97,10 +83,6 @@ class SpritesParametersView: UIViewFromNib {
     @IBAction func physicsSwitchValueChanged(_ sender: Any) {
         
     }
-    @IBAction func didEndOnExit(_ sender: UIView) {
-        sender.resignFirstResponder()
-    }
-    
     
 }
 

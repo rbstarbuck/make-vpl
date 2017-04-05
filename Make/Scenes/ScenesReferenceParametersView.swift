@@ -32,7 +32,7 @@ class ScenesReferenceParametersView: UIViewFromNib {
         self.scaleSlider.minimumValue = Float(SCReference.minimumRelativeWidth)
         self.scaleSlider.maximumValue = Float(SCReference.maximumRelativeWidth)
         self.rotationSlider.minimumValue = 0.0
-        self.rotationSlider.maximumValue = Float.pi
+        self.rotationSlider.maximumValue = 2.0 * Float.pi
     }
     
     func configure() {

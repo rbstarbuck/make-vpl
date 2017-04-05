@@ -7,6 +7,7 @@ target 'Make' do
 
   # Pods for Make
   pod 'Material', '~> 2.5.2'
+  pod 'ChromaColorPicker'
 
   target 'MakeTests' do
     inherit! :search_paths

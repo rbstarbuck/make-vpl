@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ED11D8EAF612791AE9D4FF401A453AD2'
-               BlueprintName = 'Material-com.cosmicmind.material.fonts'
+               BlueprintIdentifier = 'C7878F8DDA4FCCC8F8C71D4F65AD520D'
+               BlueprintName = 'ChromaColorPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'com.cosmicmind.material.fonts.bundle'>
+               BuildableName = 'ChromaColorPicker.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

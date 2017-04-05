@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class SCMethod: NSManagedObject {
+public class SCMethod: NSManagedObject, SCNamedEntity {
     public static let entityName = "Method"
     
     

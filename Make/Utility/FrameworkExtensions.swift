@@ -94,16 +94,12 @@ class UIViewFromNib: UIView {
     override required init(frame: CGRect) {
         super.init(frame: frame)
         self.fromNib()
-        self.initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.fromNib()
-        self.initialize()
     }
-    
-    func initialize() { }
     
 }
 
