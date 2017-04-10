@@ -14,9 +14,6 @@ protocol SelectionDelegate: class {
     
     var isSelecting: Bool { get set }
     
-    var getImage: ((NSManagedObject) -> (UIImage?))? { get }
-    var getLabel: ((NSManagedObject) -> (String))? { get }
-
     var name: String { get set }
     var textColor: UIColor { get set}
     var borderColor: UIColor { get set }
@@ -30,11 +27,16 @@ protocol SelectionDelegate: class {
     func createEntity()
     func deleteSelected()
     
+    func getImage(for entity: NSManagedObject) -> UIImage?
+    func getLabel(for entity: NSManagedObject) -> String?
+    
 }
 
 
 protocol SelectionDataSource: class {
     
+    func getImage(for entity: NSManagedObject, name: String) -> UIImage?
+    func getLabel(for entity: NSManagedObject, name: String) -> String?
     func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String)
     func createEntity(name: String)
     func didSelectEntity(_ entity: NSManagedObject, name: String)
@@ -43,6 +45,14 @@ protocol SelectionDataSource: class {
 }
 
 extension SelectionDataSource {
+    
+    func getImage(for entity: NSManagedObject) -> UIImage? {
+        return nil
+    }
+    
+    func getLabel(for entity: NSManagedObject) -> String? {
+        return nil
+    }
     
     func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String) { }
     func didSelectEntity(_ entity: NSManagedObject, name: String) { }
@@ -71,9 +81,6 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
         }
     }
     
-    var getImage: ((NSManagedObject) -> (UIImage?))? = nil
-    var getLabel: ((NSManagedObject) -> (String))? = nil
-
     func applyParameters() {
         self.configureCollectionViewController()
         self.configureCollectionViewLayout()
@@ -160,6 +167,15 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
     
     override func configureCollectionViewCell(_ cell: CoreDataCollectionViewCell) {
         self.dataSource?.configureSelectionCell(cell, name: self.name)
+    }
+    
+    
+    func getImage(for entity: NSManagedObject) -> UIImage? {
+        return self.dataSource?.getImage(for: entity, name: self.name)
+    }
+    
+    func getLabel(for entity: NSManagedObject) -> String? {
+        return self.dataSource?.getLabel(for: entity, name: self.name)
     }
     
 }

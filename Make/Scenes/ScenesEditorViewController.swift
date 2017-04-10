@@ -58,16 +58,6 @@ class ScenesEditorViewController: UIViewController {
         self.spriteSelectionController.scrollDirection = .horizontal
         self.spriteSelectionController.cellLength = 1
         
-        self.spriteSelectionController.getImage = { entity in
-            let sprite = entity as! SCSprite
-            return sprite.editorImage
-        }
-        
-        self.spriteSelectionController.getLabel = { entity in
-            let sprite = entity as! SCSprite
-            return sprite.name
-        }
-        
         let placementView = ScenesPlacementView()
         self.placementController = ScenesPlacementController(placementView: placementView,
                                                              parametersView: self.referenceParametersView,
@@ -124,7 +114,14 @@ class ScenesEditorViewController: UIViewController {
         self.setReferenceParametersViewIsHidden(animated: true)
     }
     
-    func onSpriteDrag(_ sender: UIPanGestureRecognizer) {
+    func onSpriteDoubleTap(_ sender: UITapGestureRecognizer) {
+        if let source = sender.view as? CoreDataCollectionViewCell {
+            self.selectedEntity = source.entity
+            self.performSegue(withIdentifier: spriteEditorSegueIdentifier, sender: self)
+        }
+    }
+    
+    func onSpriteDrag(_ sender: UILongPressGestureRecognizer) {
         switch sender.state {
         case .began:
             if sender.numberOfTouches > 0 {
@@ -198,8 +195,16 @@ extension ScenesEditorViewController: SelectionDataSource {
     func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String) {
         if name == SCConstants.SPRITE_DISPLAY_TITLE {
             let selectionCell = cell as! SelectionCollectionViewCell
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onSpriteDrag(_:)))
-            selectionCell.addGestureRecognizer(panGesture)
+            
+            let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.onSpriteDrag(_:)))
+            longPressGesture.delegate = self
+            longPressGesture.minimumPressDuration = 0.5
+            selectionCell.addGestureRecognizer(longPressGesture)
+            
+            let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onSpriteDoubleTap(_:)))
+            doubleTapGesture.delegate = self
+            doubleTapGesture.numberOfTapsRequired = 2
+            selectionCell.addGestureRecognizer(doubleTapGesture)
         }
     }
     
@@ -208,6 +213,37 @@ extension ScenesEditorViewController: SelectionDataSource {
             self.selectedEntity = self.scene.world.createSprite()
             self.performSegue(withIdentifier: spriteEditorSegueIdentifier, sender: self)
         }
+    }
+    
+    func getImage(for entity: NSManagedObject, name: String) -> UIImage? {
+        if name == SCConstants.SPRITE_DISPLAY_TITLE {
+            let sprite = entity as! SCSprite
+            return sprite.editorImage
+        }
+        return nil
+    }
+    
+    func getLabel(for entity: NSManagedObject, name: String) -> String? {
+        if name == SCConstants.SPRITE_DISPLAY_TITLE {
+            let sprite = entity as! SCSprite
+            return sprite.name
+        }
+        return nil
+    }
+    
+}
+
+
+extension ScenesEditorViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer is UILongPressGestureRecognizer {
+            return otherGestureRecognizer is UITapGestureRecognizer
+        }
+        else if gestureRecognizer is UITapGestureRecognizer {
+            return otherGestureRecognizer is UILongPressGestureRecognizer
+        }
+        return false
     }
     
 }

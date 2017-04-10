@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
                 <viewController id="S38-gp-3ra" customClass="GraphicsEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="php-vR-uJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="2404"/>
+            <point key="canvasLocation" x="1234" y="3234"/>
         </scene>
         <!--Scenes Editor View Controller-->
         <scene sceneID="xwI-Ic-Lvc">
@@ -28,7 +27,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1l-O7-OKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="2404"/>
+            <point key="canvasLocation" x="-220" y="3236"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="kHT-nB-blf">
@@ -41,40 +40,24 @@
                         <color key="tintColor" red="0.94577074049999998" green="0.0" blue="0.52862353316318778" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="IQw-ir-SAW" kind="relationship" relationship="rootViewController" id="XcG-4m-V5f"/>
+                        <segue destination="wge-wF-lmF" kind="relationship" relationship="rootViewController" id="D9n-6h-Uop"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2u8-e5-zuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="1466"/>
+            <point key="canvasLocation" x="-497" y="2306"/>
         </scene>
         <!--Sprites Editor View Controller-->
         <scene sceneID="o5N-Wi-EFe">
             <objects>
                 <viewController id="HKz-Mt-R1J" customClass="SpritesEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="bLy-xp-LPJ" kind="show" identifier="GraphicsEditorViewControllerSegue" id="Xqd-wo-Zch"/>
+                        <segue destination="S38-gp-3ra" kind="show" identifier="GraphicsEditorViewControllerSegue" id="SUI-aO-geB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBA-Oc-Dhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="1463"/>
-        </scene>
-        <!--Graphics Editor View Controller-->
-        <scene sceneID="pJx-w2-mLI">
-            <objects>
-                <viewController id="bLy-xp-LPJ" customClass="GraphicsEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lcp-1C-MDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2343" y="1463"/>
-        </scene>
-        <!--Gameplay View Controller-->
-        <scene sceneID="d9S-bC-zxl">
-            <objects>
-                <viewController id="ehZ-vy-hUv" customClass="GameplayViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="leQ-Tq-PW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="118" y="2484"/>
+            <point key="canvasLocation" x="510" y="3234"/>
         </scene>
         <!--World Editor View Controller-->
         <scene sceneID="ncS-jF-zYX">
@@ -82,16 +65,12 @@
                 <viewController id="wge-wF-lmF" customClass="WorldEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Yj5-iI-Bck"/>
                     <connections>
-                        <segue destination="HKz-Mt-R1J" kind="show" identifier="SpritesEditorViewControllerSegue" id="RdF-0n-qBq"/>
-                        <segue destination="S38-gp-3ra" kind="show" identifier="GraphicsEditorViewControllerSegue" id="gDn-QP-mIQ"/>
+                        <segue destination="IQw-ir-SAW" kind="show" identifier="ScenesEditorViewControllerSegue" id="lvM-Yj-IOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZo-dD-Wfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="1464"/>
+            <point key="canvasLocation" x="210" y="2304"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="zRA-0w-lCc"/>
-    </inferredMetricsTieBreakers>
 </document>

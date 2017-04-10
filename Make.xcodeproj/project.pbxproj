@@ -75,6 +75,7 @@
 		A18DEB0A1E8FFE8F00EB2030 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB091E8FFE8F00EB2030 /* ToggleButton.swift */; };
 		A18DEB0E1E95307100EB2030 /* SCNamedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB0D1E95307100EB2030 /* SCNamedEntity.swift */; };
 		A18DEB101E954ACE00EB2030 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB0F1E954ACE00EB2030 /* NameTextField.swift */; };
+		A18DEB121E958E8B00EB2030 /* BrushWidthSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18DEB111E958E8B00EB2030 /* BrushWidthSlider.swift */; };
 		A18F26CA1E0D05FD0057FB74 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */; };
 		A18F26CD1E0D0F900057FB74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18F26CC1E0D0F900057FB74 /* CoreData.framework */; };
 		A1A11DCC1E4059CE0002F5EE /* OCSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */; };
@@ -231,6 +232,7 @@
 		A18DEB091E8FFE8F00EB2030 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToggleButton.swift; path = Editor/ToggleButton.swift; sourceTree = "<group>"; };
 		A18DEB0D1E95307100EB2030 /* SCNamedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCNamedEntity.swift; path = SourceCode/SCNamedEntity.swift; sourceTree = "<group>"; };
 		A18DEB0F1E954ACE00EB2030 /* NameTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameTextField.swift; path = Editor/NameTextField.swift; sourceTree = "<group>"; };
+		A18DEB111E958E8B00EB2030 /* BrushWidthSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrushWidthSlider.swift; path = Graphics/BrushWidthSlider.swift; sourceTree = "<group>"; };
 		A18F26C91E0D05FD0057FB74 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataTestStack.swift; path = Utility/CoreDataTestStack.swift; sourceTree = "<group>"; };
 		A18F26CC1E0D0F900057FB74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A1A11DCB1E4059CE0002F5EE /* OCSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSceneView.swift; path = ObjectCode/OCSceneView.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				A12FE7E81E1599A70015989D /* BrushView.swift */,
 				A12FE7EA1E15A1AA0015989D /* BrushView.xib */,
 				A12FE7E21E1597F30015989D /* Brush.swift */,
+				A18DEB111E958E8B00EB2030 /* BrushWidthSlider.swift */,
 			);
 			name = Brush;
 			sourceTree = "<group>";
@@ -552,9 +555,9 @@
 			isa = PBXGroup;
 			children = (
 				A18DEB091E8FFE8F00EB2030 /* ToggleButton.swift */,
+				A18DEB0F1E954ACE00EB2030 /* NameTextField.swift */,
 				A18168AE1E7C3C09003B9CE9 /* Page View */,
 				A181688F1E73B410003B9CE9 /* Selection View */,
-				A18DEB0F1E954ACE00EB2030 /* NameTextField.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -1105,6 +1108,7 @@
 				A1D8B6D91E3E8A610069FFF5 /* OCScene.swift in Sources */,
 				A18168B61E7EDF1F003B9CE9 /* PhysicsShapeView.swift in Sources */,
 				A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */,
+				A18DEB121E958E8B00EB2030 /* BrushWidthSlider.swift in Sources */,
 				A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */,
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,

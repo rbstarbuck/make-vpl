@@ -12,6 +12,7 @@ import CoreData
 
 class GraphicsEditorViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: NameTextField!
     @IBOutlet weak var layerTableView: UITableView!
     @IBOutlet weak var frameCollectionView: UICollectionView!
     @IBOutlet weak var canvasView: CanvasView!
@@ -28,9 +29,12 @@ class GraphicsEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "\(SCConstants.GRAPHIC_DISPLAY_TITLE): \"\(self.graphic.name)\""
+        self.setName(self.graphic.name)
         self.edgesForExtendedLayout = UIRectEdge()
         self.view.layoutSubviews()
+        
+        self.nameTextField.listeners.insert(self)
+        self.nameTextField.entity = self.graphic
         
         let brush = Brush()
         
@@ -49,6 +53,14 @@ class GraphicsEditorViewController: UIViewController {
     
     @IBAction func deleteFrameTouch(_ sender: Any) {
         self.graphic.selectedFrame.value?.delete()
+    }
+    
+}
+
+extension GraphicsEditorViewController: NameTextFieldListener {
+    
+    func setName(_ name: String) {
+        self.title = "\(SCConstants.GRAPHIC_DISPLAY_TITLE): \"\(name)\""
     }
     
 }

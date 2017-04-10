@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,13 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cNV-Su-Obd">
-                        <rect key="frame" x="8" y="8" width="58.5" height="58.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="75.5" height="75.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="cNV-Su-Obd" secondAttribute="height" multiplier="1:1" id="jgi-fG-EBl"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="S9l-BB-ZmV">
-                        <rect key="frame" x="82.5" y="24" width="181.5" height="27"/>
+                        <rect key="frame" x="91.5" y="24" width="172.5" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -46,13 +45,13 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="twm-Ve-zZh" firstAttribute="leading" secondItem="S9l-BB-ZmV" secondAttribute="trailing" constant="8" id="OEA-DR-j8d"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="cNV-Su-Obd" secondAttribute="bottom" id="Vst-XH-KFQ"/>
+                    <constraint firstAttribute="bottom" secondItem="cNV-Su-Obd" secondAttribute="bottom" constant="-1" id="Vst-XH-KFQ"/>
                     <constraint firstItem="S9l-BB-ZmV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZfE-oU-Il1"/>
                     <constraint firstItem="S9l-BB-ZmV" firstAttribute="leading" secondItem="cNV-Su-Obd" secondAttribute="trailing" constant="16" id="e5v-ti-ztF"/>
-                    <constraint firstAttribute="topMargin" secondItem="cNV-Su-Obd" secondAttribute="top" id="kt2-Ud-qhe"/>
+                    <constraint firstAttribute="top" secondItem="cNV-Su-Obd" secondAttribute="top" id="kt2-Ud-qhe"/>
                     <constraint firstAttribute="trailingMargin" secondItem="twm-Ve-zZh" secondAttribute="trailing" id="puJ-Nt-aem"/>
                     <constraint firstItem="twm-Ve-zZh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tId-Cj-gIL"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="cNV-Su-Obd" secondAttribute="leading" id="tZT-qe-fLu"/>
+                    <constraint firstAttribute="leading" secondItem="cNV-Su-Obd" secondAttribute="leading" id="tZT-qe-fLu"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

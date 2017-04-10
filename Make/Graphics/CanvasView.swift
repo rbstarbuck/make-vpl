@@ -9,7 +9,7 @@
 import UIKit
 
 
-private var imageViewBorderWidth = CGFloat(3)
+private var imageViewBorderWidth = CGFloat(1)
 private var imageViewBorderColor = UIColor.gray
 
 
@@ -33,6 +33,10 @@ class CanvasView: UIView {
         
         self.layer.borderWidth = imageViewBorderWidth
         self.layer.borderColor = imageViewBorderColor.cgColor
+        
+        if let image = UIImage(named: "Checker background large") {
+            self.backgroundColor = UIColor(patternImage: image)
+        }
     }
     
         

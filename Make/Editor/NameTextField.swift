@@ -30,11 +30,11 @@ class NameTextField: TextField {
     var listeners = WeakSet<NameTextFieldListener>()
     
     
-    override func willMove(toWindow newWindow: UIWindow?) {
-        super.willMove(toWindow: newWindow)
-        
+    override func awakeFromNib() {
         self.returnKeyType = .done
         self.font = UIFont.systemFont(ofSize: 22.0)
+        
+        self.placeholder = "Name"
         
         self.addTarget(self, action: #selector(self.editingChanged(_:)), for: .editingChanged)
         self.addTarget(self, action: #selector(self.didEndOnExit(_:)), for: .editingDidEndOnExit)

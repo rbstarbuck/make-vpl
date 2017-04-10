@@ -30,8 +30,8 @@ class SelectionCollectionViewCell: CoreDataCollectionViewCell {
         self.borderWidth = cellBorderWidth
         
         if let controller = delegate as? SelectionDelegate {
-            self.imageView.image = controller.getImage?(entity)
-            self.label.text = controller.getLabel?(entity)
+            self.imageView.image = controller.getImage(for: entity)
+            self.label.text = controller.getLabel(for: entity)
         }
     }
 

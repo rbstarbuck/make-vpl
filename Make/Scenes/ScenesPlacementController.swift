@@ -10,7 +10,7 @@ import UIKit
 
 
 private let draggingViewReturnDuration = 0.5
-private let draggingViewAddDuration = 0.5
+private let draggingViewAddDuration = 0.25
 
 
 protocol ScenesPlacementDelegate {
@@ -25,9 +25,9 @@ protocol ScenesPlacementDelegate {
     
     func onTap(_ sender: UITapGestureRecognizer)
     
-    func dragBegan(_ sender: UIPanGestureRecognizer, in view: UIView)
-    func dragChanged(_ sender: UIPanGestureRecognizer, in view: UIView)
-    func dragEnded(_ sender: UIPanGestureRecognizer, in view: UIView)
+    func dragBegan(_ sender: UILongPressGestureRecognizer, in view: UIView)
+    func dragChanged(_ sender: UILongPressGestureRecognizer, in view: UIView)
+    func dragEnded(_ sender: UILongPressGestureRecognizer, in view: UIView)
     
     func moveBegan(_ sender: UIPanGestureRecognizer)
     func moveChanged(_ sender: UIPanGestureRecognizer)
@@ -161,9 +161,11 @@ extension ScenesPlacementController {
 
 extension ScenesPlacementController {
     
-    func dragBegan(_ sender: UIPanGestureRecognizer, in view: UIView) {
+    func dragBegan(_ sender: UILongPressGestureRecognizer, in view: UIView) {
         if self.draggingView == nil {
             if let source = sender.view as? SelectionCollectionViewCell {
+                self.previousTouch1 = sender.location(in: view)
+                
                 let returnRect = source.imageView.convert(source.imageView.bounds, to: view)
                 let sprite = source.entity as! SCSprite
                 let dragView =  UIImageView(frame: returnRect)
@@ -187,29 +189,33 @@ extension ScenesPlacementController {
         }
     }
     
-    func dragChanged(_ sender: UIPanGestureRecognizer, in view: UIView) {
-        let translation = sender.translation(in: view)
-        self.draggingView!.center.x += translation.x
-        self.draggingView!.center.y += translation.y
-        sender.setTranslation(CGPoint(), in: view)
+    func dragChanged(_ sender: UILongPressGestureRecognizer, in view: UIView) {
+        if let previousTouch = self.previousTouch1 {
+            let currentTouch = sender.location(in: view)
+            self.draggingView!.center.x += currentTouch.x - previousTouch.x
+            self.draggingView!.center.y += currentTouch.y - previousTouch.y
+            self.previousTouch1 = currentTouch
+        }
     }
     
-    func dragEnded(_ sender: UIPanGestureRecognizer, in view: UIView) {
-        if self.drop(dragView: self.draggingView!) {
-            self.draggingView!.removeFromSuperview()
-        }
-        else {
-            let view = self.draggingView!
-            let returnRect = self.draggingViewReturnRect!
-            UIView.animate(withDuration: draggingViewReturnDuration, animations: {
-                view.frame = returnRect
-            }, completion: { _ in
-                view.removeFromSuperview()
-            })
+    func dragEnded(_ sender: UILongPressGestureRecognizer, in view: UIView) {
+        if let draggingView = self.draggingView {
+            if self.drop(dragView: draggingView) {
+                draggingView.removeFromSuperview()
+            }
+            else {
+                let returnRect = self.draggingViewReturnRect!
+                UIView.animate(withDuration: draggingViewReturnDuration, animations: {
+                    draggingView.frame = returnRect
+                }, completion: { _ in
+                    draggingView.removeFromSuperview()
+                })
+            }
+            
+            self.draggingView = nil
+            self.draggingViewReturnRect = nil
         }
         
-        self.draggingView = nil
-        self.draggingViewReturnRect = nil
     }
     
     func drop(dragView: UIImageView) -> Bool {

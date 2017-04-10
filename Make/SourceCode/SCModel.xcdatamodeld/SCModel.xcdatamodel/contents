@@ -52,13 +52,14 @@
         <attribute name="flipX" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="flipY" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
-        <attribute name="relativeWidth" attributeType="Double" defaultValueString="0.15" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="relativeWidth" attributeType="Double" defaultValueString="0.2" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="rotation" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="scene" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="references" inverseEntity="Scene" syncable="YES"/>
         <relationship name="sprite" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="references" inverseEntity="Sprite" syncable="YES"/>
     </entity>
     <entity name="Scene" representedClassName=".SCScene" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="methods" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="scene" inverseEntity="Method" syncable="YES"/>
@@ -107,7 +108,7 @@
         <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>
         <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="210"/>
         <element name="Reference" positionX="-981" positionY="378" width="128" height="195"/>
-        <element name="Scene" positionX="-522" positionY="378" width="128" height="150"/>
+        <element name="Scene" positionX="-522" positionY="378" width="128" height="165"/>
         <element name="Sprite" positionX="-531" positionY="486" width="128" height="195"/>
         <element name="Variable" positionX="-864" positionY="234" width="128" height="150"/>
         <element name="World" positionX="-693" positionY="360" width="128" height="210"/>

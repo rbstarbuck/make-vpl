@@ -57,12 +57,17 @@ class SpritesParametersView: UIViewFromNib {
             self.graphicLabel.text = graphic.name
             self.graphicImageView.borderWidth = graphicBorderWidth
             self.graphicRemoveButton.isHidden = false
+            if let background = UIImage(named: "Checker background small") {
+                self.graphicImageView.backgroundColor = UIColor(patternImage: background)
+            }
+            
         }
         else {
             self.graphicImageView.image = UIImage(named: "Placeholder image")
             self.graphicLabel.text = noGraphicName
             self.graphicImageView.borderWidth = 0
             self.graphicRemoveButton.isHidden = true
+            self.graphicImageView.backgroundColor = nil
         }
     }
     

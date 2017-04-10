@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChromaColorPicker
 
 
 class BrushController: BrushDelegate {
@@ -20,7 +21,7 @@ class BrushController: BrushDelegate {
         }
     }
     
-    var brush: Brush
+    let brush: Brush
     
     
     init(view: BrushView, brush: Brush) {
@@ -32,10 +33,33 @@ class BrushController: BrushDelegate {
     
     private func attach(view: BrushView) {
         view.delegate = self
+        view.colorPicker.delegate = self
+        view.colorPicker.addTarget(self, action: #selector(self.colorPickerValueChanged(_:)), for: .valueChanged)
+        view.brushThicknessSlider.addTarget(self, action: #selector(self.brushThicknessValueChanged(_:)), for: .valueChanged)
+        
+        self.colorPickerValueChanged(view.colorPicker)
     }
     
     private func detach(view: BrushView) {
         view.delegate = nil
+    }
+    
+}
+
+extension BrushController: ChromaColorPickerDelegate {
+    
+    @objc
+    func brushThicknessValueChanged(_ sender: UISlider) {
+        self.brush.width = CGFloat(sender.value)
+    }
+    
+    @objc
+    func colorPickerValueChanged(_ sender: ChromaColorPicker) {
+        self.brush.color = sender.currentColor
+    }
+    
+    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        //self.brush.color = color
     }
     
 }

@@ -47,7 +47,7 @@ extension UIView {
         return view
     }
     
-    func constrainEdgesToParent(_ parent: UIView, margin: Int = 0) {
+    func constrainEdgesToParent(_ parent: UIView, margin: CGFloat = 0) {
         let viewDict = ["view": self]
         let vfl = "|-\(margin)-[view]-\(margin)-|"
         let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:\(vfl)", options: [], metrics: nil, views: viewDict)

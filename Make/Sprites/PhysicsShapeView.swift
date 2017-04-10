@@ -50,6 +50,10 @@ class PhysicsShapeView: UIViewFromNib {
         self.addGestureRecognizer(pinchGesture)
         
         self.outlineView.backgroundColor = UIColor.clear
+        if let image = UIImage(named: "Checker background medium") {
+            self.graphicImageView.backgroundColor = UIColor(patternImage: image)
+        }
+        
         self.configure()
     }
     

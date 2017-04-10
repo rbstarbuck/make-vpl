@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 
 
-private let cellInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-private let sectionInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+private let cellInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: -7)
+private let sectionInsets = UIEdgeInsets(top: 0, left: 7, bottom: 0, right: 0)
 private let cellAspectRatio = CGFloat(1)
 
 
@@ -65,7 +65,12 @@ class FrameController: CoreDataCollectionViewController {
     
     
     override func configureCollectionViewController() {
-        self.collectionView.backgroundColor = UIColor.black
+        if let image = UIImage(named: "Film background") {
+            self.collectionView.backgroundColor = UIColor(patternImage: image)
+        }
+        else {
+            self.collectionView.backgroundColor = UIColor.black
+        }
     }
     
     override func configureCollectionViewLayout() {

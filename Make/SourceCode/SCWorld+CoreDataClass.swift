@@ -18,6 +18,7 @@ public enum GravityDirection: Int32 {
 
 public class SCWorld: NSManagedObject, SCNamedEntity {
     public static let entityName = "World"
+    public static let sceneObserverKey = "World->>Scene"
     public static let graphicObserverKey = "World->>Graphic"
     public static let spriteObserverKey = "World->>Sprite"
 
@@ -35,9 +36,9 @@ public class SCWorld: NSManagedObject, SCNamedEntity {
     @NSManaged public var variables: Set<SCVariable>
     
     
-    public lazy var graphicObserver: ObservableEntity = {
-        let observer = ObservableEntity(key: SCWorld.graphicObserverKey,
-                                        entity: SCGraphic.entityName,
+    public lazy var sceneObserver: ObservableEntity = {
+        let observer = ObservableEntity(key: SCWorld.sceneObserverKey,
+                                        entity: SCScene.entityName,
                                         context: self.connector.context)
         observer.predicate = NSPredicate(format: "world == %@", self)
         observer.sortDescriptors.append(NSSortDescriptor(key: "dateCreated", ascending: false))
@@ -48,6 +49,16 @@ public class SCWorld: NSManagedObject, SCNamedEntity {
     public lazy var spriteObserver: ObservableEntity = {
         let observer = ObservableEntity(key: SCWorld.spriteObserverKey,
                                         entity: SCSprite.entityName,
+                                        context: self.connector.context)
+        observer.predicate = NSPredicate(format: "world == %@", self)
+        observer.sortDescriptors.append(NSSortDescriptor(key: "dateCreated", ascending: false))
+        observer.startObserving()
+        return observer
+    }()
+    
+    public lazy var graphicObserver: ObservableEntity = {
+        let observer = ObservableEntity(key: SCWorld.graphicObserverKey,
+                                        entity: SCGraphic.entityName,
                                         context: self.connector.context)
         observer.predicate = NSPredicate(format: "world == %@", self)
         observer.sortDescriptors.append(NSSortDescriptor(key: "dateCreated", ascending: false))

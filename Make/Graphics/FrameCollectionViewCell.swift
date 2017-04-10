@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 
 
-private let selectedBorderColor = UIColor.yellow
+private let selectedBorderColor = UIColor.magenta
+private let cellBackgroundColor = UIColor(hex: 0xf8f8f8)
 
 
 class FrameCollectionViewCell: CoreDataCollectionViewCell {
@@ -20,6 +21,8 @@ class FrameCollectionViewCell: CoreDataCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.backgroundColor = cellBackgroundColor
         
         let selectedBackgroundView = UIView(frame: self.contentView.frame)
         selectedBackgroundView.backgroundColor = selectedBorderColor
@@ -37,8 +40,9 @@ class FrameCollectionViewCell: CoreDataCollectionViewCell {
         
         if let frame = entity as? SCFrame {
             self.imageView = frame.makeImageView()
+            self.imageView!.backgroundColor = cellBackgroundColor
             self.addSubview(self.imageView!)
-            self.imageView!.constrainEdgesToParent(self)
+            self.imageView!.constrainEdgesToParent(self, margin: 2.5)
         }
     }
     

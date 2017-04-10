@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-private var imageViewBorderWidth = CGFloat(2)
+private var imageViewBorderWidth = CGFloat(0.5)
 private var imageViewBorderColor = UIColor.gray
 
 
@@ -29,6 +29,10 @@ class LayerTableViewCell: CoreDataTableViewCell {
         
         self.layerImageView.layer.borderWidth = imageViewBorderWidth
         self.layerImageView.layer.borderColor = imageViewBorderColor.cgColor
+        
+        if let image = UIImage(named: "Checker background extra-small") {
+            self.layerImageView.backgroundColor = UIColor(patternImage: image)
+        }
     }
 
     override func configure(delegate: CoreDataTableViewDelegate, entity: NSManagedObject) {
