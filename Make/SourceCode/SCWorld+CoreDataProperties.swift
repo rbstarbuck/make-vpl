@@ -16,8 +16,6 @@ extension SCWorld {
         return NSFetchRequest<SCWorld>(entityName: "World");
     }
 
-    @NSManaged public var comment: String?
-    @NSManaged public var gravityMagnitude: Double
 
 }
 

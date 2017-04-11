@@ -51,6 +51,12 @@ public class SCReference: NSManagedObject {
         return CGPoint(x: viewFrame.origin.x + xPos, y: viewFrame.origin.y + yPos)
     }
     
+    func gameplayCenter(in viewFrame: CGRect) -> CGPoint {
+        let xPos = viewFrame.width * CGFloat(self.centerX)
+        let yPos = viewFrame.height * CGFloat(-self.centerY) + viewFrame.height
+        return CGPoint(x: viewFrame.origin.x + xPos, y: viewFrame.origin.y + yPos)
+    }
+    
     func frame(in viewFrame: CGRect) -> CGRect {
         let dim = viewFrame.size.width * CGFloat(self.relativeWidth)
         let offset = dim / 2.0

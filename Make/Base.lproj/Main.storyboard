@@ -8,6 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Gameplay View Controller-->
+        <scene sceneID="Sva-0G-QF6">
+            <objects>
+                <viewController id="W6b-XO-tSI" customClass="GameplayViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXV-UH-198" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="2303"/>
+        </scene>
         <!--Graphics Editor View Controller-->
         <scene sceneID="GhK-C1-QkN">
             <objects>
@@ -66,11 +74,12 @@
                     <navigationItem key="navigationItem" id="Yj5-iI-Bck"/>
                     <connections>
                         <segue destination="IQw-ir-SAW" kind="show" identifier="ScenesEditorViewControllerSegue" id="lvM-Yj-IOF"/>
+                        <segue destination="W6b-XO-tSI" kind="show" identifier="GameplayViewControllerSegue" id="J4M-df-0R6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZo-dD-Wfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="2304"/>
+            <point key="canvasLocation" x="239" y="2303"/>
         </scene>
     </scenes>
 </document>

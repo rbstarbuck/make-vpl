@@ -44,6 +44,10 @@ class GraphicsEditorViewController: UIViewController {
         self.layerController = LayerController(view: self.layerTableView, graphic: self.graphic)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.graphic.world.connector.saveContext()
+    }
+    
     @IBAction func createLayerTouch(_ sender: Any) {
         if let frame = self.graphic.selectedFrame.value {
             let layer = frame.createLayer()

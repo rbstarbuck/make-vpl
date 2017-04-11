@@ -10,30 +10,19 @@ import Foundation
 import CoreData
 
 
-public class SCScene: NSManagedObject, SCNamedEntity {
+public class SCScene: NSManagedObject, SCNamedEntity, SCGravityEntity {
     public static let entityName = "Scene"
 
     
     @NSManaged public var id: String
     @NSManaged public var name: String
+    @NSManaged public var gravityMagnitude: Double
+    @NSManaged public var gravityDirection: GravityDirection
     @NSManaged public var dateCreated: Date
     @NSManaged public var methods: Set<SCMethod>
     @NSManaged public var references: Set<SCReference>
     @NSManaged public var variables: Set<SCVariable>
     @NSManaged public var world: SCWorld
-    
-    
-    public var gravityDirection: GravityDirection {
-        get {
-            return self.world.gravityDirection
-        }
-    }
-    
-    public var gravityMagnitude: Double {
-        get {
-            return self.world.gravityMagnitude
-        }
-    }
     
     
     override public func awakeFromInsert() {

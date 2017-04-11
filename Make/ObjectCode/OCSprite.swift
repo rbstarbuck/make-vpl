@@ -42,9 +42,9 @@ public class OCSprite: SKSpriteNode {
         
         self.name = scReference.id
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.position = scReference.center(in: ocScene.frame)
+        self.position = scReference.gameplayCenter(in: ocScene.frame)
         self.setScale(scReference.scale(in: ocScene.size))
-        self.zRotation = CGFloat(scReference.rotation)
+        self.zRotation = CGFloat(-scReference.rotation)
         
         if scSprite.physicsBody.isEnabled {
             self.physicsBody = self.makePhysicsBody(from: scSprite.physicsBody)

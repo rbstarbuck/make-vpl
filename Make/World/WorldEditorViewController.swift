@@ -11,6 +11,7 @@ import CoreData
 
 
 private let scenesEditorSegueIdentifier = "ScenesEditorViewControllerSegue"
+private let gameplaySegueIdentifier = "GameplayViewControllerSegue"
 
 
 class WorldEditorViewController: UIViewController {
@@ -27,7 +28,6 @@ class WorldEditorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // TODO: delete test code
         self.connector = SCConnector(context: SCCoreDataStack())
         if let world = self.connector.getWorlds().first {
@@ -37,25 +37,28 @@ class WorldEditorViewController: UIViewController {
             self.world = self.connector.createWorld()
         }
         // end test code
-        
         self.title = "\(SCConstants.WORLD_DISPLAY_TITLE): \"\(self.world.name)\""
         self.edgesForExtendedLayout = UIRectEdge()
         self.view.layoutSubviews()
+        
+        let playBarButton = UIBarButtonItem(image: UIImage(named: "Play"), style: .plain,
+                                            target: self, action: #selector(self.playInitialScene))
+        self.navigationItem.rightBarButtonItems = [playBarButton]
         
         self.sceneSelectionController = SelectionController(dataSource: self,
                                                             view: self.sceneSelectionView,
                                                             name: SCConstants.SCENE_DISPLAY_TITLE,
                                                             observer: self.world.sceneObserver)
-        self.sceneSelectionController.cellLength = 4
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.sceneSelectionView.collectionView.reloadData()
-        self.connector.saveContext()
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.world.connector.saveContext()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == scenesEditorSegueIdentifier {
@@ -64,6 +67,17 @@ class WorldEditorViewController: UIViewController {
                 scenesEditor.scene = self.selectedEntity as! SCScene
             }
         }
+        else if segue.identifier == gameplaySegueIdentifier {
+            if let gameplay = segue.destination as? GameplayViewController {
+                gameplay.connector = self.connector
+                gameplay.world = OCWorld(from: self.world, viewSize: self.view.bounds.size)
+            }
+        }
+    }
+    
+    
+    func playInitialScene() {
+        self.performSegue(withIdentifier: gameplaySegueIdentifier, sender: self)
     }
 
 }

@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-2x-Whc">
-                    <rect key="frame" x="20" y="148" width="336" height="352"/>
+                    <rect key="frame" x="20" y="136" width="336" height="364"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="75" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
@@ -57,14 +57,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epR-Om-s7Y" customClass="NameTextField" customModule="Make" customModuleProvider="target">
-                    <rect key="frame" x="76" y="36" width="280" height="48"/>
+                    <rect key="frame" x="76" y="36" width="280" height="36"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="Lhp-EE-j1d"/>
+                        <constraint firstAttribute="height" constant="36" id="Lhp-EE-j1d"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOP-gJ-fYY">
-                    <rect key="frame" x="20" y="100" width="232" height="40"/>
+                    <rect key="frame" x="20" y="88" width="232" height="40"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <state key="normal" title="   Create New Layer" image="Layers icon">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,7 +74,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rename icon" translatesAutoresizingMaskIntoConstraints="NO" id="KO6-aP-WLx">
-                    <rect key="frame" x="20" y="40" width="40" height="40"/>
+                    <rect key="frame" x="20" y="34" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="fJh-db-0xX"/>
                         <constraint firstAttribute="height" constant="40" id="kWB-pm-OGu"/>

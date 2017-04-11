@@ -16,8 +16,6 @@ extension SCGraphic {
         return NSFetchRequest<SCGraphic>(entityName: "Graphic");
     }
 
-    @NSManaged public var animationFPS: Double
-
 }
 
 // MARK: Generated accessors for frames

@@ -44,7 +44,7 @@ public class SCPhysicsBodyShapeCircle: NSObject, SCPhysicsBodyShape {
     
     public func instantiate(for sprite: SKSpriteNode) -> SKPhysicsBody {
         let frameRadius = CGFloat(self.radius) * sprite.size.height
-        let frameCenter = CGPoint(x: self.center.x * sprite.size.width, y: self.center.y * sprite.size.height)
+        let frameCenter = CGPoint(x: (self.center.x - 0.5) * sprite.size.width, y: (0.5 - self.center.y) * sprite.size.height)
         return SKPhysicsBody(circleOfRadius: frameRadius, center: frameCenter)
     }
 }

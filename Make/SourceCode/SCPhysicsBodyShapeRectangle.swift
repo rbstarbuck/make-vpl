@@ -44,7 +44,7 @@ public class SCPhysicsBodyShapeRectangle: NSObject, SCPhysicsBodyShape {
     
     public func instantiate(for sprite: SKSpriteNode) -> SKPhysicsBody {
         let frameSize = CGSize(width: self.size.width * sprite.size.width, height: self.size.height * sprite.size.height)
-        let frameCenter = CGPoint(x: self.center.x * sprite.size.width, y: self.center.y * sprite.size.height)
+        let frameCenter = CGPoint(x: (self.center.x - 0.5) * sprite.size.width, y: (0.5 - self.center.y) * sprite.size.height)
         return SKPhysicsBody(rectangleOf: frameSize, center: frameCenter)
     }
     

@@ -16,7 +16,7 @@ public enum GravityDirection: Int32 {
 }
 
 
-public class SCWorld: NSManagedObject, SCNamedEntity {
+public class SCWorld: NSManagedObject, SCNamedEntity, SCGravityEntity {
     public static let entityName = "World"
     public static let sceneObserverKey = "World->>Scene"
     public static let graphicObserverKey = "World->>Graphic"
@@ -28,6 +28,7 @@ public class SCWorld: NSManagedObject, SCNamedEntity {
     @NSManaged public var id: String
     @NSManaged public var name: String
     @NSManaged public var initialScene: String
+    @NSManaged public var gravityMagnitude: Double
     @NSManaged public var gravityDirection: GravityDirection
     @NSManaged public var graphics: Set<SCGraphic>
     @NSManaged public var scenes: Set<SCScene>

@@ -19,10 +19,14 @@ private let referenceParametersViewHideAnimationDuration = 0.25
 
 class ScenesEditorViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: NameTextField!
+    @IBOutlet weak var gravityView: GravityView!
+    
     @IBOutlet weak var contentPageView: PageView!
     @IBOutlet weak var spriteSelectionView: SelectionView!
+    
     @IBOutlet weak var bottomView: UIView!
-    @IBOutlet weak var referenceParametersView: ScenesReferenceParametersView!
+        @IBOutlet weak var referenceParametersView: ScenesReferenceParametersView!
     @IBOutlet weak var referenceParametersViewTrailingConstraint: NSLayoutConstraint!
     
     var connector: SCConnector!
@@ -35,21 +39,15 @@ class ScenesEditorViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // TODO: delete
-        self.connector = SCConnector(context: SCCoreDataStack())
-        if let world = self.connector.getWorlds().first {
-            self.scene = world.scenes.first!
-        }
-        else {
-            let world = self.connector.createWorld()
-            self.scene = world.scenes.first!
-        }
-        // end delete        
-        self.title = "\(SCConstants.SCENE_DISPLAY_TITLE): \"\(self.scene.name)\""
+        super.viewDidLoad()        
+        self.setName(self.scene.name)
         self.edgesForExtendedLayout = UIRectEdge()
         self.view.layoutSubviews()
+        
+        self.nameTextField.listeners.insert(self)
+        self.nameTextField.entity = self.scene
+        
+        self.gravityView.entity = self.scene
         
         self.spriteSelectionController = SelectionController(dataSource: self,
                                                              view: self.spriteSelectionView,
@@ -78,6 +76,10 @@ class ScenesEditorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.spriteSelectionView.collectionView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.scene.world.connector.saveContext()
     }
     
     override func viewDidLayoutSubviews() {
@@ -229,6 +231,15 @@ extension ScenesEditorViewController: SelectionDataSource {
             return sprite.name
         }
         return nil
+    }
+    
+}
+
+
+extension ScenesEditorViewController: NameTextFieldListener {
+    
+    func setName(_ name: String) {
+        self.title = "\(SCConstants.SCENE_DISPLAY_TITLE): \"\(name)\""
     }
     
 }

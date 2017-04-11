@@ -16,8 +16,6 @@ extension SCScene {
         return NSFetchRequest<SCScene>(entityName: "Scene");
     }
 
-    @NSManaged public var comment: String?
-
 }
 
 // MARK: Generated accessors for methods

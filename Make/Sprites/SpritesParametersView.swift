@@ -27,7 +27,7 @@ class SpritesParametersView: UIViewFromNib {
     @IBOutlet weak var graphicRemoveButton: UIButton!
     
     @IBOutlet weak var physicsSelectionView: UIView!
-    @IBOutlet weak var physicsSwitch: Switch!
+    @IBOutlet weak var physicsSwitch: UISwitch!
     @IBOutlet weak var physicsArrowImageView: UIImageView!
     
     
@@ -69,6 +69,8 @@ class SpritesParametersView: UIViewFromNib {
             self.graphicRemoveButton.isHidden = true
             self.graphicImageView.backgroundColor = nil
         }
+        
+        self.physicsSwitch.isOn = self.delegate.spritePhysics.isEnabled
     }
     
     func graphicSelectionViewTouch(_ sender: UITapGestureRecognizer) {
@@ -85,8 +87,8 @@ class SpritesParametersView: UIViewFromNib {
         self.configure()
     }
     
-    @IBAction func physicsSwitchValueChanged(_ sender: Any) {
-        
+    @IBAction func physicsSwitchValueChanged(_ sender: UISwitch) {
+        self.delegate.spritePhysics.isEnabled = sender.isOn
     }
     
 }

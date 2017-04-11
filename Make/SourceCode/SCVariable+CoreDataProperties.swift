@@ -16,9 +16,5 @@ extension SCVariable {
         return NSFetchRequest<SCVariable>(entityName: "Variable");
     }
 
-    @NSManaged public var comment: String?
-    @NSManaged public var sprite: SCSprite?
-    @NSManaged public var scene: SCScene?
-    @NSManaged public var world: SCWorld?
 
 }

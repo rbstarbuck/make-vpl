@@ -16,7 +16,6 @@ public class SCSprite: NSManagedObject, SCNamedEntity {
     
     @NSManaged public var id: String
     @NSManaged public var name: String
-    @NSManaged public var comment: String?
     @NSManaged public var dateCreated: Date
     @NSManaged public var graphic: SCGraphic?
     @NSManaged public var methods: Set<SCMethod>

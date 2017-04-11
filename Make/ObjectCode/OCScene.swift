@@ -54,25 +54,7 @@ public class OCScene: SKScene {
         self.gravityMagnitude = scScene.gravityMagnitude
         self.gravityDirection = scScene.gravityDirection
         
-        super.init(size: CGSize(width: 500, height: 300))
-        
-//        for scVariable in scScene.variables {
-//            var ocVariable: OCVariable!
-//            
-//            switch scVariable.data.type {
-//            case .reference:
-//                ocVariable = OCSprite(from: scVariable, in: self)
-//                self.addChild(ocVariable as! OCSprite)
-//                break
-//                
-//            case .number: break
-//            case .string: break
-//            case .boolean: break
-//            }
-//            
-//            self.variables.insert(ocVariable)
-//        }
-        
+        super.init(size: self.world.viewSize)
         
         for reference in scScene.references {
             let sprite = OCSprite(from: reference, in: self)

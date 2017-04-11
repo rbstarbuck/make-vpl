@@ -17,6 +17,9 @@ public class SCVariable: NSManagedObject, SCNamedEntity {
     @NSManaged public var id: String
     @NSManaged public var data: SCVariableData
     @NSManaged public var name: String
+    @NSManaged public var sprite: SCSprite?
+    @NSManaged public var scene: SCScene?
+    @NSManaged public var world: SCWorld?
     
     
     

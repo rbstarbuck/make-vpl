@@ -23,7 +23,6 @@
     </entity>
     <entity name="Method" representedClassName=".SCMethod" syncable="YES">
         <attribute name="code" attributeType="Transformable" customClassName="SCBlock" syncable="YES"/>
-        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="scene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="methods" inverseEntity="Scene" syncable="YES"/>
         <relationship name="sprite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="methods" inverseEntity="Sprite" syncable="YES"/>
@@ -58,8 +57,9 @@
         <relationship name="sprite" maxCount="1" deletionRule="Nullify" destinationEntity="Sprite" inverseName="references" inverseEntity="Sprite" syncable="YES"/>
     </entity>
     <entity name="Scene" representedClassName=".SCScene" syncable="YES">
-        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gravityDirection" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="gravityMagnitude" attributeType="Double" defaultValueString="9.800000000000001" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
         <relationship name="methods" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="scene" inverseEntity="Method" syncable="YES"/>
@@ -68,7 +68,6 @@
         <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="scenes" inverseEntity="World" syncable="YES"/>
     </entity>
     <entity name="Sprite" representedClassName=".SCSprite" syncable="YES">
-        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
@@ -80,7 +79,6 @@
         <relationship name="world" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="sprites" inverseEntity="World" syncable="YES"/>
     </entity>
     <entity name="Variable" representedClassName=".SCVariable" syncable="YES">
-        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" attributeType="Transformable" customClassName="SCVariableData" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
@@ -89,7 +87,6 @@
         <relationship name="world" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="World" inverseName="variables" inverseEntity="World" syncable="YES"/>
     </entity>
     <entity name="World" representedClassName=".SCWorld" syncable="YES">
-        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gravityDirection" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="gravityMagnitude" attributeType="Double" defaultValueString="9.800000000000001" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
@@ -105,12 +102,12 @@
         <element name="Frame" positionX="-1017" positionY="414" width="128" height="105"/>
         <element name="Graphic" positionX="-857" positionY="387" width="128" height="148"/>
         <element name="Layer" positionX="-1179" positionY="435" width="128" height="105"/>
-        <element name="Method" positionX="-524" positionY="233" width="128" height="161"/>
+        <element name="Method" positionX="-524" positionY="233" width="128" height="149"/>
         <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="210"/>
         <element name="Reference" positionX="-981" positionY="378" width="128" height="195"/>
-        <element name="Scene" positionX="-522" positionY="378" width="128" height="165"/>
-        <element name="Sprite" positionX="-531" positionY="486" width="128" height="195"/>
-        <element name="Variable" positionX="-864" positionY="234" width="128" height="150"/>
-        <element name="World" positionX="-693" positionY="360" width="128" height="210"/>
+        <element name="Scene" positionX="-522" positionY="378" width="128" height="180"/>
+        <element name="Sprite" positionX="-531" positionY="486" width="128" height="180"/>
+        <element name="Variable" positionX="-864" positionY="234" width="128" height="135"/>
+        <element name="World" positionX="-693" positionY="360" width="128" height="195"/>
     </elements>
 </model>

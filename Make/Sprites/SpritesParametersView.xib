@@ -19,7 +19,7 @@
                 <outlet property="nameTextField" destination="RGj-A2-CTH" id="qtf-99-lGF"/>
                 <outlet property="physicsArrowImageView" destination="aYe-ce-Q4W" id="6ix-Gi-q5Y"/>
                 <outlet property="physicsSelectionView" destination="cCb-9w-2Io" id="QW8-T6-bw6"/>
-                <outlet property="physicsSwitch" destination="rWo-8F-3Mf" id="h8P-u8-I5B"/>
+                <outlet property="physicsSwitch" destination="Ovc-0n-KDt" id="XMy-aa-smZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -54,7 +54,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graphic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg9-C6-Hvd">
                                     <rect key="frame" x="0.0" y="0.0" width="144.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="wCk-vZ-mxU">
@@ -113,7 +113,7 @@
                     <rect key="frame" x="0.0" y="197" width="312" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Physics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3sH-gg-4Nk">
-                            <rect key="frame" x="55" y="7" width="114" height="26.5"/>
+                            <rect key="frame" x="55" y="7" width="76" height="26.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -128,17 +128,6 @@
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="toW-8U-cSy"/>
                             </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWo-8F-3Mf" customClass="Switch" customModule="Material">
-                            <rect key="frame" x="177" y="-3.5" width="80" height="47"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="47" id="Olk-fc-sTO"/>
-                                <constraint firstAttribute="width" constant="80" id="gL2-Vm-8Us"/>
-                            </constraints>
-                            <connections>
-                                <action selector="physicsSwitchValueChanged:" destination="-1" eventType="valueChanged" id="amM-eP-bjS"/>
-                            </connections>
-                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Physics icon" translatesAutoresizingMaskIntoConstraints="NO" id="1Tx-e8-DtE">
                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                             <constraints>
@@ -146,19 +135,24 @@
                                 <constraint firstAttribute="height" constant="40" id="bJh-Lh-9XQ"/>
                             </constraints>
                         </imageView>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-0n-KDt">
+                            <rect key="frame" x="206" y="5" width="51" height="31"/>
+                            <connections>
+                                <action selector="physicsSwitchValueChanged:" destination="-1" eventType="valueChanged" id="FdB-lM-UHM"/>
+                            </connections>
+                        </switch>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="7a2-V7-dcM"/>
                         <constraint firstItem="aYe-ce-Q4W" firstAttribute="centerY" secondItem="cCb-9w-2Io" secondAttribute="centerY" id="94P-3g-tat"/>
-                        <constraint firstItem="rWo-8F-3Mf" firstAttribute="leading" secondItem="3sH-gg-4Nk" secondAttribute="trailing" constant="8" id="CyP-Vr-jji"/>
                         <constraint firstItem="1Tx-e8-DtE" firstAttribute="leading" secondItem="cCb-9w-2Io" secondAttribute="leading" id="D3E-ZL-kB7"/>
                         <constraint firstItem="3sH-gg-4Nk" firstAttribute="centerY" secondItem="cCb-9w-2Io" secondAttribute="centerY" id="Mid-uI-AgS"/>
-                        <constraint firstItem="rWo-8F-3Mf" firstAttribute="centerY" secondItem="cCb-9w-2Io" secondAttribute="centerY" id="Nl7-lo-5Py"/>
                         <constraint firstAttribute="trailing" secondItem="aYe-ce-Q4W" secondAttribute="trailing" id="X9C-JY-LAV"/>
                         <constraint firstItem="1Tx-e8-DtE" firstAttribute="centerY" secondItem="cCb-9w-2Io" secondAttribute="centerY" id="b9l-Nu-iha"/>
                         <constraint firstItem="3sH-gg-4Nk" firstAttribute="leading" secondItem="1Tx-e8-DtE" secondAttribute="trailing" constant="15" id="jMR-pJ-LId"/>
-                        <constraint firstItem="aYe-ce-Q4W" firstAttribute="leading" secondItem="rWo-8F-3Mf" secondAttribute="trailing" constant="15" id="uxM-Ju-2yx"/>
+                        <constraint firstItem="Ovc-0n-KDt" firstAttribute="centerY" secondItem="aYe-ce-Q4W" secondAttribute="centerY" id="kBn-Lc-w4g"/>
+                        <constraint firstItem="aYe-ce-Q4W" firstAttribute="leading" secondItem="Ovc-0n-KDt" secondAttribute="trailing" constant="17" id="yPs-gn-m6i"/>
                     </constraints>
                 </view>
             </subviews>

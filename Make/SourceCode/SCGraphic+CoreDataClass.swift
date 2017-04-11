@@ -19,6 +19,7 @@ public class SCGraphic: NSManagedObject, SCNamedEntity {
     @NSManaged public var id: String
     @NSManaged public var name: String
     @NSManaged public var dateCreated: Date
+    @NSManaged public var animationFPS: Double
     @NSManaged public var frames: Set<SCFrame>
     @NSManaged public var sprites: Set<SCSprite>?
     @NSManaged public var world: SCWorld

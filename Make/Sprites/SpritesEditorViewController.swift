@@ -13,6 +13,7 @@ import CoreData
 protocol SpritesParametersDelegate {
     
     var spriteGraphic: SCGraphic? { get set }
+    var spritePhysics: SCPhysicsBody { get }
     
     func selectGraphics()
     func selectPhysics()
@@ -72,6 +73,10 @@ class SpritesEditorViewController: UIViewController {
         self.configure()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.sprite.world.connector.saveContext()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == graphicEditorSegueIdentifier {
             let graphicsEditor = segue.destination as! GraphicsEditorViewController
@@ -108,6 +113,12 @@ extension SpritesEditorViewController: SpritesParametersDelegate {
         }
     }
     
+    var spritePhysics: SCPhysicsBody {
+        get {
+            return self.sprite.physicsBody
+        }
+    }
+    
     func selectGraphics() {
         self.contentPageView.showPage(graphicsViewPageKey)
     }
@@ -119,6 +130,20 @@ extension SpritesEditorViewController: SpritesParametersDelegate {
 }
 
 extension SpritesEditorViewController: SelectionDataSource {
+    
+    func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String) {
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.navigateToGraphic(_:)))
+        doubleTapGesture.numberOfTapsRequired = 2
+        cell.addGestureRecognizer(doubleTapGesture)
+    }
+    
+    func navigateToGraphic(_ sender: UIGestureRecognizer) {
+        if let coreDataCell = sender.view as? CoreDataCollectionViewCell,
+                let graphic = coreDataCell.entity as? SCGraphic {
+            self.sprite.graphic = graphic
+            self.performSegue(withIdentifier: graphicEditorSegueIdentifier, sender: self)
+        }
+    }
     
     func createEntity(name: String) {
         if name == SCConstants.GRAPHIC_DISPLAY_TITLE {
@@ -137,20 +162,6 @@ extension SpritesEditorViewController: SelectionDataSource {
     func deleteEntities(_ entities: [NSManagedObject], name: String) {
         if name == SCConstants.GRAPHIC_DISPLAY_TITLE {
             
-        }
-    }
-    
-    func configureSelectionCell(_ cell: CoreDataCollectionViewCell, name: String) {
-        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.navigateToGraphic(_:)))
-        doubleTapGesture.numberOfTapsRequired = 2
-        cell.addGestureRecognizer(doubleTapGesture)
-    }
-    
-    func navigateToGraphic(_ sender: UIGestureRecognizer) {
-        if let coreDataCell = sender.view as? CoreDataCollectionViewCell,
-                let graphic = coreDataCell.entity as? SCGraphic {
-            self.sprite.graphic = graphic
-            self.performSegue(withIdentifier: graphicEditorSegueIdentifier, sender: self)
         }
     }
     

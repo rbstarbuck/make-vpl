@@ -6,26 +6,27 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
 public class OCWorld {
     
     public var connector: SCConnector
+    public var initialScene: String
     
     public var activeScene: OCScene!
     
-    public var initialScene: String
-    
     public var graphics = [String: OCGraphic]()
-    
     public var variables = Variables()
     
+    public var viewSize: CGSize
     
-    public init(from scWorld: SCWorld) {
+    
+    public init(from scWorld: SCWorld, viewSize: CGSize) {
         self.connector = scWorld.connector
         self.initialScene = scWorld.initialScene
+        self.viewSize = viewSize
         
         let graphicRequest: NSFetchRequest<SCGraphic> = SCGraphic.fetchRequest()
         graphicRequest.predicate = NSPredicate(format: "world = %@", scWorld)

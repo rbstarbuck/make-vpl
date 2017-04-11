@@ -89,6 +89,10 @@
 		A1C5CD671E122F8000102431 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD661E122F8000102431 /* CanvasView.swift */; };
 		A1C5CD691E122F9B00102431 /* CanvasDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */; };
 		A1C5CD6E1E1374D500102431 /* LayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C5CD6D1E1374D500102431 /* LayerController.swift */; };
+		A1C945FC1E9B1B6E006A3949 /* PlayGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C945FB1E9B1B6E006A3949 /* PlayGameButton.swift */; };
+		A1C946001E9C624B006A3949 /* GravityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C945FF1E9C624B006A3949 /* GravityView.swift */; };
+		A1C946021E9C625E006A3949 /* GravityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C946011E9C625E006A3949 /* GravityView.xib */; };
+		A1C946041E9C6ADD006A3949 /* SCGravityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C946031E9C6ADD006A3949 /* SCGravityEntity.swift */; };
 		A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */; };
 		A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */; };
 		A1D8B6D91E3E8A610069FFF5 /* OCScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */; };
@@ -246,6 +250,10 @@
 		A1C5CD661E122F8000102431 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasView.swift; path = Graphics/CanvasView.swift; sourceTree = "<group>"; };
 		A1C5CD681E122F9B00102431 /* CanvasDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CanvasDelegate.swift; path = Graphics/CanvasDelegate.swift; sourceTree = "<group>"; };
 		A1C5CD6D1E1374D500102431 /* LayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayerController.swift; path = Graphics/LayerController.swift; sourceTree = "<group>"; };
+		A1C945FB1E9B1B6E006A3949 /* PlayGameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayGameButton.swift; path = Editor/PlayGameButton.swift; sourceTree = "<group>"; };
+		A1C945FF1E9C624B006A3949 /* GravityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GravityView.swift; path = Editor/GravityView.swift; sourceTree = "<group>"; };
+		A1C946011E9C625E006A3949 /* GravityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GravityView.xib; path = Editor/GravityView.xib; sourceTree = "<group>"; };
+		A1C946031E9C6ADD006A3949 /* SCGravityEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCGravityEntity.swift; path = ObjectCode/SCGravityEntity.swift; sourceTree = "<group>"; };
 		A1CA78621E0B131E00B7B4FA /* CoreDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataExtensions.swift; path = Utility/CoreDataExtensions.swift; sourceTree = "<group>"; };
 		A1D8B6D31E3E7DC00069FFF5 /* OCSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCSceneController.swift; path = ObjectCode/OCSceneController.swift; sourceTree = "<group>"; };
 		A1D8B6D81E3E8A610069FFF5 /* OCScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OCScene.swift; path = ObjectCode/OCScene.swift; sourceTree = "<group>"; };
@@ -453,6 +461,7 @@
 				A1C5CD0C1E0D332000102431 /* SCConnector.swift */,
 				A1C5CD5E1E0EBF3F00102431 /* SCConstants.swift */,
 				A18DEB0D1E95307100EB2030 /* SCNamedEntity.swift */,
+				A1C946031E9C6ADD006A3949 /* SCGravityEntity.swift */,
 				A1564ABD1E05A5A500632031 /* Core Data Properties */,
 				A1564B0F1E066E5E00632031 /* Method */,
 				A1F5203D1E09E0A500443ABB /* Graphic */,
@@ -556,8 +565,10 @@
 			children = (
 				A18DEB091E8FFE8F00EB2030 /* ToggleButton.swift */,
 				A18DEB0F1E954ACE00EB2030 /* NameTextField.swift */,
+				A1C945FA1E9B1B49006A3949 /* Navigation Bar Buttons */,
 				A18168AE1E7C3C09003B9CE9 /* Page View */,
 				A181688F1E73B410003B9CE9 /* Selection View */,
+				A1C945FE1E9C621F006A3949 /* Gravity Selector */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -629,6 +640,23 @@
 				A12FE7DA1E15454A0015989D /* LayerTableViewCell.xib */,
 			);
 			name = Layer;
+			sourceTree = "<group>";
+		};
+		A1C945FA1E9B1B49006A3949 /* Navigation Bar Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				A1C945FB1E9B1B6E006A3949 /* PlayGameButton.swift */,
+			);
+			name = "Navigation Bar Buttons";
+			sourceTree = "<group>";
+		};
+		A1C945FE1E9C621F006A3949 /* Gravity Selector */ = {
+			isa = PBXGroup;
+			children = (
+				A1C945FF1E9C624B006A3949 /* GravityView.swift */,
+				A1C946011E9C625E006A3949 /* GravityView.xib */,
+			);
+			name = "Gravity Selector";
 			sourceTree = "<group>";
 		};
 		A1D8B6D51E3E87690069FFF5 /* Scene */ = {
@@ -883,6 +911,7 @@
 				A1818B861E73443E00D76C05 /* AddEntityCollectionViewCell.xib in Resources */,
 				A1F907581E301E6D0015DAFE /* PhysicsPropertiesView.xib in Resources */,
 				A12FE7EB1E15A1AA0015989D /* BrushView.xib in Resources */,
+				A1C946021E9C625E006A3949 /* GravityView.xib in Resources */,
 				A16D16B41E83906B00DD0DA9 /* SelectionCollectionViewCell.xib in Resources */,
 				A11712781E2140CC00C7C791 /* AddFrameCollectionViewCell.xib in Resources */,
 				A143A7931DEBF53A004DBC84 /* Actions.sks in Resources */,
@@ -1055,6 +1084,7 @@
 				A1CA78631E0B131E00B7B4FA /* CoreDataExtensions.swift in Sources */,
 				A18DEB021E8EE7AA00EB2030 /* ScenesReferenceParametersView.swift in Sources */,
 				A1A11DD31E406C2A0002F5EE /* OCWorld.swift in Sources */,
+				A1C946001E9C624B006A3949 /* GravityView.swift in Sources */,
 				A18DEB101E954ACE00EB2030 /* NameTextField.swift in Sources */,
 				A13C8ED91E2AC0E200FA33AD /* OCGraphic.swift in Sources */,
 				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
@@ -1110,6 +1140,7 @@
 				A12FE7DB1E15454A0015989D /* LayerTableViewCell.swift in Sources */,
 				A18DEB121E958E8B00EB2030 /* BrushWidthSlider.swift in Sources */,
 				A1DBE0EF1E067CDF0053758F /* SCMethod+CoreDataProperties.swift in Sources */,
+				A1C945FC1E9B1B6E006A3949 /* PlayGameButton.swift in Sources */,
 				A1F520551E0A4C5100443ABB /* CanvasController.swift in Sources */,
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
@@ -1136,6 +1167,7 @@
 				A1F989A01E31B54B00B9409F /* PhysicsPropertiesController.swift in Sources */,
 				A185B8801E80D0CC00D51455 /* SCPhysicsBodyShapeRectangle.swift in Sources */,
 				A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */,
+				A1C946041E9C6ADD006A3949 /* SCGravityEntity.swift in Sources */,
 				A1D8B6D41E3E7DC00069FFF5 /* OCSceneController.swift in Sources */,
 				A12FE7E31E1597F30015989D /* Brush.swift in Sources */,
 				A1F907531E301B520015DAFE /* SCPhysicsBodyShape.swift in Sources */,

@@ -16,5 +16,8 @@ public class SCMethod: NSManagedObject, SCNamedEntity {
     
     @NSManaged public var code: SCBlock
     @NSManaged public var name: String
+    @NSManaged public var scene: SCScene?
+    @NSManaged public var sprite: SCSprite?
+    @NSManaged public var world: SCWorld?
     
 }
