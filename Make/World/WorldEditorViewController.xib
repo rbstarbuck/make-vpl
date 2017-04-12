@@ -4,13 +4,14 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorldEditorViewController" customModule="Make" customModuleProvider="target">
             <connections>
+                <outlet property="nameTextField" destination="QLY-3d-Em0" id="r93-KK-r11"/>
                 <outlet property="sceneSelectionView" destination="zmO-gR-u2P" id="KhD-sw-NNa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,10 +25,29 @@
                     <rect key="frame" x="341.5" y="0.0" width="682.5" height="768"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rename icon" translatesAutoresizingMaskIntoConstraints="NO" id="y9T-L4-Tm9">
+                    <rect key="frame" x="20" y="34" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Jua-Kd-bCq"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="V9o-ib-zVI"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLY-3d-Em0" customClass="NameTextField" customModule="Make" customModuleProvider="target">
+                    <rect key="frame" x="76" y="36" width="249.5" height="36"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="6mb-bs-soT"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="y9T-L4-Tm9" firstAttribute="centerY" secondItem="QLY-3d-Em0" secondAttribute="centerY" id="EZb-6c-Gil"/>
+                <constraint firstItem="QLY-3d-Em0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="GZ1-Fr-62s"/>
+                <constraint firstItem="QLY-3d-Em0" firstAttribute="leading" secondItem="y9T-L4-Tm9" secondAttribute="trailing" constant="16" id="Mcv-J9-sBr"/>
                 <constraint firstItem="zmO-gR-u2P" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2/3" id="V3I-bo-0Wu"/>
+                <constraint firstItem="zmO-gR-u2P" firstAttribute="leading" secondItem="QLY-3d-Em0" secondAttribute="trailing" constant="16" id="cTY-mZ-zDa"/>
+                <constraint firstItem="y9T-L4-Tm9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="eaY-5R-uYh"/>
                 <constraint firstAttribute="bottom" secondItem="zmO-gR-u2P" secondAttribute="bottom" id="phZ-TO-i2z"/>
                 <constraint firstAttribute="trailing" secondItem="zmO-gR-u2P" secondAttribute="trailing" id="spF-o7-oxC"/>
                 <constraint firstItem="zmO-gR-u2P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="thF-xO-e2o"/>
@@ -37,4 +57,7 @@
             <nil key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="Rename icon" width="40" height="40"/>
+    </resources>
 </document>

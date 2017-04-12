@@ -30,7 +30,7 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth icon" translatesAutoresizingMaskIntoConstraints="NO" id="0Ok-Uk-QKE">
-                    <rect key="frame" x="187" y="9" width="20" height="20"/>
+                    <rect key="frame" x="187" y="5" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="6Fp-MI-Q6W"/>
                         <constraint firstAttribute="width" constant="20" id="V3g-OH-oSV"/>
@@ -104,11 +104,11 @@
                 <constraint firstItem="jxg-zX-UC9" firstAttribute="leading" secondItem="zxK-fk-ZoK" secondAttribute="leading" id="Mbi-uI-Wem"/>
                 <constraint firstItem="wYL-em-kXQ" firstAttribute="top" secondItem="oCk-1X-YeS" secondAttribute="bottom" constant="-6" id="Pig-qe-ACd"/>
                 <constraint firstAttribute="trailing" secondItem="jxg-zX-UC9" secondAttribute="trailing" id="Wpr-tI-n8r"/>
-                <constraint firstItem="jxg-zX-UC9" firstAttribute="top" secondItem="0Ok-Uk-QKE" secondAttribute="bottom" constant="11" id="YNj-fa-kWb"/>
+                <constraint firstItem="jxg-zX-UC9" firstAttribute="top" secondItem="0Ok-Uk-QKE" secondAttribute="bottom" constant="15" id="YNj-fa-kWb"/>
                 <constraint firstItem="rru-jN-MpY" firstAttribute="top" secondItem="0yb-q3-7Kh" secondAttribute="bottom" constant="-6" id="cVV-oH-LWQ"/>
                 <constraint firstItem="z0u-ie-V8e" firstAttribute="centerX" secondItem="0Ok-Uk-QKE" secondAttribute="centerX" id="dbh-2U-Jkm"/>
                 <constraint firstItem="wYL-em-kXQ" firstAttribute="leading" secondItem="rru-jN-MpY" secondAttribute="trailing" constant="-6" id="g39-a1-h2b"/>
-                <constraint firstItem="z0u-ie-V8e" firstAttribute="top" secondItem="0Ok-Uk-QKE" secondAttribute="bottom" constant="-5" id="pY8-54-uS3"/>
+                <constraint firstItem="z0u-ie-V8e" firstAttribute="top" secondItem="0Ok-Uk-QKE" secondAttribute="bottom" constant="-1" id="pY8-54-uS3"/>
                 <constraint firstItem="wYL-em-kXQ" firstAttribute="top" secondItem="rru-jN-MpY" secondAttribute="bottom" constant="-6" id="qnc-s4-2Qk"/>
                 <constraint firstItem="zxK-fk-ZoK" firstAttribute="leading" secondItem="oCk-1X-YeS" secondAttribute="trailing" constant="16" id="rsa-4d-Oyz"/>
                 <constraint firstItem="oCk-1X-YeS" firstAttribute="top" secondItem="0yb-q3-7Kh" secondAttribute="bottom" constant="-6" id="tfK-pE-nqi"/>

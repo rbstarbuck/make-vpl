@@ -43,6 +43,9 @@
 		A16D16AC1E83100200DD0DA9 /* ScenesReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16AB1E83100200DD0DA9 /* ScenesReferenceView.swift */; };
 		A16D16B31E83906B00DD0DA9 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D16B11E83906B00DD0DA9 /* SelectionCollectionViewCell.swift */; };
 		A16D16B41E83906B00DD0DA9 /* SelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */; };
+		A17387831E9DAB5300C8F211 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17387821E9DAB5300C8F211 /* ColorSelectorView.swift */; };
+		A17387851E9DAB6700C8F211 /* ColorSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17387841E9DAB6700C8F211 /* ColorSelectorView.xib */; };
+		A17387871E9DAD7D00C8F211 /* ColorSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17387861E9DAD7D00C8F211 /* ColorSelectorController.swift */; };
 		A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */; };
 		A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */; };
 		A17C79681E6318F90001F43C /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79661E6318F90001F43C /* GameplayViewController.swift */; };
@@ -204,6 +207,9 @@
 		A16D16AB1E83100200DD0DA9 /* ScenesReferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScenesReferenceView.swift; path = Scenes/ScenesReferenceView.swift; sourceTree = "<group>"; };
 		A16D16B11E83906B00DD0DA9 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionCollectionViewCell.swift; path = Editor/SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectionCollectionViewCell.xib; path = Editor/SelectionCollectionViewCell.xib; sourceTree = "<group>"; };
+		A17387821E9DAB5300C8F211 /* ColorSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorSelectorView.swift; path = Editor/ColorSelectorView.swift; sourceTree = "<group>"; };
+		A17387841E9DAB6700C8F211 /* ColorSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorSelectorView.xib; path = Editor/ColorSelectorView.xib; sourceTree = "<group>"; };
+		A17387861E9DAD7D00C8F211 /* ColorSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorSelectorController.swift; path = Editor/ColorSelectorController.swift; sourceTree = "<group>"; };
 		A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataClass.swift"; path = "SourceCode/SCReference+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataProperties.swift"; path = "SourceCode/SCReference+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A17C79661E6318F90001F43C /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayViewController.swift; path = Gameplay/GameplayViewController.swift; sourceTree = "<group>"; };
@@ -496,6 +502,16 @@
 			name = Referencs;
 			sourceTree = "<group>";
 		};
+		A17387811E9DAB2C00C8F211 /* Color Selector */ = {
+			isa = PBXGroup;
+			children = (
+				A17387861E9DAD7D00C8F211 /* ColorSelectorController.swift */,
+				A17387821E9DAB5300C8F211 /* ColorSelectorView.swift */,
+				A17387841E9DAB6700C8F211 /* ColorSelectorView.xib */,
+			);
+			name = "Color Selector";
+			sourceTree = "<group>";
+		};
 		A17C79541E61BF6A0001F43C /* Variable */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +585,7 @@
 				A18168AE1E7C3C09003B9CE9 /* Page View */,
 				A181688F1E73B410003B9CE9 /* Selection View */,
 				A1C945FE1E9C621F006A3949 /* Gravity Selector */,
+				A17387811E9DAB2C00C8F211 /* Color Selector */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -901,6 +918,7 @@
 				A18168951E749AEF003B9CE9 /* SpritesParametersView.xib in Resources */,
 				A1F6427C1E70F4CB0034292D /* SelectionView.xib in Resources */,
 				A18168B81E7EDF35003B9CE9 /* PhysicsShapeView.xib in Resources */,
+				A17387851E9DAB6700C8F211 /* ColorSelectorView.xib in Resources */,
 				A143A79A1DEBF53A004DBC84 /* Main.storyboard in Resources */,
 				A18168B41E7EDE79003B9CE9 /* PhysicsView.xib in Resources */,
 				A143A7911DEBF53A004DBC84 /* GameScene.sks in Resources */,
@@ -1088,6 +1106,7 @@
 				A18DEB101E954ACE00EB2030 /* NameTextField.swift in Sources */,
 				A13C8ED91E2AC0E200FA33AD /* OCGraphic.swift in Sources */,
 				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
+				A17387871E9DAD7D00C8F211 /* ColorSelectorController.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
 				A16D16B31E83906B00DD0DA9 /* SelectionCollectionViewCell.swift in Sources */,
@@ -1116,6 +1135,7 @@
 				A16D16AC1E83100200DD0DA9 /* ScenesReferenceView.swift in Sources */,
 				A18B0D1A1E18385F0079EBBE /* FrameCollectionViewCell.swift in Sources */,
 				A1C5CD0D1E0D332000102431 /* SCConnector.swift in Sources */,
+				A17387831E9DAB5300C8F211 /* ColorSelectorView.swift in Sources */,
 				A18168BE1E7EFB8E003B9CE9 /* PhysicsController.swift in Sources */,
 				A1F9075B1E3192AA0015DAFE /* SpritesEditorViewController.swift in Sources */,
 				A1DBE0DB1E0671770053758F /* SCVariable+CoreDataClass.swift in Sources */,

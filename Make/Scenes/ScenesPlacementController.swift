@@ -23,6 +23,8 @@ protocol ScenesPlacementDelegate {
     func reloadData()
     func reloadSelectedReference()
     
+    func makeThumbnailFromView() -> UIImage?
+    
     func onTap(_ sender: UITapGestureRecognizer)
     
     func dragBegan(_ sender: UILongPressGestureRecognizer, in view: UIView)
@@ -122,6 +124,31 @@ class ScenesPlacementController: ScenesPlacementDelegate {
     
     func reloadSelectedReference() {
         self.selectedReferenceView?.update()
+    }
+    
+    func makeThumbnailFromView() -> UIImage? {
+        var thumbnail: UIImage?
+        
+        if let placementView = self.placementView {
+            self.selectedReferenceView = nil
+            
+            UIGraphicsBeginImageContext(placementView.bounds.size)
+            
+            placementView.layer.render(in: UIGraphicsGetCurrentContext()!)
+            thumbnail = UIGraphicsGetImageFromCurrentImageContext()!
+            let cgThumbnail = thumbnail.cgImage!.cropping(to: placementView.gameplayView.frame)!
+            thumbnail = UIImage(cgImage: cgThumbnail, scale: thumbnail.scale, orientation: thumbnail.imageOrientation)
+            
+            UIGraphicsEndImageContext()
+            UIGraphicsBeginImageContextWithOptions(SCScene.thumbnailSize, false, 0.0)
+            
+            thumbnail?.draw(in: CGRect(origin: CGPoint(), size: SCScene.thumbnailSize))
+            thumbnail = UIGraphicsGetImageFromCurrentImageContext()
+            
+            UIGraphicsEndImageContext()
+        }
+        
+        return thumbnail
     }
     
 }

@@ -6,12 +6,13 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
 public class SCScene: NSManagedObject, SCNamedEntity, SCGravityEntity {
     public static let entityName = "Scene"
+    public static let thumbnailSize = CGSize(width: 120, height: 90)
 
     
     @NSManaged public var id: String
@@ -19,6 +20,7 @@ public class SCScene: NSManagedObject, SCNamedEntity, SCGravityEntity {
     @NSManaged public var gravityMagnitude: Double
     @NSManaged public var gravityDirection: GravityDirection
     @NSManaged public var dateCreated: Date
+    @NSManaged public var thumbnail: UIImage
     @NSManaged public var methods: Set<SCMethod>
     @NSManaged public var references: Set<SCReference>
     @NSManaged public var variables: Set<SCVariable>
@@ -28,6 +30,7 @@ public class SCScene: NSManagedObject, SCNamedEntity, SCGravityEntity {
     override public func awakeFromInsert() {
         self.id = UUID().uuidString
         self.dateCreated = Date()
+        self.thumbnail = UIImage()
     }
     
     @discardableResult

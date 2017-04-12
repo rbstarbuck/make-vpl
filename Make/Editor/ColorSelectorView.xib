@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorSelectorView" customModule="Make" customModuleProvider="target">
+            <connections>
+                <outlet property="colorIndicatorImage" destination="Pvn-F3-Gaf" id="oj4-wg-nFK"/>
+                <outlet property="selectionArrowImage" destination="FgY-oq-IkX" id="X6r-87-JTq"/>
+                <outlet property="titleLabel" destination="vNe-R9-yUx" id="TgE-2S-4gU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-R9-yUx">
+                    <rect key="frame" x="56" y="7.5" width="206" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right arrow" translatesAutoresizingMaskIntoConstraints="NO" id="FgY-oq-IkX">
+                    <rect key="frame" x="260" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="EUa-73-tbX"/>
+                        <constraint firstAttribute="height" constant="40" id="PUp-q0-CXK"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle filled" translatesAutoresizingMaskIntoConstraints="NO" id="Pvn-F3-Gaf">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="AoK-eG-Yss"/>
+                        <constraint firstAttribute="height" constant="40" id="EhW-3t-5cx"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vNe-R9-yUx" firstAttribute="leading" secondItem="Pvn-F3-Gaf" secondAttribute="trailing" constant="16" id="4Jh-9g-ePN"/>
+                <constraint firstItem="Pvn-F3-Gaf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HfX-ph-bUS"/>
+                <constraint firstAttribute="trailing" secondItem="FgY-oq-IkX" secondAttribute="trailing" id="I7O-zj-yIF"/>
+                <constraint firstItem="FgY-oq-IkX" firstAttribute="leading" secondItem="vNe-R9-yUx" secondAttribute="trailing" constant="-2" id="Isr-gt-9vO"/>
+                <constraint firstItem="FgY-oq-IkX" firstAttribute="centerY" secondItem="Pvn-F3-Gaf" secondAttribute="centerY" id="gth-kP-kkd"/>
+                <constraint firstItem="vNe-R9-yUx" firstAttribute="centerY" secondItem="Pvn-F3-Gaf" secondAttribute="centerY" id="pND-0o-j9o"/>
+                <constraint firstItem="Pvn-F3-Gaf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uqE-Hv-3cT"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-39" y="-262"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Circle filled" width="40" height="40"/>
+        <image name="Right arrow" width="40" height="40"/>
+    </resources>
+</document>

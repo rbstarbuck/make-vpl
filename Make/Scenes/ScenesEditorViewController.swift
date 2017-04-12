@@ -75,10 +75,15 @@ class ScenesEditorViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.spriteSelectionView.collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let thumbnail = self.placementController.makeThumbnailFromView() {
+            self.scene.thumbnail = thumbnail
+        }
         self.scene.world.connector.saveContext()
     }
     

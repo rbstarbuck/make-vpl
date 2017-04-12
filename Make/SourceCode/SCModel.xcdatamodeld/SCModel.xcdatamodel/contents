@@ -62,6 +62,7 @@
         <attribute name="gravityMagnitude" attributeType="Double" defaultValueString="9.800000000000001" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" syncable="YES"/>
+        <attribute name="thumbnail" attributeType="Transformable" customClassName="UIImage" syncable="YES"/>
         <relationship name="methods" toMany="YES" deletionRule="Cascade" destinationEntity="Method" inverseName="scene" inverseEntity="Method" syncable="YES"/>
         <relationship name="references" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reference" inverseName="scene" inverseEntity="Reference" syncable="YES"/>
         <relationship name="variables" toMany="YES" deletionRule="Cascade" destinationEntity="Variable" inverseName="scene" inverseEntity="Variable" syncable="YES"/>
@@ -105,7 +106,7 @@
         <element name="Method" positionX="-524" positionY="233" width="128" height="149"/>
         <element name="PhysicsBody" positionX="-801" positionY="414" width="128" height="210"/>
         <element name="Reference" positionX="-981" positionY="378" width="128" height="195"/>
-        <element name="Scene" positionX="-522" positionY="378" width="128" height="180"/>
+        <element name="Scene" positionX="-522" positionY="378" width="128" height="195"/>
         <element name="Sprite" positionX="-531" positionY="486" width="128" height="180"/>
         <element name="Variable" positionX="-864" positionY="234" width="128" height="135"/>
         <element name="World" positionX="-693" positionY="360" width="128" height="195"/>

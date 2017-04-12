@@ -16,6 +16,7 @@ private let gameplaySegueIdentifier = "GameplayViewControllerSegue"
 
 class WorldEditorViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: NameTextField!
     @IBOutlet weak var sceneSelectionView: SelectionView!
     
     var connector: SCConnector!
@@ -37,9 +38,12 @@ class WorldEditorViewController: UIViewController {
             self.world = self.connector.createWorld()
         }
         // end test code
-        self.title = "\(SCConstants.WORLD_DISPLAY_TITLE): \"\(self.world.name)\""
+        self.setName(self.world.name)
         self.edgesForExtendedLayout = UIRectEdge()
         self.view.layoutSubviews()
+        
+        self.nameTextField.listeners.insert(self)
+        self.nameTextField.entity = self.world
         
         let playBarButton = UIBarButtonItem(image: UIImage(named: "Play"), style: .plain,
                                             target: self, action: #selector(self.playInitialScene))
@@ -53,10 +57,12 @@ class WorldEditorViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.sceneSelectionView.collectionView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.world.connector.saveContext()
     }
     
@@ -111,6 +117,10 @@ extension WorldEditorViewController: SelectionDataSource {
     }
     
     func getImage(for entity: NSManagedObject, name: String) -> UIImage? {
+        if name == SCConstants.SCENE_DISPLAY_TITLE {
+            let scene = entity as! SCScene
+            return scene.thumbnail
+        }
         return nil
     }
     
@@ -120,6 +130,15 @@ extension WorldEditorViewController: SelectionDataSource {
             return scene.name
         }
         return nil
+    }
+    
+}
+
+
+extension WorldEditorViewController: NameTextFieldListener {
+    
+    func setName(_ name: String) {
+        self.title = "\(SCConstants.WORLD_DISPLAY_TITLE): \"\(name)\""
     }
     
 }

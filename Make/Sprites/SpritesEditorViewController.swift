@@ -70,10 +70,12 @@ class SpritesEditorViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.configure()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.sprite.world.connector.saveContext()
     }
     

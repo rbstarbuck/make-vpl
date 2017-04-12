@@ -2,25 +2,22 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Forward Filled-100.png",
+      "filename" : "Landscape-96.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Forward Filled-100 2.png",
+      "filename" : "Landscape-96 2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Forward Filled-100 3.png",
+      "filename" : "Landscape-96 3.png",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }
