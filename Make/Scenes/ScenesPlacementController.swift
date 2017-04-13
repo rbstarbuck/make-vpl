@@ -20,6 +20,8 @@ protocol ScenesPlacementDelegate {
     
     var gameplayViewFrame: CGRect { get }
     
+    func setBackgroundColor(_ color: UIColor)
+    
     func reloadData()
     func reloadSelectedReference()
     
@@ -98,6 +100,10 @@ class ScenesPlacementController: ScenesPlacementDelegate {
         }
     }
     
+    func setBackgroundColor(_ color: UIColor) {
+        self.placementView?.gameplayView.backgroundColor = color
+    }
+    
     
     @discardableResult
     func instantiate(_ reference: SCReference) -> ScenesReferenceView? {
@@ -127,7 +133,7 @@ class ScenesPlacementController: ScenesPlacementDelegate {
     }
     
     func makeThumbnailFromView() -> UIImage? {
-        var thumbnail: UIImage?
+        var thumbnail: UIImage!
         
         if let placementView = self.placementView {
             self.selectedReferenceView = nil
@@ -135,14 +141,14 @@ class ScenesPlacementController: ScenesPlacementDelegate {
             UIGraphicsBeginImageContext(placementView.bounds.size)
             
             placementView.layer.render(in: UIGraphicsGetCurrentContext()!)
-            thumbnail = UIGraphicsGetImageFromCurrentImageContext()!
+            thumbnail = UIGraphicsGetImageFromCurrentImageContext()
             let cgThumbnail = thumbnail.cgImage!.cropping(to: placementView.gameplayView.frame)!
             thumbnail = UIImage(cgImage: cgThumbnail, scale: thumbnail.scale, orientation: thumbnail.imageOrientation)
             
             UIGraphicsEndImageContext()
             UIGraphicsBeginImageContextWithOptions(SCScene.thumbnailSize, false, 0.0)
             
-            thumbnail?.draw(in: CGRect(origin: CGPoint(), size: SCScene.thumbnailSize))
+            thumbnail.draw(in: CGRect(origin: CGPoint(), size: SCScene.thumbnailSize))
             thumbnail = UIGraphicsGetImageFromCurrentImageContext()
             
             UIGraphicsEndImageContext()

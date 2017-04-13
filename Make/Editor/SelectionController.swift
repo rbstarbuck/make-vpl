@@ -12,6 +12,7 @@ import CoreData
 
 protocol SelectionDelegate: class {
     
+    var titleFontSize: CGFloat { get set }
     var isSelecting: Bool { get set }
     
     var name: String { get set }
@@ -74,6 +75,18 @@ class SelectionController: CoreDataCollectionViewController, SelectionDelegate {
     var cellLength = 4
     var cellSizeDiff = CGFloat(24)
     var cellInsetSize = CGFloat(5)
+    
+    var titleFontSize: CGFloat {
+        get {
+            if let view = self.view {
+                return view.titleLabel.font.pointSize
+            }
+            return 0
+        }
+        set {
+            self.view?.titleLabel.font = UIFont.systemFont(ofSize: newValue)
+        }
+    }
     
     var isSelecting = false {
         didSet {

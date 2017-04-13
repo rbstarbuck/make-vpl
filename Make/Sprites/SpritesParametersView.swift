@@ -74,11 +74,11 @@ class SpritesParametersView: UIViewFromNib {
     }
     
     func graphicSelectionViewTouch(_ sender: UITapGestureRecognizer) {
-        self.delegate.selectGraphics()
+        self.delegate.navigateToGraphicsPage()
     }
     
     func physicsViewTouch(_ sender: UITapGestureRecognizer) {
-        self.delegate.selectPhysics()
+        self.delegate.navigateToPhysicsPage()
     }
     
     

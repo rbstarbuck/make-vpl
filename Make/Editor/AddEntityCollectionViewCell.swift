@@ -25,4 +25,11 @@ class AddEntityCollectionViewCell: UICollectionViewCell {
         self.delegate?.createEntity()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let fontSize = self.bounds.height / 10.0
+        self.label.font = UIFont.systemFont(ofSize: fontSize)
+    }
+    
 }

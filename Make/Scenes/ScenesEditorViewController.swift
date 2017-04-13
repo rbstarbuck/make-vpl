@@ -21,12 +21,13 @@ class ScenesEditorViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: NameTextField!
     @IBOutlet weak var gravityView: GravityView!
+    @IBOutlet weak var colorSelectorView: ColorSelectorView!
     
     @IBOutlet weak var contentPageView: PageView!
     @IBOutlet weak var spriteSelectionView: SelectionView!
     
     @IBOutlet weak var bottomView: UIView!
-        @IBOutlet weak var referenceParametersView: ScenesReferenceParametersView!
+    @IBOutlet weak var referenceParametersView: ScenesReferenceParametersView!
     @IBOutlet weak var referenceParametersViewTrailingConstraint: NSLayoutConstraint!
     
     var connector: SCConnector!
@@ -49,17 +50,21 @@ class ScenesEditorViewController: UIViewController {
         
         self.gravityView.entity = self.scene
         
+        self.colorSelectorView.colorIndicatorImage.tintColor = self.scene.backgroundColor
+        
         self.spriteSelectionController = SelectionController(dataSource: self,
                                                              view: self.spriteSelectionView,
                                                              name: SCConstants.SPRITE_DISPLAY_TITLE,
                                                              observer: self.scene.world.spriteObserver)
         self.spriteSelectionController.scrollDirection = .horizontal
         self.spriteSelectionController.cellLength = 1
+        self.spriteSelectionController.titleFontSize = 16
         
         let placementView = ScenesPlacementView()
         self.placementController = ScenesPlacementController(placementView: placementView,
                                                              parametersView: self.referenceParametersView,
                                                              scene: self.scene)
+        self.placementController.setBackgroundColor(self.scene.backgroundColor)
         self.contentPageView.addPage(placementView, key: placementViewPageKey)
         
         let referencePanGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onReferencePan(_:)))
@@ -263,3 +268,4 @@ extension ScenesEditorViewController: UIGestureRecognizerDelegate {
     }
     
 }
+

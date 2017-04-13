@@ -16,6 +16,7 @@ public class OCGraphic {
     
     public var timePerFrame: Double
     
+    private var animationKey = UUID().uuidString
     
     public init(from scGraphic: SCGraphic) {
         self.timePerFrame = 1.0 / scGraphic.animationFPS

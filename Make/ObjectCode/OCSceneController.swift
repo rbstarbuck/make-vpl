@@ -22,9 +22,9 @@ class OCSceneController: NSObject {
         
         super.init()
         // TODO: delete
-        self.sceneView.showsFPS = true
-        self.sceneView.showsNodeCount = true
-        self.sceneView.showsPhysics = true
+        //self.sceneView.showsFPS = true
+        //self.sceneView.showsNodeCount = true
+        //self.sceneView.showsPhysics = true
         // end delete
         
         self.scene.delegate = self

@@ -56,6 +56,8 @@ public class OCScene: SKScene {
         
         super.init(size: self.world.viewSize)
         
+        self.backgroundColor = scScene.backgroundColor
+        
         for reference in scScene.references {
             let sprite = OCSprite(from: reference, in: self)
             self.addChild(sprite)

@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import ChromaColorPicker
+
+
+private let popoverIdentifier = "ColorSelectorPopover"
+
+private let unselectedArrowTintColor = UIColor.gray
+private let selectedArrowTintColor = UIColor(hex: 0x3366ff)
+
 
 class ColorSelectorView: UIViewFromNib {
 
@@ -14,11 +22,8 @@ class ColorSelectorView: UIViewFromNib {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var selectionArrowImage: UIImageView!
     
-    var delegate: ColorSelectorDelegate?
-    
     
     override func awakeFromNib() {
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:)))
         self.addGestureRecognizer(tapGesture)
     }
@@ -26,7 +31,38 @@ class ColorSelectorView: UIViewFromNib {
     
     
     func onTap(_ sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let popover = storyboard.instantiateViewController(withIdentifier: popoverIdentifier) as! ColorSelectorPopoverViewController
+        popover.modalPresentationStyle = .popover
         
+        if let popoverController = popover.popoverPresentationController {
+            popoverController.permittedArrowDirections = .left
+            popoverController.delegate = self
+            popoverController.sourceView = self
+            popoverController.sourceRect = self.bounds
+        }
+        
+        self.selectionArrowImage.tintColor = selectedArrowTintColor
+        self.parentViewController?.present(popover, animated: true) {
+            self.selectionArrowImage.tintColor = unselectedArrowTintColor
+        }
+    }
+    
+    func colorPickerValueChanged(_ sender: ChromaColorPicker) {
+        self.setColor(sender.currentColor)
+    }
+    
+    func setColor(_ color: UIColor) {
+        self.colorIndicatorImage.tintColor = color
+    }
+    
+}
+
+
+extension ColorSelectorView: UIPopoverPresentationControllerDelegate {
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
     
 }

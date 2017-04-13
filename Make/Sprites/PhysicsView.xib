@@ -23,17 +23,27 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YB-qf-rRA" customClass="PhysicsShapeView" customModule="Make" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="295" height="295"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8YB-qf-rRA" secondAttribute="height" id="rIQ-2i-fgJ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-wR-7ea" customClass="PhysicsPropertiesView" customModule="Make" customModuleProvider="target">
-                    <rect key="frame" x="303" y="8" width="271" height="295"/>
+                    <rect key="frame" x="303" y="8" width="279" height="295"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="sTz-wR-7ea" firstAttribute="height" secondItem="8YB-qf-rRA" secondAttribute="height" id="3kq-Tb-DXb"/>
                 <constraint firstItem="8YB-qf-rRA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="90c-d1-Q9i"/>
@@ -41,7 +51,7 @@
                 <constraint firstItem="8YB-qf-rRA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="P1G-xT-EjQ"/>
                 <constraint firstItem="8YB-qf-rRA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="UxJ-Cw-yew"/>
                 <constraint firstItem="sTz-wR-7ea" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="mIK-3N-N73"/>
-                <constraint firstAttribute="trailing" secondItem="sTz-wR-7ea" secondAttribute="trailing" constant="16" id="v9x-Mk-D7l"/>
+                <constraint firstAttribute="trailing" secondItem="sTz-wR-7ea" secondAttribute="trailing" constant="8" id="v9x-Mk-D7l"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

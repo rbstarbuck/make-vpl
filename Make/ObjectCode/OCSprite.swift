@@ -21,6 +21,12 @@ public class OCSprite: SKSpriteNode {
         }
     }
     
+    public var graphic: OCGraphic?
+    
+    
+    private var animationKey = UUID().uuidString
+    private var animated = false
+    
     
     public init(from scReference: SCReference, in ocScene: OCScene) {
         self.variables = Variables(parent: ocScene.variables)
@@ -31,11 +37,11 @@ public class OCSprite: SKSpriteNode {
         
         var texture: SKTexture!
         if let scGraphic = scSprite.graphic {
-            let ocGraphic = ocScene.world.graphics[scGraphic.id]!
-            texture = ocGraphic.frames.first!
+            self.graphic = ocScene.world.graphics[scGraphic.id]!
+            texture = self.graphic!.frames.first!
         }
         else {
-            texture = SKTexture(imageNamed: "Placeholder image")
+            texture = SKTexture(imageNamed: "Transparent")
         }
         
         super.init(texture: texture, color: UIColor.red, size: texture.size())
@@ -45,6 +51,7 @@ public class OCSprite: SKSpriteNode {
         self.position = scReference.gameplayCenter(in: ocScene.frame)
         self.setScale(scReference.scale(in: ocScene.size))
         self.zRotation = CGFloat(-scReference.rotation)
+        self.setIsAnimated(scReference.animated)
         
         if scSprite.physicsBody.isEnabled {
             self.physicsBody = self.makePhysicsBody(from: scSprite.physicsBody)
@@ -76,4 +83,23 @@ public class OCSprite: SKSpriteNode {
         
         return physicsBody
     }
+    
+    public func setIsAnimated(_ isAnimated: Bool, count: Int = -1) {
+        if isAnimated != self.animated {
+            if !isAnimated {
+                self.removeAction(forKey: self.animationKey)
+            }
+            else if let graphic = self.graphic {
+                let action = SKAction.animate(with: graphic.frames, timePerFrame: graphic.timePerFrame)
+                if count < 0 {
+                    self.run(SKAction.repeatForever(action), withKey: self.animationKey)
+                }
+                else {
+                    self.run(SKAction.repeat(action, count: count), withKey: self.animationKey)
+                }
+            }
+            self.animated = isAnimated
+        }
+    }
+    
 }

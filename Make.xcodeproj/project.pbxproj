@@ -45,7 +45,8 @@
 		A16D16B41E83906B00DD0DA9 /* SelectionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */; };
 		A17387831E9DAB5300C8F211 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17387821E9DAB5300C8F211 /* ColorSelectorView.swift */; };
 		A17387851E9DAB6700C8F211 /* ColorSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A17387841E9DAB6700C8F211 /* ColorSelectorView.xib */; };
-		A17387871E9DAD7D00C8F211 /* ColorSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17387861E9DAD7D00C8F211 /* ColorSelectorController.swift */; };
+		A173878E1E9E955C00C8F211 /* ColorSelectorPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A173878C1E9E955C00C8F211 /* ColorSelectorPopoverViewController.swift */; };
+		A173878F1E9E955C00C8F211 /* ColorSelectorPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A173878D1E9E955C00C8F211 /* ColorSelectorPopoverViewController.xib */; };
 		A17C79631E6222060001F43C /* SCReference+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */; };
 		A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */; };
 		A17C79681E6318F90001F43C /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17C79661E6318F90001F43C /* GameplayViewController.swift */; };
@@ -209,7 +210,8 @@
 		A16D16B21E83906B00DD0DA9 /* SelectionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SelectionCollectionViewCell.xib; path = Editor/SelectionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A17387821E9DAB5300C8F211 /* ColorSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorSelectorView.swift; path = Editor/ColorSelectorView.swift; sourceTree = "<group>"; };
 		A17387841E9DAB6700C8F211 /* ColorSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorSelectorView.xib; path = Editor/ColorSelectorView.xib; sourceTree = "<group>"; };
-		A17387861E9DAD7D00C8F211 /* ColorSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorSelectorController.swift; path = Editor/ColorSelectorController.swift; sourceTree = "<group>"; };
+		A173878C1E9E955C00C8F211 /* ColorSelectorPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorSelectorPopoverViewController.swift; path = Editor/ColorSelectorPopoverViewController.swift; sourceTree = "<group>"; };
+		A173878D1E9E955C00C8F211 /* ColorSelectorPopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ColorSelectorPopoverViewController.xib; path = Editor/ColorSelectorPopoverViewController.xib; sourceTree = "<group>"; };
 		A17C79611E6222060001F43C /* SCReference+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataClass.swift"; path = "SourceCode/SCReference+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A17C79621E6222060001F43C /* SCReference+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SCReference+CoreDataProperties.swift"; path = "SourceCode/SCReference+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A17C79661E6318F90001F43C /* GameplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayViewController.swift; path = Gameplay/GameplayViewController.swift; sourceTree = "<group>"; };
@@ -484,12 +486,12 @@
 			children = (
 				A16D16A01E81F0C700DD0DA9 /* ScenesEditorViewController.swift */,
 				A16D16A11E81F0C700DD0DA9 /* ScenesEditorViewController.xib */,
-				A16D16A41E81F0CC00DD0DA9 /* Referencs */,
+				A16D16A41E81F0CC00DD0DA9 /* References */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
 		};
-		A16D16A41E81F0CC00DD0DA9 /* Referencs */ = {
+		A16D16A41E81F0CC00DD0DA9 /* References */ = {
 			isa = PBXGroup;
 			children = (
 				A16D16A91E81F12300DD0DA9 /* ScenesPlacementController.swift */,
@@ -499,15 +501,16 @@
 				A16D16A71E81F11200DD0DA9 /* ScenesPlacementView.xib */,
 				A16D16AB1E83100200DD0DA9 /* ScenesReferenceView.swift */,
 			);
-			name = Referencs;
+			name = References;
 			sourceTree = "<group>";
 		};
 		A17387811E9DAB2C00C8F211 /* Color Selector */ = {
 			isa = PBXGroup;
 			children = (
-				A17387861E9DAD7D00C8F211 /* ColorSelectorController.swift */,
 				A17387821E9DAB5300C8F211 /* ColorSelectorView.swift */,
 				A17387841E9DAB6700C8F211 /* ColorSelectorView.xib */,
+				A173878C1E9E955C00C8F211 /* ColorSelectorPopoverViewController.swift */,
+				A173878D1E9E955C00C8F211 /* ColorSelectorPopoverViewController.xib */,
 			);
 			name = "Color Selector";
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				A1F51FFF1E08EF0600443ABB /* GraphicsEditorViewController.xib in Resources */,
 				A17C79691E6318F90001F43C /* GameplayViewController.xib in Resources */,
 				A18DEB041E8EE7BB00EB2030 /* ScenesReferenceParametersView.xib in Resources */,
+				A173878F1E9E955C00C8F211 /* ColorSelectorPopoverViewController.xib in Resources */,
 				A17C79701E6327F70001F43C /* WorldEditorViewController.xib in Resources */,
 				A18168951E749AEF003B9CE9 /* SpritesParametersView.xib in Resources */,
 				A1F6427C1E70F4CB0034292D /* SelectionView.xib in Resources */,
@@ -1106,7 +1110,6 @@
 				A18DEB101E954ACE00EB2030 /* NameTextField.swift in Sources */,
 				A13C8ED91E2AC0E200FA33AD /* OCGraphic.swift in Sources */,
 				A1A11DCE1E405B210002F5EE /* SCVariableData.swift in Sources */,
-				A17387871E9DAD7D00C8F211 /* ColorSelectorController.swift in Sources */,
 				A1DBE0CF1E0671770053758F /* SCWorld+CoreDataClass.swift in Sources */,
 				A12FE7E71E1599430015989D /* BrushController.swift in Sources */,
 				A16D16B31E83906B00DD0DA9 /* SelectionCollectionViewCell.swift in Sources */,
@@ -1165,6 +1168,7 @@
 				A1DBE0D71E0671770053758F /* SCSprite+CoreDataClass.swift in Sources */,
 				A1DBE0D31E0671770053758F /* SCScene+CoreDataClass.swift in Sources */,
 				A16D16A61E81F10400DD0DA9 /* ScenesPlacementView.swift in Sources */,
+				A173878E1E9E955C00C8F211 /* ColorSelectorPopoverViewController.swift in Sources */,
 				A17C79641E6222060001F43C /* SCReference+CoreDataProperties.swift in Sources */,
 				A1DBE0D11E0671770053758F /* SCMethod+CoreDataClass.swift in Sources */,
 				A16D16AA1E81F12300DD0DA9 /* ScenesPlacementController.swift in Sources */,

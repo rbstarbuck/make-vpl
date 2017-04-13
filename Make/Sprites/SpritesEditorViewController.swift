@@ -10,13 +10,17 @@ import UIKit
 import CoreData
 
 
+private let selectedArrowColor = UIColor(hex: 0x3366ff)
+private let unselectedArrowColor = UIColor.lightGray
+
+
 protocol SpritesParametersDelegate {
     
     var spriteGraphic: SCGraphic? { get set }
     var spritePhysics: SCPhysicsBody { get }
     
-    func selectGraphics()
-    func selectPhysics()
+    func navigateToGraphicsPage()
+    func navigateToPhysicsPage()
     
 }
 
@@ -25,8 +29,6 @@ private let graphicEditorSegueIdentifier = "GraphicsEditorViewControllerSegue"
 
 private let physicsViewPageKey = "physics"
 private let graphicsViewPageKey = "graphics"
-
-private let pageCornerRadius = CGFloat(15)
 
 
 class SpritesEditorViewController: UIViewController {
@@ -51,22 +53,19 @@ class SpritesEditorViewController: UIViewController {
         self.parametersView.nameTextField.listeners.insert(self)
         self.parametersView.nameTextField.entity = self.sprite
         
-        self.contentPageView.layer.cornerRadius = pageCornerRadius
         self.contentPageView.layer.masksToBounds = true
-        self.contentPageView.borderColor = UIColor.lightGray
-        self.contentPageView.borderWidth = 0.5
         
         let physicsView = PhysicsView()
         self.physicsController = PhysicsController(view: physicsView, sprite: self.sprite)
-        self.contentPageView.addPage(physicsView, key: physicsViewPageKey)
         
         let graphicsSelectionView = SelectionView()
         self.graphicsSelectionController = SelectionController(dataSource: self,
                                                                view: graphicsSelectionView,
                                                                name: SCConstants.GRAPHIC_DISPLAY_TITLE,
                                                                observer: self.sprite.world.graphicObserver)
-        self.contentPageView.addPage(graphicsSelectionView, key: graphicsViewPageKey)
         
+        self.contentPageView.addPage(physicsView, key: physicsViewPageKey)
+        self.contentPageView.addPage(graphicsSelectionView, key: graphicsViewPageKey)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,11 +120,15 @@ extension SpritesEditorViewController: SpritesParametersDelegate {
         }
     }
     
-    func selectGraphics() {
+    func navigateToGraphicsPage() {
+        self.parametersView.graphicArrowImageView.tintColor = selectedArrowColor
+        self.parametersView.physicsArrowImageView.tintColor = unselectedArrowColor
         self.contentPageView.showPage(graphicsViewPageKey)
     }
     
-    func selectPhysics() {
+    func navigateToPhysicsPage() {
+        self.parametersView.graphicArrowImageView.tintColor = unselectedArrowColor
+        self.parametersView.physicsArrowImageView.tintColor = selectedArrowColor
         self.contentPageView.showPage(physicsViewPageKey)
     }
     

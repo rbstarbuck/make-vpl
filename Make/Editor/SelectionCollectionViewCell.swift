@@ -29,6 +29,9 @@ class SelectionCollectionViewCell: CoreDataCollectionViewCell {
         self.borderColor = cellBorderColor
         self.borderWidth = cellBorderWidth
         
+        let fontSize = self.bounds.height / 10.0
+        self.label.font = UIFont.systemFont(ofSize: fontSize)
+        
         if let controller = delegate as? SelectionDelegate {
             self.imageView.image = controller.getImage(for: entity)
             self.label.text = controller.getLabel(for: entity)

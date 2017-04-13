@@ -40,13 +40,21 @@
                         <constraint firstAttribute="height" constant="40" id="EhW-3t-5cx"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Mcr-w5-ujJ">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vNe-R9-yUx" firstAttribute="leading" secondItem="Pvn-F3-Gaf" secondAttribute="trailing" constant="16" id="4Jh-9g-ePN"/>
                 <constraint firstItem="Pvn-F3-Gaf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HfX-ph-bUS"/>
+                <constraint firstItem="Mcr-w5-ujJ" firstAttribute="leading" secondItem="Pvn-F3-Gaf" secondAttribute="leading" id="Hnr-Mf-Av5"/>
                 <constraint firstAttribute="trailing" secondItem="FgY-oq-IkX" secondAttribute="trailing" id="I7O-zj-yIF"/>
+                <constraint firstItem="Mcr-w5-ujJ" firstAttribute="trailing" secondItem="Pvn-F3-Gaf" secondAttribute="trailing" id="ISx-ca-V1Y"/>
                 <constraint firstItem="FgY-oq-IkX" firstAttribute="leading" secondItem="vNe-R9-yUx" secondAttribute="trailing" constant="-2" id="Isr-gt-9vO"/>
+                <constraint firstItem="Mcr-w5-ujJ" firstAttribute="bottom" secondItem="Pvn-F3-Gaf" secondAttribute="bottom" id="K8l-dM-hmz"/>
+                <constraint firstItem="Mcr-w5-ujJ" firstAttribute="top" secondItem="Pvn-F3-Gaf" secondAttribute="top" id="fMw-Fp-gNd"/>
                 <constraint firstItem="FgY-oq-IkX" firstAttribute="centerY" secondItem="Pvn-F3-Gaf" secondAttribute="centerY" id="gth-kP-kkd"/>
                 <constraint firstItem="vNe-R9-yUx" firstAttribute="centerY" secondItem="Pvn-F3-Gaf" secondAttribute="centerY" id="pND-0o-j9o"/>
                 <constraint firstItem="Pvn-F3-Gaf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="uqE-Hv-3cT"/>
@@ -59,6 +67,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Circle" width="20" height="20"/>
         <image name="Circle filled" width="40" height="40"/>
         <image name="Right arrow" width="40" height="40"/>
     </resources>

@@ -22,7 +22,7 @@
                 <viewController id="S38-gp-3ra" customClass="GraphicsEditorViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="php-vR-uJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="3234"/>
+            <point key="canvasLocation" x="1000" y="2802"/>
         </scene>
         <!--Scenes Editor View Controller-->
         <scene sceneID="xwI-Ic-Lvc">
@@ -35,7 +35,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1l-O7-OKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="3236"/>
+            <point key="canvasLocation" x="-168" y="2802"/>
+        </scene>
+        <!--Color Selector Popover View Controller-->
+        <scene sceneID="ZWp-r5-iUa">
+            <objects>
+                <viewController storyboardIdentifier="ColorSelectorPopover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Da-7L-TxX" customClass="ColorSelectorPopoverViewController" customModule="Make" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0HS-9P-Lmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-305" y="4058"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="kHT-nB-blf">
@@ -65,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBA-Oc-Dhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="3234"/>
+            <point key="canvasLocation" x="419" y="2802"/>
         </scene>
         <!--World Editor View Controller-->
         <scene sceneID="ncS-jF-zYX">
@@ -75,6 +83,8 @@
                     <connections>
                         <segue destination="IQw-ir-SAW" kind="show" identifier="ScenesEditorViewControllerSegue" id="lvM-Yj-IOF"/>
                         <segue destination="W6b-XO-tSI" kind="show" identifier="GameplayViewControllerSegue" id="J4M-df-0R6"/>
+                        <segue destination="HKz-Mt-R1J" kind="show" identifier="SpritesEditorViewControllerSegue" id="7LH-PS-MH8"/>
+                        <segue destination="S38-gp-3ra" kind="show" identifier="GraphicsEditorViewControllerSegue" id="JIx-Uk-3fo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZo-dD-Wfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,4 +92,8 @@
             <point key="canvasLocation" x="239" y="2303"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zRA-0w-lCc"/>
+        <segue reference="SUI-aO-geB"/>
+    </inferredMetricsTieBreakers>
 </document>

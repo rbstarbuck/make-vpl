@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScenesEditorViewController" customModule="Make" customModuleProvider="target">
             <connections>
                 <outlet property="bottomView" destination="V1X-Ed-CVq" id="HUo-NC-8Tz"/>
+                <outlet property="colorSelectorView" destination="LDz-OW-PL6" id="FCb-er-NWi"/>
                 <outlet property="contentPageView" destination="2a6-AN-mnw" id="fpy-Ad-3CY"/>
                 <outlet property="gravityView" destination="R7F-7R-5lN" id="Fz1-8V-t21"/>
                 <outlet property="nameTextField" destination="vW5-HO-kHk" id="3Th-58-fep"/>
@@ -29,6 +30,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a6-AN-mnw" customClass="PageView" customModule="Make" customModuleProvider="target">
                     <rect key="frame" x="326" y="16" width="682" height="512"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1X-Ed-CVq">
                     <rect key="frame" x="326" y="544" width="682" height="204"/>
@@ -36,6 +48,17 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs5-Yd-jUV" customClass="SelectionView" customModule="Make" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="466" height="204"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBC-yc-gKN" customClass="ScenesReferenceParametersView" customModule="Make" customModuleProvider="target">
                             <rect key="frame" x="482" y="0.0" width="200" height="204"/>
@@ -73,12 +96,21 @@
                         <constraint firstAttribute="height" constant="78" id="Bra-84-XiK"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDz-OW-PL6" customClass="ColorSelectorView" customModule="Make" customModuleProvider="target">
+                    <rect key="frame" x="20" y="182" width="290" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="NAk-Lo-doX"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="R7F-7R-5lN" firstAttribute="leading" secondItem="JHX-wQ-siY" secondAttribute="leading" id="0BH-bO-7g5"/>
+                <constraint firstItem="LDz-OW-PL6" firstAttribute="leading" secondItem="R7F-7R-5lN" secondAttribute="leading" id="1Ea-CE-sd1"/>
                 <constraint firstItem="JHX-wQ-siY" firstAttribute="centerY" secondItem="vW5-HO-kHk" secondAttribute="centerY" id="A6k-Lv-zal"/>
                 <constraint firstAttribute="trailing" secondItem="2a6-AN-mnw" secondAttribute="trailing" constant="16" id="Edz-G9-7fx"/>
+                <constraint firstItem="LDz-OW-PL6" firstAttribute="trailing" secondItem="R7F-7R-5lN" secondAttribute="trailing" id="FWc-VI-NEo"/>
                 <constraint firstItem="vW5-HO-kHk" firstAttribute="leading" secondItem="JHX-wQ-siY" secondAttribute="trailing" constant="16" id="Geb-IX-hgL"/>
                 <constraint firstItem="2a6-AN-mnw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="P7B-bN-gvA"/>
                 <constraint firstItem="R7F-7R-5lN" firstAttribute="top" secondItem="vW5-HO-kHk" secondAttribute="bottom" constant="16" id="PcV-fE-qht"/>
@@ -92,6 +124,7 @@
                 <constraint firstItem="2a6-AN-mnw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2/3" id="vF8-BG-fAi"/>
                 <constraint firstItem="V1X-Ed-CVq" firstAttribute="leading" secondItem="2a6-AN-mnw" secondAttribute="leading" id="yC9-Kd-11G"/>
                 <constraint firstItem="2a6-AN-mnw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="2/3" id="ykf-dy-3ca"/>
+                <constraint firstItem="LDz-OW-PL6" firstAttribute="top" secondItem="R7F-7R-5lN" secondAttribute="bottom" constant="16" id="z58-Nw-6HN"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>
